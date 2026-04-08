@@ -279,8 +279,7 @@ const NAV = [
   { id:'blog',     label:'Blog',     icon:'✦', badge: publishedBlogs.length },
 ]
 
-// ── Main App ──────────────────────────────────────────────────────────────────
-// ── Mobile detection hook ─────────────────────────────────────────────────────
+// ── Mobile detection ─────────────────────────────────────────────────────────
 function useIsMobile() {
   const [m, setM] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768)
   useEffect(() => {
@@ -291,15 +290,36 @@ function useIsMobile() {
   return m
 }
 
+// ── Hash routing ──────────────────────────────────────────────────────────────
+function parseHash() {
+  const h = window.location.hash.replace('#/', '').replace('#', '')
+  if (h.startsWith('blog/')) return { tab: 'blog', slug: h.slice(5) }
+  if (['laws','tickers','articles','blog'].includes(h)) return { tab: h, slug: null }
+  return { tab: 'themes', slug: null }
+}
+
 export default function App() {
   const isMobile = useIsMobile()
-  const [tab, setTab] = useState('themes')
+  const [tab, setTab] = useState(() => parseHash().tab)
   const [selectedTheme, setSelectedTheme] = useState(null)
   const [drawerArticle, setDrawerArticle] = useState(null)
   const [search, setSearch] = useState('')
   const [year, setYear] = useState('all')
-  const [activeBlog, setActiveBlog] = useState(null)
+  const [activeBlog, setActiveBlog] = useState(() => {
+    const { slug } = parseHash()
+    return slug ? (publishedBlogs.find(b => b.slug === slug) || null) : null
+  })
   const [expandedTicker, setExpandedTicker] = useState(null)
+
+  useEffect(() => {
+    const handler = () => {
+      const { tab: t, slug } = parseHash()
+      setTab(t)
+      setActiveBlog(slug ? (publishedBlogs.find(b => b.slug === slug) || null) : null)
+    }
+    window.addEventListener('hashchange', handler)
+    return () => window.removeEventListener('hashchange', handler)
+  }, [])
 
   const years = useMemo(() => ['all',...[...new Set(ARTICLES.map(a=>a.d?.slice(0,4)).filter(Boolean))].sort().reverse()],[])
   const themeCounts = useMemo(() => {
@@ -322,7 +342,15 @@ export default function App() {
     return () => { document.body.style.overflow = 'auto' }
   }, [drawerArticle])
 
-  const handleTabChange = (id) => { setTab(id); if (id !== 'blog') setActiveBlog(null) }
+  const handleTabChange = (id) => {
+    setTab(id)
+    if (id !== 'blog') { setActiveBlog(null); window.location.hash = id === 'themes' ? '' : '/' + id }
+  }
+  const openBlog = (blog) => {
+    setActiveBlog(blog)
+    setTab('blog')
+    window.location.hash = '/blog/' + blog.slug
+  }
 
   // ── Shared content pages ──────────────────────────────────────────────────
   const ThemesPage = () => (
@@ -353,7 +381,7 @@ export default function App() {
                 </div>
                 <div style={{display:'flex',gap:6,alignItems:'center'}}>
                   <span style={{fontSize:11,color:'#aaa'}}>{count}</span>
-                  {blog && <span onClick={e=>{e.stopPropagation();setActiveBlog(blog);setTab('blog')}} style={{fontSize:10,padding:'1px 7px',borderRadius:10,background:th.bg,color:th.color,fontWeight:500,cursor:'pointer'}}>Blog ↗</span>}
+                  {blog && <span onClick={e=>{e.stopPropagation();openBlog(blog)}} style={{fontSize:10,padding:'1px 7px',borderRadius:10,background:th.bg,color:th.color,fontWeight:500,cursor:'pointer'}}>Blog ↗</span>}
                 </div>
               </div>
               {topLesson && !isMobile && (
@@ -490,7 +518,7 @@ export default function App() {
         {publishedBlogs.map(blog => {
           const t = TM[blog.theme]
           return (
-            <div key={blog.slug} onClick={()=>setActiveBlog(blog)}
+            <div key={blog.slug} onClick={()=>openBlog(blog)}
               style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'1rem',cursor:'pointer',borderTop:`3px solid ${t?.color||'#ccc'}`,WebkitTapHighlightColor:'transparent'}}
               onMouseEnter={e=>{if(!isMobile)e.currentTarget.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'}}
               onMouseLeave={e=>{if(!isMobile)e.currentTarget.style.boxShadow='none'}}>
@@ -565,7 +593,7 @@ export default function App() {
 
   // Active page content
   const activePage = (() => {
-    if (tab==='blog' && activeBlog) return <BlogPost blog={activeBlog} onBack={()=>setActiveBlog(null)} isMobile={isMobile}/>
+    if (tab==='blog' && activeBlog) return <BlogPost blog={activeBlog} onBack={()=>{ setActiveBlog(null); window.location.hash='/blog'; }} isMobile={isMobile}/>
     if (tab==='blog') return <BlogListPage/>
     if (tab==='laws') return <LawsPage/>
     if (tab==='tickers') return <TickersPage/>
