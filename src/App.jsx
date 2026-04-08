@@ -38,41 +38,133 @@ function ReturnBadge({ pct }) {
   return <span style={{fontSize:11,fontWeight:600,padding:'1px 7px',borderRadius:4,background:pos?'#EBF5DE':'#FBECEC',color:pos?'#336010':'#902828'}}>{pos?'+':''}{pct.toFixed(0)}%</span>
 }
 
-// ── Bubble Chart — larger bubbles ────────────────────────────────────────────
+// ── Bubble Chart ─────────────────────────────────────────────────────────────
 function BubbleChart({ selected, onSelect }) {
-  const ref = useRef()
+  const containerRef = useRef()
+  const svgRef = useRef()
   const counts = useMemo(() => {
     const c = Object.fromEntries(THEMES.map(t => [t.label, 0]))
     ARTICLES.forEach(a => (a.themes||[]).forEach(th => { if (c[th]!==undefined) c[th]++ }))
     return c
   }, [])
+
   useEffect(() => {
-    const el = ref.current; if (!el) return
-    const W = el.clientWidth || 800, H = 380
-    d3.select(el).selectAll('*').remove()
+    const container = containerRef.current
+    const svg = svgRef.current
+    if (!container || !svg) return
+
+    const W = container.clientWidth || 860
+    const H = Math.max(460, Math.round(W * 0.55))
     const data = THEMES.map(t => ({ ...t, count: counts[t.label]||0 }))
-    const pack = d3.pack().size([W, H]).padding(6)
-    const root = d3.hierarchy({ children: data }).sum(d => Math.max(d.count, 2) + 15)
+
+    const pack = d3.pack().size([W, H]).padding(5)
+    const root = d3.hierarchy({ children: data }).sum(d => d.count + 8)
     pack(root)
-    const svg = d3.select(el).attr('viewBox',`0 0 ${W} ${H}`).attr('width','100%').attr('height',H)
-    const node = svg.selectAll('g').data(root.leaves()).enter().append('g')
-      .attr('transform', d => `translate(${d.x},${d.y})`).style('cursor','pointer')
-      .on('click', (_, d) => onSelect(selected===d.data.label ? null : d.data.label))
-    node.append('circle')
-      .attr('r', d => d.r)
-      .attr('fill', d => d.data.bg)
-      .attr('stroke', d => d.data.color)
-      .attr('stroke-width', d => selected===d.data.label ? 2.5 : 1.2)
-      .attr('opacity', d => selected && selected!==d.data.label ? 0.3 : 1)
-    node.append('text').attr('text-anchor','middle').attr('dy', d => d.r > 36 ? '-0.3em' : '0.35em')
-      .attr('font-size', d => Math.min(d.r * 0.28, 13)).attr('fill', d => d.data.color)
-      .attr('font-weight','500').attr('font-family','Inter,sans-serif')
-      .text(d => { const l=d.data.label, r=d.r; if(r<22)return''; if(r<36)return l.split(' ')[0]; return l.length>16?l.slice(0,15)+'…':l })
-    node.filter(d => d.r > 34).append('text').attr('text-anchor','middle').attr('dy','1.1em')
-      .attr('font-size', d => Math.min(d.r * 0.23, 12)).attr('fill', d => d.data.color)
-      .attr('opacity', 0.75).attr('font-family','Inter,sans-serif').text(d => d.data.count)
-  }, [selected])
-  return <svg ref={ref} style={{width:'100%',height:380,display:'block'}} />
+
+    const sel = d3.select(svg)
+    sel.selectAll('*').remove()
+    sel.attr('viewBox', `0 0 ${W} ${H}`).attr('width', '100%').attr('height', H)
+
+    const defs = sel.append('defs')
+    root.leaves().forEach((d, i) => {
+      defs.append('clipPath').attr('id', `bc-${i}`)
+        .append('circle').attr('cx', d.x).attr('cy', d.y).attr('r', Math.max(0, d.r - 1.5))
+    })
+
+    root.leaves().forEach((d, i) => {
+      const isSelected = selected === d.data.label
+      const dimmed = selected && !isSelected
+
+      const g = sel.append('g')
+        .attr('cursor', 'pointer')
+        .attr('opacity', dimmed ? 0.28 : 1)
+        .on('click', () => onSelect(isSelected ? null : d.data.label))
+
+      g.append('circle')
+        .attr('cx', d.x).attr('cy', d.y).attr('r', d.r)
+        .attr('fill', d.data.bg)
+        .attr('stroke', d.data.color)
+        .attr('stroke-width', isSelected ? 3 : 1.5)
+
+      const r = d.r
+      const textG = g.append('g').attr('clip-path', `url(#bc-${i})`)
+
+      // Split label into two lines at slash or space boundary
+      const label = d.data.label
+      let line1 = label, line2 = ''
+      if (r > 38) {
+        const slashIdx = label.indexOf(' / ')
+        if (slashIdx > 0) { line1 = label.slice(0, slashIdx); line2 = label.slice(slashIdx + 1) }
+        else {
+          const words = label.split(' ')
+          if (words.length >= 2) {
+            const mid = Math.ceil(words.length / 2)
+            line1 = words.slice(0, mid).join(' ')
+            line2 = words.slice(mid).join(' ')
+          }
+        }
+      }
+
+      const hasCount = r > 30
+      const hasTwoLines = line2 && r > 38
+      const fontSize = Math.min(r * 0.30, 15)
+      const countSize = Math.min(r * 0.22, 11)
+
+      if (r < 22) return // too small, no text
+
+      if (hasTwoLines) {
+        const totalH = fontSize * 2 * 1.2 + (hasCount ? countSize * 1.4 : 0)
+        const topY = d.y - totalH / 2 + fontSize * 0.8
+
+        textG.append('text')
+          .attr('x', d.x).attr('y', topY)
+          .attr('text-anchor', 'middle').attr('font-size', fontSize)
+          .attr('fill', d.data.color).attr('font-weight', '600')
+          .attr('font-family', 'Inter,sans-serif')
+          .text(line1)
+
+        textG.append('text')
+          .attr('x', d.x).attr('y', topY + fontSize * 1.25)
+          .attr('text-anchor', 'middle').attr('font-size', fontSize)
+          .attr('fill', d.data.color).attr('font-weight', '600')
+          .attr('font-family', 'Inter,sans-serif')
+          .text(line2)
+
+        if (hasCount) {
+          textG.append('text')
+            .attr('x', d.x).attr('y', topY + fontSize * 2.6)
+            .attr('text-anchor', 'middle').attr('font-size', countSize)
+            .attr('fill', d.data.color).attr('opacity', 0.65)
+            .attr('font-family', 'Inter,sans-serif')
+            .text(d.data.count)
+        }
+      } else {
+        const labelY = hasCount ? d.y - countSize * 0.8 : d.y + fontSize * 0.35
+
+        textG.append('text')
+          .attr('x', d.x).attr('y', labelY)
+          .attr('text-anchor', 'middle').attr('font-size', fontSize)
+          .attr('fill', d.data.color).attr('font-weight', '600')
+          .attr('font-family', 'Inter,sans-serif')
+          .text(r < 36 ? (label.split(' ')[0]) : label)
+
+        if (hasCount) {
+          textG.append('text')
+            .attr('x', d.x).attr('y', labelY + fontSize * 1.3)
+            .attr('text-anchor', 'middle').attr('font-size', countSize)
+            .attr('fill', d.data.color).attr('opacity', 0.65)
+            .attr('font-family', 'Inter,sans-serif')
+            .text(d.data.count)
+        }
+      }
+    })
+  }, [selected, counts])
+
+  return (
+    <div ref={containerRef} style={{width:'100%'}}>
+      <svg ref={svgRef} style={{width:'100%',display:'block'}} />
+    </div>
+  )
 }
 
 // ── Article drawer ────────────────────────────────────────────────────────────
