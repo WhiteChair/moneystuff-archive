@@ -229,7 +229,7 @@ function ArticleRow({ a, selected, onClick }) {
 }
 
 // ── Blog post reader ──────────────────────────────────────────────────────────
-function BlogPost({ blog, onBack }) {
+function BlogPost({ blog, onBack, isMobile = false }) {
   const t = TM[blog.theme]
   return (
     <div style={{maxWidth:700}}>
@@ -239,7 +239,7 @@ function BlogPost({ blog, onBack }) {
           <ThemePill theme={blog.theme}/>
           <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa'}}>{blog.publish_date} · {blog.article_count} source articles</span>
         </div>
-        <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:26,fontWeight:600,lineHeight:1.3,marginBottom:10,letterSpacing:'-0.01em'}}>{blog.title}</h1>
+        <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:26,fontWeight:600,lineHeight:1.3,marginBottom:10,letterSpacing:'-0.01em'}}>{blog.title}</h1>
         <p style={{fontSize:16,color:'#666',fontStyle:'italic'}}>{blog.subtitle}</p>
       </div>
       <div style={{borderTop:'2px solid #1a1a18',paddingTop:'1.5rem',marginBottom:'2rem'}}>
@@ -280,7 +280,19 @@ const NAV = [
 ]
 
 // ── Main App ──────────────────────────────────────────────────────────────────
+// ── Mobile detection hook ─────────────────────────────────────────────────────
+function useIsMobile() {
+  const [m, setM] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768)
+  useEffect(() => {
+    const h = () => setM(window.innerWidth < 768)
+    window.addEventListener('resize', h)
+    return () => window.removeEventListener('resize', h)
+  }, [])
+  return m
+}
+
 export default function App() {
+  const isMobile = useIsMobile()
   const [tab, setTab] = useState('themes')
   const [selectedTheme, setSelectedTheme] = useState(null)
   const [drawerArticle, setDrawerArticle] = useState(null)
@@ -295,12 +307,11 @@ export default function App() {
     ARTICLES.forEach(a => (a.themes||[]).forEach(th => { if(c[th]!==undefined) c[th]++ }))
     return c
   }, [])
-
   const filtered = useMemo(() => ARTICLES.filter(a => {
     if (year!=='all' && !a.d?.startsWith(year)) return false
     if (search) {
       const q = search.toLowerCase()
-      if (!a.t.toLowerCase().includes(q) && !a.lesson?.toLowerCase().includes(q) && !a.summary?.toLowerCase().includes(q)) return false
+      if (!a.t.toLowerCase().includes(q) && !a.lesson?.toLowerCase().includes(q)) return false
     }
     if (selectedTheme && !a.themes?.includes(selectedTheme)) return false
     return true
@@ -311,27 +322,307 @@ export default function App() {
     return () => { document.body.style.overflow = 'auto' }
   }, [drawerArticle])
 
-  const handleTabChange = (id) => {
-    setTab(id)
-    if (id !== 'blog') setActiveBlog(null)
+  const handleTabChange = (id) => { setTab(id); if (id !== 'blog') setActiveBlog(null) }
+
+  // ── Shared content pages ──────────────────────────────────────────────────
+  const ThemesPage = () => (
+    <div>
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:6}}>Themes</h1>
+      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1rem'}}>
+        {ARTICLES.length} issues across {THEMES.length} themes. Tap a bubble or card to filter.
+      </p>
+      <div style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'0.75rem',marginBottom:'1rem'}}>
+        <div style={{fontSize:11,color:'#aaa',marginBottom:6}}>
+          Bubble size = article count.{selectedTheme && <span style={{marginLeft:6,color:TM[selectedTheme]?.color,fontWeight:500}}>{selectedTheme} · <span style={{cursor:'pointer',textDecoration:'underline'}} onClick={()=>setSelectedTheme(null)}>clear</span></span>}
+        </div>
+        <BubbleChart selected={selectedTheme} onSelect={setSelectedTheme}/>
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(260px,1fr))',gap:8}}>
+        {THEMES.map(th => {
+          const count = themeCounts[th.label]||0
+          const blog = publishedBlogs.find(b=>b.theme===th.label)
+          const topLesson = ARTICLES.find(a=>a.themes?.includes(th.label)&&a.lesson?.length>50)
+          return (
+            <div key={th.label}
+              style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'0.875rem',cursor:'pointer',borderTop:`3px solid ${th.color}`,opacity:selectedTheme&&selectedTheme!==th.label?0.4:1,transition:'opacity 0.2s',userSelect:'none',WebkitTapHighlightColor:'transparent'}}
+              onClick={()=>setSelectedTheme(selectedTheme===th.label?null:th.label)}>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:topLesson?6:0}}>
+                <div style={{display:'flex',alignItems:'center',gap:8}}>
+                  <span style={{fontSize:18}}>{th.icon}</span>
+                  <span style={{fontSize:13,fontWeight:500}}>{th.label}</span>
+                </div>
+                <div style={{display:'flex',gap:6,alignItems:'center'}}>
+                  <span style={{fontSize:11,color:'#aaa'}}>{count}</span>
+                  {blog && <span onClick={e=>{e.stopPropagation();setActiveBlog(blog);setTab('blog')}} style={{fontSize:10,padding:'1px 7px',borderRadius:10,background:th.bg,color:th.color,fontWeight:500,cursor:'pointer'}}>Blog ↗</span>}
+                </div>
+              </div>
+              {topLesson && !isMobile && (
+                <div style={{borderTop:'1px solid #EEEEE8',paddingTop:6,marginTop:4}}>
+                  <div style={{fontSize:11,fontStyle:'italic',color:'#777',lineHeight:1.5}}>"{topLesson.lesson.slice(0,90)}{topLesson.lesson.length>90?'…':''}"</div>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+      {selectedTheme && (
+        <div style={{marginTop:'1.5rem'}}>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
+            <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:500,margin:0}}>{selectedTheme}</h2>
+            <button onClick={()=>setTab('articles')} style={{fontSize:12,color:'#666'}}>All →</button>
+          </div>
+          {ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).slice(0,6).map(a=>(
+            <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
+          ))}
+          {ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).length>6 && (
+            <div style={{textAlign:'center',padding:'0.75rem',fontSize:12,color:'#888'}}>
+              +{ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).length-6} more · <span style={{color:'#1455A0',cursor:'pointer'}} onClick={()=>setTab('articles')}>view all</span>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+
+  const LawsPage = () => (
+    <div>
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:6}}>The Laws of Insider Trading</h1>
+      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.5rem'}}>Matt Levine has been adding to this list since 2016. None of it is legal advice.</p>
+      {LAWS.map(l => (
+        <div key={l.number} style={{display:'flex',gap:isMobile?14:24,marginBottom:'1.5rem',paddingBottom:'1.5rem',borderBottom:'1px solid #EEEEE8'}}>
+          <div style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?30:42,fontWeight:700,color:'#ccc',flexShrink:0,width:isMobile?36:52,textAlign:'center',lineHeight:1,paddingTop:2}}>{l.number}</div>
+          <div style={{paddingTop:4}}>
+            <p style={{fontSize:isMobile?14:15,lineHeight:1.75,color:'#1a1a18',marginBottom:6,fontStyle:l.number===1?'italic':'normal',fontWeight:l.number===1?500:400}}>{l.description}</p>
+            <a href={l.article_url} target="_blank" rel="noreferrer" style={{fontSize:11,color:'#aaa',textDecoration:'none'}}>— {l.article_title} · {l.article_date}</a>
+          </div>
+        </div>
+      ))}
+      <p style={{fontSize:12,color:'#bbb',fontStyle:'italic'}}>None of this is legal advice. Probably put that at the top of your spreadsheet.</p>
+    </div>
+  )
+
+  const TickersPage = () => (
+    <div>
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:6}}>Tickers</h1>
+      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.25rem'}}>Return since Matt first wrote about them. Plus companies that went bankrupt.</p>
+      <div style={{marginBottom:'2rem'}}>
+        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Active — return since first mention</div>
+        {[...TICKERS].sort((a,b)=>b.return_pct-a.return_pct).map(t => (
+          <div key={t.ticker} style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'12px',marginBottom:6,cursor:'pointer',WebkitTapHighlightColor:'transparent'}} onClick={()=>setExpandedTicker(expandedTicker===t.ticker?null:t.ticker)}>
+            <div style={{display:'flex',alignItems:'center',gap:10}}>
+              <div style={{width:42,height:42,borderRadius:8,background:t.return_pct>=0?'#EBF5DE':'#FBECEC',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:10,color:t.return_pct>=0?'#336010':'#902828'}}>{t.ticker}</span>
+              </div>
+              <div style={{flex:1,minWidth:0}}>
+                <div style={{fontSize:11,color:'#666',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>First: <strong style={{color:'#333'}}>{t.first_date}</strong> · {t.mention_count}×</div>
+                {!isMobile && <div style={{fontSize:10,color:'#aaa',marginTop:1,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{t.mentions?.[0]?.t?.slice(0,45)}…</div>}
+              </div>
+              <div style={{textAlign:'right',flexShrink:0}}>
+                {!isMobile && <div style={{fontSize:11,color:'#888',marginBottom:2}}>${t.price_then} → <strong>${t.price_now}</strong></div>}
+                <ReturnBadge pct={t.return_pct}/>
+              </div>
+            </div>
+            {expandedTicker===t.ticker && (
+              <div style={{marginTop:10,paddingTop:10,borderTop:'1px solid #EEEEE8'}}>
+                <div style={{fontSize:11,color:'#888',marginBottom:2}}>${t.price_then} → ${t.price_now} · {t.mention_count} mentions</div>
+                {t.mentions?.slice(0,4).map((m,i)=><div key={i} style={{fontSize:11,padding:'2px 0',color:'#555'}}><span style={{fontFamily:"'JetBrains Mono',monospace",color:'#aaa',marginRight:6}}>{m.d}</span>{m.t}</div>)}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div>
+        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Companies that went bankrupt</div>
+        {BANKRUPT.map(b => (
+          <div key={b.ticker} style={{background:'#fff',border:'1px solid #F2E8E8',borderLeft:'3px solid #902828',borderRadius:10,padding:'12px',marginBottom:6,cursor:'pointer',WebkitTapHighlightColor:'transparent'}} onClick={()=>setExpandedTicker(expandedTicker===b.ticker?null:b.ticker)}>
+            <div style={{display:'flex',alignItems:'center',gap:10}}>
+              <div style={{width:42,height:42,borderRadius:8,background:'#FBECEC',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:10,color:'#902828'}}>{b.ticker}</span>
+              </div>
+              <div style={{flex:1,minWidth:0}}>
+                <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:2}}>
+                  <strong style={{fontSize:13}}>{b.name}</strong>
+                  <span style={{fontSize:9,padding:'1px 5px',borderRadius:4,background:'#902828',color:'#fff',fontWeight:700}}>BANKRUPT</span>
+                </div>
+                <div style={{fontSize:11,color:'#aaa'}}>{b.bankruptcy_date} · {b.mention_count}× archived</div>
+              </div>
+            </div>
+            {expandedTicker===b.ticker && (
+              <div style={{marginTop:10,paddingTop:10,borderTop:'1px solid #F2E8E8'}}>
+                <p style={{fontSize:12,color:'#666',lineHeight:1.6,marginBottom:6}}>{b.note}</p>
+                {b.mentions?.slice(0,4).map((m,i)=><div key={i} style={{fontSize:11,padding:'2px 0',color:'#555'}}><span style={{fontFamily:"'JetBrains Mono',monospace",color:'#aaa',marginRight:6}}>{m.d}</span>{m.t}</div>)}
+              </div>
+            )}
+          </div>
+        ))}
+        <p style={{fontSize:11,color:'#bbb',marginTop:'1rem'}}>Prices via Yahoo Finance, refreshed daily. Not financial advice.</p>
+      </div>
+    </div>
+  )
+
+  const ArticlesPage = () => (
+    <div>
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:10}}>Articles</h1>
+      <div style={{display:'flex',gap:6,marginBottom:'0.75rem',flexWrap:'wrap'}}>
+        <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search…" style={{flex:'1 1 140px',minWidth:0,fontSize:13}}/>
+        <select value={year} onChange={e=>setYear(e.target.value)} style={{fontSize:13,flex:'0 0 auto'}}>
+          {years.map(y=><option key={y} value={y}>{y==='all'?'All years':y}</option>)}
+        </select>
+        <select value={selectedTheme||''} onChange={e=>setSelectedTheme(e.target.value||null)} style={{fontSize:13,flex:'1 1 120px',minWidth:0}}>
+          <option value=''>All themes</option>
+          {THEMES.map(t=><option key={t.label} value={t.label}>{t.label}</option>)}
+        </select>
+        {(selectedTheme||search||year!=='all') && <button onClick={()=>{setSelectedTheme(null);setSearch('');setYear('all')}} style={{fontSize:11,color:'#888'}}>Clear</button>}
+      </div>
+      <div style={{fontSize:11,color:'#aaa',marginBottom:6}}>{filtered.length}{filtered.length===400?' (max 400)':''} articles</div>
+      {filtered.map(a=>(
+        <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
+      ))}
+      {!filtered.length && <div style={{textAlign:'center',padding:'3rem',color:'#aaa'}}>No results.</div>}
+    </div>
+  )
+
+  const BlogListPage = () => (
+    <div>
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:6}}>Blog</h1>
+      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.25rem'}}>How X actually works, according to Matt Levine. New posts every three days.</p>
+      <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(300px,1fr))',gap:10,marginBottom:'1.5rem'}}>
+        {publishedBlogs.map(blog => {
+          const t = TM[blog.theme]
+          return (
+            <div key={blog.slug} onClick={()=>setActiveBlog(blog)}
+              style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'1rem',cursor:'pointer',borderTop:`3px solid ${t?.color||'#ccc'}`,WebkitTapHighlightColor:'transparent'}}
+              onMouseEnter={e=>{if(!isMobile)e.currentTarget.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'}}
+              onMouseLeave={e=>{if(!isMobile)e.currentTarget.style.boxShadow='none'}}>
+              <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:8}}>
+                <span style={{fontSize:18}}>{t?.icon}</span>
+                <ThemePill theme={blog.theme}/>
+                <span style={{fontSize:10,color:'#aaa',fontFamily:"'JetBrains Mono',monospace",marginLeft:'auto'}}>{blog.publish_date}</span>
+              </div>
+              <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:14,fontWeight:500,lineHeight:1.4,marginBottom:6}}>{blog.title}</h3>
+              <p style={{fontSize:12,color:'#777',lineHeight:1.5,marginBottom:6}}>{blog.subtitle}</p>
+              <div style={{fontSize:11,color:'#aaa'}}>{blog.sections?.length} sections</div>
+            </div>
+          )
+        })}
+      </div>
+      {BLOGS.filter(b=>b.publish_date>TODAY).length > 0 && (
+        <>
+          <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Coming soon</div>
+          <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr 1fr':'repeat(auto-fill,minmax(260px,1fr))',gap:6}}>
+            {BLOGS.filter(b=>b.publish_date>TODAY).map(blog => {
+              const t = TM[blog.theme]
+              return (
+                <div key={blog.slug} style={{background:'#F8F8F8',border:'1px dashed #DDD',borderRadius:10,padding:'0.875rem',opacity:0.6}}>
+                  <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:4}}>
+                    <span style={{fontSize:16}}>{t?.icon}</span>
+                    <span style={{fontSize:10,color:'#aaa',fontFamily:"'JetBrains Mono',monospace"}}>{blog.publish_date}</span>
+                  </div>
+                  <div style={{fontSize:12,color:'#999',fontFamily:"'Playfair Display',serif",fontWeight:500,lineHeight:1.3}}>{blog.title.replace('Here Is How ','').replace(', According to Matt Levine','')}</div>
+                </div>
+              )
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  )
+
+  // ── Shared article drawer (full-screen on mobile) ─────────────────────────
+  const MobileDrawer = ({ article, onClose }) => {
+    if (!article) return null
+    const t = TM[article.themes?.[0]]
+    const blog = publishedBlogs.find(b => article.themes?.includes(b.theme))
+    return (
+      <div style={{position:'fixed',inset:0,background:'#fff',zIndex:300,overflowY:'auto',display:'flex',flexDirection:'column'}}>
+        <div style={{padding:'1rem',borderBottom:'1px solid #EAEAE4',display:'flex',alignItems:'flex-start',gap:12,position:'sticky',top:0,background:'#fff',zIndex:1}}>
+          <div style={{flex:1}}>
+            <div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa',marginBottom:3}}>{article.d} · {article.w?.toLocaleString()} words</div>
+            <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:500,lineHeight:1.4,margin:0}}>{article.t}</h2>
+          </div>
+          <button onClick={onClose} style={{background:'none',border:'none',fontSize:24,color:'#bbb',cursor:'pointer',padding:0,lineHeight:1,flexShrink:0,marginTop:-2}}>×</button>
+        </div>
+        <div style={{padding:'1rem',flex:1}}>
+          {article.themes?.length>0 && <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:14}}>{article.themes.map(th=><ThemePill key={th} theme={th}/>)}</div>}
+          {article.lesson && (
+            <div style={{background:'#FAFAF4',borderLeft:`3px solid ${t?.color||'#ccc'}`,padding:'12px 14px',borderRadius:'0 8px 8px 0',marginBottom:14}}>
+              <div style={{fontSize:10,fontWeight:600,color:t?.color||'#888',textTransform:'uppercase',letterSpacing:'0.07em',marginBottom:5}}>Key passage</div>
+              <div style={{fontSize:14,lineHeight:1.75,fontStyle:'italic',color:'#333'}}>"{article.lesson}"</div>
+            </div>
+          )}
+          {article.summary && article.summary !== article.lesson && <p style={{fontSize:13,color:'#555',lineHeight:1.7,marginBottom:14}}>{article.summary}</p>}
+          {blog && <div style={{background:'#F7F4FF',borderRadius:8,padding:'10px 12px',marginBottom:14}}>
+            <div style={{fontSize:10,fontWeight:600,color:'#6058B0',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:3}}>Related deep-dive</div>
+            <div style={{fontSize:12,color:'#333',fontWeight:500,lineHeight:1.4}}>{blog.title.replace('Here Is How ','').replace(', According to Matt Levine','')}</div>
+          </div>}
+          <a href={article.u} target="_blank" rel="noreferrer" style={{display:'block',textAlign:'center',fontSize:14,color:'#1455A0',textDecoration:'none',padding:'12px',border:'1px solid #1455A0',borderRadius:8,marginTop:8}}>
+            Read full issue ↗
+          </a>
+        </div>
+      </div>
+    )
   }
 
+  // Active page content
+  const activePage = (() => {
+    if (tab==='blog' && activeBlog) return <BlogPost blog={activeBlog} onBack={()=>setActiveBlog(null)} isMobile={isMobile}/>
+    if (tab==='blog') return <BlogListPage/>
+    if (tab==='laws') return <LawsPage/>
+    if (tab==='tickers') return <TickersPage/>
+    if (tab==='articles') return <ArticlesPage/>
+    return <ThemesPage/>
+  })()
+
+  // ── MOBILE LAYOUT ─────────────────────────────────────────────────────────
+  if (isMobile) {
+    return (
+      <div style={{minHeight:'100vh',background:'#FAFAF8',paddingBottom:70}}>
+        {/* Full-screen article drawer on mobile */}
+        {drawerArticle && <MobileDrawer article={drawerArticle} onClose={()=>setDrawerArticle(null)}/>}
+
+        {/* Mobile header */}
+        <div style={{background:'#fff',borderBottom:'1px solid #EAEAE4',padding:'12px 16px',position:'sticky',top:0,zIndex:100,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+          <div onClick={()=>handleTabChange('themes')} style={{cursor:'pointer'}}>
+            <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:500,letterSpacing:'-0.01em'}}>Money Stuff Archive</div>
+            <div style={{fontSize:10,color:'#bbb'}}>Matt Levine · Bloomberg · {ARTICLES.length} issues</div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div style={{padding:'1rem 1rem 1rem'}}>
+          {activePage}
+        </div>
+
+        {/* Bottom tab bar */}
+        <div style={{position:'fixed',bottom:0,left:0,right:0,background:'#fff',borderTop:'1px solid #EAEAE4',display:'flex',zIndex:100,paddingBottom:'env(safe-area-inset-bottom)'}}>
+          {NAV.map(n => (
+            <button key={n.id} onClick={()=>handleTabChange(n.id)}
+              style={{flex:1,display:'flex',flexDirection:'column',alignItems:'center',gap:2,padding:'8px 4px',border:'none',background:'transparent',color:tab===n.id?'#1a1a18':'#aaa',cursor:'pointer',position:'relative',WebkitTapHighlightColor:'transparent'}}>
+              <span style={{fontSize:18,lineHeight:1}}>{n.icon}</span>
+              <span style={{fontSize:9,fontWeight:tab===n.id?600:400,letterSpacing:'0.02em'}}>{n.label}</span>
+              {n.badge && <span style={{position:'absolute',top:4,right:'50%',marginRight:-18,background:'#C04A1E',color:'#fff',fontSize:8,fontWeight:700,padding:'0 3px',borderRadius:6,lineHeight:'14px'}}>{n.badge}</span>}
+              {tab===n.id && <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:2,background:'#1a1a18',borderRadius:1}}/>}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  // ── DESKTOP LAYOUT ────────────────────────────────────────────────────────
   return (
     <div style={{display:'flex',minHeight:'100vh',background:'#FAFAF8'}}>
-      {/* Drawer overlay */}
       {drawerArticle && <div onClick={()=>setDrawerArticle(null)} style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.25)',zIndex:199}}/>}
       <ArticleDrawer article={drawerArticle} onClose={()=>setDrawerArticle(null)}/>
 
-      {/* ── Sidebar ── */}
+      {/* Sidebar */}
       <div style={{width:200,flexShrink:0,background:'#fff',borderRight:'1px solid #EAEAE4',display:'flex',flexDirection:'column',position:'sticky',top:0,height:'100vh',overflowY:'auto'}}>
-        {/* Logo */}
         <div style={{padding:'1.5rem 1.25rem 1rem',borderBottom:'1px solid #EAEAE4'}}>
           <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:500,lineHeight:1.3,letterSpacing:'-0.01em',cursor:'pointer'}} onClick={()=>handleTabChange('themes')}>
             Money Stuff<br/>Archive
           </div>
           <div style={{fontSize:10,color:'#bbb',marginTop:4}}>Matt Levine · Bloomberg</div>
         </div>
-        {/* Nav items */}
         <nav style={{padding:'0.75rem 0',flex:1}}>
           {NAV.map(n => (
             <button key={n.id} onClick={()=>handleTabChange(n.id)}
@@ -342,247 +633,15 @@ export default function App() {
             </button>
           ))}
         </nav>
-        {/* Footer */}
         <div style={{padding:'1rem 1.25rem',borderTop:'1px solid #EAEAE4',fontSize:10,color:'#bbb',lineHeight:1.6}}>
           {ARTICLES.length} issues archived<br/>
           <a href="http://link.mail.bloombergbusiness.com/join/4wm/moneystuff-signup" target="_blank" rel="noreferrer" style={{color:'#bbb'}}>Subscribe ↗</a>
         </div>
       </div>
 
-      {/* ── Main content ── */}
+      {/* Main */}
       <div style={{flex:1,minWidth:0,padding:'2rem 2.5rem 4rem',maxWidth:900}}>
-
-        {/* ── THEMES ── */}
-        {tab==='themes' && (
-          <div>
-            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:500,marginBottom:6}}>Themes</h1>
-            <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.5rem',maxWidth:600}}>
-              {ARTICLES.length} issues classified across {THEMES.length} themes. Click a bubble or card to filter.
-            </p>
-            <div style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'1rem',marginBottom:'1.5rem'}}>
-              <div style={{fontSize:11,color:'#aaa',marginBottom:8}}>
-                Bubble size = article count. Click to filter.
-                {selectedTheme && <span style={{marginLeft:8,color:TM[selectedTheme]?.color,fontWeight:500}}>· {selectedTheme} · <span style={{cursor:'pointer',textDecoration:'underline'}} onClick={()=>setSelectedTheme(null)}>clear</span></span>}
-              </div>
-              <BubbleChart selected={selectedTheme} onSelect={setSelectedTheme}/>
-            </div>
-
-            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:10}}>
-              {THEMES.map(th => {
-                const count = themeCounts[th.label]||0
-                const blog = publishedBlogs.find(b=>b.theme===th.label)
-                const topLesson = ARTICLES.find(a=>a.themes?.includes(th.label)&&a.lesson?.length>50)
-                return (
-                  <div key={th.label}
-                    style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'1rem',cursor:'pointer',borderTop:`3px solid ${th.color}`,opacity:selectedTheme&&selectedTheme!==th.label?0.45:1,transition:'opacity 0.2s,box-shadow 0.15s',userSelect:'none'}}
-                    onClick={()=>setSelectedTheme(selectedTheme===th.label?null:th.label)}
-                    onMouseEnter={e=>e.currentTarget.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'}
-                    onMouseLeave={e=>e.currentTarget.style.boxShadow='none'}>
-                    <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8}}>
-                      <div style={{display:'flex',alignItems:'center',gap:8}}>
-                        <span style={{fontSize:18}}>{th.icon}</span>
-                        <span style={{fontSize:13,fontWeight:500}}>{th.label}</span>
-                      </div>
-                      <div style={{display:'flex',gap:6,alignItems:'center'}}>
-                        <span style={{fontSize:11,color:'#aaa'}}>{count}</span>
-                        {blog && <span onClick={e=>{e.stopPropagation();setActiveBlog(blog);setTab('blog')}} style={{fontSize:10,padding:'1px 7px',borderRadius:10,background:th.bg,color:th.color,fontWeight:500,cursor:'pointer'}}>Blog ↗</span>}
-                      </div>
-                    </div>
-                    {topLesson && (
-                      <div style={{borderTop:'1px solid #EEEEE8',paddingTop:8,marginTop:4}}>
-                        <div style={{fontSize:11,fontStyle:'italic',color:'#777',lineHeight:1.6}}>"{topLesson.lesson.slice(0,110)}{topLesson.lesson.length>110?'…':''}"</div>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-
-            {selectedTheme && (
-              <div style={{marginTop:'2rem'}}>
-                <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:12}}>
-                  <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:500,margin:0}}>{selectedTheme}</h2>
-                  <button onClick={()=>{setTab('articles')}} style={{fontSize:12,color:'#666'}}>View all articles →</button>
-                </div>
-                {ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).slice(0,8).map(a=>(
-                  <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
-                ))}
-                {ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).length>8 && (
-                  <div style={{textAlign:'center',padding:'0.75rem',fontSize:12,color:'#888'}}>
-                    +{ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).length-8} more · <span style={{color:'#1455A0',cursor:'pointer'}} onClick={()=>setTab('articles')}>view all</span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* ── LAWS ── */}
-        {tab==='laws' && (
-          <div style={{maxWidth:720}}>
-            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:500,marginBottom:6}}>The Laws of Insider Trading</h1>
-            <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'2rem',maxWidth:580}}>
-              Matt Levine has been adding to this list since 2016. None of it is legal advice. The First Law says it all.
-            </p>
-            {LAWS.map(l => (
-              <div key={l.number} style={{display:'flex',gap:24,marginBottom:'1.75rem',paddingBottom:'1.75rem',borderBottom:'1px solid #EEEEE8'}}>
-                <div style={{fontFamily:"'Playfair Display',serif",fontSize:42,fontWeight:700,color:'#ccc',flexShrink:0,width:52,textAlign:'center',lineHeight:1,paddingTop:2}}>{l.number}</div>
-                <div style={{paddingTop:4}}>
-                  <p style={{fontSize:15,lineHeight:1.75,color:'#1a1a18',marginBottom:8,fontStyle:l.number===1?'italic':'normal',fontWeight:l.number===1?500:400}}>{l.description}</p>
-                  <a href={l.article_url} target="_blank" rel="noreferrer" style={{fontSize:11,color:'#aaa',textDecoration:'none'}}>
-                    — {l.article_title} · {l.article_date}
-                  </a>
-                </div>
-              </div>
-            ))}
-            <p style={{fontSize:12,color:'#bbb',fontStyle:'italic',marginTop:'1rem'}}>None of this is legal advice. Probably put that at the top of your spreadsheet.</p>
-          </div>
-        )}
-
-        {/* ── TICKERS ── */}
-        {tab==='tickers' && (
-          <div>
-            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:500,marginBottom:6}}>Tickers</h1>
-            <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.5rem',maxWidth:620}}>
-              Stocks mentioned in the archive, with return since Matt first wrote about them. Plus companies that went bust since he covered them.
-            </p>
-
-            <div style={{marginBottom:'2.5rem'}}>
-              <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:10}}>Active — return since first mention</div>
-              <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(380px,1fr))',gap:8}}>
-                {[...TICKERS].sort((a,b)=>b.return_pct-a.return_pct).map(t => (
-                  <div key={t.ticker} style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'12px 16px',cursor:'pointer'}} onClick={()=>setExpandedTicker(expandedTicker===t.ticker?null:t.ticker)}>
-                    <div style={{display:'flex',alignItems:'center',gap:12}}>
-                      <div style={{width:44,height:44,borderRadius:8,background:t.return_pct>=0?'#EBF5DE':'#FBECEC',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
-                        <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:11,color:t.return_pct>=0?'#336010':'#902828'}}>{t.ticker}</span>
-                      </div>
-                      <div style={{flex:1,minWidth:0}}>
-                        <div style={{fontSize:12,color:'#666'}}>First mentioned <strong style={{color:'#333'}}>{t.first_date}</strong> · {t.mention_count}×</div>
-                        <div style={{fontSize:11,color:'#aaa',marginTop:1,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{t.mentions?.[0]?.t?.slice(0,48)}…</div>
-                      </div>
-                      <div style={{textAlign:'right',flexShrink:0}}>
-                        <div style={{fontSize:11,color:'#888',marginBottom:2}}>${t.price_then} → <strong>${t.price_now}</strong></div>
-                        <ReturnBadge pct={t.return_pct}/>
-                      </div>
-                    </div>
-                    {expandedTicker===t.ticker && (
-                      <div style={{marginTop:10,paddingTop:10,borderTop:'1px solid #EEEEE8'}}>
-                        <div style={{fontSize:11,color:'#888',marginBottom:4}}>Most recent mentions:</div>
-                        {t.mentions?.slice(0,5).map((m,i)=><div key={i} style={{fontSize:11,padding:'2px 0',color:'#555'}}><span style={{fontFamily:"'JetBrains Mono',monospace",color:'#aaa',marginRight:8}}>{m.d}</span>{m.t}</div>)}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:10}}>Companies that went bankrupt</div>
-              <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(380px,1fr))',gap:8}}>
-                {BANKRUPT.map(b => (
-                  <div key={b.ticker} style={{background:'#fff',border:'1px solid #F2E8E8',borderLeft:'3px solid #902828',borderRadius:10,padding:'12px 16px',cursor:'pointer'}} onClick={()=>setExpandedTicker(expandedTicker===b.ticker?null:b.ticker)}>
-                    <div style={{display:'flex',alignItems:'center',gap:12}}>
-                      <div style={{width:44,height:44,borderRadius:8,background:'#FBECEC',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
-                        <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:10,color:'#902828'}}>{b.ticker}</span>
-                      </div>
-                      <div style={{flex:1,minWidth:0}}>
-                        <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:2}}>
-                          <strong style={{fontSize:13}}>{b.name}</strong>
-                          <span style={{fontSize:9,padding:'1px 5px',borderRadius:4,background:'#902828',color:'#fff',fontWeight:700,letterSpacing:'0.04em'}}>BANKRUPT</span>
-                        </div>
-                        <div style={{fontSize:11,color:'#aaa'}}>{b.bankruptcy_date} · {b.mention_count}× in archive</div>
-                      </div>
-                    </div>
-                    {expandedTicker===b.ticker && (
-                      <div style={{marginTop:10,paddingTop:10,borderTop:'1px solid #F2E8E8'}}>
-                        <p style={{fontSize:12,color:'#666',lineHeight:1.6,marginBottom:8}}>{b.note}</p>
-                        {b.mentions?.slice(0,5).map((m,i)=><div key={i} style={{fontSize:11,padding:'2px 0',color:'#555'}}><span style={{fontFamily:"'JetBrains Mono',monospace",color:'#aaa',marginRight:8}}>{m.d}</span>{m.t}</div>)}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <p style={{fontSize:11,color:'#bbb',marginTop:'1rem'}}>Prices via Yahoo Finance, refreshed daily. Not financial advice.</p>
-            </div>
-          </div>
-        )}
-
-        {/* ── ARTICLES ── */}
-        {tab==='articles' && (
-          <div>
-            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:500,marginBottom:12}}>Articles</h1>
-            <div style={{display:'flex',gap:8,marginBottom:'1rem',flexWrap:'wrap',alignItems:'center'}}>
-              <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search titles and lessons…" style={{flex:'1 1 220px',maxWidth:300}}/>
-              <select value={year} onChange={e=>setYear(e.target.value)}>
-                {years.map(y=><option key={y} value={y}>{y==='all'?'All years':y}</option>)}
-              </select>
-              <select value={selectedTheme||''} onChange={e=>setSelectedTheme(e.target.value||null)}>
-                <option value=''>All themes</option>
-                {THEMES.map(t=><option key={t.label} value={t.label}>{t.label}</option>)}
-              </select>
-              {(selectedTheme||search||year!=='all') && <button onClick={()=>{setSelectedTheme(null);setSearch('');setYear('all')}} style={{fontSize:11,color:'#888'}}>Clear</button>}
-            </div>
-            <div style={{fontSize:11,color:'#aaa',marginBottom:8}}>
-              {filtered.length}{filtered.length===400?' (max 400)':''} articles
-              {selectedTheme&&` · ${selectedTheme}`}{search&&` · "${search}"`}
-            </div>
-            {filtered.map(a=>(
-              <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
-            ))}
-            {!filtered.length && <div style={{textAlign:'center',padding:'3rem',color:'#aaa'}}>No results.</div>}
-          </div>
-        )}
-
-        {/* ── BLOG ── */}
-        {tab==='blog' && activeBlog && <BlogPost blog={activeBlog} onBack={()=>setActiveBlog(null)}/>}
-        {tab==='blog' && !activeBlog && (
-          <div>
-            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:500,marginBottom:6}}>Blog</h1>
-            <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.5rem',maxWidth:580}}>
-              "Here is how X actually works, according to Matt Levine." New posts every three days.
-            </p>
-            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12,marginBottom:'2rem'}}>
-              {publishedBlogs.map(blog => {
-                const t = TM[blog.theme]
-                return (
-                  <div key={blog.slug} onClick={()=>setActiveBlog(blog)}
-                    style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'1.25rem',cursor:'pointer',borderTop:`3px solid ${t?.color||'#ccc'}`,transition:'box-shadow 0.15s'}}
-                    onMouseEnter={e=>e.currentTarget.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'}
-                    onMouseLeave={e=>e.currentTarget.style.boxShadow='none'}>
-                    <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
-                      <span style={{fontSize:20}}>{t?.icon}</span>
-                      <ThemePill theme={blog.theme}/>
-                      <span style={{fontSize:10,color:'#aaa',fontFamily:"'JetBrains Mono',monospace",marginLeft:'auto'}}>{blog.publish_date}</span>
-                    </div>
-                    <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:15,fontWeight:500,lineHeight:1.4,marginBottom:8}}>{blog.title}</h3>
-                    <p style={{fontSize:12,color:'#777',lineHeight:1.6,marginBottom:10}}>{blog.subtitle}</p>
-                    <div style={{fontSize:11,color:'#aaa'}}>{blog.sections?.length} sections · {blog.article_count} sources</div>
-                  </div>
-                )
-              })}
-            </div>
-            {BLOGS.filter(b=>b.publish_date>TODAY).length > 0 && (
-              <>
-                <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:10}}>Coming soon</div>
-                <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:8}}>
-                  {BLOGS.filter(b=>b.publish_date>TODAY).map(blog => {
-                    const t = TM[blog.theme]
-                    return (
-                      <div key={blog.slug} style={{background:'#F8F8F8',border:'1px dashed #DDD',borderRadius:10,padding:'1rem',opacity:0.6}}>
-                        <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:6}}>
-                          <span style={{fontSize:18}}>{t?.icon}</span>
-                          <span style={{fontSize:10,color:'#aaa',fontFamily:"'JetBrains Mono',monospace"}}>Publishes {blog.publish_date}</span>
-                        </div>
-                        <div style={{fontSize:13,color:'#999',fontFamily:"'Playfair Display',serif",fontWeight:500}}>{blog.title}</div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </>
-            )}
-          </div>
-        )}
-
+        {activePage}
       </div>
     </div>
   )
