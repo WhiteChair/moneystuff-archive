@@ -1,0 +1,8 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #FAFAF8; color: #1a1a18; line-height: 1.6; }
+a { color: inherit; }
+button { font-family: inherit; cursor: pointer; border: 1px solid #d4d4c8; background: #fff; padding: 5px 12px; border-radius: 6px; font-size: 12px; transition: background 0.1s; }
+button:hover:not(:disabled) { background: #f0f0ea; }
+button:disabled { opacity: 0.4; cursor: default; }
+input, select { font-family: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid #d4d4c8; border-radius: 6px; background: #fff; outline: none; }
+input:focus, select:focus { border-color: #999; }

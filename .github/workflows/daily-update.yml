@@ -1,0 +1,52 @@
+name: Daily Update
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 7:00 UTC = 2:00 AM EST (3:00 AM EDT)
+  workflow_dispatch:        # manual trigger from GitHub Actions UI
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node deps
+        run: npm ci
+
+      - name: Run update pipeline
+        run: python3 scripts/update.py
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: team_frtLRzDPA3ZjB3clAnGBHEhH
+          VERCEL_PROJECT_ID: prj_tGcny5Zx8up0uXfxSQ9tjZOJoWLk
+        run: python3 scripts/deploy.py
+
+      - name: Commit updated data files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json
+          git diff --cached --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
+          git push
