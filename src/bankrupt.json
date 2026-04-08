@@ -1,0 +1,222 @@
+[
+  {
+    "ticker": "FTX",
+    "name": "FTX",
+    "status": "bankrupt",
+    "bankruptcy_date": "2022-11-11",
+    "note": "Sam Bankman-Fried's crypto exchange collapsed in Nov 2022. SBF sentenced to 25 years.",
+    "mention_count": 22,
+    "mentions": [
+      {
+        "d": "2024-04-08",
+        "id": "45804",
+        "t": "Coal Plants for Green Investors"
+      },
+      {
+        "d": "2024-04-08",
+        "id": "41440",
+        "t": "The SBF Case Was Easy"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "23006",
+        "t": "FTX Creates Crypto Contagion"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "22983",
+        "t": "FTX\u2019s Balance Sheet Was Bad"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "23212",
+        "t": "Crypto Had a Credit Bubble"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "22948",
+        "t": "FTX Is Still Looking for\u00a0Money"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "23156",
+        "t": "FTX Had Plans For Its Robinhood Shares"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "33079",
+        "t": "Big Firms Want Normal Crypto Markets"
+      }
+    ]
+  },
+  {
+    "ticker": "SIVB",
+    "name": "Silicon Valley Bank",
+    "status": "bankrupt",
+    "bankruptcy_date": "2023-03-10",
+    "note": "Failed March 2023 in the second-largest US bank failure. Acquired by First Citizens.",
+    "mention_count": 10,
+    "mentions": [
+      {
+        "d": "2024-04-08",
+        "id": "34539",
+        "t": "Branches Make Bank Runs Harder"
+      },
+      {
+        "d": "2024-04-08",
+        "id": "41440",
+        "t": "The SBF Case Was Easy"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "24927",
+        "t": "Startup Bank Had a Startup Bank Run"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "28080",
+        "t": "The Bank Regulators Are Disappointed"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "28137",
+        "t": "SVB\u2019s Depositors Weren\u2019t Very Loyal"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "30485",
+        "t": "It\u2019s Never Too Late for Banks to Hedge"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "27672",
+        "t": "Silicon Valley Bank Ran Out of Money"
+      },
+      {
+        "d": "2023-03-12",
+        "id": "25268",
+        "t": "SVB Couldn\u2019t Ignore Its Losses, But the Fed Can"
+      }
+    ]
+  },
+  {
+    "ticker": "CS",
+    "name": "Credit Suisse",
+    "status": "bankrupt",
+    "bankruptcy_date": "2023-03-19",
+    "note": "Forced merger with UBS in March 2023 after 167 years. AT1 bonds wiped to zero.",
+    "mention_count": 10,
+    "mentions": [
+      {
+        "d": "2025-04-13",
+        "id": "183342",
+        "t": "People Are Worried About Deleveraging"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "33507",
+        "t": "UBS Cuts Out Credit Suisse"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "29658",
+        "t": "Credit Suisse Had a Great Awful Quarter"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "22453",
+        "t": "Buyout Loans Have a Bad Week"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "22815",
+        "t": "Credit Suisse Gives First Boston Gets a Second Chance"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "22692",
+        "t": "Credit Suisse was a reverse meme stock"
+      },
+      {
+        "d": "2023-04-09",
+        "id": "26647",
+        "t": "UBS Got Credit Suisse for Almost Nothing"
+      },
+      {
+        "d": "2022-04-09",
+        "id": "18415",
+        "t": "Credit Suisse\u2019s Oopsie Bonds Go Down"
+      }
+    ]
+  },
+  {
+    "ticker": "WE",
+    "name": "WeWork",
+    "status": "bankrupt",
+    "bankruptcy_date": "2023-11-06",
+    "note": "Filed Chapter 11 in November 2023 after spectacular IPO collapse from $47B to near zero.",
+    "mention_count": 19,
+    "mentions": [
+      {
+        "d": "2026-02-07",
+        "id": "219259",
+        "t": "Five Bananas Won\u2019t Pay the Rent"
+      },
+      {
+        "d": "2024-04-08",
+        "id": "41956",
+        "t": "Some Startups Need a Second Chance"
+      },
+      {
+        "d": "2024-04-08",
+        "id": "49362",
+        "t": "We Are Maybe Getting Back Together"
+      },
+      {
+        "d": "2023-11-02",
+        "id": "43447",
+        "t": "Fake WeWork Rescuer Was an Hour Late"
+      },
+      {
+        "d": "2021-02-08",
+        "id": "42143",
+        "t": "WeWork\u2019s Rescue Wasn\u2019t Real"
+      },
+      {
+        "d": "2020-04-09",
+        "id": "8520",
+        "t": "We Looks Out for Our Selves"
+      },
+      {
+        "d": "2020-04-09",
+        "id": "9030",
+        "t": "We Has Some Bonds to Sell"
+      },
+      {
+        "d": "2020-04-09",
+        "id": "8894",
+        "t": "We Can Be Weird, or It Can Be Public"
+      }
+    ]
+  },
+  {
+    "ticker": "CELH",
+    "name": "Celsius Network",
+    "status": "bankrupt",
+    "bankruptcy_date": "2022-07-13",
+    "note": "Crypto lender froze withdrawals and filed bankruptcy July 2022. Customers lost billions.",
+    "mention_count": 2,
+    "mentions": [
+      {
+        "d": "2022-04-14",
+        "id": "72712",
+        "t": "Celsius Wants Some Money Back"
+      },
+      {
+        "d": "2019-11-26",
+        "id": "34354",
+        "t": "Celsius Was Lying"
+      }
+    ]
+  }
+]

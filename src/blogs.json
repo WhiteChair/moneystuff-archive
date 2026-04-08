@@ -1,0 +1,140 @@
+[
+  {
+    "slug": "options-derivatives",
+    "theme": "Options / Derivatives",
+    "title": "Here Is How Options Actually Work, According to Matt Levine",
+    "subtitle": "A cheat code for crooks, a headache for regulators, and the hidden skeleton of modern markets",
+    "publish_date": "2026-04-08",
+    "article_count": 101,
+    "intro": "Matt Levine has written about options more than almost any other instrument \u2014 partly because they're genuinely fascinating, and partly because they show up everywhere you wouldn't expect them. Options aren't just the things retail traders blow up their accounts with on Robinhood. They're hidden inside executive pay, inside market making, inside the very structure of corporate debt. Once you see them, you can't unsee them.\n\nMatt's signature move is to reveal that something you thought was ordinary is actually an option in disguise. A job offer at a startup? A call option on the company's future. A limit order in an electronic order book? An unpriced put option you just gave away to high-frequency traders. Corporate bonds? A call option the company holds on its own assets.\n\nThe result is a tour through how modern finance actually works \u2014 not the sanitized textbook version, but the version where everything is secretly a bet on something else.",
+    "sections": [
+      {
+        "heading": "What an option actually is, and why it matters that everything is one",
+        "quote": "If a stock is trading at $100, and I place an order to buy it at $99.99, that order goes onto the order book, and I am bound by it. I have effectively written a put option on the stock. If the value of the stock goes down to $99.95 before I cancel my order, the put option I've given away will be exercised \u2014 the seller will sell me the stock at $99.99, more than it's worth. If I actually sold a put option, I would get paid for it: Someone would pay me a premium in exchange for this option to sell me stock at a fixed price. Same with a call option. Options are valuable, and modern financial markets are full of them.",
+        "quote_title": "Why Exchanges Like Speed Bumps",
+        "quote_date": "2020-04-09",
+        "quote_url": "https://newsletterhunt.com/emails/8185",
+        "commentary": "This is the insight that makes Matt's writing on market structure so illuminating. Every time a market maker quotes a two-sided market \u2014 willing to buy at 99.99, sell at 100.01 \u2014 they're giving free options to anyone who wants them. If news breaks and the stock instantly jumps to 110, the market maker is stuck selling at 100.01. They gave someone a very valuable option and got nothing for it.\n\nThis is why high-frequency traders care so much about speed. The first person to cancel a stale limit order after news breaks wins. Everyone else handed out free put options and got taken."
+      },
+      {
+        "heading": "The Second Law of Insider Trading: don't buy short-dated out-of-the-money call options",
+        "quote": "You can trade any instruments you want \u2014 buy short-dated out-of-the-money options, whatever \u2014 and don't worry (for now!) about the legal issues. You have all the normal public information (a Bloomberg terminal, analyst research reports, whatever) that you'd have anyway, plus a complete, accurate earnings release that no one else will see for 24 hours. Can you make money? How confident are you of that? You can't be 100 percent confident, right? I mean, sure, if the earnings are way better than expectations, the stock will likely go up. But 'way better than expectations' is a matter of interpretation.",
+        "quote_title": "Even Cheaters Don't Always Win",
+        "quote_date": "2016-07-29",
+        "quote_url": "https://newsletterhunt.com/emails/4371",
+        "commentary": "The Laws of Insider Trading are Matt's longest-running bit. The Second Law \u2014 don't do it by buying short-dated out-of-the-money call options on merger targets \u2014 isn't just sensible advice for aspiring criminals. It's a window into why options are the instrument of choice for insider trading in the first place.\n\nShort-dated out-of-the-money calls are essentially lottery tickets. They're cheap, they expire soon, and they pay off enormous multiples if the stock moves sharply in your direction. If you know a merger is coming, buying a week-to-expiry call option at a strike price above the current stock price turns a small investment into something spectacular. The leverage is the point \u2014 and it's exactly that leverage that gets people caught, because the SEC screens for unusual options activity before big announcements."
+      },
+      {
+        "heading": "The cancer patient and where option thinking breaks down",
+        "quote": "Let's say you have cancer. A publicly traded biotech company has a promising drug in development to treat your cancer. It is conducting clinical trials of this drug. Your doctor suggests that you should try to sign up for the trial. You do. The drug works and your cancer is cured. The company has not yet released the results of the trial. You have a data point \u2014 your own experience \u2014 and you think the drug is great. You buy some short-dated out-of-the-money call options on the company's stock. A week later, the company releases the trial results, which are excellent; the drug works. The stock shoots up and you make a ton of money on the call options. Is this illegal insider trading?",
+        "quote_title": "Fake Cancer Doctor Insider Trading",
+        "quote_date": "2026-01-09",
+        "quote_url": "https://newsletterhunt.com/emails/216193",
+        "commentary": "Matt loves this hypothetical because it shows the limits of the 'you have information nobody else has, therefore you can't trade' framing. Of course you have information nobody else has \u2014 you're the one who got cured. But did you violate a duty to anyone by trading on it?\n\nThis is the core of Matt's view on insider trading, which bleeds into his view on options specifically: the instrument isn't the crime. Options are neutral. They're just contracts. What matters is the information behind the trade, and whether the trader obtained that information legitimately."
+      },
+      {
+        "heading": "When options eat companies: CDS and engineered defaults",
+        "quote": "There is a widespread belief that Wall Street traders use complicated derivative products to fool and defraud their unsophisticated clients, but you hear somewhat less about how Wall Street traders use complicated derivatives products to fool and defraud their unsophisticated bosses.",
+        "quote_title": "Watch Out for Sneaky Swaps Traders",
+        "quote_date": "2016-12-29",
+        "quote_url": "https://newsletterhunt.com/emails/7968",
+        "commentary": "Credit default swaps are options on corporate defaults \u2014 you pay a premium and collect if a company fails to pay its debt. Sounds useful as insurance. The problem Matt chronicles repeatedly is that these instruments created an entire industry dedicated to manufacturing the default events that trigger them.\n\nThe Windstream saga is the purest example: a hedge fund bought CDS on Windstream debt, then sued Windstream claiming it had violated its bond covenants \u2014 which it had \u2014 specifically to trigger a default and collect on the CDS. The company was financially fine. The hedge fund's entire strategy was to find a technical legal violation and weaponize it. Options, when they're on corporate debt instead of equity, turn lawyers into traders."
+      },
+      {
+        "heading": "Options as compensation: why startups work the way they do",
+        "quote": "In my former career, I was in the business of structuring derivatives, which in my case often meant that I was in the business of saying no to derivatives. 'Derivatives' is sort of a vague term, and there is a persistent folk belief that they have magic powers, that any legal or financial problem can somehow be solved by doing a derivative. But mostly what derivatives do is let you slice up risk and move it around.",
+        "quote_title": "Lyft Is Angry About Lockups",
+        "quote_date": "2017-06-09",
+        "quote_url": "https://newsletterhunt.com/emails/6061",
+        "commentary": "The most consequential use of options in the modern economy isn't trading \u2014 it's compensation. When a startup gives an early employee equity, what they're actually giving is a call option: the right to buy shares at the current low valuation, which pays off enormously if the company succeeds.\n\nMatt's point is that options let you slice up risk and distribute it in economically useful ways. The startup keeps the cash it would have spent on salary; the employee takes the upside risk in exchange. Everyone involved is making a rational bet. The fact that most startup options expire worthless doesn't mean they were mispriced \u2014 it means early-stage companies are risky."
+      },
+      {
+        "heading": "Retail options and the gamification of markets",
+        "quote": "Call options give investors the right to buy shares at a specific price later in time. Puts confer the right to sell. The most popular options were calls tied to the shares' continued advance throughout the day, Cboe data show. These were pegged to a so-called strike of $70, well above where the shares started the day.",
+        "quote_title": "Robinhood Is More Fun With Options",
+        "quote_date": "2022-04-09",
+        "quote_url": "https://newsletterhunt.com/emails/18344",
+        "commentary": "The democratization of options trading through apps like Robinhood is one of Matt's recurring themes in the 2020s. Zero-commission trading and fractional shares brought retail investors into markets that had previously been institutional. But options \u2014 especially short-dated, out-of-the-money options on meme stocks \u2014 are the instruments that turned investing into something closer to sports betting.\n\nThe meme stock phenomenon of 2021 revealed a feedback loop that Matt has analyzed carefully: retail traders buying call options forces market makers to buy the underlying stock to hedge, which pushes the stock price up, which makes the calls worth more. Options aren't just derivatives of the market \u2014 in certain conditions, they can drive it."
+      },
+      {
+        "heading": "The hidden option in prediction markets and war betting",
+        "quote": "Insider trading, I often say around here, is not about fairness; it is about theft. The problem with insider trading is not that you have information that the rest of the market doesn't have: You're supposed to try to get information that the rest of the market doesn't have; the point of financial markets is for people to compete to get good information and incorporate it into prices.",
+        "quote_title": "Insider Trading on War",
+        "quote_date": "2026-02-07",
+        "quote_url": "https://newsletterhunt.com/emails/220511",
+        "commentary": "Prediction markets are options in disguise. When you buy a Yes contract on 'Will X happen by date Y?' at 25 cents, you're buying a binary call option on that event. The pricing follows the same logic as any option: probability of outcome times payoff.\n\nMatt has been fascinated by prediction markets as they've grown, not just for what they reveal about how people price uncertainty, but for the new forms of insider trading they enable. If you know a company is about to announce something, you can now express that view in options markets, stock markets, and prediction markets simultaneously. The tools keep multiplying."
+      }
+    ],
+    "conclusion": "Options keep appearing in Matt's writing because they're the instrument that makes finance interesting. They let you separate the thing from the right to own the thing, the upside from the downside, the timing from the decision. Once you understand that a limit order is an option, that executive pay is an option, that convertible debt is an option \u2014 you start to see finance not as a series of transactions but as a continuous negotiation over risk.\n\nMatt's consistent argument is that options themselves are neutral. They're not good or bad, clever or reckless. What matters is who holds them, what they're on, and whether the people involved understand what they've actually signed. Most financial disasters involve someone who didn't fully appreciate the option they'd sold.\n\nThe Second Law of Insider Trading exists because options are the most efficient way to turn information into money. That's also why they're everywhere in legitimate finance.",
+    "key_insight": "Options are just contracts that let you separate the right to own something from owning it \u2014 and once you see that, you realize modern finance is almost entirely made of them."
+  },
+  {
+    "slug": "insider-trading",
+    "theme": "Insider Trading",
+    "title": "Here Is How Insider Trading Actually Works, According to Matt Levine",
+    "subtitle": "It's not about fairness. It never was. It's about theft.",
+    "publish_date": "2026-04-11",
+    "article_count": 33,
+    "intro": "The most counterintuitive thing about Matt Levine's writing on insider trading is the thing he says in almost every piece: insider trading law is not about fairness. It's about theft.\n\nEvery time a prosecutor announces an insider trading case, they give a speech about level playing fields and market integrity and cheaters who got the answers before the test. Matt finds this deeply annoying, because it's both inaccurate and philosophically incoherent. Financial markets are not fair. They were never supposed to be fair. The whole point of capital markets is to reward people for finding information that other people don't have.\n\nWhat insider trading law actually protects is property rights. If you learned a secret from your company, that secret belongs to the company, not to you. Trading on it isn't cheating \u2014 it's stealing. And the distinction matters enormously for understanding what's actually illegal and what isn't.",
+    "sections": [
+      {
+        "heading": "The fundamental mistake everyone makes about insider trading",
+        "quote": "Insider trading is not about fairness, it is about theft. Whenever an insider trading case is announced, the prosecutors will make a little speech about how financial markets have to be a level playing field, and how the insider traders are cheaters who got the answers before they took the test, but it is all nonsense. Financial markets are not a level playing field; some people will always have faster computers or better resources or more money to spend on research than others, and they should have incentives to find out information that other people don't have. But more important, the level-playing-field stuff is just not the law. The law doesn't say that any time you trade on material nonpublic information it's illegal. The law, to oversimplify a complicated area, makes it illegal to trade on material nonpublic information that you obtained in violation of a duty to someone.",
+        "quote_title": "You Have to Pay the Right Person",
+        "quote_date": "2019-04-10",
+        "quote_url": "https://newsletterhunt.com/emails/5562",
+        "commentary": "This is Matt's most important single argument about insider trading, and it's worth sitting with. The law doesn't say: 'If you know something the market doesn't know, you can't trade.' That would be insane \u2014 it would criminalize every analyst, every journalist, every fund manager who's ever done superior research.\n\nWhat the law says is closer to: if you obtained that information in a way that violated a duty you owed to someone, that's the crime. The CEO who trades on her own company's earnings is stealing from shareholders. The banker who tips his brother is giving away something that doesn't belong to him. The information is the property; trading on it without authorization is the theft."
+      },
+      {
+        "heading": "The personal benefit requirement \u2014 and why it gets weird",
+        "quote": "At least in U.S. insider trading law, it matters a great deal whether you pass along inside information in exchange for a 'personal benefit,' but the definition of 'personal benefit' is vague and expansive. So I appreciate that he expressly says he got 'no service or good (whatever that means)'; that is the right thing to deny! Weird to live in the guy's house though. He says he rents it 'on normal commercial terms.'",
+        "quote_title": "Insider Trading",
+        "quote_date": "2019-06-28",
+        "quote_url": "https://newsletterhunt.com/emails/265593",
+        "commentary": "The personal benefit requirement is the doctrine that makes insider trading law strange. To convict someone of insider trading for tipping a friend, prosecutors generally have to prove the tipper got something in return \u2014 money, gifts, or even just the psychological satisfaction of making someone happy.\n\nMatt chronicles the absurdities this creates. A deer-hunting museum counts as personal benefit. First-class flights to Per Se count. Living rent-free in someone's London townhouse while carefully stating that you received 'no service or good' definitely counts. The law was written for cash in parking lots; reality keeps producing weirder arrangements."
+      },
+      {
+        "heading": "The Taylor Swift problem: prediction markets and the future of insider trading",
+        "quote": "In the past, if you knew about Taylor Swift's engagement before anyone else, you could have felt cool about it, or perhaps you could have sold the story to a tabloid. Now you can use prediction markets to turn it directly into, well, some money. You can be rewarded for making the market on Taylor Swift's engagement more efficient. Three themes that we have discussed on this newsletter intersect here: prediction markets, insider trading, and the Taylor Swift economy.",
+        "quote_title": "The Taylor Swift Wedding Trade",
+        "quote_date": "2025-09-10",
+        "quote_url": "https://newsletterhunt.com/emails/198827",
+        "commentary": "Prediction markets have created a new wrinkle that Matt has written about with barely-concealed delight. They're not quite stock markets, not quite sports betting, and regulators haven't fully decided how to treat them. But the insider trading logic applies immediately: if you have material nonpublic information about an event that a prediction market prices, and you trade on it, are you a criminal?\n\nUser 'romanticpaul' on Polymarket made $3,500 trading on what appears to be advance knowledge of the Swift-Kelce engagement. The SEC has bigger fish to fry. But as prediction markets grow and cover more events \u2014 elections, Fed decisions, corporate announcements \u2014 the insider trading rules that apply to them will matter a lot."
+      },
+      {
+        "heading": "Working from home made one kind of insider trading easier",
+        "quote": "Being out of the office might cause you to do more crime, because you are less closely observed by bosses and compliance, or more crime, because you are not around peer pressure to do crime. Empirically, though, the answer seems to be 'less crime.' That said, there is one classic form of financial crime that I think would have to be increased by work-from-home? That form of financial crime is 'looking at your girlfriend's computer to see what high-stakes deals she is working on, and then insider trading on them.' People love that one. If your girlfriend mostly works from her law firm's or investment bank's office, but logs in at night or does weekend conference calls on live deals, you might pick up some information to trade on, though she might remember to use code names when you're in earshot and lock her computer when she steps away. But if she works from home all day every day in your one-bedroom apartment, you are just far more likely to know what she is working on.",
+        "quote_title": "Insider Trading Is Better From Home",
+        "quote_date": "2021-11-05",
+        "quote_url": "https://newsletterhunt.com/emails/33759",
+        "commentary": "This is quintessential Matt Levine \u2014 taking a serious empirical question (did WFH affect financial crime rates?) and immediately finding the one way in which the answer is delightfully obvious in the wrong direction.\n\nThe spousal/partner insider trading genre is enormous in the SEC's enforcement history. The dynamic is always the same: one person has access to material nonpublic information as part of their job; the other person trades on it; both go to prison. The work-from-home era accelerated this because the usual physical separation between office life and home life collapsed."
+      },
+      {
+        "heading": "When you can legally trade on your own intentions",
+        "quote": "One general piece of not-legal-advice that I like to give about insider trading is that it's never illegal to trade on your own intentions. If Warren Buffett or Carl Icahn announce that they like a stock, that stock will go up; there is nothing whatsoever wrong with them buying the stock first and then announcing that they like it.",
+        "quote_title": "Insider Trading",
+        "quote_date": "2019-02-06",
+        "quote_url": "https://newsletterhunt.com/emails/265593",
+        "commentary": "This is one of the cleanest things Matt has ever written about trading law, and it follows directly from the theft framework. If the information belongs to you \u2014 because it's your intention, your plan, your decision \u2014 you can trade on it. You can't steal from yourself.\n\nThis is why an activist investor can buy a large position before announcing a stake. This is why a CEO can technically buy her own company's stock while planning an acquisition (though it gets complicated fast). The information is hers. She made it. The market doesn't know about it yet, but that's the market's problem, not hers."
+      },
+      {
+        "heading": "The cancer patient hypothetical \u2014 and the limits of the rule",
+        "quote": "Let's say you have cancer. A publicly traded biotech company has a promising drug in development to treat your cancer. It is conducting clinical trials of this drug. Your doctor suggests that you should try to sign up for the trial. You do. The drug works and your cancer is cured. The company has not yet released the results of the trial. You have a data point \u2014 your own experience \u2014 and you think the drug is great. You buy some short-dated out-of-the-money call options on the company's stock. A week later, the company releases the trial results, which are excellent; the drug works. The stock shoots up and you make a ton of money on the call options. Is this illegal insider trading?",
+        "quote_title": "Fake Cancer Doctor Insider Trading",
+        "quote_date": "2026-01-09",
+        "quote_url": "https://newsletterhunt.com/emails/216193",
+        "commentary": "Matt loves edge cases because they reveal where legal doctrine breaks down. The cancer patient hypothetical is interesting precisely because the theft framework produces an ambiguous answer.\n\nYou have information nobody else has. But did you violate a duty to get it? You signed up for a trial. The company invited you. You experienced the drug's effects on your own body \u2014 that's your information. On the other hand, clinical trial participants typically sign agreements that include confidentiality provisions. If you agreed not to share the results, trading on them might violate that agreement. The line between 'your own experience' and 'confidential clinical data' is not obvious."
+      },
+      {
+        "heading": "War, prediction markets, and the outer limits of what counts",
+        "quote": "Insider trading, I often say around here, is not about fairness; it is about theft. The problem with insider trading is not that you have information that the rest of the market doesn't have: You're supposed to try to get information that the rest of the market doesn't have; the point of financial markets is for people to compete to get good information and incorporate it into prices. The problem with insider trading is that you are using information that belongs to someone else \u2014 your employer or client or shareholders or brother-in-law or golf buddy \u2014 without their permission.",
+        "quote_title": "Insider Trading on War",
+        "quote_date": "2026-02-07",
+        "quote_url": "https://newsletterhunt.com/emails/220511",
+        "commentary": "One of the most interesting recent developments Matt has covered is the emergence of prediction markets for geopolitical events \u2014 including war. If a government official knows that troops are about to move before the market does, and they trade on that information, is it insider trading?\n\nThe theft framework suggests it might be. The information 'belongs to' the government in some sense \u2014 it was generated by classified intelligence and military planning. Trading on it without authorization looks an awful lot like misappropriation. The legal answer is unsettled. But intellectually, it follows directly from Matt's core argument: the question is always who owns the information, not whether it gives you an edge."
+      }
+    ],
+    "conclusion": "Matt's insider trading writing is unified by a single argument: the law protects property, not fairness. Prosecutors keep telling fairness stories because fairness stories are easier to explain to juries. But they're wrong about the law, and they lead to confused outcomes \u2014 cases that turn on whether a tipped friend was also a personal friend, whether a kick-back was sufficiently cash-like, whether a free vacation counts as a benefit.\n\nThe cleaner framework \u2014 information as property, trading without authorization as theft \u2014 makes many of these cases cleaner to analyze. It also makes clear which things aren't insider trading: trading on your own research, trading on your own intentions, trading on information you gathered legitimately from public sources or your own experience.\n\nMatt's Laws of Insider Trading (he's up to twelve now) all follow from the same principle. Don't use information that belongs to someone else. Don't text about it. Don't do it in your mother's account. And definitely don't Google 'how to insider trade without getting caught.'",
+    "key_insight": "The whole confusion about insider trading comes from prosecutors telling fairness stories when the law is actually about theft \u2014 and once you understand that, most of the weird edge cases start to make sense."
+  }
+]
