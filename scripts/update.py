@@ -33,7 +33,7 @@ classified = load_json(classified_path, {})
 tickers    = load_json(tickers_path, [])
 
 existing_ids = {a['id'] for a in articles}
-max_id       = max((int(a['id']) for a in articles), default=0)
+max_id       = max((int(a['id']) for a in articles if str(a['id']).isdigit()), default=0)
 print(f"Existing: {len(articles)} articles, max ID: {max_id}")
 
 # ── Discover new article IDs ──────────────────────────────────────────────────
