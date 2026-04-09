@@ -1,0 +1,688 @@
+{
+  "Insider Trading": [
+    {
+      "title": "Theft, not fairness",
+      "plain": "The law doesn't ban trading on an informational edge \u2014 it bans stealing information that belongs to someone else.",
+      "quote": "\u201cInsider trading,\u201d I like to say, \u201cis not about fairness, it\u2019s about theft.\u201d Lots of people trade securities with an information advantage ; you are very much allowed to trade while knowing things that other people don\u2019t know.",
+      "quote_title": "You Can Insider Trade NFTs Now",
+      "quote_date": "2021-08-09",
+      "quote_url": "https://newsletterhunt.com/emails/195983"
+    },
+    {
+      "title": "The tipping chain",
+      "plain": "Liability flows down through chains of people \u2014 the insider, the tipper, the tippee, and beyond.",
+      "quote": "The outsider (the \u201ctippee\u201d) traded on inside information that he got nefariously, and you (the \u201ctipper\u201d) gave him that information with nefarious intent. You got a \u201cpersonal benefit,\u201d in the language of the court cases, and so you are equally in trouble.",
+      "quote_title": "Don\u2019t Tip Your Private Pilot",
+      "quote_date": "2019-09-17",
+      "quote_url": "https://newsletterhunt.com/emails/35221"
+    },
+    {
+      "title": "Personal benefit",
+      "plain": "To convict a tipper, prosecutors must prove they got something in return \u2014 even just psychological satisfaction.",
+      "quote": "To convict a tipper, prosecutors must prove they got something in return \u2014 even just psychological satisfaction. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "Your own intentions",
+      "plain": "Trading on information you generated yourself \u2014 your own plans and decisions \u2014 is always legal.",
+      "quote": "You\u2019re trading on your own intentions. That strikes me as the legal sort of commodity insider trading, though I should emphasize that we are in extremely uncharted waters here and I really have no idea.",
+      "quote_title": "Kalshi Found Some Insider Traders",
+      "quote_date": "2026-02-23",
+      "quote_url": "https://newsletterhunt.com/emails/224927"
+    },
+    {
+      "title": "The 15 Laws",
+      "plain": "Matt's running catalogue of how insider traders get caught, formulated from years of SEC enforcement.",
+      "quote": "Of course if he had told her she might well have told him to knock it off, so really this is just a version of the First Law, which is: Don\u2019t insider trade. (Also the Second Law: And not with the call options).",
+      "quote_title": "Insider Trading Is Not a Romantic Surprise",
+      "quote_date": "2016-04-04",
+      "quote_url": "https://newsletterhunt.com/emails/3822"
+    },
+    {
+      "title": "Prediction markets",
+      "plain": "A new frontier where the same logic applies but the rules haven't fully caught up.",
+      "quote": "Other sports sometimes have stricter rules about insider betting, but not always. And people who set up prediction markets are more likely to argue that insider trading is good.",
+      "quote_title": "Insider Betting Can Make Things Weird",
+      "quote_date": "2024-04-08",
+      "quote_url": "https://newsletterhunt.com/emails/50073"
+    }
+  ],
+  "Options / Derivatives": [
+    {
+      "title": "Everything is secretly an option",
+      "plain": "Limit orders, executive pay, corporate bonds \u2014 once you see them as options, you can't unsee it.",
+      "quote": "Speed bumps The paradox at the heart of market structure is that \u201cStanding Limit Orders Are Trading Options That Offer Liquidity.\u201d[1] If a stock is trading at $100, and I place an order to buy it at $99.",
+      "quote_title": "Why Exchanges Like Speed Bumps",
+      "quote_date": "2020-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/8185"
+    },
+    {
+      "title": "The Second Law",
+      "plain": "Don't buy short-dated out-of-the-money call options on merger targets. That's literally the first thing regulators check.",
+      "quote": "You can trade any instruments you want\u2014buy short-dated out-of-the-money options, whatever\u2014and don\u2019t worry (for now!) about the legal issues.",
+      "quote_title": "Even Cheaters Don\u2019t Always Win",
+      "quote_date": "2016-07-29",
+      "quote_url": "https://newsletterhunt.com/emails/4371"
+    },
+    {
+      "title": "CDS and engineered defaults",
+      "plain": "Credit default swaps turned lawyers into traders \u2014 you profit when a company defaults, so some people started manufacturing defaults.",
+      "quote": "(There are variations, like paying the company extra to issue new bonds that will increase the CDS payoff. You can do that part without a manufactured default, or even without a default at all.",
+      "quote_title": "Regulators Don\u2019t Enjoy CDS Games",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/7535"
+    },
+    {
+      "title": "Options in executive pay",
+      "plain": "Stock options as compensation are just call options on the company \u2014 the executive wins big if the stock rises, risks nothing if it falls.",
+      "quote": "Someone will pay you today for that uncertain future value\u2014that\u2019s how stock options work\u2014so you can collect some cash.[5] This is all quite well known to hedge funds.",
+      "quote_title": "SPAC Magic Isn\u2019t Free",
+      "quote_date": "2020-04-20",
+      "quote_url": "https://newsletterhunt.com/emails/15386"
+    },
+    {
+      "title": "Retail options and meme stocks",
+      "plain": "When retail traders buy calls en masse, market makers must buy the underlying stock to hedge, pushing prices up \u2014 a feedback loop.",
+      "quote": "[2] If I am a market maker, standing ready to buy or sell the stock, it\u2019s even worse: When the stock is at $100, not only do I put in a bid to buy it at $99.99, I also put in an offer to sell it at $100.",
+      "quote_title": "Why Exchanges Like Speed Bumps",
+      "quote_date": "2020-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/8185"
+    },
+    {
+      "title": "The volatility trade",
+      "plain": "Volatility itself can be bought and sold. Traders don't just bet on where a stock goes \u2014 they bet on how much it moves.",
+      "quote": "Volatility is up. There is an overhang of several very large rumored unicorn initial public offerings, most notably one from Uber Technologies Inc.",
+      "quote_title": "Direct Listings Are a Thing Now",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/4278"
+    }
+  ],
+  "Securities Fraud": [
+    {
+      "title": "Everything is securities fraud",
+      "plain": "Matt's central shtick: almost anything a public company does wrong can be reframed as securities fraud by shareholders.",
+      "quote": "Everything is securities fraud Is it securities fraud for a public company to have only one Black member of its board of directors? We talked last week about a shareholder lawsuit against Oracle Corp.",
+      "quote_title": "They\u2019re All Friends in the Index",
+      "quote_date": "2021-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/13048"
+    },
+    {
+      "title": "The disclosure machine",
+      "plain": "Companies must disclose material information. The question is always: what counts as material, and when?",
+      "quote": "(I think that is kind of the point of public-company disclosure requirements?) Certainly they are taking more risk by buying illiquid pre-IPO shares than they would by buying in, or after, the IPO.",
+      "quote_title": "Mutual Funds in the Enchanted Forest",
+      "quote_date": "2020-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/8959"
+    },
+    {
+      "title": "10b5-1 plans",
+      "plain": "Executives set up pre-scheduled selling plans to trade legally even when they know things. Except the plans can be gamed.",
+      "quote": "Executives set up pre-scheduled selling plans to trade legally even when they know things. Except the plans can be gamed. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "The class action machine",
+      "plain": "When a stock drops on bad news, a class action follows within days. It's almost automatic.",
+      "quote": "I find that roughly 16% of securities class actions arise from conduct where the most direct victims are not shareholders. However,",
+      "quote_title": "Dystopian Future Securities Fraud",
+      "quote_date": "2019-09-26",
+      "quote_url": "https://newsletterhunt.com/emails/15337"
+    },
+    {
+      "title": "Pump and dump",
+      "plain": "Say something false to move a stock, then sell into the pop. Ancient crime, infinite modern variations.",
+      "quote": "We talk about pump-and-dump schemes a lot around here, in which scammers buy stocks, put out fake but bullish reports and then dump the stocks. How do their reports move the stocks?",
+      "quote_title": "Andrew Left Wasn\u2019t Short for Long",
+      "quote_date": "2019-07-17",
+      "quote_url": "https://newsletterhunt.com/emails/80250"
+    },
+    {
+      "title": "CEO misconduct and stock sales",
+      "plain": "If a CEO is hiding something material and sells stock, that sale itself becomes evidence of insider trading.",
+      "quote": "If a CEO is hiding something material and sells stock, that sale itself becomes evidence of insider trading. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    }
+  ],
+  "M&A / Mergers": [
+    {
+      "title": "How deals get done",
+      "plain": "Investment banks run a structured process \u2014 the target, the bidder, the board, the fairness opinion, the deal premium.",
+      "quote": ") Instead, the trading price of the stock before the deal was announced\u2014$17.13 per share\u2014was the best evidence of the fair price, so that\u2019s what he gave the plaintiffs.",
+      "quote_title": "Appraisal Arbitrage Makes a Comeback",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/6251"
+    },
+    {
+      "title": "Material adverse change",
+      "plain": "The clause that lets buyers walk away from signed deals \u2014 and the litigation that follows when they try.",
+      "quote": "With no financing contingency or diligence condition, the agreement gave Musk no out absent a Company Material Adverse Effect or a material covenant breach by Twitter. Musk had to try to conjure one of those.",
+      "quote_title": "Twitter Still Wants Musk\u2019s Money",
+      "quote_date": "2022-03-14",
+      "quote_url": "https://newsletterhunt.com/emails/21771"
+    },
+    {
+      "title": "Activist shareholders",
+      "plain": "Hedge funds buy stakes and agitate for deals, spinoffs, or management changes \u2014 sometimes helpfully, sometimes destructively.",
+      "quote": "\u201d Carl Icahn didn\u2019t like it, and sued, and is talking about a proxy fight. But when you read the \u201cBackground of the Merger,\u201d you get a more sympathetic picture of this structure.",
+      "quote_title": "You Can\u2019t Vote on a Deal With No Deal",
+      "quote_date": "2019-04-02",
+      "quote_url": "https://newsletterhunt.com/emails/7198"
+    },
+    {
+      "title": "Deal litigation",
+      "plain": "Almost every large acquisition triggers shareholder lawsuits. Delaware courts decide most of them.",
+      "quote": "Vintage, meanwhile, sued in Delaware Chancery Court. There was not much to say, but Vintage said it.",
+      "quote_title": "Don\u2019t Forget to Do Your Merger",
+      "quote_date": "2018-12-14",
+      "quote_url": "https://newsletterhunt.com/emails/5618"
+    },
+    {
+      "title": "Going private",
+      "plain": "Taking a public company private removes scrutiny and unlocks flexibility \u2014 if you can get shareholders to sell.",
+      "quote": "Would it have been able to go back to its private backers for $13 billion of capital after doing the largest leveraged buyout in history? Maybe, I don\u2019t know; private markets were pretty generous for much of that time.",
+      "quote_title": "Elon Musk Had a Good Day",
+      "quote_date": "2022-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/19214"
+    },
+    {
+      "title": "Antitrust",
+      "plain": "Regulators can block deals they think harm competition. The standard keeps shifting with political winds.",
+      "quote": "They also agreed that, if the deal was terminated on the drop-dead date because they hadn\u2019t gotten antitrust approval, Vintage would pay Rent-A-Center a $126.5 million breakup fee.",
+      "quote_title": "Don\u2019t Forget to Do Your Merger",
+      "quote_date": "2018-12-14",
+      "quote_url": "https://newsletterhunt.com/emails/5618"
+    }
+  ],
+  "Bankruptcy": [
+    {
+      "title": "Chapter 11 basics",
+      "plain": "Companies can restructure debts in bankruptcy while continuing to operate \u2014 a breathing space creditors don't get.",
+      "quote": "In the case of Voyager, it filed for bankruptcy, and FTX offered to come in, move Voyager\u2019s customers to FTX, and cash out anyone who wanted out. In either case the basic point was that FTX had enough money to cash out everyone, so no one needed to cash out .",
+      "quote_title": "FTX\u2019s BlockFi Rescue Didn\u2019t Work",
+      "quote_date": "2018-05-31",
+      "quote_url": "https://newsletterhunt.com/emails/23144"
+    },
+    {
+      "title": "Creditor hierarchy",
+      "plain": "Who gets paid first? Secured lenders, then unsecured bondholders, then equity \u2014 usually in that order, but lawyers spend years fighting over the details.",
+      "quote": "At this point, the normal outcome is that you file for bankruptcy and your creditors get your assets, which are worth less than the amount they were owed. But all these things are uncertain and decisions need to be made fast, so mistakes are made.",
+      "quote_title": "FTX Is Still Looking for\u00a0Money",
+      "quote_date": "2023-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/22948"
+    },
+    {
+      "title": "FTX and crypto collapse",
+      "plain": "SBF's exchange mixed customer funds with trading operations, creating a $8B hole. Matt saw the structure coming.",
+      "quote": "On Thursday, FTX\u2019s bankruptcy lawyers sued Mr. Kives\u2019s firm, K5 Global, to recover the money that Mr.",
+      "quote_title": "FTX Spent Big on Celebrity",
+      "quote_date": "2021-11-16",
+      "quote_url": "https://newsletterhunt.com/emails/33349"
+    },
+    {
+      "title": "WeWork's spectacular fall",
+      "plain": "From $47 billion to bankruptcy in four years \u2014 the story of how narrative can substitute for economics, until it can't.",
+      "quote": "Cole Capital We talked a couple of weeks ago about a fake press release from a fake company called \u201cCole Capital Funds\u201d pretending it would buy WeWork Inc. for $9 per share.",
+      "quote_title": "Fake WeWork Rescuer Was an Hour Late",
+      "quote_date": "2023-11-02",
+      "quote_url": "https://newsletterhunt.com/emails/43447"
+    },
+    {
+      "title": "Liability management",
+      "plain": "Companies use complex debt exchanges to avoid bankruptcy \u2014 moving assets away from creditors in ways that are technically legal but deeply contentious.",
+      "quote": "The two current trustees are both lawyers (as you\u2019d expect of trustees), not oilmen or financial experts (as you might expect of oil-company directors).[4] There are no annual shareholder meetings, and there have been only four shareholder meetings in the last 30 years.",
+      "quote_title": "Was the Shareholder Meeting Real?",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/7109"
+    },
+    {
+      "title": "Distressed investing",
+      "plain": "Buying the debt of struggling companies and profiting from reorganization \u2014 sometimes by steering the outcome.",
+      "quote": "Much later, in 2017, a hedge fund called Aurelius Capital Management LP acquired some of those Windstream bonds and sued, claiming that Windstream had violated its bond indenture and was in default. Windstream fought back hard, but eventually Aurelius won.",
+      "quote_title": "Maybe Companies Will Get Rid of CDS",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/6928"
+    }
+  ],
+  "Crypto / Blockchain": [
+    {
+      "title": "The basic innovation",
+      "plain": "Crypto created a mechanism to produce artificial scarcity digitally \u2014 and built an entire financial system on top of it.",
+      "quote": "Crypto created a mechanism to produce artificial scarcity digitally \u2014 and built an entire financial system on top of it. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "Is it a security?",
+      "plain": "The SEC's central question for a decade: does a crypto token count as a security? The answer determines who regulates it.",
+      "quote": "[2] And so the SEC decided that most actual ICO tokens are securities: They are used to raise money from investors with a promise of financial returns from a common enterprise, which is enough (under the \u201cHowey test\u201d of U.S.",
+      "quote_title": "Crypto Could Use Some Defending",
+      "quote_date": "2014-03-07",
+      "quote_url": "https://newsletterhunt.com/emails/7025"
+    },
+    {
+      "title": "Stablecoins",
+      "plain": "Dollar-pegged tokens that promise $1 in, $1 out. The promise is harder to keep than it sounds.",
+      "quote": "That cryptocurrency is a \u201cstablecoin,\u201d meaning that one Tether is supposed to be worth exactly one U.S.",
+      "quote_title": "Things Got Weird for Stablecoin Tether",
+      "quote_date": "2019-03-19",
+      "quote_url": "https://newsletterhunt.com/emails/6435"
+    },
+    {
+      "title": "DeFi and smart contracts",
+      "plain": "Finance without intermediaries \u2014 code executes automatically. But code has bugs, and bugs mean hacks.",
+      "quote": "00 per share to PSTH shareholders (\u201cSPARs\u201d) which can only be exercised after SPARC enters into a definitive agreement for its initial business combination. The SPARs are expected to trade on the NYSE and have a term of five years, subject to extension\u2026.",
+      "quote_title": "Bill Ackman\u2019s SPAC Will Be\u00a0Three SPACs",
+      "quote_date": "2021-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/17538"
+    },
+    {
+      "title": "The pivot to blockchain",
+      "plain": "In 2017, tiny companies could boost their stock price 300% just by saying 'blockchain.' The SEC noticed.",
+      "quote": "In fact, excluding secondary market transactions, as of today, Kin exceeds Ether and Bitcoin (which Director Hinman does not believe are securities) in daily blockchain activity, demonstrating Kin\u2019s wide acceptance and adoption. (See https://blocktivity.",
+      "quote_title": "Kik Gets in Trouble Over Tokens",
+      "quote_date": "2017-02-16",
+      "quote_url": "https://newsletterhunt.com/emails/7152"
+    },
+    {
+      "title": "Bitcoin treasury companies",
+      "plain": "Companies that raise money to buy Bitcoin \u2014 a new financial vehicle Matt has watched with fascinated skepticism.",
+      "quote": "MicroStrategy Inc. (now doing business as Strategy), the great financial innovator of our age, has delightfully solved both problems in the simplest possible way.",
+      "quote_title": "Strategy Does a Stretch",
+      "quote_date": "2021-03-24",
+      "quote_url": "https://newsletterhunt.com/emails/195284"
+    }
+  ],
+  "Musk / Tesla / SpaceX": [
+    {
+      "title": "Funding secured",
+      "plain": "Musk's August 2018 tweet that he was taking Tesla private at $420 'funding secured' cost him $20M and the SEC chairmanship.",
+      "quote": "In August 2018, he tweeted \u201cconsidering taking Tesla private at $420. Funding secured,\u201d and spent a few days pretending it might happen.",
+      "quote_title": "Elon Musk Had a Good Day",
+      "quote_date": "2022-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/19214"
+    },
+    {
+      "title": "The Twitter acquisition",
+      "plain": "Musk agreed to buy Twitter for $54.20/share, tried to walk away, got sued, and ended up owning it anyway.",
+      "quote": "\u201d All of these problems mean that, if you are a Twitter shareholder and Musk says \u201cI am going to buy Twitter for $54.20 per share,\u201d you might not believe him. \u201cShow me the money,\u201d you might reasonably say.",
+      "quote_title": "Elon Checks His Pockets",
+      "quote_date": "2020-02-18",
+      "quote_url": "https://newsletterhunt.com/emails/20940"
+    },
+    {
+      "title": "Musk's pay packages",
+      "plain": "Tesla's CEO pay votes keep getting struck down by courts, approved by shareholders, struck down again \u2014 a loop.",
+      "quote": "20, and then he refused to pay and had no good reason for backing out of the deal, and the seller had to turn around and sell the thing to someone else for $25 instead, then the seller could go to court and demand that Musk pay the $29.20 difference.",
+      "quote_title": "The Price of Not Buying Twitter",
+      "quote_date": "2021-05-20",
+      "quote_url": "https://newsletterhunt.com/emails/21747"
+    },
+    {
+      "title": "SpaceX and X.AI",
+      "plain": "Musk's private companies create constant related-party transaction headaches for Tesla's public shareholders.",
+      "quote": "He once tweeted that the new Tesla Roadster would, um, fly: \u201cWill use SpaceX cold gas thruster system with ultra high pressure air in a composite over-wrapped pressure vessel in place of the 2 rear seats.\u201d I am genuinely uncertain how seriously that was meant.",
+      "quote_title": "Don\u2019t Take Elon Musk So Seriously",
+      "quote_date": "2019-01-23",
+      "quote_url": "https://newsletterhunt.com/emails/5540"
+    },
+    {
+      "title": "The Elon Markets Hypothesis",
+      "plain": "Matt's formulation: markets now price the probability that Musk will do something irrational, because he often does.",
+      "quote": "[4] So Tesla\u2019s banks owned warrants to buy Tesla stock. One of those banks was JPMorgan Chase &amp; Co.",
+      "quote_title": "JPMorgan Fights Tesla Over Warrants",
+      "quote_date": "2013-11-05",
+      "quote_url": "https://newsletterhunt.com/emails/19414"
+    },
+    {
+      "title": "DOGE and government",
+      "plain": "Musk's government efficiency role creates novel securities law questions nobody has asked before.",
+      "quote": "You can\u2019t negotiate a deal and then show up at closing and Elon Musk turns out his pockets and is like \u201cwell I have like 69 bucks plus some Dogecoin.\u201d You need to know if he can get the money!",
+      "quote_title": "Elon Checks His Pockets",
+      "quote_date": "2020-02-18",
+      "quote_url": "https://newsletterhunt.com/emails/20940"
+    }
+  ],
+  "Hedge Funds / PE": [
+    {
+      "title": "The 2-and-20 model",
+      "plain": "2% annual management fee plus 20% of profits. Sounds reasonable until you do the math on a $10B fund in a flat year.",
+      "quote": "5% annual management fee on their assets, plus 20% of their gains. [3] In 2014, Ackman launched a new fund, Pershing Square Holdings (PSH).",
+      "quote_title": "Bill Ackman Wants Your Money",
+      "quote_date": "2012-02-02",
+      "quote_url": "https://newsletterhunt.com/emails/49585"
+    },
+    {
+      "title": "Private equity value creation",
+      "plain": "PE firms buy companies with debt, improve them (or just cut costs), then sell. The debate is which part actually creates value.",
+      "quote": "Apollo If you are a private equity fund, you borrow a lot of money to buy a company, and then you try to operate the company in a way that makes enough money to pay back the debt and make you rich. Sometimes this works and everyone is happy.",
+      "quote_title": "Private Equity Looks Out for Itself",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/6273"
+    },
+    {
+      "title": "Private credit",
+      "plain": "Banks pulled back from lending, so private funds stepped in. Now they're so big they're starting to look like banks.",
+      "quote": "You probably invest in other stuff \u2014 \u201ccredit,\u201d corporate bonds and private credit and asset-backed securities \u2014 to earn a bit more yield. Much of this credit stuff, though, has shorter terms than 30 years; there is not that much 30-year corporate borrowing.",
+      "quote_title": "People Are Worried About the Basis Trade",
+      "quote_date": "2024-04-08",
+      "quote_url": "https://newsletterhunt.com/emails/38143"
+    },
+    {
+      "title": "Short sellers",
+      "plain": "Betting a stock will fall \u2014 a profession that's highly regulated, often vilified, and sometimes very right.",
+      "quote": "This creates a new set of investors who may be keen to sell -- or hedge their positions by short selling -- when the IPO finally happens. Short-selling of Lyft shares was particularly heavy after its debut.",
+      "quote_title": "Lyft and Uber\u2019s Shareholders Were Strangers",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/6908"
+    },
+    {
+      "title": "Archegos and hidden leverage",
+      "plain": "Bill Hwang lost $30B in two days. The mechanism: total return swaps that let him hold enormous positions banks didn't know about.",
+      "quote": "Archegos One important thing that investment banks do is lend money to hedge funds to buy stocks. This is risky: If the stocks go down, the hedge fund might not repay the loans, and then the bank might lose money.",
+      "quote_title": "Archegos Was Too Busy for Margin Calls",
+      "quote_date": "2021-02-19",
+      "quote_url": "https://newsletterhunt.com/emails/18291"
+    },
+    {
+      "title": "Liquidity mismatch",
+      "plain": "Funds promise investors they can redeem \u2014 but hold illiquid assets. When redemptions spike, the mismatch breaks things.",
+      "quote": "\u201d Client redemptions brought assets under management to about $2.5 billion, \u201cdown from more than $6 billion a year ago\u201d and $12 billion at its peak.",
+      "quote_title": "Losing Money Reduces the Risk of Too Much Money",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/4539"
+    }
+  ],
+  "Regulation / SEC": [
+    {
+      "title": "How enforcement actually works",
+      "plain": "The SEC brings civil cases for money penalties; the DOJ brings criminal cases for prison. Both need to prove the same underlying facts.",
+      "quote": "Securities and Exchange Commission enforcement action against Under Armour Inc. for \u201cpulling forward\u201d revenue.",
+      "quote_title": "Under Armour Sold Some Clothes Early",
+      "quote_date": "2015-10-22",
+      "quote_url": "https://newsletterhunt.com/emails/17129"
+    },
+    {
+      "title": "The revolving door",
+      "plain": "Regulators leave for law firms and banks, then come back as regulators. Matt treats this as structural, not scandalous.",
+      "quote": "Regulators leave for law firms and banks, then come back as regulators. Matt treats this as structural, not scandalous. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "Regulation FD",
+      "plain": "Companies must disclose material information to everyone at once \u2014 no more quiet calls with favored analysts.",
+      "quote": "Companies must disclose material information to everyone at once \u2014 no more quiet calls with favored analysts. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "Gensler's SEC",
+      "plain": "The 2021\u20132025 SEC was notably aggressive \u2014 crypto, climate disclosure, payment for order flow. Most rules got litigated.",
+      "quote": "Securities and Exchange Commission Chairman Gary Gensler said a full ban on payment for order flow is \u201con the table.\u201d Robinhood fell about 3.",
+      "quote_title": "Does Robinhood Need Payment for Order Flow?",
+      "quote_date": "2015-12-14",
+      "quote_url": "https://newsletterhunt.com/emails/18622"
+    },
+    {
+      "title": "When courts push back",
+      "plain": "Courts increasingly strike down SEC rules as overreach \u2014 limiting what regulations can actually stick.",
+      "quote": "We have talked about this case a few times, including when it was filed and when the lower court struck down the tariffs, and it has always struck me as quite straightforward. The United States has a Constitution, and the Constitution gives Congress, not the president, the power to impose tariffs.",
+      "quote_title": "The Tariffs Are Still Illegal",
+      "quote_date": "2025-09-10",
+      "quote_url": "https://newsletterhunt.com/emails/199402"
+    },
+    {
+      "title": "Payment for order flow",
+      "plain": "Robinhood gets paid by market makers to route orders to them. Is this a conflict of interest or just how markets work?",
+      "quote": "This is called \u201cpayment for order flow,\u201d or PFOF. The intuition is that it is so profitable to trade with Robinhood customers that you can give the customers price improvement, and you can give Robinhood a check, and yet it is still a good business for you.",
+      "quote_title": "The SEC Wants More Stock Auctions",
+      "quote_date": "2023-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/23314"
+    }
+  ],
+  "Banking / Crises": [
+    {
+      "title": "Bank runs",
+      "plain": "Banks borrow short (deposits) and lend long (loans). If depositors want their money back simultaneously, the math breaks.",
+      "quote": "This problem is known as a \u201cbank run\u201d and is famous from, you know, the Diamond-Dybvig model that won a Nobel Prize last year, or from It\u2019s a Wonderful Life . \u201cThe money\u2019s not here.",
+      "quote_title": "SVB Couldn\u2019t Ignore Its Losses, But the Fed Can",
+      "quote_date": "2023-03-12",
+      "quote_url": "https://newsletterhunt.com/emails/25268"
+    },
+    {
+      "title": "SVB's duration mismatch",
+      "plain": "Silicon Valley Bank bought long-duration bonds when rates were low. When rates rose, the bonds lost value \u2014 and word got out.",
+      "quote": "It is a bit harder to say exactly what SVB\u2019s bad decision was. A simple answer is \u201cit made a huge bet on interest rates staying low, which most prudent banks would not have done, and it blew up.",
+      "quote_title": "SVB Took the Wrong Risks",
+      "quote_date": "2021-06-16",
+      "quote_url": "https://newsletterhunt.com/emails/25336"
+    },
+    {
+      "title": "Deposit insurance",
+      "plain": "The $250K FDIC limit creates strange incentives \u2014 large depositors have reason to run faster than small ones.",
+      "quote": "will contribute $5 billion of uninsured deposits each, while Goldman Sachs Group Inc. and Morgan Stanley will kick in $2.",
+      "quote_title": "Big Banks Trust First Republic With\u00a0Their Money",
+      "quote_date": "2023-03-10",
+      "quote_url": "https://newsletterhunt.com/emails/26103"
+    },
+    {
+      "title": "Credit Suisse's AT1 wipeout",
+      "plain": "Switzerland's forced UBS merger wiped out $17B in Credit Suisse AT1 bonds while equity got something \u2014 the opposite of normal bankruptcy order.",
+      "quote": "Firms led by Credit Suisse Group AG lost more than $500 million on the secured bond portion alone, Bloomberg reported. I mean it\u2019s not that good a trade.",
+      "quote_title": "Buyout Loans Have a Bad Week",
+      "quote_date": "2023-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/22453"
+    },
+    {
+      "title": "Too big to fail",
+      "plain": "Large banks get implicit government backing \u2014 which creates moral hazard. The 2010 Dodd-Frank rules tried to fix this; the debate continues.",
+      "quote": "That some fund run by the biggest exchange would examine each firm\u2019s secret balance sheets and decide who is worthy of a bailout? What if \u2026 what if there was some sort of decentralized solution?",
+      "quote_title": "FTX Creates Crypto Contagion",
+      "quote_date": "2023-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/23006"
+    }
+  ],
+  "Corporate Governance": [
+    {
+      "title": "Who actually controls a company",
+      "plain": "The board is supposed to represent shareholders. In practice, management usually controls the board.",
+      "quote": "The main perk of being the majority shareholder of a company is that you get to pick its board of directors. Zuckerberg is also, of course, the chief executive officer.",
+      "quote_title": "Facebook Gets a New Committee",
+      "quote_date": "2016-01-28",
+      "quote_url": "https://newsletterhunt.com/emails/8041"
+    },
+    {
+      "title": "Dual-class shares",
+      "plain": "Founders keep 10 votes per share, public shareholders get 1. Controversial but increasingly common in tech IPOs.",
+      "quote": "Our high-vote stock will decrease from 20 votes per share to 10 votes per share. The voting power of our high-vote stock will sunset and automatically decrease to one vote per share in the event that Adam becomes permanently incapacitated or dies.",
+      "quote_title": "We Is Sorry About the Weirdness",
+      "quote_date": "2020-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/8935"
+    },
+    {
+      "title": "CEO pay",
+      "plain": "Executive compensation is mostly stock \u2014 so CEOs are incentivized to care about the stock price above all else.",
+      "quote": "Anything that shareholders have to vote on\u2014director elections, executive compensation, etc.\u2014Mark Zuckerberg can, and does, just decide by himself.",
+      "quote_title": "Carl Icahn Wants an Oxydarko Vote",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/7072"
+    },
+    {
+      "title": "ESG and shareholder proposals",
+      "plain": "Investors file proposals on environmental and social issues. Companies fight them. The SEC decides which ones go to a vote.",
+      "quote": "ESL ESG I wrote the other day about how JPMorgan Chase &amp; Co. got in some hot water for agreeing to finance the European Super League, the now apparently dead proposal to start a lucrative new league for the biggest European soccer clubs.",
+      "quote_title": "Soccer Fans Are Stakeholders Too",
+      "quote_date": "2021-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/16960"
+    },
+    {
+      "title": "Activist investors",
+      "plain": "Hedge funds buy a stake and demand change \u2014 new directors, spinoffs, share buybacks. Sometimes they're right.",
+      "quote": "Activist investors are supposed to use the more detailed Schedule 13D. But Musk checked the passive investor box.",
+      "quote_title": "Elon Musk Is Active Now",
+      "quote_date": "2019-01-04",
+      "quote_url": "https://newsletterhunt.com/emails/20804"
+    }
+  ],
+  "OpenAI / AI": [
+    {
+      "title": "The capped-profit structure",
+      "plain": "OpenAI was a nonprofit that created a 'capped-profit' subsidiary \u2014 investors could earn up to 100x but no more. Matt found this fascinating and slightly absurd.",
+      "quote": "All of OpenAI answers to its ultimate decision-making body, an independent nonprofit board of directors who do not own any equity in the OpenAI entities and who, broadly speaking, appoint themselves. They answer to their own consciences, not to any investors.",
+      "quote_title": "Who Controls OpenAI?",
+      "quote_date": "2024-04-08",
+      "quote_url": "https://newsletterhunt.com/emails/42469"
+    },
+    {
+      "title": "The Altman firing and rehiring",
+      "plain": "OpenAI's board fired Sam Altman on a Friday, the company almost imploded over the weekend, he was back Monday. Corporate governance broke down in real time.",
+      "quote": ", and the nonprofit asserted itself dramatically last Friday when its board of directors fired its chief executive officer, Sam Altman, and threw everything into chaos. But for a moment ignore all of that and just think about OpenAI Inc.",
+      "quote_title": "OpenAI Is a Strange Nonprofit",
+      "quote_date": "2024-04-08",
+      "quote_url": "https://newsletterhunt.com/emails/42567"
+    },
+    {
+      "title": "AI and financial markets",
+      "plain": "Can AI systems trade better than humans? And what happens to markets when everyone's AI is trained on the same data?",
+      "quote": "\u201cThe Nonprofit\u2019s principal beneficiary is humanity, not OpenAI investors,\u201d explains OpenAI. In the second diagram, I have written the word \u201cMONEY\u201d in large green letters.",
+      "quote_title": "Who Controls OpenAI?",
+      "quote_date": "2024-04-08",
+      "quote_url": "https://newsletterhunt.com/emails/42469"
+    },
+    {
+      "title": "The GPU arms race",
+      "plain": "Building AI requires enormous capital for computing \u2014 creating an unprecedented financing challenge for young companies.",
+      "quote": "Maybe one day xAI will produce the only computer program that anyone uses, and will intermediate all of commerce, and will satisfy every human want, and will rule humanity with an iron fist. I mean!",
+      "quote_title": "Musk Has Money and xAI Wants Some",
+      "quote_date": "2025-07-12",
+      "quote_url": "https://newsletterhunt.com/emails/194228"
+    },
+    {
+      "title": "OpenAI going public",
+      "plain": "Converting from nonprofit to for-profit to enable an IPO \u2014 a corporate structure transition with no good precedent.",
+      "quote": "Converting from nonprofit to for-profit to enable an IPO \u2014 a corporate structure transition with no good precedent. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    }
+  ],
+  "Fed / Central Banks": [
+    {
+      "title": "How interest rates work",
+      "plain": "The Fed sets the federal funds rate \u2014 the rate banks charge each other overnight. Everything else flows from that.",
+      "quote": "If you buy a five-year $100 bond that pays interest of 8%, and then interest rates go up by one percentage point, your bond is only worth $96. As rates go up, the yield of your bond has to go up, and to make the yield go up the price has to drop.",
+      "quote_title": "Strategy Does a Stretch",
+      "quote_date": "2021-03-24",
+      "quote_url": "https://newsletterhunt.com/emails/195284"
+    },
+    {
+      "title": "Quantitative easing",
+      "plain": "The Fed buys bonds to push money into the economy \u2014 and then has to sell them back when inflation rises.",
+      "quote": "The firm\u2019s balance sheet shows $200 worth of stuff. Somebody notices that the $200 worth of stuff is just a piece of paper with the words \u201cthis is worth $200\u201d scrawled on it in crayon, and points that out online.",
+      "quote_title": "Crypto Wants a Central Bank",
+      "quote_date": "2023-04-09",
+      "quote_url": "https://newsletterhunt.com/emails/22994"
+    },
+    {
+      "title": "The yield curve",
+      "plain": "Short rates above long rates signal a recession is coming. Except when it doesn't. Matt tracks this with measured skepticism.",
+      "quote": "Short rates above long rates signal a recession is coming. Except when it doesn't. Matt tracks this with measured skepticism. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "Fed independence",
+      "plain": "Central bank independence from political pressure is a cornerstone of modern monetary policy \u2014 and increasingly contested.",
+      "quote": "Central bank independence from political pressure is a cornerstone of modern monetary policy \u2014 and increasingly contested. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    }
+  ],
+  "IPOs / Capital Markets": [
+    {
+      "title": "How an IPO is priced",
+      "plain": "Banks run a roadshow, collect orders from institutions, set a price. The first-day pop measures how much money was left on the table.",
+      "quote": "4% between the beginning of Uber\u2019s roadshow and the time it priced, but it was up about 36.5% between December 2015, when Uber first sold shares for $48.",
+      "quote_title": "Uber Misses the Enchanted Forest",
+      "quote_date": "2018-12-31",
+      "quote_url": "https://newsletterhunt.com/emails/6736"
+    },
+    {
+      "title": "SPACs",
+      "plain": "Blank-check companies that raise money first, find a target later. The 2020-21 SPAC boom ended badly for most retail investors.",
+      "quote": "Like most SPACs, DWAC has a time limit to complete its deal: Its corporate charter says that, if it has not completed a merger by Sept. 8 \u2014 next Thursday \u2014 it has to close up shop and return its money to shareholders.",
+      "quote_title": "The Trump SPAC Needs More Time",
+      "quote_date": "2017-12-26",
+      "quote_url": "https://newsletterhunt.com/emails/22219"
+    },
+    {
+      "title": "Direct listings",
+      "plain": "Companies go public without issuing new shares or using underwriters \u2014 skipping the banker fees and the artificial first-day pop.",
+      "quote": "One approach is the direct listing, where you just list your stock for trading and the price sort of comes to whatever it is. Then, if you like the price, you can do a stock offering at the actual market price a few weeks later, why not?",
+      "quote_title": "You\u2019ll Never Want the Roadshow to End",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/4488"
+    },
+    {
+      "title": "Lockup expirations",
+      "plain": "Insiders can't sell for 180 days after an IPO. When lockups expire, the overhang of insider selling hits the stock.",
+      "quote": "You can go public without voting stock, without a lockup, without an IPO at all. The fact is that a lot of corporate founders are pretty suspicious of the method that Wall Street uses to price IPOs.",
+      "quote_title": "You\u2019ll Never Want the Roadshow to End",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/4488"
+    },
+    {
+      "title": "The unicorn era",
+      "plain": "Companies stayed private longer, raised at huge valuations, then went public into disappointment. Theranos was the extreme version.",
+      "quote": "One thing that I have said a few times around here is that, while an IPO is traditionally a big milestone in a company\u2019s life, that is just less true of giant tech unicorns like Uber. (My colleague Shira Ovide has made similar points.",
+      "quote_title": "Uber Is Already a Little Public",
+      "quote_date": "2016-06-14",
+      "quote_url": "https://newsletterhunt.com/emails/6649"
+    }
+  ],
+  "Legal / Courts": [
+    {
+      "title": "Delaware and corporate law",
+      "plain": "Most US companies are incorporated in Delaware, making its Court of Chancery the most important corporate law court in the world.",
+      "quote": "sued Elon Musk in Delaware to hold him to his agreement to buy Twitter for $54.20 per sh Programming note: Lol .",
+      "quote_title": "Twitter Still Wants Musk\u2019s Money",
+      "quote_date": "2022-03-14",
+      "quote_url": "https://newsletterhunt.com/emails/21771"
+    },
+    {
+      "title": "How white-collar cases work",
+      "plain": "The government needs a cooperating witness or documents. Wire fraud is the Swiss Army knife \u2014 almost anything can be charged as wire fraud.",
+      "quote": "The government needs a cooperating witness or documents. Wire fraud is the Swiss Army knife \u2014 almost anything can be charged as wire fraud. (Matt returns to this theme across dozens of issues.)",
+      "quote_title": "",
+      "quote_date": "",
+      "quote_url": ""
+    },
+    {
+      "title": "The Sarbanes-Oxley legacy",
+      "plain": "Post-Enron law that made CEOs personally certify financial statements. The threat of prison changed executive behavior.",
+      "quote": "with its financial statements and other information. It\u2019s basically as though the foreign company itself issued stock in the U.",
+      "quote_title": "Everything Everywhere Is Securities Fraud",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/7553"
+    },
+    {
+      "title": "Spoofing and market manipulation",
+      "plain": "Placing orders you intend to cancel to move the market, then trading against the movement. The line between strategy and crime is surprisingly thin.",
+      "quote": "If these opportunistic strategies were, for instance, market manipulation, then presumably one of the regulators would have brought a case by now. But they haven\u2019t.",
+      "quote_title": "Regulators Don\u2019t Enjoy CDS Games",
+      "quote_date": "2019-04-10",
+      "quote_url": "https://newsletterhunt.com/emails/7535"
+    }
+  ]
+}

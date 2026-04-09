@@ -5,6 +5,8 @@ import TICKERS from './tickers.json'
 import BANKRUPT from './bankrupt.json'
 import BLOGS from './blogs.json'
 import LAWS from './laws.json'
+import CONCEPTS from './concepts.json'
+import { LayoutGrid, Scale, TrendingUp, Newspaper, BookOpen, ChevronLeft, ExternalLink } from 'lucide-react'
 
 const THEMES = [
   { label:"Securities Fraud",       color:"#C04A1E", bg:"#FDF0EB", icon:"⚖️" },
@@ -272,12 +274,95 @@ function BlogPost({ blog, onBack, isMobile = false }) {
 
 // ── Sidebar nav ───────────────────────────────────────────────────────────────
 const NAV = [
-  { id:'themes',   label:'Themes',   icon:'◉' },
-  { id:'laws',     label:'Laws',     icon:'§' },
-  { id:'tickers',  label:'Tickers',  icon:'$' },
-  { id:'articles', label:'Articles', icon:'≡' },
-  { id:'blog',     label:'Blog',     icon:'✦', badge: publishedBlogs.length },
+  { id:'themes',   label:'Themes',   Icon: LayoutGrid },
+  { id:'laws',     label:'Laws',     Icon: Scale },
+  { id:'tickers',  label:'Tickers',  Icon: TrendingUp },
+  { id:'articles', label:'Articles', Icon: Newspaper },
+  { id:'blog',     label:'Blog',     Icon: BookOpen, badge: publishedBlogs.length },
 ]
+
+// ── Theme Deep Dive page ──────────────────────────────────────────────────────
+function ThemeDeepDive({ theme, onBack, onViewArticles, isMobile }) {
+  const t = TM[theme]
+  const concepts = CONCEPTS[theme] || []
+  const articles = ARTICLES.filter(a => a.themes?.includes(theme))
+    .sort((a,b) => b.d.localeCompare(a.d))
+    .slice(0, 8)
+  const blog = publishedBlogs.find(b => b.theme === theme)
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:'1.5rem'}}>
+        <button onClick={onBack} style={{display:'flex',alignItems:'center',gap:4,background:'none',border:'none',cursor:'pointer',color:'#888',fontSize:12,padding:0}}>
+          <ChevronLeft size={14}/> Themes
+        </button>
+        <span style={{color:'#ddd'}}>·</span>
+        <ThemePill theme={theme}/>
+        {blog && (
+          <span onClick={()=>onViewArticles('blog', blog)} style={{fontSize:11,padding:'2px 9px',borderRadius:10,background:t?.bg,color:t?.color,fontWeight:500,cursor:'pointer',marginLeft:'auto'}}>
+            Read full essay ↗
+          </span>
+        )}
+      </div>
+
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?22:26,fontWeight:500,marginBottom:6,letterSpacing:'-0.01em'}}>{theme}</h1>
+      <p style={{fontSize:13,color:'#777',marginBottom:'2rem'}}>{ARTICLES.filter(a=>a.themes?.includes(theme)).length} articles in archive</p>
+
+      {/* Concept cards */}
+      <div style={{marginBottom:'2.5rem'}}>
+        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:12}}>Key concepts</div>
+        <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(340px,1fr))',gap:10}}>
+          {concepts.map((c, i) => (
+            <div key={i} style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'1rem',borderLeft:`3px solid ${t?.color||'#ccc'}`}}>
+              <div style={{fontSize:13,fontWeight:600,color:'#1a1a18',marginBottom:6}}>{c.title}</div>
+              <div style={{fontSize:12,color:'#666',lineHeight:1.6,marginBottom:c.quote?12:0}}>{c.plain}</div>
+              {c.quote && (
+                <div style={{background:'#FAFAF4',borderRadius:8,padding:'10px 12px'}}>
+                  <div style={{fontSize:12,lineHeight:1.7,fontStyle:'italic',color:'#444',marginBottom:c.quote_title?6:0}}>
+                    "{c.quote}"
+                  </div>
+                  {c.quote_title && (
+                    <div style={{display:'flex',alignItems:'center',gap:4}}>
+                      <a href={c.quote_url} target="_blank" rel="noreferrer"
+                        style={{fontSize:10,color:t?.color||'#888',textDecoration:'none',fontWeight:500}}>
+                        — {c.quote_title}
+                      </a>
+                      {c.quote_date && <span style={{fontSize:10,color:'#bbb'}}>· {c.quote_date}</span>}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Recent articles */}
+      <div>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
+          <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em'}}>Recent articles</div>
+          <button onClick={()=>onViewArticles('articles', null)} style={{fontSize:11,color:'#666',background:'none',border:'none',cursor:'pointer'}}>View all {ARTICLES.filter(a=>a.themes?.includes(theme)).length} →</button>
+        </div>
+        {articles.map(a => (
+          <div key={a.id} style={{padding:'9px 0',borderBottom:'1px solid #EEEEE8'}}>
+            <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
+              <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa',paddingTop:2,whiteSpace:'nowrap',flexShrink:0}}>{a.d}</span>
+              <div style={{flex:1,minWidth:0}}>
+                <div style={{fontSize:13,fontWeight:500,lineHeight:1.4,marginBottom:2}}>{a.t}</div>
+                {a.lesson && <div style={{fontSize:11,color:'#999',fontStyle:'italic',lineHeight:1.5}}>"{a.lesson.slice(0,80)}{a.lesson.length>80?'…':''}"</div>}
+              </div>
+              <a href={a.u} target="_blank" rel="noreferrer" style={{color:'#bbb',flexShrink:0,paddingTop:2}}>
+                <ExternalLink size={12}/>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 
 // ── Mobile detection ─────────────────────────────────────────────────────────
 function useIsMobile() {
@@ -310,6 +395,7 @@ export default function App() {
     return slug ? (publishedBlogs.find(b => b.slug === slug) || null) : null
   })
   const [expandedTicker, setExpandedTicker] = useState(null)
+  const [activeThemePage, setActiveThemePage] = useState(null) // theme label when deep-dive open
 
   useEffect(() => {
     const handler = () => {
@@ -344,8 +430,10 @@ export default function App() {
 
   const handleTabChange = (id) => {
     setTab(id)
+    setActiveThemePage(null)
     if (id !== 'blog') { setActiveBlog(null); window.location.hash = id === 'themes' ? '' : '/' + id }
   }
+  const openThemePage = (themeLabel) => { setActiveThemePage(themeLabel); setSelectedTheme(themeLabel) }
   const openBlog = (blog) => {
     setActiveBlog(blog)
     setTab('blog')
@@ -361,9 +449,9 @@ export default function App() {
       </p>
       <div style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'0.75rem',marginBottom:'1rem'}}>
         <div style={{fontSize:11,color:'#aaa',marginBottom:6}}>
-          Bubble size = article count.{selectedTheme && <span style={{marginLeft:6,color:TM[selectedTheme]?.color,fontWeight:500}}>{selectedTheme} · <span style={{cursor:'pointer',textDecoration:'underline'}} onClick={()=>setSelectedTheme(null)}>clear</span></span>}
+          Bubble size = article count. Click to explore a theme.
         </div>
-        <BubbleChart selected={selectedTheme} onSelect={setSelectedTheme}/>
+        <BubbleChart selected={selectedTheme} onSelect={openThemePage}/>
       </div>
       <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(260px,1fr))',gap:8}}>
         {THEMES.map(th => {
@@ -393,22 +481,7 @@ export default function App() {
           )
         })}
       </div>
-      {selectedTheme && (
-        <div style={{marginTop:'1.5rem'}}>
-          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
-            <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:500,margin:0}}>{selectedTheme}</h2>
-            <button onClick={()=>setTab('articles')} style={{fontSize:12,color:'#666'}}>All →</button>
-          </div>
-          {ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).slice(0,6).map(a=>(
-            <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
-          ))}
-          {ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).length>6 && (
-            <div style={{textAlign:'center',padding:'0.75rem',fontSize:12,color:'#888'}}>
-              +{ARTICLES.filter(a=>a.themes?.includes(selectedTheme)).length-6} more · <span style={{color:'#1455A0',cursor:'pointer'}} onClick={()=>setTab('articles')}>view all</span>
-            </div>
-          )}
-        </div>
-      )}
+
     </div>
   )
 
@@ -593,6 +666,14 @@ export default function App() {
 
   // Active page content
   const activePage = (() => {
+    if (tab==='themes' && activeThemePage) return <ThemeDeepDive
+      theme={activeThemePage} isMobile={isMobile}
+      onBack={()=>setActiveThemePage(null)}
+      onViewArticles={(dest, blog) => {
+        if (dest==='blog') { setActiveBlog(blog); setTab('blog'); window.location.hash='/blog/'+blog.slug }
+        else { setTab('articles'); setActiveThemePage(null); window.location.hash='/articles' }
+      }}
+    />
     if (tab==='blog' && activeBlog) return <BlogPost blog={activeBlog} onBack={()=>{ setActiveBlog(null); window.location.hash='/blog'; }} isMobile={isMobile}/>
     if (tab==='blog') return <BlogListPage/>
     if (tab==='laws') return <LawsPage/>
@@ -626,7 +707,7 @@ export default function App() {
           {NAV.map(n => (
             <button key={n.id} onClick={()=>handleTabChange(n.id)}
               style={{flex:1,display:'flex',flexDirection:'column',alignItems:'center',gap:2,padding:'8px 4px',border:'none',background:'transparent',color:tab===n.id?'#1a1a18':'#aaa',cursor:'pointer',position:'relative',WebkitTapHighlightColor:'transparent'}}>
-              <span style={{fontSize:18,lineHeight:1}}>{n.icon}</span>
+              <n.Icon size={20} strokeWidth={tab===n.id?2.2:1.5}/>
               <span style={{fontSize:9,fontWeight:tab===n.id?600:400,letterSpacing:'0.02em'}}>{n.label}</span>
               {n.badge && <span style={{position:'absolute',top:4,right:'50%',marginRight:-18,background:'#C04A1E',color:'#fff',fontSize:8,fontWeight:700,padding:'0 3px',borderRadius:6,lineHeight:'14px'}}>{n.badge}</span>}
               {tab===n.id && <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:2,background:'#1a1a18',borderRadius:1}}/>}
@@ -655,7 +736,7 @@ export default function App() {
           {NAV.map(n => (
             <button key={n.id} onClick={()=>handleTabChange(n.id)}
               style={{width:'100%',display:'flex',alignItems:'center',gap:10,padding:'9px 1.25rem',border:'none',background:tab===n.id?'#F7F7F2':'transparent',color:tab===n.id?'#1a1a18':'#666',fontWeight:tab===n.id?500:400,fontSize:13,cursor:'pointer',textAlign:'left',borderLeft:tab===n.id?'3px solid #1a1a18':'3px solid transparent',position:'relative'}}>
-              <span style={{fontSize:14,opacity:0.7,width:16,textAlign:'center',fontFamily:'monospace'}}>{n.icon}</span>
+              <n.Icon size={15} strokeWidth={tab===n.id?2.2:1.6} style={{flexShrink:0,opacity:tab===n.id?1:0.6}}/>
               {n.label}
               {n.badge && <span style={{marginLeft:'auto',background:'#C04A1E',color:'#fff',fontSize:9,fontWeight:700,padding:'1px 5px',borderRadius:8,lineHeight:1.5}}>{n.badge}</span>}
             </button>
