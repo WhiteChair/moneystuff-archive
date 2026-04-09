@@ -15,6 +15,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: true
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -45,8 +52,6 @@ jobs:
 
       - name: Commit updated data files
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json
           git diff --cached --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
           git push
