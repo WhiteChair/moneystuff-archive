@@ -1,0 +1,381 @@
+[
+  {
+    "theme": "Musk / Tesla / SpaceX",
+    "recent_90": 12,
+    "recent_30": 6,
+    "total": 121,
+    "heat_ratio": 5.71,
+    "articles": [
+      {
+        "d": "2026-04-07",
+        "t": "Truth Machines Go to War",
+        "u": "https://newsletterhunt.com/emails/264272"
+      },
+      {
+        "d": "2026-04-01",
+        "t": "OpenAI Is Almost Public",
+        "u": "https://newsletterhunt.com/emails/258497"
+      },
+      {
+        "d": "2026-03-30",
+        "t": "Private Assets Are Coming to 401(k)s",
+        "u": "https://newsletterhunt.com/emails/255926"
+      },
+      {
+        "d": "2026-03-24",
+        "t": "Private Credit Is Not on Sale",
+        "u": "https://mail.google.com/mail/u/0/#all/19d2110a10491fd9"
+      },
+      {
+        "d": "2026-03-23",
+        "t": "Elon Did Some Securities Fraud",
+        "u": "https://mail.google.com/mail/u/0/#all/19d1bda665133a9a"
+      }
+    ]
+  },
+  {
+    "theme": "Hedge Funds / PE",
+    "recent_90": 11,
+    "recent_30": 4,
+    "total": 113,
+    "heat_ratio": 5.6,
+    "articles": [
+      {
+        "d": "2026-03-30",
+        "t": "Private Assets Are Coming to 401(k)s",
+        "u": "https://newsletterhunt.com/emails/255926"
+      },
+      {
+        "d": "2026-03-25",
+        "t": "Private Credit Has Some Debt",
+        "u": "https://mail.google.com/mail/u/0/#all/19d261e3d00058db"
+      },
+      {
+        "d": "2026-03-24",
+        "t": "Private Credit Is Not on Sale",
+        "u": "https://mail.google.com/mail/u/0/#all/19d2110a10491fd9"
+      },
+      {
+        "d": "2026-03-17",
+        "t": "Anti-Private Equity Is Good Business",
+        "u": "https://mail.google.com/mail/u/0/#all/19cfcd9bb2c03dc6"
+      },
+      {
+        "d": "2026-03-09",
+        "t": "People Are Worried About Blue Owl Liquidity",
+        "u": "https://newsletterhunt.com/emails/223583"
+      }
+    ]
+  },
+  {
+    "theme": "OpenAI / AI",
+    "recent_90": 5,
+    "recent_30": 2,
+    "total": 57,
+    "heat_ratio": 5.05,
+    "articles": [
+      {
+        "d": "2026-04-08",
+        "t": "Robot Retail Investors",
+        "u": "https://mail.google.com/mail/u/0/#all/19d6e4120d7ca0b5"
+      },
+      {
+        "d": "2026-04-01",
+        "t": "OpenAI Is Almost Public",
+        "u": "https://newsletterhunt.com/emails/258497"
+      },
+      {
+        "d": "2026-02-23",
+        "t": "Kalshi Found Some Insider Traders",
+        "u": "https://newsletterhunt.com/emails/224927"
+      },
+      {
+        "d": "2026-02-17",
+        "t": "Private Credit Gets Marked Down",
+        "u": "https://newsletterhunt.com/emails/243647"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "The AI Whateverpocalypse Trade",
+        "u": "https://newsletterhunt.com/emails/220282"
+      }
+    ]
+  },
+  {
+    "theme": "Insider Trading",
+    "recent_90": 3,
+    "recent_30": 0,
+    "total": 36,
+    "heat_ratio": 4.8,
+    "articles": [
+      {
+        "d": "2026-02-23",
+        "t": "Kalshi Found Some Insider Traders",
+        "u": "https://newsletterhunt.com/emails/224927"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Insider Trading on War",
+        "u": "https://newsletterhunt.com/emails/220511"
+      },
+      {
+        "d": "2026-01-09",
+        "t": "Fake Cancer Doctor Insider Trading",
+        "u": "https://newsletterhunt.com/emails/216193"
+      }
+    ]
+  },
+  {
+    "theme": "Options / Derivatives",
+    "recent_90": 5,
+    "recent_30": 2,
+    "total": 101,
+    "heat_ratio": 2.85,
+    "articles": [
+      {
+        "d": "2026-04-02",
+        "t": "Prediction Market Structured Notes",
+        "u": "https://newsletterhunt.com/emails/259817"
+      },
+      {
+        "d": "2026-03-12",
+        "t": "Lever the Predictions",
+        "u": "https://newsletterhunt.com/emails/244835"
+      },
+      {
+        "d": "2026-03-09",
+        "t": "War Markets Have Some Bugs",
+        "u": "https://newsletterhunt.com/emails/230909"
+      },
+      {
+        "d": "2026-03-09",
+        "t": "People Are Worried About BCRED Liquidity",
+        "u": "https://newsletterhunt.com/emails/234003"
+      },
+      {
+        "d": "2026-02-18",
+        "t": "Weather Prediction Prediction",
+        "u": "https://newsletterhunt.com/emails/250940"
+      }
+    ]
+  },
+  {
+    "theme": "Crypto / Blockchain",
+    "recent_90": 6,
+    "recent_30": 2,
+    "total": 144,
+    "heat_ratio": 2.4,
+    "articles": [
+      {
+        "d": "2026-03-30",
+        "t": "Private Assets Are Coming to 401(k)s",
+        "u": "https://newsletterhunt.com/emails/255926"
+      },
+      {
+        "d": "2026-03-18",
+        "t": "Tokens Are Not Securities",
+        "u": "https://mail.google.com/mail/u/0/#all/19d01cf4abafdf75"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "The AI Whateverpocalypse Trade",
+        "u": "https://newsletterhunt.com/emails/220282"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Cracking Open the DATs",
+        "u": "https://newsletterhunt.com/emails/219120"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Predicting the Big Game",
+        "u": "https://newsletterhunt.com/emails/219871"
+      }
+    ]
+  },
+  {
+    "theme": "M&A / Mergers",
+    "recent_90": 4,
+    "recent_30": 1,
+    "total": 110,
+    "heat_ratio": 2.09,
+    "articles": [
+      {
+        "d": "2026-04-08",
+        "t": "Not Merging Is Not Securities Fraud",
+        "u": "https://newsletterhunt.com/emails/265593"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "The Killer Non-Acquisition",
+        "u": "https://newsletterhunt.com/emails/218020"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Musk\u2019s Moonshot Merger",
+        "u": "https://newsletterhunt.com/emails/218989"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Musk Mars Merger, Maybe",
+        "u": "https://newsletterhunt.com/emails/218842"
+      }
+    ]
+  },
+  {
+    "theme": "Regulation / SEC",
+    "recent_90": 6,
+    "recent_30": 2,
+    "total": 187,
+    "heat_ratio": 1.85,
+    "articles": [
+      {
+        "d": "2026-04-08",
+        "t": "Not Merging Is Not Securities Fraud",
+        "u": "https://newsletterhunt.com/emails/265593"
+      },
+      {
+        "d": "2026-03-18",
+        "t": "Tokens Are Not Securities",
+        "u": "https://mail.google.com/mail/u/0/#all/19d01cf4abafdf75"
+      },
+      {
+        "d": "2026-03-09",
+        "t": "War Markets Have Some Bugs",
+        "u": "https://newsletterhunt.com/emails/230909"
+      },
+      {
+        "d": "2026-03-09",
+        "t": "BlackRock Guards the Gates",
+        "u": "https://newsletterhunt.com/emails/240842"
+      },
+      {
+        "d": "2026-02-23",
+        "t": "Kalshi Found Some Insider Traders",
+        "u": "https://newsletterhunt.com/emails/224927"
+      }
+    ]
+  },
+  {
+    "theme": "Bankruptcy",
+    "recent_90": 2,
+    "recent_30": 0,
+    "total": 64,
+    "heat_ratio": 1.8,
+    "articles": [
+      {
+        "d": "2026-02-07",
+        "t": "Private Credit Marks Will Matter",
+        "u": "https://newsletterhunt.com/emails/217866"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Five Bananas Won\u2019t Pay the Rent",
+        "u": "https://newsletterhunt.com/emails/219259"
+      }
+    ]
+  },
+  {
+    "theme": "Securities Fraud",
+    "recent_90": 9,
+    "recent_30": 4,
+    "total": 292,
+    "heat_ratio": 1.77,
+    "articles": [
+      {
+        "d": "2026-04-08",
+        "t": "Not Merging Is Not Securities Fraud",
+        "u": "https://newsletterhunt.com/emails/265593"
+      },
+      {
+        "d": "2026-03-31",
+        "t": "Are Algae Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/257311"
+      },
+      {
+        "d": "2026-03-23",
+        "t": "Elon Did Some Securities Fraud",
+        "u": "https://mail.google.com/mail/u/0/#all/19d1bda665133a9a"
+      },
+      {
+        "d": "2026-03-16",
+        "t": "Make the Predictions Come True",
+        "u": "https://mail.google.com/mail/u/0/#all/19cf7eb2f3f43a40"
+      },
+      {
+        "d": "2026-03-09",
+        "t": "AI Can Manage Your Mutual Fund",
+        "u": "https://newsletterhunt.com/emails/224301"
+      }
+    ]
+  },
+  {
+    "theme": "Fed / Central Banks",
+    "recent_90": 1,
+    "recent_30": 1,
+    "total": 36,
+    "heat_ratio": 1.6,
+    "articles": [
+      {
+        "d": "2026-04-07",
+        "t": "Truth Machines Go to War",
+        "u": "https://newsletterhunt.com/emails/264272"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 2,
+    "recent_30": 1,
+    "total": 100,
+    "heat_ratio": 1.15,
+    "articles": [
+      {
+        "d": "2026-04-01",
+        "t": "OpenAI Is Almost Public",
+        "u": "https://newsletterhunt.com/emails/258497"
+      },
+      {
+        "d": "2026-02-07",
+        "t": "Cracking Open the DATs",
+        "u": "https://newsletterhunt.com/emails/219120"
+      }
+    ]
+  },
+  {
+    "theme": "Legal / Courts",
+    "recent_90": 1,
+    "recent_30": 0,
+    "total": 66,
+    "heat_ratio": 0.87,
+    "articles": [
+      {
+        "d": "2026-01-09",
+        "t": "Fake Cancer Doctor Insider Trading",
+        "u": "https://newsletterhunt.com/emails/216193"
+      }
+    ]
+  },
+  {
+    "theme": "Corporate Governance",
+    "recent_90": 1,
+    "recent_30": 0,
+    "total": 71,
+    "heat_ratio": 0.81,
+    "articles": [
+      {
+        "d": "2026-03-09",
+        "t": "BlackRock Guards the Gates",
+        "u": "https://newsletterhunt.com/emails/240842"
+      }
+    ]
+  },
+  {
+    "theme": "Banking / Crises",
+    "recent_90": 0,
+    "recent_30": 0,
+    "total": 32,
+    "heat_ratio": 0.0,
+    "articles": []
+  }
+]

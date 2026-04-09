@@ -6,6 +6,7 @@ import BANKRUPT from './bankrupt.json'
 import BLOGS from './blogs.json'
 import LAWS from './laws.json'
 import CONCEPTS from './concepts.json'
+import TRENDING from './trending.json'
 import { LayoutGrid, Scale, TrendingUp, Newspaper, BookOpen, ChevronLeft, ExternalLink } from 'lucide-react'
 
 const THEMES = [
@@ -285,50 +286,75 @@ const NAV = [
 function ThemeDeepDive({ theme, onBack, onViewArticles, isMobile }) {
   const t = TM[theme]
   const concepts = CONCEPTS[theme] || []
-  const articles = ARTICLES.filter(a => a.themes?.includes(theme))
-    .sort((a,b) => b.d.localeCompare(a.d))
-    .slice(0, 8)
+  const trending = TRENDING.find(tr => tr.theme === theme)
+  const allThemeArticles = ARTICLES.filter(a => a.themes?.includes(theme))
+  const recentArticles = [...allThemeArticles].sort((a,b) => b.d.localeCompare(a.d)).slice(0,6)
   const blog = publishedBlogs.find(b => b.theme === theme)
 
   return (
     <div>
-      {/* Header */}
-      <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:'1.5rem'}}>
-        <button onClick={onBack} style={{display:'flex',alignItems:'center',gap:4,background:'none',border:'none',cursor:'pointer',color:'#888',fontSize:12,padding:0}}>
+      {/* Back + header */}
+      <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:'1.25rem'}}>
+        <button onClick={onBack}
+          style={{display:'flex',alignItems:'center',gap:4,background:'none',border:'none',cursor:'pointer',color:'#888',fontSize:12,padding:0,WebkitTapHighlightColor:'transparent'}}>
           <ChevronLeft size={14}/> Themes
         </button>
-        <span style={{color:'#ddd'}}>·</span>
-        <ThemePill theme={theme}/>
+      </div>
+
+      <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',gap:12,marginBottom:'0.5rem',flexWrap:'wrap'}}>
+        <div>
+          <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:6}}>
+            <span style={{fontSize:28}}>{t?.icon}</span>
+            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?22:26,fontWeight:500,margin:0,letterSpacing:'-0.01em'}}>{theme}</h1>
+          </div>
+          <div style={{display:'flex',gap:12,alignItems:'center'}}>
+            <span style={{fontSize:12,color:'#888'}}>{allThemeArticles.length} articles in archive</span>
+            {trending && trending.heat_ratio >= 1.5 && (
+              <span style={{fontSize:11,padding:'2px 8px',borderRadius:10,background:t?.bg,color:t?.color,fontWeight:500}}>
+                {trending.heat_ratio >= 4 ? '🔥🔥🔥' : trending.heat_ratio >= 2.5 ? '🔥🔥' : '🔥'} {trending.recent_90}× in 90 days
+              </span>
+            )}
+          </div>
+        </div>
         {blog && (
-          <span onClick={()=>onViewArticles('blog', blog)} style={{fontSize:11,padding:'2px 9px',borderRadius:10,background:t?.bg,color:t?.color,fontWeight:500,cursor:'pointer',marginLeft:'auto'}}>
+          <button onClick={()=>onViewArticles('blog', blog)}
+            style={{fontSize:12,padding:'6px 14px',borderRadius:8,background:t?.color,color:'#fff',border:'none',cursor:'pointer',fontWeight:500,whiteSpace:'nowrap',WebkitTapHighlightColor:'transparent'}}>
             Read full essay ↗
-          </span>
+          </button>
         )}
       </div>
 
-      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?22:26,fontWeight:500,marginBottom:6,letterSpacing:'-0.01em'}}>{theme}</h1>
-      <p style={{fontSize:13,color:'#777',marginBottom:'2rem'}}>{ARTICLES.filter(a=>a.themes?.includes(theme)).length} articles in archive</p>
-
-      {/* Concept cards */}
-      <div style={{marginBottom:'2.5rem'}}>
-        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:12}}>Key concepts</div>
-        <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(340px,1fr))',gap:10}}>
+      {/* Concepts */}
+      <div style={{marginTop:'1.75rem',marginBottom:'2.5rem'}}>
+        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:14}}>Key concepts</div>
+        <div style={{display:'flex',flexDirection:'column',gap:14}}>
           {concepts.map((c, i) => (
-            <div key={i} style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'1rem',borderLeft:`3px solid ${t?.color||'#ccc'}`}}>
-              <div style={{fontSize:13,fontWeight:600,color:'#1a1a18',marginBottom:6}}>{c.title}</div>
-              <div style={{fontSize:12,color:'#666',lineHeight:1.6,marginBottom:c.quote?12:0}}>{c.plain}</div>
+            <div key={i} style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,overflow:'hidden'}}>
+              {/* Concept header stripe */}
+              <div style={{borderLeft:`4px solid ${t?.color||'#ccc'}`,padding:'12px 16px 10px',background:'#FAFAF8'}}>
+                <div style={{fontSize:14,fontWeight:600,color:'#1a1a18',marginBottom:4}}>{c.title}</div>
+                <div style={{fontSize:13,color:'#555',lineHeight:1.6}}>{c.plain}</div>
+              </div>
+              {/* Analysis */}
+              {c.analysis && (
+                <div style={{padding:'12px 16px',borderTop:'1px solid #F0F0EA'}}>
+                  <div style={{fontSize:12,color:'#666',lineHeight:1.8}}>{c.analysis}</div>
+                </div>
+              )}
+              {/* Matt's quote */}
               {c.quote && (
-                <div style={{background:'#FAFAF4',borderRadius:8,padding:'10px 12px'}}>
-                  <div style={{fontSize:12,lineHeight:1.7,fontStyle:'italic',color:'#444',marginBottom:c.quote_title?6:0}}>
+                <div style={{padding:'12px 16px',borderTop:'1px solid #F0F0EA',background:'#FAFAF4'}}>
+                  <div style={{fontSize:11,fontWeight:600,color:t?.color||'#888',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:6}}>Matt on this</div>
+                  <div style={{fontSize:13,lineHeight:1.8,fontStyle:'italic',color:'#333',marginBottom:c.quote_title?8:0}}>
                     "{c.quote}"
                   </div>
                   {c.quote_title && (
-                    <div style={{display:'flex',alignItems:'center',gap:4}}>
-                      <a href={c.quote_url} target="_blank" rel="noreferrer"
-                        style={{fontSize:10,color:t?.color||'#888',textDecoration:'none',fontWeight:500}}>
+                    <div style={{display:'flex',alignItems:'center',gap:6}}>
+                      <a href={c.quote_url||'#'} target="_blank" rel="noreferrer"
+                        style={{fontSize:11,color:t?.color||'#888',textDecoration:'none',fontWeight:500}}>
                         — {c.quote_title}
                       </a>
-                      {c.quote_date && <span style={{fontSize:10,color:'#bbb'}}>· {c.quote_date}</span>}
+                      {c.quote_date && <span style={{fontSize:11,color:'#bbb'}}>· {c.quote_date}</span>}
                     </div>
                   )}
                 </div>
@@ -342,22 +368,33 @@ function ThemeDeepDive({ theme, onBack, onViewArticles, isMobile }) {
       <div>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
           <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em'}}>Recent articles</div>
-          <button onClick={()=>onViewArticles('articles', null)} style={{fontSize:11,color:'#666',background:'none',border:'none',cursor:'pointer'}}>View all {ARTICLES.filter(a=>a.themes?.includes(theme)).length} →</button>
+          <button onClick={()=>onViewArticles('articles', null)}
+            style={{fontSize:11,color:'#666',background:'none',border:'none',cursor:'pointer',padding:0}}>
+            All {allThemeArticles.length} →
+          </button>
         </div>
-        {articles.map(a => (
+        {recentArticles.map(a => (
           <div key={a.id} style={{padding:'9px 0',borderBottom:'1px solid #EEEEE8'}}>
             <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
               <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa',paddingTop:2,whiteSpace:'nowrap',flexShrink:0}}>{a.d}</span>
               <div style={{flex:1,minWidth:0}}>
-                <div style={{fontSize:13,fontWeight:500,lineHeight:1.4,marginBottom:2}}>{a.t}</div>
-                {a.lesson && <div style={{fontSize:11,color:'#999',fontStyle:'italic',lineHeight:1.5}}>"{a.lesson.slice(0,80)}{a.lesson.length>80?'…':''}"</div>}
+                <a href={a.u} target="_blank" rel="noreferrer"
+                  style={{fontSize:13,fontWeight:500,lineHeight:1.4,color:'#1a1a18',textDecoration:'none',display:'block',marginBottom:2}}>
+                  {a.t}
+                </a>
+                {a.lesson && <div style={{fontSize:11,color:'#999',fontStyle:'italic',lineHeight:1.5}}>"{a.lesson.slice(0,100)}{a.lesson.length>100?'…':''}"</div>}
               </div>
-              <a href={a.u} target="_blank" rel="noreferrer" style={{color:'#bbb',flexShrink:0,paddingTop:2}}>
-                <ExternalLink size={12}/>
-              </a>
             </div>
           </div>
         ))}
+        {allThemeArticles.length > 6 && (
+          <div style={{paddingTop:10,textAlign:'center'}}>
+            <button onClick={()=>onViewArticles('articles', null)}
+              style={{fontSize:12,color:'#1455A0',background:'none',border:'1px solid #1455A0',borderRadius:6,padding:'6px 16px',cursor:'pointer'}}>
+              View all {allThemeArticles.length} articles →
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -453,6 +490,33 @@ export default function App() {
         </div>
         <BubbleChart selected={selectedTheme} onSelect={openThemePage}/>
       </div>
+      {/* ── What's Hot ── */}
+      <div style={{marginBottom:'1.5rem'}}>
+        <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:10}}>
+          <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em'}}>What Matt is covering right now</div>
+          <div style={{fontSize:10,color:'#bbb'}}>— last 90 days</div>
+        </div>
+        <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+          {TRENDING.filter(t=>t.heat_ratio>=1.5).slice(0,6).map(t => {
+            const th = TM[t.theme]
+            if (!th) return null
+            const flames = t.heat_ratio >= 4 ? '🔥🔥🔥' : t.heat_ratio >= 2.5 ? '🔥🔥' : '🔥'
+            return (
+              <div key={t.theme} onClick={()=>openThemePage(t.theme)}
+                style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:8,padding:'8px 12px',cursor:'pointer',display:'flex',alignItems:'center',gap:8,WebkitTapHighlightColor:'transparent',transition:'box-shadow 0.15s'}}
+                onMouseEnter={e=>e.currentTarget.style.boxShadow='0 2px 8px rgba(0,0,0,0.08)'}
+                onMouseLeave={e=>e.currentTarget.style.boxShadow='none'}>
+                <span style={{fontSize:13}}>{flames}</span>
+                <div>
+                  <div style={{fontSize:12,fontWeight:500,color:th.color}}>{t.theme}</div>
+                  <div style={{fontSize:10,color:'#aaa'}}>{t.recent_90}× in 90 days · {t.recent_30}× this month</div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
       <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(260px,1fr))',gap:8}}>
         {THEMES.map(th => {
           const count = themeCounts[th.label]||0
@@ -460,8 +524,10 @@ export default function App() {
           const topLesson = ARTICLES.find(a=>a.themes?.includes(th.label)&&a.lesson?.length>50)
           return (
             <div key={th.label}
-              style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'0.875rem',cursor:'pointer',borderTop:`3px solid ${th.color}`,opacity:selectedTheme&&selectedTheme!==th.label?0.4:1,transition:'opacity 0.2s',userSelect:'none',WebkitTapHighlightColor:'transparent'}}
-              onClick={()=>setSelectedTheme(selectedTheme===th.label?null:th.label)}>
+              style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:10,padding:'0.875rem',cursor:'pointer',borderTop:`3px solid ${th.color}`,transition:'box-shadow 0.15s',userSelect:'none',WebkitTapHighlightColor:'transparent'}}
+              onClick={()=>openThemePage(th.label)}
+              onMouseEnter={e=>e.currentTarget.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'}
+              onMouseLeave={e=>e.currentTarget.style.boxShadow='none'}>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:topLesson?6:0}}>
                 <div style={{display:'flex',alignItems:'center',gap:8}}>
                   <span style={{fontSize:18}}>{th.icon}</span>
@@ -470,6 +536,7 @@ export default function App() {
                 <div style={{display:'flex',gap:6,alignItems:'center'}}>
                   <span style={{fontSize:11,color:'#aaa'}}>{count}</span>
                   {blog && <span onClick={e=>{e.stopPropagation();openBlog(blog)}} style={{fontSize:10,padding:'1px 7px',borderRadius:10,background:th.bg,color:th.color,fontWeight:500,cursor:'pointer'}}>Blog ↗</span>}
+                  <span style={{fontSize:12,color:'#ccc'}}>›</span>
                 </div>
               </div>
               {topLesson && !isMobile && (
