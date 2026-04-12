@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Money Stuff Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAFAF8;
+    --white: #ffffff;
+    --ink: #1a1a18;
+    --ink-light: #555;
+    --rule: #EAEAE4;
+    --muted: #aaa;
+    --accent: #C04A1E;
+    --accent-bg: #FDF0EB;
+    --btc: #F7931A;
+    --btc-bg: #FFF8F0;
+    --eth: #627EEA;
+    --eth-bg: #F0F3FF;
+    --poly: #8247E5;
+    --poly-bg: #F5F0FF;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  /* ── Subtle grid texture ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--rule) 1px, transparent 1px),
+      linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* ── Back link ── */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .back:hover { color: var(--ink); }
+  .back svg { width: 12px; height: 12px; }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 2.5rem;
+  }
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 6vw, 34px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .subtitle {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-light);
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 2rem 0;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .divider span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── Wallet card ── */
+  .wallet-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .wallet-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    transform: translateY(-1px);
+  }
+
+  .wallet-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .wallet-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .wallet-name {
+    font-weight: 500;
+    font-size: 14px;
+    flex: 1;
+  }
+  .wallet-network {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .wallet-body {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wallet-address {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-light);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11px;
+    color: var(--ink-light);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .copy-btn:hover {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+  }
+  .copy-btn.copied {
+    background: #EBF5DE;
+    color: #336010;
+    border-color: #336010;
+  }
+  .copy-btn svg { width: 11px; height: 11px; }
+
+  /* ── Bitcoin specific ── */
+  .btc .wallet-icon { background: var(--btc-bg); }
+  .btc .wallet-network { background: var(--btc-bg); color: var(--btc); }
+  .btc .wallet-header { border-bottom-color: #FDE8C8; }
+  .btc .wallet-body { background: #FFFCF8; }
+
+  /* ── Ethereum specific ── */
+  .eth .wallet-icon { background: var(--eth-bg); }
+  .eth .wallet-network { background: var(--eth-bg); color: var(--eth); }
+  .eth .wallet-header { border-bottom-color: #DDE3FA; }
+  .eth .wallet-body { background: #F8F9FF; }
+
+  /* ── Polygon specific ── */
+  .poly .wallet-icon { background: var(--poly-bg); }
+  .poly .wallet-network { background: var(--poly-bg); color: var(--poly); }
+  .poly .wallet-header { border-bottom-color: #E3D9F8; }
+  .poly .wallet-body { background: #FAF8FF; }
+
+  /* ── Footer note ── */
+  .footer-note {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.7;
+    text-align: center;
+  }
+  .footer-note a {
+    color: var(--ink-light);
+    text-decoration: none;
+  }
+  .footer-note a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* ── Toast ── */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media (max-width: 480px) {
+    .wallet-address { font-size: 9.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <a href="https://moneystuff-archive.vercel.app" class="back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+    Back to Money Stuff Archive
+  </a>
+
+  <div class="header">
+    <div class="header-label">Support this project</div>
+    <h1>Buy me a coffee<br/>in <em>crypto</em></h1>
+    <p class="subtitle">
+      This archive is a side project — no subscriptions, no ads, just
+      942 issues of Matt Levine's Money Stuff classified, searchable,
+      and free to read. If it's useful to you, a tip is always appreciated.
+    </p>
+  </div>
+
+  <div class="divider"><span>Choose your chain</span></div>
+
+  <!-- Bitcoin -->
+  <div class="wallet-card btc">
+    <div class="wallet-header">
+      <div class="wallet-icon">₿</div>
+      <div class="wallet-name">Bitcoin</div>
+      <div class="wallet-network">BTC · Native SegWit</div>
+    </div>
+    <div class="wallet-body">
+      <div class="wallet-address" id="addr-btc">bc1q0887v5dcma4ltqsl4wu6l5vv6md5njsquyv5se</div>
+      <button class="copy-btn" onclick="copyAddr('btc')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- Ethereum -->
+  <div class="wallet-card eth">
+    <div class="wallet-header">
+      <div class="wallet-icon">Ξ</div>
+      <div class="wallet-name">Ethereum</div>
+      <div class="wallet-network">ETH · ERC-20</div>
+    </div>
+    <div class="wallet-body">
+      <div class="wallet-address" id="addr-eth">0xa1bF6ad4a2CB9D569f6C2C4fAb73508302EAE464</div>
+      <button class="copy-btn" onclick="copyAddr('eth')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- Polygon -->
+  <div class="wallet-card poly">
+    <div class="wallet-header">
+      <div class="wallet-icon">⬡</div>
+      <div class="wallet-name">Polygon</div>
+      <div class="wallet-network">MATIC · Polygon PoS</div>
+    </div>
+    <div class="wallet-body">
+      <div class="wallet-address" id="addr-poly">0xa1bF6ad4a2CB9D569f6C2C4fAb73508302EAE464</div>
+      <button class="copy-btn" onclick="copyAddr('poly')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Built with curiosity and too many hours reading Matt Levine.<br/>
+    <a href="https://moneystuff-archive.vercel.app">moneystuff-archive.vercel.app</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.bloomberg.com/account/newsletters/money-stuff" target="_blank">Subscribe to Money Stuff ↗</a>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Copied to clipboard ✓</div>
+
+<script>
+  function copyAddr(chain) {
+    const addr = document.getElementById('addr-' + chain).textContent.trim()
+    navigator.clipboard.writeText(addr).then(() => {
+      // Update button
+      const btn = document.querySelector(`.${chain} .copy-btn`)
+      btn.classList.add('copied')
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied`
+      setTimeout(() => {
+        btn.classList.remove('copied')
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy`
+      }, 2000)
+      // Toast
+      const toast = document.getElementById('toast')
+      toast.textContent = addr.slice(0,10) + '…' + addr.slice(-6) + ' copied ✓'
+      toast.classList.add('show')
+      setTimeout(() => toast.classList.remove('show'), 2500)
+    })
+  }
+</script>
+</body>
+</html>

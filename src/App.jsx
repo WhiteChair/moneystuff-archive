@@ -812,6 +812,8 @@ export default function App() {
         <div style={{padding:'1rem 1.25rem',borderTop:'1px solid #EAEAE4',fontSize:10,color:'#bbb',lineHeight:1.6}}>
           {ARTICLES.length} issues archived<br/>
           <a href="http://link.mail.bloombergbusiness.com/join/4wm/moneystuff-signup" target="_blank" rel="noreferrer" style={{color:'#bbb'}}>Subscribe ↗</a>
+          <br/>
+          <a href="/support.html" style={{color:'#C04A1E',fontWeight:500,fontSize:10}}>☕ Support this project</a>
         </div>
       </div>
 
