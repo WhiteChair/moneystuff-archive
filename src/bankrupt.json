@@ -4,7 +4,7 @@
     "name": "FTX",
     "status": "bankrupt",
     "bankruptcy_date": "2022-11-11",
-    "note": "Sam Bankman-Fried's crypto exchange collapsed in Nov 2022. SBF sentenced to 25 years.",
+    "note": "Sam Bankman-Fried's crypto exchange collapsed Nov 2022. SBF sentenced to 25 years.",
     "mention_count": 22,
     "mentions": [
       {
@@ -54,7 +54,7 @@
     "name": "Silicon Valley Bank",
     "status": "bankrupt",
     "bankruptcy_date": "2023-03-10",
-    "note": "Failed March 2023 in the second-largest US bank failure. Acquired by First Citizens.",
+    "note": "Failed March 2023, second-largest US bank failure. Acquired by First Citizens.",
     "mention_count": 10,
     "mentions": [
       {
@@ -104,7 +104,7 @@
     "name": "Credit Suisse",
     "status": "bankrupt",
     "bankruptcy_date": "2023-03-19",
-    "note": "Forced merger with UBS in March 2023 after 167 years. AT1 bonds wiped to zero.",
+    "note": "Forced merger with UBS in March 2023. AT1 bonds wiped to zero.",
     "mention_count": 10,
     "mentions": [
       {
@@ -154,7 +154,7 @@
     "name": "WeWork",
     "status": "bankrupt",
     "bankruptcy_date": "2023-11-06",
-    "note": "Filed Chapter 11 in November 2023 after spectacular IPO collapse from $47B to near zero.",
+    "note": "Filed Chapter 11 Nov 2023 after spectacular collapse from $47B valuation.",
     "mention_count": 19,
     "mentions": [
       {
@@ -204,7 +204,7 @@
     "name": "Celsius Network",
     "status": "bankrupt",
     "bankruptcy_date": "2022-07-13",
-    "note": "Crypto lender froze withdrawals and filed bankruptcy July 2022. Customers lost billions.",
+    "note": "Crypto lender froze withdrawals and filed bankruptcy July 2022.",
     "mention_count": 2,
     "mentions": [
       {
