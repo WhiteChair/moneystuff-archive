@@ -52,6 +52,6 @@ jobs:
 
       - name: Commit updated data files
         run: |
-          git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json
+          git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json src/articles.json src/tickers.json src/bankrupt.json
           git diff --cached --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
           git push

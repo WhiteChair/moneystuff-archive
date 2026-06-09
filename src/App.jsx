@@ -27,8 +27,22 @@ const THEMES = [
   { label:"Options / Derivatives",  color:"#6058B0", bg:"#EEEDF8", icon:"📊" },
 ]
 const TM = Object.fromEntries(THEMES.map(t => [t.label, t]))
-const TODAY = '2026-04-08'
+const TODAY = new Date().toISOString().slice(0, 10)
 const publishedBlogs = BLOGS.filter(b => b.publish_date <= TODAY)
+
+// ── Archive health ───────────────────────────────────────────────────────────
+const LATEST_ISSUE = ARTICLES.reduce((m, a) => (a.d > m ? a.d : m), '')
+const DAYS_STALE = Math.floor((Date.now() - new Date(LATEST_ISSUE + 'T12:00:00Z')) / 86400000)
+const IS_STALE = DAYS_STALE > 3
+function HealthBadge({ style }) {
+  return (
+    <span title={IS_STALE ? `No new issues for ${DAYS_STALE} days — pipeline may be stuck` : 'Archive is up to date'}
+      style={{display:'inline-flex',alignItems:'center',gap:4,fontSize:10,color:IS_STALE?'#902828':'#7A9A5A',fontWeight:IS_STALE?600:400,...style}}>
+      <span style={{width:6,height:6,borderRadius:'50%',background:IS_STALE?'#C03030':'#7AB35A',flexShrink:0}}/>
+      {IS_STALE ? `stale · last issue ${LATEST_ISSUE}` : `updated ${LATEST_ISSUE}`}
+    </span>
+  )
+}
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 function ThemePill({ theme, small, onClick }) {
@@ -762,6 +776,7 @@ export default function App() {
             <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:500,letterSpacing:'-0.01em'}}>Money Stuff Archive</div>
             <div style={{fontSize:10,color:'#bbb'}}>Matt Levine · Bloomberg · {ARTICLES.length} issues</div>
           </div>
+          <HealthBadge/>
         </div>
 
         {/* Content */}
@@ -811,6 +826,7 @@ export default function App() {
         </nav>
         <div style={{padding:'1rem 1.25rem',borderTop:'1px solid #EAEAE4',fontSize:10,color:'#bbb',lineHeight:1.6}}>
           {ARTICLES.length} issues archived<br/>
+          <HealthBadge style={{margin:'2px 0'}}/><br/>
           <a href="http://link.mail.bloombergbusiness.com/join/4wm/moneystuff-signup" target="_blank" rel="noreferrer" style={{color:'#bbb'}}>Subscribe ↗</a>
           <br/>
           <a href="/support.html" style={{color:'#C04A1E',fontWeight:500,fontSize:10}}>☕ Support this project</a>
