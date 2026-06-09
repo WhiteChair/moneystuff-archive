@@ -264,6 +264,27 @@ for a in articles:
     enriched.append({'id':a['id'],'t':a['t'],'d':a['d'],'u':a['u'],'w':a['w'],
                      'themes':c.get('themes',[]),'lesson':c.get('lesson','')[:180],'summary':c.get('summary','')[:300]})
 
+# ── Match articles to legal doctrines ────────────────────────────────────────
+doctrines = load_json(os.path.join(SRC_DIR, 'doctrines.json'), [])
+doctrine_matches = {}
+for d in doctrines:
+    pats = [re.compile(p, re.IGNORECASE) for p in d.get('patterns', [])]
+    hits = []
+    for a in articles:
+        text = (a.get('t','') + ' ' + a.get('p',''))
+        score = sum(1 for p in pats if p.search(text))
+        if score > 0:
+            hits.append((score, a.get('d',''), a['id']))
+    hits.sort(key=lambda h: (h[0], h[1]), reverse=True)
+    ids = [h[2] for h in hits[:12]]
+    if len(ids) < 6 and d.get('fallback_theme'):
+        pad = sorted([a for a in articles if d['fallback_theme'] in classified.get(a['id'],{}).get('themes',[]) and a['id'] not in ids],
+                     key=lambda a: a.get('d',''), reverse=True)
+        ids += [a['id'] for a in pad[:6-len(ids)]]
+    doctrine_matches[d['slug']] = ids
+with open(os.path.join(SRC_DIR,'doctrine_matches.json'),'w') as f: json.dump(doctrine_matches, f, separators=(',',':'))
+print(f"Doctrine matches: " + ', '.join(f"{k}:{len(v)}" for k,v in doctrine_matches.items()))
+
 # ── Save everything ───────────────────────────────────────────────────────────
 with open(articles_path,   'w') as f: json.dump(articles,   f, separators=(',',':'))
 with open(classified_path, 'w') as f: json.dump(classified, f, separators=(',',':'))

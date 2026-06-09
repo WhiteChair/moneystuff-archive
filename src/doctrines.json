@@ -1,0 +1,551 @@
+[
+ {
+  "slug": "rule-10b-5",
+  "name": "Rule 10b-5: The Everything Rule",
+  "category": "Foundations",
+  "tagline": "One short rule from 1942 that powers insider trading law, securities class actions, and most of Money Stuff",
+  "plain": "Section 10(b) of the Securities Exchange Act of 1934 makes it unlawful to use \"any manipulative or deceptive device\" in connection with the purchase or sale of a security, and SEC Rule 10b-5 implements it by banning any \"device, scheme, or artifice to defraud,\" any material misstatement or omission, and any act that \"operates as a fraud.\" That language is so broad that it has become the engine of nearly all of U.S. securities enforcement. Insider trading law is not (mostly) written in any statute \u2014 it is judge-made law built case by case on top of Rule 10b-5.\n\nThis is why \"everything is securities fraud\" works as a legal observation and not just a joke. If a public company does a bad thing, knows about it, and doesn't tell shareholders, the eventual stock drop converts the bad thing into a 10b-5 claim. The rule's breadth is also its weirdness: the same sentence covers a CEO lying on an earnings call, a lawyer trading on a client's merger, and a fake press release.",
+  "elements": [
+   "A manipulative or deceptive device, scheme, misstatement, or omission",
+   "Materiality of the misstated or omitted fact",
+   "'In connection with' the purchase or sale of a security (read very broadly)",
+   "Scienter \u2014 intent to deceive, or at least recklessness",
+   "For private plaintiffs: reliance, economic loss, and loss causation"
+  ],
+  "cases": [
+   {
+    "name": "SEC v. Texas Gulf Sulphur Co.",
+    "cite": "401 F.2d 833 (2d Cir. 1968)",
+    "holding": "The foundational insider trading case: insiders with material nonpublic information must disclose it or abstain from trading. Also an early, expansive reading of materiality and 'in connection with.'"
+   },
+   {
+    "name": "Lorenzo v. SEC",
+    "cite": "587 U.S. 71 (2019)",
+    "holding": "Someone who knowingly disseminates false statements made by another can be liable under the 'scheme' prongs of 10b-5, even if he didn't 'make' the statement himself."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Section 10(b), 15 U.S.C. \u00a7 78j(b)",
+    "url": "https://www.law.cornell.edu/uscode/text/15/78j"
+   },
+   {
+    "name": "Rule 10b-5, 17 C.F.R. \u00a7 240.10b-5",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5"
+   }
+  ],
+  "study_tip": "On an exam, start every securities fraud or insider trading analysis by anchoring it in \u00a7 10(b) and Rule 10b-5 \u2014 then identify which theory (classical, misappropriation, fraud-on-the-market) does the work.",
+  "patterns": [
+   "10b-5",
+   "10b5(?!-1)",
+   "rule 10b",
+   "section 10\\(b\\)"
+  ],
+  "fallback_theme": "Securities Fraud"
+ },
+ {
+  "slug": "classical-theory",
+  "name": "Classical Theory & Disclose-or-Abstain",
+  "category": "Insider Trading",
+  "tagline": "Insiders owe their shareholders a duty: tell them, or don't trade",
+  "plain": "The classical theory covers the intuitive case: a corporate insider \u2014 officer, director, employee \u2014 trades in his own company's stock while knowing material nonpublic information. The fraud is on the shareholders he trades with, because his position of trust gives him a duty to them: disclose the information or abstain from trading. Since insiders basically never can disclose (the merger is confidential), the rule operates as a trading ban.\n\nThe crucial limit came from Chiarella: there is no general duty to the market. A financial printer who decoded the names of takeover targets from documents he was typesetting and traded on them was not guilty under the classical theory, because he owed no duty to the shareholders of those targets \u2014 he was a stranger to them. Trading on an informational advantage is not, by itself, fraud. This is the doctrinal root of Matt Levine's favorite refrain: insider trading is not about fairness, it's about theft. The question is never whether your trade was unfair to the other side; it's whether you breached a duty to someone.",
+  "elements": [
+   "Corporate insider (or 'constructive insider' \u2014 lawyers, bankers, accountants temporarily entrusted with corporate information)",
+   "Material nonpublic information about the issuer",
+   "A duty of trust and confidence to the issuer's shareholders",
+   "Trading (or tipping) without disclosure"
+  ],
+  "cases": [
+   {
+    "name": "Chiarella v. United States",
+    "cite": "445 U.S. 222 (1980)",
+    "holding": "No fraud without a duty to disclose, and no duty without a relationship of trust and confidence. Silence is only fraudulent against people you owe a duty to."
+   },
+   {
+    "name": "SEC v. Texas Gulf Sulphur Co.",
+    "cite": "401 F.2d 833 (2d Cir. 1968)",
+    "holding": "Insiders aware of a massive undisclosed ore strike had to disclose or abstain; an issuer's misleading press release can violate 10b-5."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b-5, 17 C.F.R. \u00a7 240.10b-5",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5"
+   }
+  ],
+  "study_tip": "Always identify whose duty was breached. If the trader owes no duty to the shareholders on the other side, classical theory fails \u2014 and you reach for misappropriation.",
+  "patterns": [
+   "disclose or abstain",
+   "classical theory",
+   "chiarella",
+   "corporate insider",
+   "duty to (its |the )?shareholders"
+  ],
+  "fallback_theme": "Insider Trading"
+ },
+ {
+  "slug": "misappropriation",
+  "name": "Misappropriation Theory",
+  "category": "Insider Trading",
+  "tagline": "Stealing information from its source is fraud \u2014 even if you owe the people you trade with nothing",
+  "plain": "Misappropriation fills the Chiarella gap. Under O'Hagan, an outsider commits securities fraud when he trades on confidential information in breach of a duty owed to the source of the information. The lawyer who trades on his client's secret tender offer defrauds the client \u2014 the rightful owner of the information \u2014 not the shareholders he buys from. This is the theory that catches lawyers, bankers, printers, psychiatrists, spouses, and everyone else who is entrusted with information and converts it to their own use.\n\nIt is also why Matt insists the law protects property, not fairness. The doctrine has a famous, slightly absurd corollary: the 'brazen fiduciary' who tells the source 'I am going to trade on your information' commits no securities fraud, because there's no deception \u2014 though he'll be sued for everything else. Rule 10b5-2 lists when a duty of trust exists, including a history, pattern, or practice of sharing confidences \u2014 which is how telling your spouse, who tells her husband, who buys Whole Foods call options within the hour, becomes a federal case.",
+  "elements": [
+   "Material nonpublic information",
+   "A duty of trust or confidence owed to the source of the information (employer, client, family member under 10b5-2)",
+   "Deceptive conversion of the information for personal trading benefit, without disclosure to the source",
+   "Use 'in connection with' a securities transaction"
+  ],
+  "cases": [
+   {
+    "name": "United States v. O'Hagan",
+    "cite": "521 U.S. 642 (1997)",
+    "holding": "A lawyer who traded on his firm's client's confidential bid information defrauded the source of the information; misappropriation satisfies \u00a7 10(b)."
+   },
+   {
+    "name": "Carpenter v. United States",
+    "cite": "484 U.S. 19 (1987)",
+    "holding": "A Wall Street Journal columnist who leaked his own upcoming columns to traders misappropriated the Journal's property \u2014 the publication schedule and contents belonged to the paper, not the writer."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b5-2 (duties of trust or confidence), 17 C.F.R. \u00a7 240.10b5-2",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b5-2"
+   }
+  ],
+  "study_tip": "Carpenter is the bridge to Matt's 'you can trade on your own intentions \u2014 but check that you own them' point: the columnist's opinions belonged to his employer.",
+  "patterns": [
+   "misappropriat",
+   "o'hagan",
+   "duty of trust",
+   "10b5-2",
+   "duty .{0,20}to the source"
+  ],
+  "fallback_theme": "Insider Trading"
+ },
+ {
+  "slug": "personal-benefit",
+  "name": "Tipper/Tippee Liability & Personal Benefit",
+  "category": "Insider Trading",
+  "tagline": "Why the deer-hunting museum mattered: tips are only illegal if the tipper got something",
+  "plain": "When an insider doesn't trade but tips someone who does, liability runs through Dirks: the tippee inherits the tipper's duty only if the tipper breached it, and the tipper breaches it only by receiving a personal benefit for the tip. A benefit can be money, a kickback, a reputational gain that translates into earnings \u2014 or simply making a gift of the information to a trading relative or friend, which the Court treats like trading yourself and handing over the proceeds.\n\nThis single element generates most of the great Money Stuff insider trading material, because it forces the government to prove why someone shared information. Tell your son about the merger for legitimate tax planning and swear him to secrecy: fine. Your son tells his friends expecting them to trade, and one of them agrees to put his real estate office in your son's planned deer-hunting museum: now the SEC has its personal benefit. Newman briefly made the government's life hard by demanding proof of a meaningfully close relationship and that remote tippees knew of the benefit; Salman pushed back, confirming that gifting information to a trading relative is benefit enough.",
+  "elements": [
+   "Tipper discloses MNPI in breach of a fiduciary-type duty",
+   "Tipper receives a personal benefit \u2014 pecuniary gain, reputational benefit, quid pro quo, or a gift to a trading relative or friend",
+   "Tippee knows or should know of the breach",
+   "Remote tippees: knowledge of the breach travels down the chain (the hard part to prove)"
+  ],
+  "cases": [
+   {
+    "name": "Dirks v. SEC",
+    "cite": "463 U.S. 646 (1983)",
+    "holding": "Tippee liability is derivative of the tipper's breach, and breach requires personal benefit. An analyst exposing a fraud via insiders who sought no benefit was not liable."
+   },
+   {
+    "name": "United States v. Newman",
+    "cite": "773 F.3d 438 (2d Cir. 2014)",
+    "holding": "Demanded proof of a meaningfully close personal relationship generating an exchange-like benefit, and that remote tippees knew of it. Sent a wave of convictions tumbling."
+   },
+   {
+    "name": "Salman v. United States",
+    "cite": "580 U.S. 39 (2016)",
+    "holding": "A gift of confidential information to a trading relative or friend is itself a personal benefit; rejected Newman's stricter pecuniary requirement."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b-5, 17 C.F.R. \u00a7 240.10b-5",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5"
+   }
+  ],
+  "study_tip": "Exam pattern: trace the chain. For every link ask (1) was there a breach with personal benefit at the top, and (2) did this person know about it? Liability dies wherever knowledge dies.",
+  "patterns": [
+   "personal benefit",
+   "tippee",
+   "tipper",
+   "dirks",
+   "newman",
+   "salman",
+   "golf buddy",
+   "tipped (his|her|a|the)"
+  ],
+  "fallback_theme": "Insider Trading"
+ },
+ {
+  "slug": "materiality",
+  "name": "Materiality & MNPI",
+  "category": "Insider Trading",
+  "tagline": "Would a reasonable investor care? For mergers: probability times magnitude",
+  "plain": "Information is material if there is a substantial likelihood that a reasonable investor would consider it important \u2014 that it would significantly alter the 'total mix' of available information. That's TSC Industries. For contingent events like merger negotiations, Basic adds the probability/magnitude test: weigh how likely the event is against how big it would be for the company. Early-stage talks about a transformative acquisition can be material even though no deal exists yet.\n\nMateriality is judged in hindsight by what the stock did, which is what makes it treacherous. The press-release hackers' own trading records became an accidental academic study of this: even knowing every earnings announcement in advance, they could only sometimes predict which ones would move the stock. 'Material' is easy to say in a complaint after a 19% move and genuinely hard to know in advance \u2014 which is also why insiders are told to treat basically everything interesting as MNPI.",
+  "elements": [
+   "Substantial likelihood a reasonable investor would consider the fact important (TSC Industries)",
+   "Total mix: would disclosure have significantly altered the information available?",
+   "Contingent events: probability of occurrence \u00d7 anticipated magnitude (Basic)",
+   "Nonpublic: not yet effectively disseminated to the market"
+  ],
+  "cases": [
+   {
+    "name": "TSC Industries, Inc. v. Northway, Inc.",
+    "cite": "426 U.S. 438 (1976)",
+    "holding": "Defined materiality as the substantial-likelihood / total-mix standard, deliberately set below 'any fact an investor might want.'"
+   },
+   {
+    "name": "Basic Inc. v. Levinson",
+    "cite": "485 U.S. 224 (1988)",
+    "holding": "Merger negotiations can be material before agreement-in-principle; materiality of contingent events depends on probability and magnitude."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b-5, 17 C.F.R. \u00a7 240.10b-5",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5"
+   }
+  ],
+  "study_tip": "Don't say 'material because the stock moved.' Argue probability \u00d7 magnitude ex ante, then use the price reaction as corroborating evidence.",
+  "patterns": [
+   "material nonpublic",
+   "materiality",
+   "mnpi",
+   "reasonable investor",
+   "total mix",
+   "probability and magnitude"
+  ],
+  "fallback_theme": "Insider Trading"
+ },
+ {
+  "slug": "10b5-1-plans",
+  "name": "Rule 10b5-1 Trading Plans",
+  "category": "Insider Trading",
+  "tagline": "The executive's safe harbor \u2014 and why it didn't save Les Moonves",
+  "plain": "Rule 10b5-1 gives insiders an affirmative defense: set up a binding plan to buy or sell on a schedule at a time when you have no inside information, and later automatic trades under the plan aren't 'on the basis of' whatever you learn afterward. It's how executives whose pay is mostly stock can sell some without committing a crime every quarter. After years of suspiciously well-timed plan adoptions, the SEC's 2022 amendments added cooling-off periods (90+ days for officers and directors), good-faith certifications, and limits on overlapping plans.\n\nThe defense has a structural hole that Money Stuff loves: the plan only works if you were clean when you adopted it. An executive whose undisclosed misconduct is itself the inside information \u2014 say, decades of harassment that will eventually crater the stock \u2014 can't launder his sales through a plan adopted while he already knew. If everything is insider trading, even the good defenses spring leaks.",
+  "elements": [
+   "Binding contract, instruction, or written plan adopted when not aware of MNPI",
+   "Plan specifies amounts, prices, and dates \u2014 or a formula \u2014 and removes the insider's later discretion",
+   "Adopted in good faith, not as part of a scheme to evade (and good faith must continue)",
+   "Post-2022: cooling-off period, director/officer certification, restrictions on multiple overlapping plans and single-trade plans"
+  ],
+  "cases": [
+   {
+    "name": "SEC Rule 10b5-1 Amendments",
+    "cite": "Release No. 33-11138 (Dec. 2022)",
+    "holding": "Added cooling-off periods, certifications, overlapping-plan limits, and disclosure requirements after academic studies showed plan adoptions clustered before bad news."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b5-1, 17 C.F.R. \u00a7 240.10b5-1",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b5-1"
+   }
+  ],
+  "study_tip": "The defense dates from plan adoption, not execution. Ask what the insider knew on the day the plan was signed.",
+  "patterns": [
+   "10b5-1",
+   "trading plan",
+   "pre-?planned selling",
+   "prearranged"
+  ],
+  "fallback_theme": "Insider Trading"
+ },
+ {
+  "slug": "reg-fd",
+  "name": "Regulation FD & Corporate Access",
+  "category": "Insider Trading",
+  "tagline": "Companies can't whisper to favored analysts \u2014 yet the CEO meeting circuit is real",
+  "plain": "Regulation FD prohibits issuers from selectively disclosing material nonpublic information to analysts, institutional investors, and other market professionals: intentional disclosures must be made publicly at the same time, accidental ones promptly after. It's a disclosure rule aimed at issuers, not an insider trading rule aimed at traders, but it polices the same anxiety \u2014 that the well-connected hear things first.\n\nWhat makes it interesting is everything it permits. Big asset managers run private conferences of one-on-one CEO meetings; banks sell 'corporate access' to their clients; expert networks connect funds with industry insiders. Everyone solemnly observes that no MNPI changes hands in these meetings, and yet sophisticated investors pay enormous sums for them, presumably not just for the cocktails. The gap between Reg FD's formal rule and the actual information economy of Wall Street is one of Money Stuff's richest running themes \u2014 and the cleanest illustration that the level playing field is aspiration, not law.",
+  "elements": [
+   "Issuer (or person acting on its behalf) discloses MNPI",
+   "To covered persons: broker-dealers, analysts, institutional investors, holders likely to trade",
+   "Intentional: simultaneous public disclosure required; non-intentional: prompt disclosure (generally within 24 hours)",
+   "Exclusions: confidants under duty (lawyers, bankers), persons who agree to confidentiality, and ordinary-course communications"
+  ],
+  "cases": [
+   {
+    "name": "SEC v. Siebel Systems, Inc.",
+    "cite": "384 F. Supp. 2d 694 (S.D.N.Y. 2005)",
+    "holding": "Dismissed an aggressive Reg FD case over a CFO's private remarks; warned the SEC against nitpicking semantic differences from prior public statements."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Regulation FD, 17 C.F.R. \u00a7 243.100",
+    "url": "https://www.law.cornell.edu/cfr/text/17/243.100"
+   }
+  ],
+  "study_tip": "Reg FD violations are issuer-side enforcement actions, not insider trading by the recipient \u2014 analysts who legally receive selective disclosure generally can trade (the issuer gets in trouble, not them).",
+  "patterns": [
+   "regulation fd",
+   "reg fd",
+   "selective disclosure",
+   "corporate access",
+   "expert network"
+  ],
+  "fallback_theme": "Regulation / SEC"
+ },
+ {
+  "slug": "shadow-trading",
+  "name": "Shadow Trading",
+  "category": "Insider Trading",
+  "tagline": "Trading the competitor's stock on your employer's secret \u2014 the newest frontier",
+  "plain": "Shadow trading is using your company's confidential information to trade not in your company's stock, but in an economically linked one \u2014 a peer, competitor, or likely next acquisition target. For years this looked like a gap in the doctrine: the classical theory needs a duty to the traded company's shareholders, and the information isn't 'about' the peer at all.\n\nPanuwat closed much of the gap. A Medivation executive learned Pfizer was about to acquire his company and, within minutes, bought short-dated out-of-the-money call options (of course) on Incyte, a comparable biotech he figured would pop on the news. The SEC charged misappropriation: the information belonged to Medivation, whose policies barred using it to trade any security. A jury agreed in 2024. The theory's limits are still being mapped \u2014 it leans heavily on the employer's confidentiality policies \u2014 but the era of treating peer-company trades as automatically safe is over.",
+  "elements": [
+   "MNPI obtained from employer or source",
+   "Duty to the source not to use confidential information for personal benefit (often grounded in company policy or agreement)",
+   "Trading in a different issuer whose value is linked to the information",
+   "Materiality assessed for the traded security: would the news move that stock?"
+  ],
+  "cases": [
+   {
+    "name": "SEC v. Panuwat",
+    "cite": "No. 21-cv-06322 (N.D. Cal.), jury verdict Apr. 2024",
+    "holding": "Misappropriation theory reaches trading in a peer company's securities where the employer's policy covered use of its information to trade 'any' security; first 'shadow trading' verdict."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b5-2, 17 C.F.R. \u00a7 240.10b5-2",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b5-2"
+   }
+  ],
+  "study_tip": "Read the employer's insider trading policy in the fact pattern \u2014 Panuwat turned substantially on the words 'securities of another publicly traded company.'",
+  "patterns": [
+   "shadow trading",
+   "panuwat",
+   "peer company",
+   "economically linked"
+  ],
+  "fallback_theme": "Insider Trading"
+ },
+ {
+  "slug": "everything-is-securities-fraud",
+  "name": "Fraud-on-the-Market & Event-Driven Litigation",
+  "category": "Securities Fraud",
+  "tagline": "The doctrine behind 'everything is securities fraud'",
+  "plain": "The Levine theorem \u2014 a public company that does a bad thing has also committed securities fraud \u2014 runs on two legal machines. First, the disclosure trigger: the company knew the bad thing and didn't tell shareholders, so its statements (or silence, where there was a duty to speak) were misleading. Second, fraud-on-the-market: under Basic, plaintiffs in an efficient market are presumed to have relied on the integrity of the market price, which impounded the misstatements. That presumption is what makes class certification \u2014 and therefore the entire securities class action industry \u2014 possible; without it, millions of individual reliance questions would swamp every case.\n\nSo when the plane crashes, the CEO turns out to be a harasser, or the chicken sandwiches run out, the stock drops and the complaint writes itself. Halliburton II declined to kill the Basic presumption but let defendants rebut it at certification with evidence the misstatement had no price impact. Plaintiffs must still plead and prove loss causation \u2014 Dura: the fraud, not just the bad news, caused the loss \u2014 which is the main brake on the doctrine's 'everything' quality.",
+  "elements": [
+   "Material misrepresentation or omission (with a duty to disclose)",
+   "Scienter",
+   "Reliance \u2014 presumed via fraud-on-the-market in an efficient market (rebuttable by lack of price impact)",
+   "Economic loss and loss causation: a corrective disclosure that deflated the price"
+  ],
+  "cases": [
+   {
+    "name": "Basic Inc. v. Levinson",
+    "cite": "485 U.S. 224 (1988)",
+    "holding": "Established the fraud-on-the-market presumption of reliance for securities traded in efficient markets."
+   },
+   {
+    "name": "Halliburton Co. v. Erica P. John Fund, Inc.",
+    "cite": "573 U.S. 258 (2014)",
+    "holding": "Retained Basic but allowed defendants to rebut the presumption at class certification with price-impact evidence."
+   },
+   {
+    "name": "Dura Pharmaceuticals, Inc. v. Broudo",
+    "cite": "544 U.S. 336 (2005)",
+    "holding": "An inflated purchase price alone isn't loss causation; plaintiffs must show the truth's revelation caused the loss."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Rule 10b-5, 17 C.F.R. \u00a7 240.10b-5",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5"
+   },
+   {
+    "name": "PSLRA, 15 U.S.C. \u00a7 78u-4",
+    "url": "https://www.law.cornell.edu/uscode/text/15/78u-4"
+   }
+  ],
+  "study_tip": "When a fact pattern is 'bad thing happened, stock dropped,' organize around the private 10b-5 elements and spend your time on the two contested ones: scienter and loss causation.",
+  "patterns": [
+   "everything is securities fraud",
+   "fraud.on.the.market",
+   "shareholder lawsuit",
+   "class action",
+   "stock drop",
+   "loss causation",
+   "corrective disclosure"
+  ],
+  "fallback_theme": "Securities Fraud"
+ },
+ {
+  "slug": "scienter",
+  "name": "Scienter & the PSLRA",
+  "category": "Securities Fraud",
+  "tagline": "Fraud needs a guilty mind \u2014 and Congress made it hard to plead",
+  "plain": "Scienter is the mental state for securities fraud: an intent to deceive, manipulate, or defraud, which every circuit extends to severe recklessness. Negligence isn't enough; being wrong isn't fraud; even being badly, expensively wrong isn't fraud without a culpable state of mind. This is the element that separates 'the company's projections missed' from 'the company lied.'\n\nThe Private Securities Litigation Reform Act of 1995 turned scienter into the main battlefield. Plaintiffs must plead, with particularity, facts giving rise to a strong inference of scienter \u2014 before any discovery. Tellabs defined 'strong': cogent and at least as compelling as any opposing innocent inference, with complaints judged holistically. In practice, most securities class actions live or die at the motion to dismiss on this element, which is why complaints lean so heavily on confidential witnesses, suspicious insider stock sales, and resignations timed to the bad news.",
+  "elements": [
+   "Intent to deceive, manipulate, or defraud \u2014 or severe recklessness",
+   "PSLRA: particularized facts creating a 'strong inference' of scienter",
+   "Tellabs: the inference must be cogent and at least as compelling as competing innocent inferences",
+   "Motive-and-opportunity allegations alone are usually insufficient; insider sales help if unusual in timing and amount"
+  ],
+  "cases": [
+   {
+    "name": "Ernst & Ernst v. Hochfelder",
+    "cite": "425 U.S. 185 (1976)",
+    "holding": "Section 10(b) requires scienter; negligence cannot support a private damages action."
+   },
+   {
+    "name": "Tellabs, Inc. v. Makor Issues & Rights, Ltd.",
+    "cite": "551 U.S. 308 (2007)",
+    "holding": "Defined the PSLRA's 'strong inference': at least as compelling as any opposing inference, assessed holistically."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "PSLRA pleading standard, 15 U.S.C. \u00a7 78u-4(b)(2)",
+    "url": "https://www.law.cornell.edu/uscode/text/15/78u-4"
+   }
+  ],
+  "study_tip": "Frame scienter comparatively, Tellabs-style: state the culpable inference, state the most plausible innocent inference, and argue which is more compelling.",
+  "patterns": [
+   "scienter",
+   "recklessness",
+   "strong inference",
+   "pslra",
+   "motion to dismiss"
+  ],
+  "fallback_theme": "Securities Fraud"
+ },
+ {
+  "slug": "schedule-13d",
+  "name": "Schedule 13D & Beneficial Ownership",
+  "category": "Disclosure & Markets",
+  "tagline": "Cross 5% and tell the world what you're up to \u2014 eventually, in careful legalese",
+  "plain": "Section 13(d) of the Exchange Act requires anyone who acquires beneficial ownership of more than 5% of a public company's equity to file a Schedule 13D disclosing who they are, how they paid, and \u2014 Item 4 \u2014 their plans or proposals, from 'investment purposes only' to mergers and board fights. Passive investors can file the short-form 13G instead. The SEC's 2023 amendments cut the 13D deadline from ten days to five business days, shrinking (but not eliminating) the window in which an activist can quietly keep buying after crossing the threshold.\n\nThe form is a Money Stuff character in its own right. It is perfectly legal to trade on your own intentions \u2014 buy quietly, then announce you're 'considering strategic alternatives' and watch the stock jump, even sell into the pop and call the whole thing off \u2014 provided the consideration was real. The line between that and manipulation is subjective intent, which is why the careful legalese matters: a bland Item 4 amendment is fine, while 'funding secured' on Twitter, when it isn't, costs $20 million.",
+  "elements": [
+   "Beneficial ownership above 5% of a class of registered voting equity (voting or investment power, including via groups)",
+   "Schedule 13D within 5 business days (post-2023); amendments 'promptly' upon material change",
+   "Item 4: plans or proposals regarding extraordinary transactions, board changes, etc.",
+   "13G alternative for passive and institutional investors; 'group' formation aggregates positions"
+  ],
+  "cases": [
+   {
+    "name": "SEC v. Musk (settlement)",
+    "cite": "Lit. Release No. 24413 (2018)",
+    "holding": "'Funding secured' tweet about taking Tesla private at $420 led to securities fraud charges, a $20M fine each for Musk and Tesla, and a lawyer-review requirement \u2014 the canonical 'do it in legalese' lesson."
+   },
+   {
+    "name": "Rondeau v. Mosinee Paper Corp.",
+    "cite": "422 U.S. 49 (1975)",
+    "holding": "Section 13(d)'s purpose is investor information about accumulations; injunctive relief requires irreparable harm, not just a late filing."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Section 13(d), 15 U.S.C. \u00a7 78m(d)",
+    "url": "https://www.law.cornell.edu/uscode/text/15/78m"
+   },
+   {
+    "name": "Rule 13d-1, 17 C.F.R. \u00a7 240.13d-1",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.13d-1"
+   }
+  ],
+  "study_tip": "Two separate questions: was the filing timely and accurate (13(d) issue), and were the trades themselves lawful (10b-5 issue)? Trading ahead of your own announcement is generally the latter \u2014 and generally fine.",
+  "patterns": [
+   "13d",
+   "schedule 13",
+   "beneficial ownership",
+   "activist stake",
+   "13g",
+   "5% stake",
+   "stake in"
+  ],
+  "fallback_theme": "Corporate Governance"
+ },
+ {
+  "slug": "market-manipulation",
+  "name": "Market Manipulation",
+  "category": "Disclosure & Markets",
+  "tagline": "Fake demand, fake news, fake takeovers \u2014 and the puzzle of manipulative real trades",
+  "plain": "Manipulation is conduct designed to deceive investors by artificially affecting market activity: wash trades, matched orders, painting the tape, spoofing (placing orders you intend to cancel to fake supply or demand), pump-and-dumps, and fake corporate news. Section 9(a) bans specific classics; 10b-5 sweeps in the rest; for futures, Dodd-Frank added an explicit anti-spoofing provision. A fake takeover announcement \u2014 say, a bid filed under an invented name to pop the stock \u2014 is straightforwardly criminal.\n\nThe deep puzzle, a Money Stuff perennial, is open-market manipulation: every real, executed trade moves prices, so when is real buying 'artificial'? Courts mostly answer with intent \u2014 trades meant to create a false impression of demand rather than to acquire a position \u2014 which makes the same conduct legal or felonious depending on what was in your head. The blockchain-pivot era was a study in the adjacent question: if everyone knows the magic words are dumb, and the stock goes up anyway, who exactly was deceived?",
+  "elements": [
+   "Conduct creating a false or misleading appearance of trading activity or price (wash sales, matched orders, spoofing) or disseminating false information",
+   "Manipulative intent \u2014 the heart of open-market cases",
+   "Effect on or connection with securities transactions",
+   "Criminal spoofing (commodities): intent to cancel before execution at the time of order entry"
+  ],
+  "cases": [
+   {
+    "name": "Santa Fe Industries, Inc. v. Green",
+    "cite": "430 U.S. 462 (1977)",
+    "holding": "'Manipulation' is a term of art: practices intended to mislead investors by artificially affecting market activity; mere unfairness without deception isn't 10(b) manipulation."
+   },
+   {
+    "name": "United States v. Coscia",
+    "cite": "866 F.3d 782 (7th Cir. 2017)",
+    "holding": "First criminal spoofing conviction under Dodd-Frank upheld; intent to cancel at order entry distinguishes spoofing from lawful trading."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Section 9(a), 15 U.S.C. \u00a7 78i",
+    "url": "https://www.law.cornell.edu/uscode/text/15/78i"
+   },
+   {
+    "name": "Anti-spoofing, 7 U.S.C. \u00a7 6c(a)(5)(C)",
+    "url": "https://www.law.cornell.edu/uscode/text/7/6c"
+   }
+  ],
+  "study_tip": "Separate deception-by-trades from deception-by-statements. For open-market trades, everything turns on intent; for statements, you're back in ordinary 10b-5 misrepresentation analysis.",
+  "patterns": [
+   "manipulat",
+   "spoofing",
+   "pump.and.dump",
+   "wash trad",
+   "short squeeze",
+   "painting the tape",
+   "fake (takeover|bid|tender)"
+  ],
+  "fallback_theme": "Securities Fraud"
+ },
+ {
+  "slug": "insider-trading-crimes",
+  "name": "Criminal Enforcement: Wire Fraud, \u00a7 78ff & Parallel Proceedings",
+  "category": "Disclosure & Markets",
+  "tagline": "The SEC takes your money; the DOJ takes your liberty; the wires take everyone",
+  "plain": "Insider trading can be pursued civilly by the SEC (disgorgement, penalties up to three times profits, officer-and-director bars) and criminally by the DOJ (willful violations of the Exchange Act, up to 20 years). Prosecutors also reach for the wire fraud statute, which requires only a scheme to defraud someone of money or property using interstate wires \u2014 no securities-law duties, no personal-benefit doctrine. Congress added 18 U.S.C. \u00a7 1348 after Enron as a securities-fraud charge deliberately free of Title 15's judicial barnacles, and the Second Circuit has held the Dirks personal-benefit requirement doesn't apply to it.\n\nThis layering explains a lot of observed prosecutorial behavior: charge-stacking, the SEC's asset freezes against 'certain unknown traders' in suspiciously lucky options (a burden-shifting trap \u2014 claim the money and identify yourself), and the practical reality that the same conduct supports different charges with different elements. It is also Matt's 'flatness' complaint about white-collar law: everything is just 'fraud,' graded mostly by dollar amounts rather than by moral distinctions the way homicide law grades killings.",
+  "elements": [
+   "Criminal Exchange Act violation: willfulness on top of the civil elements (\u00a7 78ff)",
+   "Wire fraud: scheme to defraud of money or property + interstate wire use (confidential business information is property under Carpenter)",
+   "18 U.S.C. \u00a7 1348: securities fraud without Dirks' personal-benefit requirement (Blaszczak line)",
+   "SEC remedies: disgorgement, civil penalties, bars, asset freezes on suspicious unknown traders"
+  ],
+  "cases": [
+   {
+    "name": "Carpenter v. United States",
+    "cite": "484 U.S. 19 (1987)",
+    "holding": "Confidential business information is 'property' for mail/wire fraud \u2014 the gateway for charging information misuse outside securities law."
+   },
+   {
+    "name": "United States v. Blaszczak",
+    "cite": "947 F.3d 19 (2d Cir. 2019), vacated and remanded, 141 S. Ct. 1040 (2021)",
+    "holding": "Held Dirks' personal-benefit test doesn't apply to \u00a7 1348; later vacated on 'property' grounds after Kelly, but the personal-benefit holding remains influential."
+   }
+  ],
+  "statutes": [
+   {
+    "name": "Criminal penalties, 15 U.S.C. \u00a7 78ff",
+    "url": "https://www.law.cornell.edu/uscode/text/15/78ff"
+   },
+   {
+    "name": "Securities fraud, 18 U.S.C. \u00a7 1348",
+    "url": "https://www.law.cornell.edu/uscode/text/18/1348"
+   },
+   {
+    "name": "Wire fraud, 18 U.S.C. \u00a7 1343",
+    "url": "https://www.law.cornell.edu/uscode/text/18/1343"
+   }
+  ],
+  "study_tip": "If a fact pattern's tip seems to fail the personal-benefit test, don't stop \u2014 ask whether prosecutors could recharge it as wire fraud or \u00a7 1348, where Dirks may not apply.",
+  "patterns": [
+   "wire fraud",
+   "1348",
+   "criminal (charges|case|complaint)",
+   "indicted",
+   "prosecutors",
+   "asset freeze",
+   "disgorgement"
+  ],
+  "fallback_theme": "Legal / Courts"
+ }
+]

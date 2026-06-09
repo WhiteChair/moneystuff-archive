@@ -7,7 +7,9 @@ import BLOGS from './blogs.json'
 import LAWS from './laws.json'
 import CONCEPTS from './concepts.json'
 import TRENDING from './trending.json'
-import { LayoutGrid, Scale, TrendingUp, Newspaper, BookOpen, ChevronLeft, ExternalLink } from 'lucide-react'
+import DOCTRINES from './doctrines.json'
+import DOCTRINE_MATCHES from './doctrine_matches.json'
+import { LayoutGrid, Scale, TrendingUp, Newspaper, BookOpen, ChevronLeft, ExternalLink, Landmark } from 'lucide-react'
 
 const THEMES = [
   { label:"Securities Fraud",       color:"#C04A1E", bg:"#FDF0EB", icon:"⚖️" },
@@ -291,6 +293,7 @@ function BlogPost({ blog, onBack, isMobile = false }) {
 const NAV = [
   { id:'themes',   label:'Themes',   Icon: LayoutGrid },
   { id:'laws',     label:'Laws',     Icon: Scale },
+  { id:'doctrine', label:'Doctrine', Icon: Landmark },
   { id:'tickers',  label:'Tickers',  Icon: TrendingUp },
   { id:'articles', label:'Articles', Icon: Newspaper },
   { id:'blog',     label:'Blog',     Icon: BookOpen, badge: publishedBlogs.length },
@@ -430,7 +433,8 @@ function useIsMobile() {
 function parseHash() {
   const h = window.location.hash.replace('#/', '').replace('#', '')
   if (h.startsWith('blog/')) return { tab: 'blog', slug: h.slice(5) }
-  if (['laws','tickers','articles','blog'].includes(h)) return { tab: h, slug: null }
+  if (h.startsWith('doctrine/')) return { tab: 'doctrine', slug: h.slice(9) }
+  if (['laws','tickers','articles','blog','doctrine'].includes(h)) return { tab: h, slug: null }
   return { tab: 'themes', slug: null }
 }
 
@@ -447,12 +451,17 @@ export default function App() {
   })
   const [expandedTicker, setExpandedTicker] = useState(null)
   const [activeThemePage, setActiveThemePage] = useState(null) // theme label when deep-dive open
+  const [activeDoctrine, setActiveDoctrine] = useState(() => {
+    const p = parseHash()
+    return p.tab === 'doctrine' && p.slug ? (DOCTRINES.find(d => d.slug === p.slug) || null) : null
+  })
 
   useEffect(() => {
     const handler = () => {
       const { tab: t, slug } = parseHash()
       setTab(t)
-      setActiveBlog(slug ? (publishedBlogs.find(b => b.slug === slug) || null) : null)
+      setActiveBlog(t === 'blog' && slug ? (publishedBlogs.find(b => b.slug === slug) || null) : null)
+      setActiveDoctrine(t === 'doctrine' && slug ? (DOCTRINES.find(d => d.slug === slug) || null) : null)
     }
     window.addEventListener('hashchange', handler)
     return () => window.removeEventListener('hashchange', handler)
@@ -483,6 +492,7 @@ export default function App() {
     setTab(id)
     setActiveThemePage(null)
     if (id !== 'blog') { setActiveBlog(null); window.location.hash = id === 'themes' ? '' : '/' + id }
+    if (id !== 'doctrine') setActiveDoctrine(null); else { setActiveDoctrine(null); window.location.hash = '/doctrine' }
   }
   const openThemePage = (themeLabel) => { setActiveThemePage(themeLabel); setSelectedTheme(themeLabel) }
   const openBlog = (blog) => {
@@ -565,6 +575,93 @@ export default function App() {
 
     </div>
   )
+
+  const DOCTRINE_CATS = [...new Set(DOCTRINES.map(d => d.category))]
+  const openDoctrine = (d) => { setActiveDoctrine(d); setTab('doctrine'); window.location.hash = '/doctrine/' + d.slug; window.scrollTo(0,0) }
+
+  const DoctrinePage = () => (
+    <div>
+      <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:6}}>Doctrine</h1>
+      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.5rem'}}>Securities law as taught by Money Stuff: the black-letter rules, the key cases, and the archive stories that make them stick. Built with law students in mind. None of it is legal advice.</p>
+      {DOCTRINE_CATS.map(cat => (
+        <div key={cat} style={{marginBottom:'1.75rem'}}>
+          <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>{cat}</div>
+          <div style={{display:'grid',gridTemplateColumns:isMobile?'1fr':'repeat(auto-fill,minmax(300px,1fr))',gap:10}}>
+            {DOCTRINES.filter(d => d.category===cat).map(d => (
+              <div key={d.slug} onClick={()=>openDoctrine(d)}
+                style={{background:'#fff',border:'1px solid #EAEAE4',borderRadius:12,padding:'1rem',cursor:'pointer',borderTop:'3px solid #505048',WebkitTapHighlightColor:'transparent'}}
+                onMouseEnter={e=>{if(!isMobile)e.currentTarget.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'}}
+                onMouseLeave={e=>{if(!isMobile)e.currentTarget.style.boxShadow='none'}}>
+                <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:14,fontWeight:500,lineHeight:1.4,marginBottom:6}}>{d.name}</h3>
+                <p style={{fontSize:12,color:'#777',lineHeight:1.5,marginBottom:8}}>{d.tagline}</p>
+                <div style={{fontSize:10,color:'#aaa',fontFamily:"'JetBrains Mono',monospace"}}>{d.cases.length} key cases · {(DOCTRINE_MATCHES[d.slug]||[]).length} archive stories</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+
+  const DoctrineDeepDive = ({ doctrine }) => {
+    const matched = (DOCTRINE_MATCHES[doctrine.slug]||[]).map(id => ARTICLES.find(a=>a.id===id)).filter(Boolean)
+    const SectionLabel = ({children}) => <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:10}}>{children}</div>
+    return (
+      <div style={{maxWidth:700}}>
+        <button onClick={()=>{setActiveDoctrine(null); window.location.hash='/doctrine'}} style={{fontSize:12,color:'#888',border:'none',background:'none',padding:'0 0 1.5rem',cursor:'pointer',display:'block'}}>← Doctrine</button>
+        <div style={{marginBottom:'1.75rem'}}>
+          <div style={{fontSize:10,fontWeight:600,color:'#505048',textTransform:'uppercase',letterSpacing:'0.07em',marginBottom:10}}>{doctrine.category}</div>
+          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:26,fontWeight:600,lineHeight:1.3,marginBottom:10,letterSpacing:'-0.01em'}}>{doctrine.name}</h1>
+          <p style={{fontSize:15,color:'#666',fontStyle:'italic',lineHeight:1.6}}>{doctrine.tagline}</p>
+        </div>
+        <div style={{borderTop:'2px solid #1a1a18',paddingTop:'1.25rem',marginBottom:'2rem'}}>
+          {doctrine.plain.split('\n\n').map((p,i)=><p key={i} style={{fontSize:14,lineHeight:1.85,color:'#333',marginBottom:'0.875rem'}}>{p}</p>)}
+        </div>
+        <div style={{marginBottom:'2rem'}}>
+          <SectionLabel>The black letter</SectionLabel>
+          {doctrine.elements.map((el,i)=>(
+            <div key={i} style={{display:'flex',gap:12,marginBottom:10}}>
+              <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:'#bbb',flexShrink:0,paddingTop:3}}>{i+1}</span>
+              <p style={{fontSize:13,lineHeight:1.7,color:'#444',margin:0}}>{el}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{marginBottom:'2rem'}}>
+          <SectionLabel>Key cases</SectionLabel>
+          {doctrine.cases.map((c,i)=>(
+            <div key={i} style={{background:'#fff',border:'1px solid #EAEAE4',borderLeft:'3px solid #505048',borderRadius:'0 10px 10px 0',padding:'12px 14px',marginBottom:8}}>
+              <div style={{fontSize:13,fontWeight:600,color:'#1a1a18',marginBottom:2}}>{c.name}</div>
+              <div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#999',marginBottom:6}}>{c.cite}</div>
+              <p style={{fontSize:12.5,lineHeight:1.65,color:'#555',margin:0}}>{c.holding}</p>
+            </div>
+          ))}
+        </div>
+        {doctrine.study_tip && (
+          <div style={{background:'#FDF5E6',borderLeft:'4px solid #9A6010',borderRadius:'0 10px 10px 0',padding:'14px 16px',marginBottom:'2rem'}}>
+            <div style={{fontSize:10,fontWeight:600,color:'#9A6010',textTransform:'uppercase',letterSpacing:'0.07em',marginBottom:5}}>Exam tip</div>
+            <p style={{fontSize:13,lineHeight:1.7,color:'#333',margin:0,fontStyle:'italic'}}>{doctrine.study_tip}</p>
+          </div>
+        )}
+        <div style={{marginBottom:'2rem'}}>
+          <SectionLabel>Primary sources</SectionLabel>
+          {doctrine.statutes.map((s,i)=>(
+            <a key={i} href={s.url} target="_blank" rel="noreferrer" style={{display:'flex',alignItems:'center',gap:8,fontSize:13,color:'#1455A0',textDecoration:'none',padding:'8px 0',borderBottom:i<doctrine.statutes.length-1?'1px solid #EEEEE8':'none'}}>
+              <ExternalLink size={13} style={{flexShrink:0,opacity:0.6}}/>{s.name}
+            </a>
+          ))}
+        </div>
+        {matched.length>0 && (
+          <div style={{marginBottom:'1.5rem'}}>
+            <SectionLabel>In the archive</SectionLabel>
+            {matched.map(a=>(
+              <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
+            ))}
+          </div>
+        )}
+        <p style={{fontSize:12,color:'#bbb',fontStyle:'italic'}}>None of this is legal advice. Probably put that at the top of your outline.</p>
+      </div>
+    )
+  }
 
   const LawsPage = () => (
     <div>
@@ -757,6 +854,8 @@ export default function App() {
     />
     if (tab==='blog' && activeBlog) return <BlogPost blog={activeBlog} onBack={()=>{ setActiveBlog(null); window.location.hash='/blog'; }} isMobile={isMobile}/>
     if (tab==='blog') return <BlogListPage/>
+    if (tab==='doctrine' && activeDoctrine) return <DoctrineDeepDive doctrine={activeDoctrine}/>
+    if (tab==='doctrine') return <DoctrinePage/>
     if (tab==='laws') return <LawsPage/>
     if (tab==='tickers') return <TickersPage/>
     if (tab==='articles') return <ArticlesPage/>
