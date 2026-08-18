@@ -179,7 +179,36 @@ for a in articles:
     prev = best.get(k)
     if prev is None or (str(a['id']) in FULLTEXT and str(prev['id']) not in FULLTEXT):
         best[k] = a
-articles = sorted(best.values(), key=lambda x: x.get('d', ''), reverse=True)
+
+# NewsletterHunt sometimes ingests one issue many times over (33 consecutive IDs
+# all holding the 2021-07-29 Archegos column) and its listing spreads those
+# copies across consecutive days - including Saturdays and Sundays, which Money
+# Stuff never publishes on. Collapse same-title records sitting inside a short
+# window and keep the earliest date, which is the real send date.
+def pick(cluster):
+    winner = dict(next((c for c in cluster if str(c['id']) in FULLTEXT), cluster[0]))
+    winner['d'] = cluster[0]['d']
+    return winner
+
+by_title = defaultdict(list)
+for a in best.values():
+    by_title[norm_title(a['t'])].append(a)
+
+articles, merged = [], 0
+for group in by_title.values():
+    group.sort(key=lambda x: x.get('d', ''))
+    cluster = [group[0]]
+    for a in group[1:]:
+        span = (datetime.fromisoformat(a['d']) - datetime.fromisoformat(cluster[0]['d'])).days
+        if span <= 10:
+            cluster.append(a)
+        else:
+            articles.append(pick(cluster)); cluster = [a]
+    if len(cluster) > 1: merged += len(cluster) - 1
+    articles.append(pick(cluster))
+if merged:
+    print(f"Merged {merged} re-ingested copies of issues already held")
+articles.sort(key=lambda x: x.get('d', ''), reverse=True)
 
 # ── Full text ─────────────────────────────────────────────────────────────────
 if BACKFILL_FULLTEXT:
