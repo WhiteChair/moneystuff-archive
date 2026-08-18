@@ -8,7 +8,7 @@ on:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repo
@@ -52,6 +52,9 @@ jobs:
 
       - name: Commit updated data files
         run: |
-          git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json src/articles.json src/tickers.json src/bankrupt.json
+          git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json \
+                  scripts/date_index.json scripts/fulltext/ \
+                  src/articles.json src/tickers.json src/bankrupt.json src/sections.json src/doctrine_matches.json src/trending.json \
+                  public/fulltext/
           git diff --cached --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
           git push

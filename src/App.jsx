@@ -9,6 +9,7 @@ import CONCEPTS from './concepts.json'
 import TRENDING from './trending.json'
 import DOCTRINES from './doctrines.json'
 import DOCTRINE_MATCHES from './doctrine_matches.json'
+import SECTIONS from './sections.json'
 import { LayoutGrid, Scale, TrendingUp, Newspaper, BookOpen, ChevronLeft, ExternalLink, Landmark } from 'lucide-react'
 
 const THEMES = [
@@ -31,6 +32,80 @@ const THEMES = [
 const TM = Object.fromEntries(THEMES.map(t => [t.label, t]))
 const TODAY = new Date().toISOString().slice(0, 10)
 const publishedBlogs = BLOGS.filter(b => b.publish_date <= TODAY)
+const BY_ID = Object.fromEntries(ARTICLES.map(a => [String(a.id), a]))
+
+// ── Full text ────────────────────────────────────────────────────────────────
+// Section *headers* ship in the bundle - small, and enough to show what is in
+// an issue and to filter on. Section *bodies* are ~25MB across all years, so
+// they live in /fulltext/<year>.json and are fetched only when a reader asks
+// to search inside issues. Shards are cached for the session once pulled.
+const FT_CACHE = new Map()
+let FT_MANIFEST = null
+async function ftManifest() {
+  if (!FT_MANIFEST) FT_MANIFEST = await fetch('/fulltext/manifest.json').then(r => r.json()).catch(() => ({ years: [] }))
+  return FT_MANIFEST
+}
+async function ftYear(y) {
+  if (!FT_CACHE.has(y)) FT_CACHE.set(y, await fetch(`/fulltext/${y}.json`).then(r => r.json()).catch(() => ({})))
+  return FT_CACHE.get(y)
+}
+function snippet(text, q, pad = 110) {
+  const i = text.toLowerCase().indexOf(q)
+  if (i < 0) return ''
+  const s = Math.max(0, i - pad), e = Math.min(text.length, i + q.length + pad)
+  return (s ? '…' : '') + text.slice(s, e).trim() + (e < text.length ? '…' : '')
+}
+function Highlight({ text, q }) {
+  const i = text.toLowerCase().indexOf(q.toLowerCase())
+  if (i < 0) return <>{text}</>
+  return <>{text.slice(0, i)}<mark style={{background:'#FBEBC8',padding:'0 2px'}}>{text.slice(i, i + q.length)}</mark>{text.slice(i + q.length)}</>
+}
+
+// Walks year shards newest-first, publishing partial results as each lands so
+// the list fills in rather than blocking on the whole corpus.
+function useDeepSearch(query, enabled, year) {
+  const [state, setState] = useState({ running: false, hits: [], done: 0, total: 0 })
+  useEffect(() => {
+    const q = query.trim().toLowerCase()
+    if (!enabled || q.length < 3) { setState({ running: false, hits: [], done: 0, total: 0 }); return }
+    let cancelled = false
+    const run = async () => {
+      const all = (await ftManifest()).years || []
+      const years = year !== 'all' ? all.filter(y => y === year) : all.slice().sort().reverse()
+      if (cancelled) return
+      setState({ running: true, hits: [], done: 0, total: years.length })
+      const hits = []
+      for (let i = 0; i < years.length; i++) {
+        const data = await ftYear(years[i])
+        if (cancelled) return
+        for (const [id, rec] of Object.entries(data)) {
+          const matched = (rec.s || []).filter(s => s.t && s.t.toLowerCase().includes(q))
+          if (matched.length) hits.push({ id, count: matched.length, secs: matched.slice(0, 2).map(s => ({ h: s.h, snip: snippet(s.t, q) })) })
+        }
+        if (cancelled) return
+        setState({ running: i < years.length - 1, hits: hits.slice(), done: i + 1, total: years.length })
+      }
+    }
+    const timer = setTimeout(run, 350)   // debounce typing
+    return () => { cancelled = true; clearTimeout(timer) }
+  }, [query, enabled, year])
+  return state
+}
+
+function SectionList({ id, size = 11 }) {
+  const secs = (SECTIONS[String(id)] || []).filter(Boolean)
+  if (!secs.length) return null
+  return (
+    <div style={{marginBottom:14}}>
+      <div style={{fontSize:10,fontWeight:600,color:'#888',textTransform:'uppercase',letterSpacing:'0.07em',marginBottom:6}}>In this issue</div>
+      <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
+        {secs.map((h, i) => (
+          <span key={i} style={{fontSize:size,color:'#555',background:'#F4F4EE',border:'1px solid #E7E7DF',borderRadius:5,padding:'3px 8px',lineHeight:1.4}}>{h}</span>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 // ── Archive health ───────────────────────────────────────────────────────────
 const LATEST_ISSUE = ARTICLES.reduce((m, a) => (a.d > m ? a.d : m), '')
@@ -202,6 +277,7 @@ function ArticleDrawer({ article, onClose }) {
       </div>
       <div style={{padding:'1.25rem',flex:1}}>
         {article.themes?.length>0 && <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:16}}>{article.themes.map(th=><ThemePill key={th} theme={th}/>)}</div>}
+        <SectionList id={article.id}/>
         {article.lesson && (
           <div style={{background:'#FAFAF4',borderLeft:`3px solid ${t?.color||'#ccc'}`,padding:'12px 16px',borderRadius:'0 8px 8px 0',marginBottom:16}}>
             <div style={{fontSize:10,fontWeight:600,color:t?.color||'#888',textTransform:'uppercase',letterSpacing:'0.07em',marginBottom:6}}>Key passage</div>
@@ -449,6 +525,8 @@ export default function App() {
     const { slug } = parseHash()
     return slug ? (publishedBlogs.find(b => b.slug === slug) || null) : null
   })
+  const [deep, setDeep] = useState(false)
+  const deepRes = useDeepSearch(search, deep, year)
   const [expandedTicker, setExpandedTicker] = useState(null)
   const [activeThemePage, setActiveThemePage] = useState(null) // theme label when deep-dive open
   const [activeDoctrine, setActiveDoctrine] = useState(() => {
@@ -477,7 +555,8 @@ export default function App() {
     if (year!=='all' && !a.d?.startsWith(year)) return false
     if (search) {
       const q = search.toLowerCase()
-      if (!a.t.toLowerCase().includes(q) && !a.lesson?.toLowerCase().includes(q)) return false
+      const inHeader = (SECTIONS[String(a.id)] || []).some(h => h.toLowerCase().includes(q))
+      if (!a.t.toLowerCase().includes(q) && !a.lesson?.toLowerCase().includes(q) && !inHeader) return false
     }
     if (selectedTheme && !a.themes?.includes(selectedTheme)) return false
     return true
@@ -494,6 +573,9 @@ export default function App() {
     if (id !== 'blog') { setActiveBlog(null); window.location.hash = id === 'themes' ? '' : '/' + id }
     if (id !== 'doctrine') setActiveDoctrine(null); else { setActiveDoctrine(null); window.location.hash = '/doctrine' }
   }
+  const deepSorted = useMemo(() =>
+    [...deepRes.hits].sort((x, y) => (BY_ID[y.id]?.d || '').localeCompare(BY_ID[x.id]?.d || '')),
+    [deepRes.hits])
   const openThemePage = (themeLabel) => { setActiveThemePage(themeLabel); setSelectedTheme(themeLabel) }
   const openBlog = (blog) => {
     setActiveBlog(blog)
@@ -743,7 +825,7 @@ export default function App() {
     <div>
       <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:10}}>Articles</h1>
       <div style={{display:'flex',gap:6,marginBottom:'0.75rem',flexWrap:'wrap'}}>
-        <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search…" style={{flex:'1 1 140px',minWidth:0,fontSize:13}}/>
+        <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search titles & sections…" style={{flex:'1 1 140px',minWidth:0,fontSize:13}}/>
         <select value={year} onChange={e=>setYear(e.target.value)} style={{fontSize:13,flex:'0 0 auto'}}>
           {years.map(y=><option key={y} value={y}>{y==='all'?'All years':y}</option>)}
         </select>
@@ -753,7 +835,48 @@ export default function App() {
         </select>
         {(selectedTheme||search||year!=='all') && <button onClick={()=>{setSelectedTheme(null);setSearch('');setYear('all')}} style={{fontSize:11,color:'#888'}}>Clear</button>}
       </div>
-      <div style={{fontSize:11,color:'#aaa',marginBottom:6}}>{filtered.length}{filtered.length===400?' (max 400)':''} articles</div>
+      <label style={{display:'flex',alignItems:'center',gap:6,fontSize:12,color:'#666',marginBottom:'0.75rem',cursor:'pointer'}}>
+        <input type="checkbox" checked={deep} onChange={e=>setDeep(e.target.checked)} style={{margin:0}}/>
+        Search inside issues <span style={{color:'#aaa',fontSize:11}}>— every section, not just headlines</span>
+      </label>
+
+      {deep && search.trim().length>=3 && (
+        <div style={{marginBottom:'1.5rem'}}>
+          <div style={{fontSize:11,color:'#aaa',marginBottom:8}}>
+            {deepRes.running
+              ? `Searching inside issues… ${deepRes.done}/${deepRes.total} years`
+              : `${deepRes.hits.length} ${deepRes.hits.length===1?'issue mentions':'issues mention'} “${search.trim()}” in the body text`}
+          </div>
+          {deepSorted.slice(0,80).map(h => {
+            const a = BY_ID[h.id]
+            if (!a) return null
+            return (
+              <div key={h.id} onClick={()=>setDrawerArticle(a)}
+                style={{padding:'10px 0',borderBottom:'1px solid #EEEEE8',cursor:'pointer'}}>
+                <div style={{display:'flex',gap:10,alignItems:'baseline',marginBottom:4}}>
+                  <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa',width:72,flexShrink:0}}>{a.d}</span>
+                  <span style={{fontSize:13,fontWeight:500,lineHeight:1.4}}>{a.t}</span>
+                  {h.count>1 && <span style={{fontSize:10,color:'#bbb'}}>{h.count} sections</span>}
+                </div>
+                {h.secs.map((s,i)=>(
+                  <div key={i} style={{marginLeft:82,marginBottom:4}}>
+                    {s.h && <div style={{fontSize:11,fontWeight:600,color:'#777',marginBottom:2}}>{s.h}</div>}
+                    <div style={{fontSize:12,color:'#666',lineHeight:1.6}}><Highlight text={s.snip} q={search.trim()}/></div>
+                  </div>
+                ))}
+              </div>
+            )
+          })}
+          {!deepRes.running && !deepRes.hits.length && (
+            <div style={{fontSize:12,color:'#aaa',padding:'0.5rem 0'}}>Nothing inside the issues matches that.</div>
+          )}
+        </div>
+      )}
+
+      <div style={{fontSize:11,color:'#aaa',marginBottom:6}}>
+        {deep && search.trim().length>=3 ? 'Title & section-header matches — ' : ''}
+        {filtered.length}{filtered.length===400?' (max 400)':''} articles
+      </div>
       {filtered.map(a=>(
         <ArticleRow key={a.id} a={a} selected={drawerArticle?.id===a.id} onClick={()=>setDrawerArticle(d=>d?.id===a.id?null:a)}/>
       ))}
@@ -822,6 +945,7 @@ export default function App() {
         </div>
         <div style={{padding:'1rem',flex:1}}>
           {article.themes?.length>0 && <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:14}}>{article.themes.map(th=><ThemePill key={th} theme={th}/>)}</div>}
+        <SectionList id={article.id}/>
           {article.lesson && (
             <div style={{background:'#FAFAF4',borderLeft:`3px solid ${t?.color||'#ccc'}`,padding:'12px 14px',borderRadius:'0 8px 8px 0',marginBottom:14}}>
               <div style={{fontSize:10,fontWeight:600,color:t?.color||'#888',textTransform:'uppercase',letterSpacing:'0.07em',marginBottom:5}}>Key passage</div>

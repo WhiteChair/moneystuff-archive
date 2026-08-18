@@ -14,6 +14,12 @@ from concurrent.futures import ThreadPoolExecutor
 from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+import dates as dates_mod        # accurate publication dates from listing pages
+import fulltext as ft            # whole-issue text + section headers
+
+REINDEX_DATES    = '--reindex-dates' in sys.argv      # rebuild every date (slow, ~186 pages)
+BACKFILL_FULLTEXT = '--backfill-fulltext' in sys.argv  # fetch full text for every issue
 SRC_DIR    = os.path.join(SCRIPT_DIR, '..', 'src')
 HEADERS    = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 NOW        = datetime.now()
@@ -35,6 +41,30 @@ tickers    = load_json(tickers_path, [])
 existing_ids = {a['id'] for a in articles}
 max_id       = max((int(a['id']) for a in articles if str(a['id']).isdigit()), default=0)
 print(f"Existing: {len(articles)} articles, max ID: {max_id}")
+
+# ── Authoritative dates ───────────────────────────────────────────────────────
+# The <time datetime="..."> attribute on every /emails/<id> page is hardcoded to
+# the same value, and the relative text ("almost 7 years ago") is far too coarse
+# to date an issue. The listing pages carry exact day headers, so those win.
+print("Building date index" + (" (full rebuild)" if REINDEX_DATES else " (recent pages)") + "...")
+index_path = os.path.join(SCRIPT_DIR, 'date_index.json')
+try:
+    DATE_INDEX = json.load(open(index_path))
+except Exception:
+    DATE_INDEX = {}
+fresh = dates_mod.build_date_index(max_pages=None if REINDEX_DATES else 5)
+DATE_INDEX.update(fresh)          # merge: the daily crawl only sees recent pages
+with open(index_path, 'w') as f:
+    json.dump(DATE_INDEX, f, separators=(',',':'), sort_keys=True)
+
+corrected = 0
+for a in articles:
+    true_d = DATE_INDEX.get(str(a['id']))
+    if true_d and a.get('d') != true_d:
+        a['d'] = true_d
+        corrected += 1
+if corrected:
+    print(f"Corrected {corrected} publication dates")
 
 # ── Discover new article IDs ──────────────────────────────────────────────────
 def fetch_page_ids(page):
@@ -73,29 +103,31 @@ def fetch_article(aid):
     url = f'https://newsletterhunt.com/emails/{aid}'
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=12) as r:
+        with urllib.request.urlopen(req, timeout=20) as r:
             html = r.read().decode('utf-8', errors='ignore')
         title_m = re.search(r'<h2[^>]*>\s*(.*?)\s*</h2>', html, re.DOTALL)
         raw_title = re.sub(r'<[^>]+>', '', title_m.group(1)).strip() if title_m else ''
+        raw_title = unescape(raw_title)
         title = raw_title.replace('Money Stuff: ', '').replace('Money Stuff ', '')
-        time_m = re.search(r'<time[^>]*datetime="[^"]*"[^>]*>\s*([^<]+?)\s*</time>', html)
-        date = parse_relative_date(time_m.group(1).strip()) if time_m else NOW_DATE
-        idx = html.find('srcdoc=')
-        if idx < 0: return None
-        iframe_end = html.find('</iframe>', idx)
-        region = html[idx:iframe_end if iframe_end > 0 else idx+60000]
-        match = re.search(r'srcdoc="((?:[^"\\]|\\.)*)"', region, re.DOTALL)
-        if not match: return None
-        decoded = unescape(match.group(1))
-        decoded = re.sub(r'<script[^>]*>.*?</script>', '', decoded, flags=re.DOTALL)
-        decoded = re.sub(r'<style[^>]*>.*?</style>', '', decoded, flags=re.DOTALL)
-        text = re.sub(r'<[^>]+>', ' ', decoded)
-        text = re.sub(r'\s+', ' ', text).strip()
+
+        # Date: listing index first; relative text only as a last resort.
+        date = DATE_INDEX.get(str(aid))
+        if not date:
+            time_m = re.search(r'<time[^>]*datetime="[^"]*"[^>]*>\s*([^<]+?)\s*</time>', html)
+            date = parse_relative_date(time_m.group(1).strip()) if time_m else NOW_DATE
+
+        body = ft.extract_srcdoc(html)
+        if not body: return None
+        text, sections = ft.split_sections(body)
         if len(text) < 400: return None
-        if 'money stuff' not in text[:100].lower() and 'money stuff' not in title.lower(): return None
+        if 'money stuff' not in text[:120].lower() and 'money stuff' not in title.lower(): return None
         words = text.split()
-        return {'id': aid, 't': title, 'd': date, 'u': url, 'w': len(words), 'p': ' '.join(words[:300])}
+        return {'id': str(aid), 't': title, 'd': date, 'u': url, 'w': len(words),
+                'p': ' '.join(words[:300]),
+                '_full': {'id': str(aid), 's': sections, 'w': len(words)}}
     except: return None
+
+FULLTEXT = ft.load_all_store()
 
 if new_ids:
     print(f"Fetching {len(new_ids)} articles...")
@@ -103,17 +135,57 @@ if new_ids:
     with ThreadPoolExecutor(max_workers=4) as ex:
         for result in ex.map(fetch_article, new_ids):
             if result:
+                FULLTEXT[result['id']] = result.pop('_full')
                 fetched.append(result)
                 print(f"  ✓ {result['d']} | {result['t'][:50]}")
             time.sleep(0.1)
     articles.extend(fetched)
+for a in articles:
+    a.pop('_full', None)
 
 # Dedupe + sort
-seen, deduped = set(), []
-for a in sorted(articles, key=lambda x: x.get('d',''), reverse=True):
-    k = (a['t'][:40], a['d'])
-    if k not in seen: seen.add(k); deduped.append(a)
-articles = deduped
+# Titles arrive from two sources (scrape and Gmail) with different entity
+# encoding and curly-vs-straight quotes, so normalise before comparing. With
+# dates now correct, same-issue duplicates finally collide on the same key.
+def norm_title(t):
+    t = unescape(t or '').lower()
+    t = t.replace('\u2019', "'").replace('\u2018', "'")
+    t = t.replace('\u201c', '"').replace('\u201d', '"').replace('\u2014', ' ')
+    return re.sub(r'[^a-z0-9 ]', '', t)[:40].strip()
+
+for a in articles:
+    a['t'] = unescape(a.get('t', ''))
+
+best = {}
+for a in articles:
+    k = (norm_title(a['t']), a.get('d', ''))
+    prev = best.get(k)
+    if prev is None or (str(a['id']) in FULLTEXT and str(prev['id']) not in FULLTEXT):
+        best[k] = a
+articles = sorted(best.values(), key=lambda x: x.get('d', ''), reverse=True)
+
+# ── Full text ─────────────────────────────────────────────────────────────────
+if BACKFILL_FULLTEXT:
+    FULLTEXT = ft.backfill([a['id'] for a in articles],
+                           {a['id']: a['d'] for a in articles}, existing=FULLTEXT)
+
+# "Things happen" is the closing link roundup - real text, but it name-checks
+# dozens of unrelated companies and would swamp theme/ticker/doctrine matching.
+ROUNDUP = ('things happen', 'elsewhere')
+
+def body(a, roundup=False):
+    """Full issue text when we have it, preview otherwise."""
+    rec = FULLTEXT.get(str(a['id']))
+    if not rec:
+        return a.get('p', '')
+    if roundup:
+        return ft.full_text(rec)
+    keep = [s['t'] for s in ft.sections_of(rec)
+            if not any(s['h'].lower().startswith(r) for r in ROUNDUP)]
+    return ' '.join(keep) if keep else ft.full_text(rec)
+
+with_full = sum(1 for a in articles if str(a['id']) in FULLTEXT)
+print(f"Full text available for {with_full}/{len(articles)} articles")
 
 # ── Classify new articles ─────────────────────────────────────────────────────
 RULES = {
@@ -137,7 +209,7 @@ BAD = [r'^Programming note',r'^Bloomberg Opinion',r'^window\.onload',r'^Matt Lev
 GOOD_SIGNALS = [r'\bi (always|often|sometimes) say\b',r'\bthe (point|lesson|key) (is|here)\b',r'\bhere.s (how|why)\b',r'\bthink about\b',r'\bthe basic\b',r'\bif you\b',r'\bone way to\b']
 
 def classify_one(a):
-    text = (a['t'] + ' ' + a.get('p','')).lower()
+    text = (a['t'] + ' ' + body(a)).lower()
     scores = defaultdict(int)
     for theme, patterns in RULES.items():
         for pat in patterns:
@@ -158,7 +230,8 @@ def classify_one(a):
     good = [s for _,s in scored[:2]]
     return {'themes': themes[:3], 'lesson': lesson, 'summary': ' '.join(good[:2])[:300]}
 
-new_to_classify = [a for a in articles if a['id'] not in classified]
+RECLASSIFY = '--reclassify' in sys.argv
+new_to_classify = articles if RECLASSIFY else [a for a in articles if a['id'] not in classified]
 if new_to_classify:
     print(f"Classifying {len(new_to_classify)} new articles...")
     for a in new_to_classify:
@@ -179,7 +252,7 @@ SKIP = {'I','A','AT','OR','BE','TO','OF','IN','ON','IS','IT','BY','AS','AN','SO'
 
 ticker_mentions = defaultdict(list)
 for a in articles:
-    content = a.get('p','') + ' ' + a.get('t','')
+    content = body(a) + ' ' + a.get('t','')
     for m in TICKER_RE.finditer(content):
         t = m.group(1)
         if 2<=len(t)<=5 and t not in SKIP:
@@ -245,7 +318,7 @@ B_MATCH = {'FTX':['ftx','sam bankman'],'SIVB':['silicon valley bank','svb'],
            'CS':['credit suisse'],'WE':['wework'],'CELH':['celsius']}
 b_mentions = defaultdict(list)
 for a in articles:
-    content = (a.get('p','') + ' ' + a.get('t','')).lower()
+    content = (body(a) + ' ' + a.get('t','')).lower()
     for ticker, terms in B_MATCH.items():
         if any(t in content for t in terms):
             b_mentions[ticker].append({'d':a['d'],'id':a['id'],'t':a['t']})
@@ -271,7 +344,7 @@ for d in doctrines:
     pats = [re.compile(p, re.IGNORECASE) for p in d.get('patterns', [])]
     hits = []
     for a in articles:
-        text = (a.get('t','') + ' ' + a.get('p',''))
+        text = (a.get('t','') + ' ' + body(a))
         score = sum(1 for p in pats if p.search(text))
         if score > 0:
             hits.append((score, a.get('d',''), a['id']))
@@ -289,6 +362,9 @@ print(f"Doctrine matches: " + ', '.join(f"{k}:{len(v)}" for k,v in doctrine_matc
 with open(articles_path,   'w') as f: json.dump(articles,   f, separators=(',',':'))
 with open(classified_path, 'w') as f: json.dump(classified, f, separators=(',',':'))
 with open(tickers_path,    'w') as f: json.dump(tickers,    f, separators=(',',':'))
+
+manifest = ft.save_store(FULLTEXT, {a['id']: a['d'] for a in articles})
+print(f"Full-text shards: {manifest['total']} issues across {len(manifest['years'])} years")
 
 os.makedirs(SRC_DIR, exist_ok=True)
 with open(os.path.join(SRC_DIR,'articles.json'),'w') as f: json.dump(enriched, f, separators=(',',':'))
