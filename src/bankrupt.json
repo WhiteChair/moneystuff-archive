@@ -1,11 +1,61 @@
 [
   {
+    "ticker": "TWTR",
+    "name": "Twitter",
+    "event": "TAKEN PRIVATE",
+    "date": "Oct 2022",
+    "note": "Musk signed in April 2022, spent the summer trying to get out of it, then closed at $54.20 a share in October. Now X.",
+    "mention_count": 445,
+    "mentions": [
+      {
+        "d": "2026-08-11",
+        "id": "449105",
+        "t": "Pick-and-Shovel Seller Financing"
+      },
+      {
+        "d": "2026-07-30",
+        "id": "433001",
+        "t": "The Situation Deteriorated"
+      },
+      {
+        "d": "2026-07-06",
+        "id": "402707",
+        "t": "Untruth Machines"
+      },
+      {
+        "d": "2026-05-21",
+        "id": "331889",
+        "t": "SpaceX Investors Can\u2019t Complain"
+      },
+      {
+        "d": "2026-05-18",
+        "id": "326543",
+        "t": "Sometimes Andrew Left Was Right"
+      },
+      {
+        "d": "2026-05-14",
+        "id": "320207",
+        "t": "Ryan Cohen Wants to Work at eBay"
+      },
+      {
+        "d": "2026-05-07",
+        "id": "308261",
+        "t": "Sell on eBay to Buy eBay"
+      },
+      {
+        "d": "2026-05-05",
+        "id": "304334",
+        "t": "Investment Banking Without a License"
+      }
+    ]
+  },
+  {
     "ticker": "FTX",
     "name": "FTX",
-    "status": "bankrupt",
-    "bankruptcy_date": "2022-11-11",
-    "note": "Sam Bankman-Fried's crypto exchange collapsed Nov 2022. SBF sentenced to 25 years.",
-    "mention_count": 143,
+    "event": "BANKRUPT",
+    "date": "Nov 2022",
+    "note": "Sam Bankman-Fried's crypto exchange collapsed after a run revealed customer funds at Alameda. SBF sentenced to 25 years.",
+    "mention_count": 147,
     "mentions": [
       {
         "d": "2026-07-30",
@@ -50,61 +100,11 @@
     ]
   },
   {
-    "ticker": "SIVB",
-    "name": "Silicon Valley Bank",
-    "status": "bankrupt",
-    "bankruptcy_date": "2023-03-10",
-    "note": "Failed March 2023, second-largest US bank failure. Acquired by First Citizens.",
-    "mention_count": 54,
-    "mentions": [
-      {
-        "d": "2025-12-09",
-        "id": "211894",
-        "t": "Private Indices Are the New Public Indices"
-      },
-      {
-        "d": "2025-04-21",
-        "id": "185701",
-        "t": "Crypto Might Get Some Banks"
-      },
-      {
-        "d": "2025-01-15",
-        "id": "142983",
-        "t": "Capital One\u00a0High-Yield Account Wasn\u2019t"
-      },
-      {
-        "d": "2024-06-20",
-        "id": "64212",
-        "t": "Virgin Orbit Had a Fake Takeover"
-      },
-      {
-        "d": "2024-04-29",
-        "id": "58058",
-        "t": "A Paramount Merger Will Be Tricky"
-      },
-      {
-        "d": "2024-04-10",
-        "id": "56157",
-        "t": "Super Users Had Inflation Questions"
-      },
-      {
-        "d": "2024-03-07",
-        "id": "52359",
-        "t": "Exxon Barges in on Hess Deal"
-      },
-      {
-        "d": "2023-12-07",
-        "id": "43979",
-        "t": "OpenAI Was Pretty Portable"
-      }
-    ]
-  },
-  {
     "ticker": "CS",
     "name": "Credit Suisse",
-    "status": "bankrupt",
-    "bankruptcy_date": "2023-03-19",
-    "note": "Forced merger with UBS in March 2023. AT1 bonds wiped to zero.",
+    "event": "FORCED MERGER",
+    "date": "Mar 2023",
+    "note": "Swiss authorities pushed it into UBS's arms over a weekend and wrote its AT1 bonds to zero while shareholders got stock \u2014 the wrong way round, said the AT1 holders.",
     "mention_count": 124,
     "mentions": [
       {
@@ -152,9 +152,9 @@
   {
     "ticker": "WE",
     "name": "WeWork",
-    "status": "bankrupt",
-    "bankruptcy_date": "2023-11-06",
-    "note": "Filed Chapter 11 Nov 2023 after spectacular collapse from $47B valuation.",
+    "event": "BANKRUPT",
+    "date": "Nov 2023",
+    "note": "From a $47 billion valuation and a withdrawn IPO to Chapter 11, with a SPAC in between.",
     "mention_count": 112,
     "mentions": [
       {
@@ -200,12 +200,312 @@
     ]
   },
   {
-    "ticker": "CELH",
-    "name": "Celsius Network",
-    "status": "bankrupt",
-    "bankruptcy_date": "2022-07-13",
-    "note": "Crypto lender froze withdrawals and filed bankruptcy July 2022.",
+    "ticker": "\u2014",
+    "name": "Archegos Capital",
+    "event": "COLLAPSED",
+    "date": "Mar 2021",
+    "note": "Bill Hwang's family office blew up on concentrated total return swaps, costing its banks over $10 billion. Credit Suisse took the worst of it. Hwang was convicted of fraud in 2024.",
+    "mention_count": 67,
+    "mentions": [
+      {
+        "d": "2026-08-03",
+        "id": "438149",
+        "t": "Hedgehog Hedge Fund"
+      },
+      {
+        "d": "2026-07-07",
+        "id": "403796",
+        "t": "Index Traders Had a Good Month"
+      },
+      {
+        "d": "2026-04-15",
+        "id": "276581",
+        "t": "AIbirds"
+      },
+      {
+        "d": "2025-09-16",
+        "id": "200891",
+        "t": "Insider Trading Is Not About Fairness"
+      },
+      {
+        "d": "2024-12-02",
+        "id": "125097",
+        "t": "Texas Asks If Index Funds Are Illegal"
+      },
+      {
+        "d": "2024-09-17",
+        "id": "98088",
+        "t": "Archegos\u2019 Banks Had Some Chats"
+      },
+      {
+        "d": "2024-08-15",
+        "id": "87697",
+        "t": "Stablecoins Can Have Bank Runs"
+      },
+      {
+        "d": "2024-07-29",
+        "id": "81158",
+        "t": "Due Diligence Can Be Risky"
+      }
+    ]
+  },
+  {
+    "ticker": "SIVB",
+    "name": "Silicon Valley Bank",
+    "event": "SEIZED",
+    "date": "Mar 2023",
+    "note": "Deposits fled after a botched capital raise; regulators closed it in a weekend. Second-largest US bank failure at the time.",
+    "mention_count": 54,
+    "mentions": [
+      {
+        "d": "2025-12-09",
+        "id": "211894",
+        "t": "Private Indices Are the New Public Indices"
+      },
+      {
+        "d": "2025-04-21",
+        "id": "185701",
+        "t": "Crypto Might Get Some Banks"
+      },
+      {
+        "d": "2025-01-15",
+        "id": "142983",
+        "t": "Capital One\u00a0High-Yield Account Wasn\u2019t"
+      },
+      {
+        "d": "2024-06-20",
+        "id": "64212",
+        "t": "Virgin Orbit Had a Fake Takeover"
+      },
+      {
+        "d": "2024-04-29",
+        "id": "58058",
+        "t": "A Paramount Merger Will Be Tricky"
+      },
+      {
+        "d": "2024-04-10",
+        "id": "56157",
+        "t": "Super Users Had Inflation Questions"
+      },
+      {
+        "d": "2024-03-07",
+        "id": "52359",
+        "t": "Exxon Barges in on Hess Deal"
+      },
+      {
+        "d": "2023-12-07",
+        "id": "43979",
+        "t": "OpenAI Was Pretty Portable"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Terra / Luna",
+    "event": "COLLAPSED",
+    "date": "May 2022",
+    "note": "Algorithmic stablecoin that held its peg by promising to print more of the thing backing it. Roughly $40 billion evaporated in a week.",
     "mention_count": 46,
+    "mentions": [
+      {
+        "d": "2026-02-24",
+        "id": "224301",
+        "t": "AI Can Manage Your Mutual Fund"
+      },
+      {
+        "d": "2025-03-31",
+        "id": "179613",
+        "t": "Musk Merged His Xes"
+      },
+      {
+        "d": "2024-08-15",
+        "id": "87697",
+        "t": "Stablecoins Can Have Bank Runs"
+      },
+      {
+        "d": "2024-07-22",
+        "id": "78127",
+        "t": "Bad Trades Are Also Valuable"
+      },
+      {
+        "d": "2024-04-08",
+        "id": "55958",
+        "t": "Public Markets Are the New Private Markets"
+      },
+      {
+        "d": "2024-02-21",
+        "id": "50882",
+        "t": "Reddit\u2019s IPO Is for Redditors"
+      },
+      {
+        "d": "2024-01-30",
+        "id": "48640",
+        "t": "HyperFund Had More to Lose Than to Gain"
+      },
+      {
+        "d": "2023-11-02",
+        "id": "41210",
+        "t": "The Banks Are Where the Money Isn\u2019t"
+      }
+    ]
+  },
+  {
+    "ticker": "HTZ",
+    "name": "Hertz",
+    "event": "BANKRUPT",
+    "date": "May 2020",
+    "note": "Then asked the bankruptcy court for permission to sell $500 million of stock that it told buyers was probably worthless. Emerged June 2021.",
+    "mention_count": 41,
+    "mentions": [
+      {
+        "d": "2024-09-11",
+        "id": "95938",
+        "t": "Hertz Bankruptcy Was Too Good for Shareholders"
+      },
+      {
+        "d": "2024-07-17",
+        "id": "76010",
+        "t": "Trump Media Has Some Stock to Sell"
+      },
+      {
+        "d": "2023-10-31",
+        "id": "41081",
+        "t": "Bad Passwords Are Securities Fraud"
+      },
+      {
+        "d": "2023-07-05",
+        "id": "33852",
+        "t": "Lots of Banks Means Lots of Bank Mergers"
+      },
+      {
+        "d": "2023-05-17",
+        "id": "31008",
+        "t": "Banks Want a Break From the FDIC"
+      },
+      {
+        "d": "2023-04-19",
+        "id": "29343",
+        "t": "Betterment Missed Some Tax Trades"
+      },
+      {
+        "d": "2023-04-12",
+        "id": "28965",
+        "t": "SPAC PIPEs Sometimes Leak"
+      },
+      {
+        "d": "2023-02-07",
+        "id": "23849",
+        "t": "Bed Bath & Beyond Sold Some Stock"
+      }
+    ]
+  },
+  {
+    "ticker": "BBBY",
+    "name": "Bed Bath & Beyond",
+    "event": "BANKRUPT",
+    "date": "Apr 2023",
+    "note": "Meme stock that kept selling shares into its own rally on the way down. Ryan Cohen got out first.",
+    "mention_count": 34,
+    "mentions": [
+      {
+        "d": "2026-04-01",
+        "id": "258497",
+        "t": "OpenAI Is Almost Public"
+      },
+      {
+        "d": "2025-10-09",
+        "id": "203482",
+        "t": "First Brands Is Missing Some Money"
+      },
+      {
+        "d": "2025-09-24",
+        "id": "201806",
+        "t": "There Was a RadioShack Ponzi"
+      },
+      {
+        "d": "2025-07-23",
+        "id": "195179",
+        "t": "Meme Stocks Are Back"
+      },
+      {
+        "d": "2025-07-01",
+        "id": "192951",
+        "t": "A Drug-Trial Stock Sale"
+      },
+      {
+        "d": "2025-02-04",
+        "id": "152685",
+        "t": "Robinhood Wanted B*ts on the B*g G*me"
+      },
+      {
+        "d": "2024-10-22",
+        "id": "110049",
+        "t": "The Sophisticated Investor Test"
+      },
+      {
+        "d": "2024-07-17",
+        "id": "76010",
+        "t": "Trump Media Has Some Stock to Sell"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Greensill Capital",
+    "event": "INSOLVENT",
+    "date": "Mar 2021",
+    "note": "Supply-chain finance turned into lending against invoices that had not happened yet. Took $10 billion of Credit Suisse client funds down with it.",
+    "mention_count": 25,
+    "mentions": [
+      {
+        "d": "2025-10-09",
+        "id": "203482",
+        "t": "First Brands Is Missing Some Money"
+      },
+      {
+        "d": "2024-08-15",
+        "id": "87697",
+        "t": "Stablecoins Can Have Bank Runs"
+      },
+      {
+        "d": "2023-05-15",
+        "id": "30869",
+        "t": "Crypto Had Its Bank Runs Too"
+      },
+      {
+        "d": "2023-03-21",
+        "id": "27219",
+        "t": "JPMorgan Had Some Fake Nickel"
+      },
+      {
+        "d": "2023-03-16",
+        "id": "25491",
+        "t": "Credit Suisse Puts On a Brave Face"
+      },
+      {
+        "d": "2023-03-01",
+        "id": "24451",
+        "t": "Goldman Wants to Be More Boring"
+      },
+      {
+        "d": "2022-06-28",
+        "id": "21612",
+        "t": "Don\u2019t Cheat on the Ethics Exam"
+      },
+      {
+        "d": "2022-05-20",
+        "id": "21231",
+        "t": "The SPAC Bust Is Expensive"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Celsius Network",
+    "event": "BANKRUPT",
+    "date": "Jul 2022",
+    "note": "Crypto lender froze withdrawals, then filed. Founder Alex Mashinsky pleaded guilty to fraud.",
+    "mention_count": 25,
     "mentions": [
       {
         "d": "2026-07-30",
@@ -213,39 +513,839 @@
         "t": "The Situation Deteriorated"
       },
       {
-        "d": "2026-04-23",
-        "id": "286682",
-        "t": "Traders Do Something About the Weather"
+        "d": "2024-07-23",
+        "id": "78459",
+        "t": "Don\u2019t Loot the Scams"
       },
       {
-        "d": "2025-10-21",
-        "id": "204922",
-        "t": "OpenAI Is Building a Banker"
+        "d": "2023-11-27",
+        "id": "43157",
+        "t": "OpenAI Is Still an $86 Billion Nonprofit"
       },
       {
-        "d": "2025-10-08",
-        "id": "203359",
-        "t": "AI Insurance Is Expensive"
+        "d": "2023-07-13",
+        "id": "34354",
+        "t": "Celsius Was Lying"
       },
+      {
+        "d": "2023-07-06",
+        "id": "33910",
+        "t": "Small Banks Don\u2019t Like High Rates"
+      },
+      {
+        "d": "2023-04-26",
+        "id": "29711",
+        "t": "First Republic Calls In a Favor"
+      },
+      {
+        "d": "2023-02-15",
+        "id": "24099",
+        "t": "Purple Innovation\u2019s PRPLS Innovation"
+      },
+      {
+        "d": "2023-02-14",
+        "id": "24076",
+        "t": "Three Arrows Gives Crypto Another Try"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "BlockFi",
+    "event": "BANKRUPT",
+    "date": "Nov 2022",
+    "note": "Rescued by FTX in July 2022, which was not the rescue it looked like.",
+    "mention_count": 25,
+    "mentions": [
+      {
+        "d": "2023-10-09",
+        "id": "39626",
+        "t": "Ozempic Is Bad for Business"
+      },
+      {
+        "d": "2023-05-15",
+        "id": "30869",
+        "t": "Crypto Had Its Bank Runs Too"
+      },
+      {
+        "d": "2023-04-27",
+        "id": "29769",
+        "t": "First Republic Is in Limbo"
+      },
+      {
+        "d": "2023-02-13",
+        "id": "24043",
+        "t": "The SEC Cracks Down on Crypto"
+      },
+      {
+        "d": "2023-01-10",
+        "id": "23515",
+        "t": "Crypto Banks Owe Themselves Money"
+      },
+      {
+        "d": "2022-12-19",
+        "id": "23341",
+        "t": "Elon Wants Some Twitter Help"
+      },
+      {
+        "d": "2022-12-05",
+        "id": "23212",
+        "t": "Crypto Had a Credit Bubble"
+      },
+      {
+        "d": "2022-12-01",
+        "id": "23179",
+        "t": "SBF Missed FTX\u2019s Risks"
+      }
+    ]
+  },
+  {
+    "ticker": "FRC",
+    "name": "First Republic",
+    "event": "SEIZED",
+    "date": "May 2023",
+    "note": "Survived March 2023 on a $30 billion deposit infusion from eleven banks, then failed anyway. Sold to JPMorgan.",
+    "mention_count": 22,
+    "mentions": [
+      {
+        "d": "2024-04-29",
+        "id": "58058",
+        "t": "A Paramount Merger Will Be Tricky"
+      },
+      {
+        "d": "2024-04-10",
+        "id": "56157",
+        "t": "Super Users Had Inflation Questions"
+      },
+      {
+        "d": "2023-09-12",
+        "id": "38006",
+        "t": "Gambling on Options Is Fun"
+      },
+      {
+        "d": "2023-08-28",
+        "id": "37111",
+        "t": "Loans Still Aren\u2019t Securities"
+      },
+      {
+        "d": "2023-07-26",
+        "id": "35221",
+        "t": "Don\u2019t Tip Your Private Pilot"
+      },
+      {
+        "d": "2023-07-17",
+        "id": "34539",
+        "t": "Branches Make Bank Runs Harder"
+      },
+      {
+        "d": "2023-06-29",
+        "id": "33574",
+        "t": "The Big Banks Aren\u2019t Stressed"
+      },
+      {
+        "d": "2023-06-14",
+        "id": "32645",
+        "t": "Regional Banks Don\u2019t Feel Loved"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Three Arrows Capital",
+    "event": "LIQUIDATED",
+    "date": "Jun 2022",
+    "note": "Crypto hedge fund that borrowed from everyone at once, mostly unsecured. Its default cascaded through the lenders below.",
+    "mention_count": 22,
+    "mentions": [
+      {
+        "d": "2025-01-21",
+        "id": "145843",
+        "t": "The SEC Was Busy Last Week"
+      },
+      {
+        "d": "2024-07-15",
+        "id": "75258",
+        "t": "OpenAI Might Have\u00a0Lucrative NDAs"
+      },
+      {
+        "d": "2024-06-24",
+        "id": "65994",
+        "t": "Boomer Candy Business Is Booming"
+      },
+      {
+        "d": "2024-02-21",
+        "id": "50882",
+        "t": "Reddit\u2019s IPO Is for Redditors"
+      },
+      {
+        "d": "2023-11-27",
+        "id": "43157",
+        "t": "OpenAI Is Still an $86 Billion Nonprofit"
+      },
+      {
+        "d": "2023-10-19",
+        "id": "40290",
+        "t": "Bitcoin Is Not Great for Murder"
+      },
+      {
+        "d": "2023-10-16",
+        "id": "40068",
+        "t": "CDS Bet Bites Carl Icahn"
+      },
+      {
+        "d": "2023-10-09",
+        "id": "39626",
+        "t": "Ozempic Is Bad for Business"
+      }
+    ]
+  },
+  {
+    "ticker": "NKLA",
+    "name": "Nikola",
+    "event": "BANKRUPT",
+    "date": "Feb 2025",
+    "note": "The truck rolled downhill in the promotional video. Founder Trevor Milton was convicted of fraud in 2022 and pardoned in 2025.",
+    "mention_count": 21,
+    "mentions": [
+      {
+        "d": "2025-10-13",
+        "id": "203928",
+        "t": "OpenAI Keeps Doing Deals"
+      },
+      {
+        "d": "2025-06-10",
+        "id": "190857",
+        "t": "People Are Worried About Private Market Liquidity"
+      },
+      {
+        "d": "2025-03-31",
+        "id": "179613",
+        "t": "Musk Merged His Xes"
+      },
+      {
+        "d": "2023-04-12",
+        "id": "28965",
+        "t": "SPAC PIPEs Sometimes Leak"
+      },
+      {
+        "d": "2022-09-12",
+        "id": "22315",
+        "t": "Citi Got Its $500 Million Back"
+      },
+      {
+        "d": "2022-01-24",
+        "id": "20082",
+        "t": "Maybe the Memes Are Over"
+      },
+      {
+        "d": "2021-12-13",
+        "id": "19691",
+        "t": "The Trump SPAC PIPE Is Free Money"
+      },
+      {
+        "d": "2021-07-29",
+        "id": "18241",
+        "t": "Archegos Was Too Busy for Margin Calls"
+      }
+    ]
+  },
+  {
+    "ticker": "REV",
+    "name": "Revlon",
+    "event": "BANKRUPT",
+    "date": "Jun 2022",
+    "note": "Filed months after Citi wired lenders $900 million of its own money by mistake and a judge said they could keep it. Emerged May 2023.",
+    "mention_count": 19,
+    "mentions": [
+      {
+        "d": "2026-07-30",
+        "id": "433001",
+        "t": "The Situation Deteriorated"
+      },
+      {
+        "d": "2025-10-16",
+        "id": "204320",
+        "t": "Nothing Is Securities Fraud?"
+      },
+      {
+        "d": "2024-05-28",
+        "id": "60909",
+        "t": "Archegos Sent Goldman Some Free Money"
+      },
+      {
+        "d": "2023-06-22",
+        "id": "33146",
+        "t": "Does Mark Zuckerberg Own Too Much Meta?"
+      },
+      {
+        "d": "2023-02-15",
+        "id": "24099",
+        "t": "Purple Innovation\u2019s PRPLS Innovation"
+      },
+      {
+        "d": "2022-11-02",
+        "id": "22872",
+        "t": "Mergers Aren\u2019t Always Fair"
+      },
+      {
+        "d": "2022-09-12",
+        "id": "22315",
+        "t": "Citi Got Its $500 Million Back"
+      },
+      {
+        "d": "2022-06-23",
+        "id": "21568",
+        "t": "Revlon Is Getting Memed"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Voyager Digital",
+    "event": "BANKRUPT",
+    "date": "Jul 2022",
+    "note": "Went down on its unsecured loan to Three Arrows. Customers learned the difference between a deposit and a loan to a crypto firm.",
+    "mention_count": 17,
+    "mentions": [
       {
         "d": "2024-07-23",
         "id": "78459",
         "t": "Don\u2019t Loot the Scams"
       },
       {
+        "d": "2023-10-16",
+        "id": "40068",
+        "t": "CDS Bet Bites Carl Icahn"
+      },
+      {
+        "d": "2023-06-06",
+        "id": "32176",
+        "t": "The SEC Comes for Crypto"
+      },
+      {
+        "d": "2023-04-26",
+        "id": "29711",
+        "t": "First Republic Calls In a Favor"
+      },
+      {
+        "d": "2023-02-15",
+        "id": "24099",
+        "t": "Purple Innovation\u2019s PRPLS Innovation"
+      },
+      {
+        "d": "2023-02-13",
+        "id": "24043",
+        "t": "The SEC Cracks Down on Crypto"
+      },
+      {
+        "d": "2022-12-19",
+        "id": "23341",
+        "t": "Elon Wants Some Twitter Help"
+      },
+      {
+        "d": "2022-11-28",
+        "id": "23144",
+        "t": "FTX\u2019s BlockFi Rescue Didn\u2019t Work"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Theranos",
+    "event": "DISSOLVED",
+    "date": "Sep 2018",
+    "note": "The blood tests did not work. Elizabeth Holmes got 11 years, Sunny Balwani nearly 13.",
+    "mention_count": 17,
+    "mentions": [
+      {
+        "d": "2026-03-10",
+        "id": "242228",
+        "t": "Bill Ackman Wants Your Money Again"
+      },
+      {
+        "d": "2025-09-22",
+        "id": "201554",
+        "t": "Bitcoin Treasury Company M&A"
+      },
+      {
+        "d": "2025-03-13",
+        "id": "172023",
+        "t": "You Need Regulators to Deregulate"
+      },
+      {
+        "d": "2024-03-21",
+        "id": "54244",
+        "t": "Pump and Dumps Are Legal Now"
+      },
+      {
+        "d": "2023-10-24",
+        "id": "40559",
+        "t": "Big Bonuses Are Back at UK Banks"
+      },
+      {
+        "d": "2023-02-23",
+        "id": "24301",
+        "t": "Slam Dunks Might Be Securities"
+      },
+      {
+        "d": "2022-01-04",
+        "id": "19893",
+        "t": "Slaying the Blood Unicorn"
+      },
+      {
+        "d": "2021-11-08",
+        "id": "19338",
+        "t": "Elon Musk Did Some Tweets"
+      }
+    ]
+  },
+  {
+    "ticker": "SBNY",
+    "name": "Signature Bank",
+    "event": "SEIZED",
+    "date": "Mar 2023",
+    "note": "Closed by New York regulators two days after SVB. Its crypto-payments network went with it.",
+    "mention_count": 16,
+    "mentions": [
+      {
+        "d": "2024-11-19",
+        "id": "120105",
+        "t": "Insider Trading at the Fed"
+      },
+      {
+        "d": "2024-04-29",
+        "id": "58058",
+        "t": "A Paramount Merger Will Be Tricky"
+      },
+      {
+        "d": "2023-07-25",
+        "id": "35154",
+        "t": "Keeping Track of Bank Accounts Is Hard"
+      },
+      {
+        "d": "2023-07-18",
+        "id": "34610",
+        "t": "Buyout Funds Buy From Themselves"
+      },
+      {
+        "d": "2023-07-17",
+        "id": "34539",
+        "t": "Branches Make Bank Runs Harder"
+      },
+      {
+        "d": "2023-06-14",
+        "id": "32645",
+        "t": "Regional Banks Don\u2019t Feel Loved"
+      },
+      {
+        "d": "2023-04-20",
+        "id": "29404",
+        "t": "Banking Gets a Bit Narrower"
+      },
+      {
+        "d": "2023-04-13",
+        "id": "29018",
+        "t": "Twitter Gets Into the Stock Business"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Melvin Capital",
+    "event": "SHUT DOWN",
+    "date": "May 2022",
+    "note": "Lost 53% in the January 2021 GameStop squeeze, took $2.75 billion from Citadel and Point72, never recovered, returned the rest.",
+    "mention_count": 16,
+    "mentions": [
+      {
+        "d": "2023-07-05",
+        "id": "33852",
+        "t": "Lots of Banks Means Lots of Bank Mergers"
+      },
+      {
+        "d": "2022-06-02",
+        "id": "21344",
+        "t": "Don\u2019t Insider Trade NFTs"
+      },
+      {
+        "d": "2022-05-20",
+        "id": "21231",
+        "t": "The SPAC Bust Is Expensive"
+      },
+      {
+        "d": "2022-04-21",
+        "id": "20954",
+        "t": "Elon Got His Money!"
+      },
+      {
+        "d": "2021-07-15",
+        "id": "18064",
+        "t": "The Meme Stocks Can\u2019t Fail"
+      },
+      {
+        "d": "2021-03-23",
+        "id": "16503",
+        "t": "Happy GameStop Earnings Day"
+      },
+      {
+        "d": "2021-03-04",
+        "id": "16181",
+        "t": "Melvin Capital Had a Better Month"
+      },
+      {
+        "d": "2021-02-24",
+        "id": "16071",
+        "t": "The Vaccine Is Not a Competition"
+      }
+    ]
+  },
+  {
+    "ticker": "SI",
+    "name": "Silvergate",
+    "event": "WOUND DOWN",
+    "date": "Mar 2023",
+    "note": "The bank for crypto companies had a crypto bank run after FTX failed, sold its bond portfolio at a loss to meet withdrawals, then voluntarily liquidated. Holding company filed Chapter 11 in 2024.",
+    "mention_count": 13,
+    "mentions": [
+      {
+        "d": "2025-12-04",
+        "id": "211225",
+        "t": "Buy Low, Sell to Yourself"
+      },
+      {
+        "d": "2025-11-25",
+        "id": "209751",
+        "t": "Take the Crypto Out of the Indexes"
+      },
+      {
+        "d": "2024-10-03",
+        "id": "103812",
+        "t": "Private Credit Wants Everyone\u2019s Money"
+      },
+      {
+        "d": "2023-07-18",
+        "id": "34610",
+        "t": "Buyout Funds Buy From Themselves"
+      },
+      {
+        "d": "2023-05-18",
+        "id": "31078",
+        "t": "Tether Bought Some Bitcoin"
+      },
+      {
+        "d": "2023-03-21",
+        "id": "27219",
+        "t": "JPMorgan Had Some Fake Nickel"
+      },
+      {
+        "d": "2023-03-13",
+        "id": "25268",
+        "t": "SVB Couldn\u2019t Ignore Its Losses, But the Fed Can"
+      },
+      {
+        "d": "2023-03-10",
+        "id": "24927",
+        "t": "Startup Bank Had a Startup Bank Run"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Genesis Global",
+    "event": "BANKRUPT",
+    "date": "Jan 2023",
+    "note": "DCG's lending arm, on the other side of Gemini Earn. The SEC called Earn an unregistered securities offering.",
+    "mention_count": 10,
+    "mentions": [
+      {
+        "d": "2025-01-21",
+        "id": "145843",
+        "t": "The SEC Was Busy Last Week"
+      },
+      {
+        "d": "2023-10-19",
+        "id": "40290",
+        "t": "Bitcoin Is Not Great for Murder"
+      },
+      {
+        "d": "2023-02-14",
+        "id": "24076",
+        "t": "Three Arrows Gives Crypto Another Try"
+      },
+      {
+        "d": "2023-02-13",
+        "id": "24043",
+        "t": "The SEC Cracks Down on Crypto"
+      },
+      {
+        "d": "2023-01-17",
+        "id": "23621",
+        "t": "SEC Comes for Gemini Too Late"
+      },
+      {
+        "d": "2023-01-10",
+        "id": "23515",
+        "t": "Crypto Banks Owe Themselves Money"
+      },
+      {
+        "d": "2023-01-03",
+        "id": "23447",
+        "t": "Crypto Manipulation Has Consequences"
+      },
+      {
+        "d": "2022-11-16",
+        "id": "23006",
+        "t": "FTX Creates Crypto Contagion"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Wirecard",
+    "event": "INSOLVENT",
+    "date": "Jun 2020",
+    "note": "\u20ac1.9 billion of cash in Philippine bank accounts turned out not to exist. The COO fled and has not been found.",
+    "mention_count": 8,
+    "mentions": [
+      {
+        "d": "2023-02-27",
+        "id": "24390",
+        "t": "Wirecard Had a Wild Run"
+      },
+      {
+        "d": "2021-01-06",
+        "id": "15353",
+        "t": "Tesla Kept Busy in 2020"
+      },
+      {
+        "d": "2020-07-31",
+        "id": "13243",
+        "t": "Apple Stock Will Get Cheaper"
+      },
+      {
+        "d": "2020-07-20",
+        "id": "13048",
+        "t": "They\u2019re All Friends in the Index"
+      },
+      {
+        "d": "2020-07-17",
+        "id": "13018",
+        "t": "Free Trades Can Really Cost You"
+      },
+      {
+        "d": "2020-07-10",
+        "id": "12914",
+        "t": "Mattress Company Stiffs Some Lenders"
+      },
+      {
+        "d": "2020-07-02",
+        "id": "12804",
+        "t": "Free Wirecard Money Costs SoftBank"
+      },
+      {
+        "d": "2020-06-22",
+        "id": "12606",
+        "t": "The Best Fraud Is in Plain Sight"
+      }
+    ]
+  },
+  {
+    "ticker": "RIDE",
+    "name": "Lordstown Motors",
+    "event": "BANKRUPT",
+    "date": "Jun 2023",
+    "note": "SPAC-era EV maker that sued Foxconn on the way out for failing to fund it.",
+    "mention_count": 6,
+    "mentions": [
+      {
+        "d": "2024-07-17",
+        "id": "76010",
+        "t": "Trump Media Has Some Stock to Sell"
+      },
+      {
+        "d": "2023-10-02",
+        "id": "39234",
+        "t": "SBF\u2019s Defense Will Be Tough"
+      },
+      {
+        "d": "2023-06-28",
+        "id": "33507",
+        "t": "UBS Cuts Out Credit Suisse"
+      },
+      {
+        "d": "2021-07-27",
+        "id": "18186",
+        "t": "Lordstown Is Selling Some Stock"
+      },
+      {
+        "d": "2021-06-21",
+        "id": "17774",
+        "t": "Lordstown Executives Had Good Timing"
+      },
+      {
+        "d": "2021-06-15",
+        "id": "17700",
+        "t": "Lordstown\u2019s Electric-Truck Orders Were Vague"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Purdue Pharma",
+    "event": "BANKRUPT",
+    "date": "Sep 2019",
+    "note": "Filed to settle opioid claims. The Supreme Court threw out the plan in 2024 because it released the Sacklers, who had not filed for bankruptcy themselves.",
+    "mention_count": 6,
+    "mentions": [
+      {
         "d": "2024-07-11",
         "id": "73485",
         "t": "Banks Can Outsource Their Trades"
       },
       {
-        "d": "2024-07-09",
-        "id": "72712",
-        "t": "Celsius Wants Some Money Back"
+        "d": "2024-06-27",
+        "id": "67512",
+        "t": "Purdue\u2019s Bankruptcy Went Too Far"
       },
       {
-        "d": "2024-03-06",
-        "id": "52253",
-        "t": "Elon Musk Wanted Control, Not Charity"
+        "d": "2023-05-31",
+        "id": "31809",
+        "t": "Purdue Pharma\u2019s Bankruptcy Works Now"
+      },
+      {
+        "d": "2021-12-23",
+        "id": "19820",
+        "t": "The Purdue Bankruptcy Didn\u2019t Work"
+      },
+      {
+        "d": "2020-02-13",
+        "id": "10450",
+        "t": "It\u2019s Good If People Want Tesla Stock"
+      },
+      {
+        "d": "2019-08-29",
+        "id": "8688",
+        "t": "Put Your Business in a Box"
+      }
+    ]
+  },
+  {
+    "ticker": "\u2014",
+    "name": "Evergrande",
+    "event": "LIQUIDATION ORDER",
+    "date": "Jan 2024",
+    "note": "$300 billion of liabilities. A Hong Kong court ordered liquidation after two years of restructuring talks went nowhere.",
+    "mention_count": 5,
+    "mentions": [
+      {
+        "d": "2024-03-19",
+        "id": "54028",
+        "t": "Banks Can Get Emissions Off the Books"
+      },
+      {
+        "d": "2021-10-26",
+        "id": "19214",
+        "t": "Elon Musk Had a Good Day"
+      },
+      {
+        "d": "2021-10-07",
+        "id": "19008",
+        "t": "Looking for Tether\u2019s Money"
+      },
+      {
+        "d": "2021-09-23",
+        "id": "18872",
+        "t": "Dark Pool Sold Some Order Flow"
+      },
+      {
+        "d": "2021-09-21",
+        "id": "18817",
+        "t": "Evergrande Borrowed From Everyone"
+      }
+    ]
+  },
+  {
+    "ticker": "ME",
+    "name": "23andMe",
+    "event": "BANKRUPT",
+    "date": "Mar 2025",
+    "note": "Filed with 15 million people's genetic data as an asset on the block.",
+    "mention_count": 5,
+    "mentions": [
+      {
+        "d": "2025-06-05",
+        "id": "190424",
+        "t": "Bankruptcy Was Good for 23andMe"
+      },
+      {
+        "d": "2025-03-24",
+        "id": "176478",
+        "t": "There\u2019s a Stock Exchange for Lawsuits"
+      },
+      {
+        "d": "2025-03-07",
+        "id": "169020",
+        "t": "The Podcast: Audible Frustration"
+      },
+      {
+        "d": "2025-03-05",
+        "id": "167997",
+        "t": "There Was a Texas Lottery Arbitrage"
+      },
+      {
+        "d": "2024-09-19",
+        "id": "98830",
+        "t": "23andMe Is Just \u2018Me\u2019 Now"
+      }
+    ]
+  },
+  {
+    "ticker": "SAVE",
+    "name": "Spirit Airlines",
+    "event": "CEASED OPERATIONS",
+    "date": "May 2026",
+    "note": "Filed Chapter 11 in November 2024 after the JetBlue merger was blocked on antitrust grounds, emerged in March 2025, filed again that August, and stopped flying altogether on 2 May 2026.",
+    "mention_count": 3,
+    "mentions": [
+      {
+        "d": "2025-10-30",
+        "id": "206126",
+        "t": "Pay Now, Merge Later"
+      },
+      {
+        "d": "2024-01-17",
+        "id": "46936",
+        "t": "Making ESG a Crime"
+      },
+      {
+        "d": "2022-06-28",
+        "id": "21612",
+        "t": "Don\u2019t Cheat on the Ethics Exam"
+      }
+    ]
+  },
+  {
+    "ticker": "FSR",
+    "name": "Fisker",
+    "event": "BANKRUPT",
+    "date": "Jun 2024",
+    "note": "Second EV company by the same founder to go bankrupt.",
+    "mention_count": 3,
+    "mentions": [
+      {
+        "d": "2023-07-19",
+        "id": "34676",
+        "t": "A Stock Fund That Can\u2019t Go Down"
+      },
+      {
+        "d": "2021-06-15",
+        "id": "17700",
+        "t": "Lordstown\u2019s Electric-Truck Orders Were Vague"
+      },
+      {
+        "d": "2021-02-23",
+        "id": "16055",
+        "t": "SPAC Investors Don\u2019t Love Lucid"
       }
     ]
   }

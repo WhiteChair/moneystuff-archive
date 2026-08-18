@@ -285,37 +285,52 @@ if new_to_classify:
 
 # ── Refresh ticker prices ─────────────────────────────────────────────────────
 print("Refreshing ticker prices...")
-COMPANY_TICKERS = {
-    'Tesla':'TSLA','Goldman Sachs':'GS','Goldman':'GS','Apple':'AAPL','Microsoft':'MSFT',
-    'Amazon':'AMZN','Alphabet':'GOOGL','Meta':'META','Facebook':'META','Netflix':'NFLX',
-    'Uber':'UBER','Airbnb':'ABNB','Rivian':'RIVN','Coinbase':'COIN','JPMorgan':'JPM',
-    'JP Morgan':'JPM','Bank of America':'BAC','Citigroup':'C','Citi':'C','Morgan Stanley':'MS',
-    'BlackRock':'BLK','Berkshire':'BRK-B','Robinhood':'HOOD','Palantir':'PLTR',
-    'Snowflake':'SNOW','Deutsche Bank':'DB',
-}
-TICKER_RE = re.compile(r'\$([A-Z]{1,5})\b')
-SKIP = {'I','A','AT','OR','BE','TO','OF','IN','ON','IS','IT','BY','AS','AN','SO','UP','DO','GO','NO'}
+# Live, still-tradeable companies. Matched on whole-issue text by word-boundary
+# regex - Levine writes company names, essentially never "$TICKER" cashtags, so
+# a name table is the only thing that finds anything.
+COMPANY_PATTERNS = {
+    'TSLA': [r'Tesla'],            'GS':   [r'Goldman Sachs', r'Goldman'],
+    'AAPL': [r'Apple Inc', r'Apple'], 'MSFT': [r'Microsoft'],
+    'AMZN': [r'Amazon'],           'GOOGL':[r'Alphabet', r'Google'],
+    'META': [r'Meta Platforms', r'Meta\b', r'Facebook'],
+    'NFLX': [r'Netflix'],          'UBER': [r'Uber'],
+    'ABNB': [r'Airbnb'],           'RIVN': [r'Rivian'],
+    'COIN': [r'Coinbase'],         'JPM':  [r'JPMorgan', r'JP Morgan'],
+    'BAC':  [r'Bank of America'],  'C':    [r'Citigroup', r'Citibank', r'Citi\b'],
+    'MS':   [r'Morgan Stanley'],   'BLK':  [r'BlackRock'],
+    'BRK-B':[r'Berkshire'],        'HOOD': [r'Robinhood'],
+    'PLTR': [r'Palantir'],         'SNOW': [r'Snowflake'],
+    'DB':   [r'Deutsche Bank'],
+    # added 2026-08: names the archive is full of but the old table never saw
+    'GME':  [r'GameStop'],         'AMC':  [r'AMC Entertainment', r'AMC\b'],
+    'NVDA': [r'Nvidia'],           'MSTR': [r'MicroStrategy', r'Strategy Inc'],
+    'DJT':  [r'Trump Media'],      'UBS':  [r'UBS\b'],
+    'BCS':  [r'Barclays'],         'HSBC': [r'HSBC'],
+    'WFC':  [r'Wells Fargo'],      'SCHW': [r'Charles Schwab', r'Schwab'],
+    'IBKR': [r'Interactive Brokers'], 'BX': [r'Blackstone'],
+    'KKR':  [r'KKR'],              'APO':  [r'Apollo Global', r'Apollo Management'],
+    'ARES': [r'Ares Management'],  'BA':   [r'Boeing'],
+    'DIS':  [r'Disney'],           'INTC': [r'Intel\b'],
+    'PYPL': [r'PayPal'],           'PTON': [r'Peloton'],
+    'ZG':   [r'Zillow'],           'OPEN': [r'Opendoor'],
+    'SNAP': [r'Snapchat', r'Snap Inc'], 'CVNA': [r'Carvana'],
+    'CRCL': [r'Circle Internet'],  }
+COMPANY_RES = {t: [re.compile(r'\b' + p + r'\b', re.I) for p in pats]
+               for t, pats in COMPANY_PATTERNS.items()}
+MIN_ISSUES = 6   # below this a name is a passing reference, not a subject
 
 ticker_mentions = defaultdict(list)
 for a in articles:
     content = body(a) + ' ' + a.get('t','')
-    for m in TICKER_RE.finditer(content):
-        t = m.group(1)
-        if 2<=len(t)<=5 and t not in SKIP:
-            ticker_mentions[t].append({'d':a['d'],'id':a['id'],'t':a['t']})
-    for company, ticker in COMPANY_TICKERS.items():
-        if company.lower() in content.lower():
+    for ticker, pats in COMPANY_RES.items():
+        if any(p.search(content) for p in pats):
             ticker_mentions[ticker].append({'d':a['d'],'id':a['id'],'t':a['t']})
-
-for t in list(ticker_mentions.keys()):
-    seen_ids, deduped_m = set(), []
-    for m in sorted(ticker_mentions[t], key=lambda x: x['d'], reverse=True):
-        if m['id'] not in seen_ids: seen_ids.add(m['id']); deduped_m.append(m)
-    ticker_mentions[t] = deduped_m
+for t in ticker_mentions:
+    ticker_mentions[t].sort(key=lambda m: m['d'], reverse=True)
 
 def fetch_ticker(ticker, mentions):
-    if len(mentions) < 2: return None
-    first_date = sorted(mentions, key=lambda m: m['d'])[0]['d']
+    if len(mentions) < MIN_ISSUES: return None
+    first_date = mentions[-1]['d']
     url = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1mo&range=12y'
     try:
         req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0'})
@@ -328,53 +343,146 @@ def fetch_ticker(ticker, mentions):
         target_ts = datetime.strptime(first_date, '%Y-%m-%d').timestamp()
         valid = [(t, c) for t,c in zip(timestamps, closes) if c is not None]
         if not valid: return None
-        closest = min(valid, key=lambda x: abs(x[0]-target_ts))
+        # Companies Matt wrote about before they were listed (Coinbase, Circle,
+        # Palantir...) have no price on the first-mention date. Price from the
+        # first day the stock actually traded, and say so, rather than silently
+        # passing off the IPO price as the 2019 price.
+        after = [v for v in valid if v[0] >= target_ts]
+        closest = after[0] if after else valid[-1]
         price_then, price_now = closest[1], meta.get('regularMarketPrice')
         if not price_then or not price_now: return None
-        return {'ticker':ticker,'first_date':first_date,'price_then':round(price_then,2),
+        price_date = datetime.fromtimestamp(closest[0]).strftime('%Y-%m-%d')
+        return {'ticker':ticker,'first_date':first_date,'price_date':price_date,
+                # monthly bars land on the 1st, so only flag a real gap
+                'priced_late': (datetime.fromtimestamp(closest[0]) -
+                                datetime.strptime(first_date, '%Y-%m-%d')).days > 90,
+                'price_then':round(price_then,2),
                 'price_now':round(price_now,2),'return_pct':round((price_now/price_then-1)*100,1),
                 'mention_count':len(mentions),'currency':meta.get('currency','USD'),
                 'mentions':mentions[:8]}
     except: return None
 
-top_tickers = sorted([(t,m) for t,m in ticker_mentions.items() if t not in SKIP], key=lambda x:-len(x[1]))[:25]
 new_tickers = []
-for ticker, mentions in top_tickers:
+for ticker, mentions in sorted(ticker_mentions.items(), key=lambda x:-len(x[1])):
     result = fetch_ticker(ticker, mentions)
     if result:
         new_tickers.append(result)
-        print(f"  {ticker}: ${result['price_then']} → ${result['price_now']} ({result['return_pct']:+.0f}%)")
+        print(f"  {ticker}: ${result['price_then']} -> ${result['price_now']} ({result['return_pct']:+.0f}%)")
     time.sleep(0.4)
-tickers = new_tickers
+if new_tickers: tickers = new_tickers
+print(f"Live tickers: {len(tickers)}")
 
-# ── Update bankrupt company mentions ─────────────────────────────────────────
-BANKRUPT_DATA = [
-    {"ticker":"FTX","name":"FTX","status":"bankrupt","bankruptcy_date":"2022-11-11",
-     "note":"Sam Bankman-Fried's crypto exchange collapsed Nov 2022. SBF sentenced to 25 years."},
-    {"ticker":"SIVB","name":"Silicon Valley Bank","status":"bankrupt","bankruptcy_date":"2023-03-10",
-     "note":"Failed March 2023, second-largest US bank failure. Acquired by First Citizens."},
-    {"ticker":"CS","name":"Credit Suisse","status":"bankrupt","bankruptcy_date":"2023-03-19",
-     "note":"Forced merger with UBS in March 2023. AT1 bonds wiped to zero."},
-    {"ticker":"WE","name":"WeWork","status":"bankrupt","bankruptcy_date":"2023-11-06",
-     "note":"Filed Chapter 11 Nov 2023 after spectacular collapse from $47B valuation."},
-    {"ticker":"CELH","name":"Celsius Network","status":"bankrupt","bankruptcy_date":"2022-07-13",
-     "note":"Crypto lender froze withdrawals and filed bankruptcy July 2022."},
+# ── Dead companies: bankrupt, seized, taken private, wound down ──────────────
+# Deliberately NOT priced. Yahoo silently re-points a delisted symbol at whoever
+# holds it now (SI returns a live quote that has nothing to do with Silvergate),
+# so these carry an event and a date instead of a return.
+DEAD_COMPANIES = [
+    {"ticker":"TWTR","name":"Twitter","event":"TAKEN PRIVATE","date":"Oct 2022",
+     "note":"Musk signed in April 2022, spent the summer trying to get out of it, then closed at $54.20 a share in October. Now X.",
+     "patterns":[r'Twitter']},
+    {"ticker":"—","name":"Archegos Capital","event":"COLLAPSED","date":"Mar 2021",
+     "note":"Bill Hwang's family office blew up on concentrated total return swaps, costing its banks over $10 billion. Credit Suisse took the worst of it. Hwang was convicted of fraud in 2024.",
+     "patterns":[r'Archegos']},
+    {"ticker":"FTX","name":"FTX","event":"BANKRUPT","date":"Nov 2022",
+     "note":"Sam Bankman-Fried's crypto exchange collapsed after a run revealed customer funds at Alameda. SBF sentenced to 25 years.",
+     "patterns":[r'FTX', r'Bankman-Fried', r'Alameda Research']},
+    {"ticker":"SIVB","name":"Silicon Valley Bank","event":"SEIZED","date":"Mar 2023",
+     "note":"Deposits fled after a botched capital raise; regulators closed it in a weekend. Second-largest US bank failure at the time.",
+     "patterns":[r'Silicon Valley Bank', r'SVB']},
+    {"ticker":"CS","name":"Credit Suisse","event":"FORCED MERGER","date":"Mar 2023",
+     "note":"Swiss authorities pushed it into UBS's arms over a weekend and wrote its AT1 bonds to zero while shareholders got stock — the wrong way round, said the AT1 holders.",
+     "patterns":[r'Credit Suisse']},
+    {"ticker":"BBBY","name":"Bed Bath & Beyond","event":"BANKRUPT","date":"Apr 2023",
+     "note":"Meme stock that kept selling shares into its own rally on the way down. Ryan Cohen got out first.",
+     "patterns":[r'Bed Bath']},
+    {"ticker":"—","name":"Greensill Capital","event":"INSOLVENT","date":"Mar 2021",
+     "note":"Supply-chain finance turned into lending against invoices that had not happened yet. Took $10 billion of Credit Suisse client funds down with it.",
+     "patterns":[r'Greensill']},
+    {"ticker":"REV","name":"Revlon","event":"BANKRUPT","date":"Jun 2022",
+     "note":"Filed months after Citi wired lenders $900 million of its own money by mistake and a judge said they could keep it. Emerged May 2023.",
+     "patterns":[r'Revlon']},
+    {"ticker":"FRC","name":"First Republic","event":"SEIZED","date":"May 2023",
+     "note":"Survived March 2023 on a $30 billion deposit infusion from eleven banks, then failed anyway. Sold to JPMorgan.",
+     "patterns":[r'First Republic']},
+    {"ticker":"HTZ","name":"Hertz","event":"BANKRUPT","date":"May 2020",
+     "note":"Then asked the bankruptcy court for permission to sell $500 million of stock that it told buyers was probably worthless. Emerged June 2021.",
+     "patterns":[r'Hertz']},
+    {"ticker":"NKLA","name":"Nikola","event":"BANKRUPT","date":"Feb 2025",
+     "note":"The truck rolled downhill in the promotional video. Founder Trevor Milton was convicted of fraud in 2022 and pardoned in 2025.",
+     "patterns":[r'Nikola']},
+    {"ticker":"SI","name":"Silvergate","event":"WOUND DOWN","date":"Mar 2023",
+     "note":"The bank for crypto companies had a crypto bank run after FTX failed, sold its bond portfolio at a loss to meet withdrawals, then voluntarily liquidated. Holding company filed Chapter 11 in 2024.",
+     "patterns":[r'Silvergate']},
+    {"ticker":"—","name":"Terra / Luna","event":"COLLAPSED","date":"May 2022",
+     "note":"Algorithmic stablecoin that held its peg by promising to print more of the thing backing it. Roughly $40 billion evaporated in a week.",
+     "patterns":[r'Terraform', r'TerraUSD', r'Luna\b']},
+    {"ticker":"—","name":"Three Arrows Capital","event":"LIQUIDATED","date":"Jun 2022",
+     "note":"Crypto hedge fund that borrowed from everyone at once, mostly unsecured. Its default cascaded through the lenders below.",
+     "patterns":[r'Three Arrows']},
+    {"ticker":"—","name":"Celsius Network","event":"BANKRUPT","date":"Jul 2022",
+     "note":"Crypto lender froze withdrawals, then filed. Founder Alex Mashinsky pleaded guilty to fraud.",
+     "patterns":[r'Celsius Network', r'Mashinsky']},
+    {"ticker":"—","name":"Voyager Digital","event":"BANKRUPT","date":"Jul 2022",
+     "note":"Went down on its unsecured loan to Three Arrows. Customers learned the difference between a deposit and a loan to a crypto firm.",
+     "patterns":[r'Voyager Digital']},
+    {"ticker":"—","name":"BlockFi","event":"BANKRUPT","date":"Nov 2022",
+     "note":"Rescued by FTX in July 2022, which was not the rescue it looked like.",
+     "patterns":[r'BlockFi']},
+    {"ticker":"—","name":"Genesis Global","event":"BANKRUPT","date":"Jan 2023",
+     "note":"DCG's lending arm, on the other side of Gemini Earn. The SEC called Earn an unregistered securities offering.",
+     "patterns":[r'Genesis Global', r'Genesis Capital']},
+    {"ticker":"SBNY","name":"Signature Bank","event":"SEIZED","date":"Mar 2023",
+     "note":"Closed by New York regulators two days after SVB. Its crypto-payments network went with it.",
+     "patterns":[r'Signature Bank']},
+    {"ticker":"WE","name":"WeWork","event":"BANKRUPT","date":"Nov 2023",
+     "note":"From a $47 billion valuation and a withdrawn IPO to Chapter 11, with a SPAC in between.",
+     "patterns":[r'WeWork']},
+    {"ticker":"—","name":"Wirecard","event":"INSOLVENT","date":"Jun 2020",
+     "note":"€1.9 billion of cash in Philippine bank accounts turned out not to exist. The COO fled and has not been found.",
+     "patterns":[r'Wirecard']},
+    {"ticker":"—","name":"Evergrande","event":"LIQUIDATION ORDER","date":"Jan 2024",
+     "note":"$300 billion of liabilities. A Hong Kong court ordered liquidation after two years of restructuring talks went nowhere.",
+     "patterns":[r'Evergrande']},
+    {"ticker":"RIDE","name":"Lordstown Motors","event":"BANKRUPT","date":"Jun 2023",
+     "note":"SPAC-era EV maker that sued Foxconn on the way out for failing to fund it.",
+     "patterns":[r'Lordstown']},
+    {"ticker":"—","name":"Theranos","event":"DISSOLVED","date":"Sep 2018",
+     "note":"The blood tests did not work. Elizabeth Holmes got 11 years, Sunny Balwani nearly 13.",
+     "patterns":[r'Theranos', r'Elizabeth Holmes']},
+    {"ticker":"—","name":"Purdue Pharma","event":"BANKRUPT","date":"Sep 2019",
+     "note":"Filed to settle opioid claims. The Supreme Court threw out the plan in 2024 because it released the Sacklers, who had not filed for bankruptcy themselves.",
+     "patterns":[r'Purdue Pharma', r'Sackler']},
+    {"ticker":"—","name":"Melvin Capital","event":"SHUT DOWN","date":"May 2022",
+     "note":"Lost 53% in the January 2021 GameStop squeeze, took $2.75 billion from Citadel and Point72, never recovered, returned the rest.",
+     "patterns":[r'Melvin Capital']},
+    {"ticker":"SAVE","name":"Spirit Airlines","event":"CEASED OPERATIONS","date":"May 2026",
+     "note":"Filed Chapter 11 in November 2024 after the JetBlue merger was blocked on antitrust grounds, emerged in March 2025, filed again that August, and stopped flying altogether on 2 May 2026.",
+     "patterns":[r'Spirit Airlines', r'Spirit Aviation']},
+    {"ticker":"FSR","name":"Fisker","event":"BANKRUPT","date":"Jun 2024",
+     "note":"Second EV company by the same founder to go bankrupt.",
+     "patterns":[r'Fisker']},
+    {"ticker":"ME","name":"23andMe","event":"BANKRUPT","date":"Mar 2025",
+     "note":"Filed with 15 million people's genetic data as an asset on the block.",
+     "patterns":[r'23andMe']},
 ]
-B_MATCH = {'FTX':['ftx','sam bankman'],'SIVB':['silicon valley bank','svb'],
-           'CS':['credit suisse'],'WE':['wework'],'CELH':['celsius']}
-b_mentions = defaultdict(list)
+DEAD_RES = {d['name']: [re.compile(r'\b' + p + r'\b', re.I) for p in d['patterns']]
+            for d in DEAD_COMPANIES}
+d_mentions = defaultdict(list)
 for a in articles:
-    content = (body(a) + ' ' + a.get('t','')).lower()
-    for ticker, terms in B_MATCH.items():
-        if any(t in content for t in terms):
-            b_mentions[ticker].append({'d':a['d'],'id':a['id'],'t':a['t']})
+    content = body(a) + ' ' + a.get('t','')
+    for name, pats in DEAD_RES.items():
+        if any(p.search(content) for p in pats):
+            d_mentions[name].append({'d':a['d'],'id':a['id'],'t':a['t']})
 
 bankrupt = []
-for b in BANKRUPT_DATA:
-    b_copy = dict(b)
-    b_copy['mention_count'] = len(b_mentions[b['ticker']])
-    b_copy['mentions'] = sorted(b_mentions[b['ticker']], key=lambda m: m['d'], reverse=True)[:8]
-    bankrupt.append(b_copy)
+for d in DEAD_COMPANIES:
+    ms = sorted(d_mentions[d['name']], key=lambda m: m['d'], reverse=True)
+    entry = {k: v for k, v in d.items() if k != 'patterns'}
+    entry['mention_count'] = len(ms)
+    entry['mentions'] = ms[:8]
+    bankrupt.append(entry)
+bankrupt.sort(key=lambda b: -b['mention_count'])
+print("Dead companies: " + ', '.join(f"{b['name']}:{b['mention_count']}" for b in bankrupt))
 
 # ── Build enriched articles ───────────────────────────────────────────────────
 enriched = []

@@ -3,6 +3,7 @@ import * as d3 from 'd3'
 import ARTICLES from './articles.json'
 import TICKERS from './tickers.json'
 import BANKRUPT from './bankrupt.json'
+const EVENT_COLOR = {'TAKEN PRIVATE':'#4A5568','FORCED MERGER':'#4A5568','SHUT DOWN':'#7A5C3E','WOUND DOWN':'#7A5C3E','LIQUIDATED':'#7A5C3E','LIQUIDATION ORDER':'#7A5C3E','DISSOLVED':'#7A5C3E'}
 import BLOGS from './blogs.json'
 import LAWS from './laws.json'
 import CONCEPTS from './concepts.json'
@@ -765,7 +766,7 @@ export default function App() {
   const TickersPage = () => (
     <div>
       <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:24,fontWeight:500,marginBottom:6}}>Tickers</h1>
-      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.25rem'}}>Return since Matt first wrote about them. Plus companies that went bankrupt.</p>
+      <p style={{fontSize:13,color:'#777',lineHeight:1.7,marginBottom:'1.25rem'}}>Return since Matt first wrote about them. Plus the ones that didn't make it.</p>
       <div style={{marginBottom:'2rem'}}>
         <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Active — return since first mention</div>
         {[...TICKERS].sort((a,b)=>b.return_pct-a.return_pct).map(t => (
@@ -775,7 +776,7 @@ export default function App() {
                 <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:10,color:t.return_pct>=0?'#336010':'#902828'}}>{t.ticker}</span>
               </div>
               <div style={{flex:1,minWidth:0}}>
-                <div style={{fontSize:11,color:'#666',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>First: <strong style={{color:'#333'}}>{t.first_date}</strong> · {t.mention_count}×</div>
+                <div style={{fontSize:11,color:'#666',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>First: <strong style={{color:'#333'}}>{t.first_date}</strong> · {t.mention_count}×{t.priced_late&&<span style={{color:'#bbb'}}> · priced from {t.price_date}</span>}</div>
                 {!isMobile && <div style={{fontSize:10,color:'#aaa',marginTop:1,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{t.mentions?.[0]?.t?.slice(0,45)}…</div>}
               </div>
               <div style={{textAlign:'right',flexShrink:0}}>
@@ -785,7 +786,7 @@ export default function App() {
             </div>
             {expandedTicker===t.ticker && (
               <div style={{marginTop:10,paddingTop:10,borderTop:'1px solid #EEEEE8'}}>
-                <div style={{fontSize:11,color:'#888',marginBottom:2}}>${t.price_then} → ${t.price_now} · {t.mention_count} mentions</div>
+                <div style={{fontSize:11,color:'#888',marginBottom:2}}>${t.price_then} → ${t.price_now} · {t.mention_count} issues{t.priced_late&&` · price from ${t.price_date}, when it first traded`}</div>
                 {t.mentions?.slice(0,4).map((m,i)=><div key={i} style={{fontSize:11,padding:'2px 0',color:'#555'}}><span style={{fontFamily:"'JetBrains Mono',monospace",color:'#aaa',marginRight:6}}>{m.d}</span>{m.t}</div>)}
               </div>
             )}
@@ -793,19 +794,19 @@ export default function App() {
         ))}
       </div>
       <div>
-        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Companies that went bankrupt</div>
+        <div style={{fontSize:11,fontWeight:600,color:'#aaa',textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:8}}>Dead — bankrupt, seized, taken private</div>
         {BANKRUPT.map(b => (
           <div key={b.ticker} style={{background:'#fff',border:'1px solid #F2E8E8',borderLeft:'3px solid #902828',borderRadius:10,padding:'12px',marginBottom:6,cursor:'pointer',WebkitTapHighlightColor:'transparent'}} onClick={()=>setExpandedTicker(expandedTicker===b.ticker?null:b.ticker)}>
             <div style={{display:'flex',alignItems:'center',gap:10}}>
               <div style={{width:42,height:42,borderRadius:8,background:'#FBECEC',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
-                <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:10,color:'#902828'}}>{b.ticker}</span>
+                <span style={{fontFamily:"'JetBrains Mono',monospace",fontWeight:600,fontSize:b.ticker.length>4?9:10,color:'#902828'}}>{b.ticker}</span>
               </div>
               <div style={{flex:1,minWidth:0}}>
-                <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:2}}>
+                <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:2,flexWrap:'wrap'}}>
                   <strong style={{fontSize:13}}>{b.name}</strong>
-                  <span style={{fontSize:9,padding:'1px 5px',borderRadius:4,background:'#902828',color:'#fff',fontWeight:700}}>BANKRUPT</span>
+                  <span style={{fontSize:9,padding:'1px 5px',borderRadius:4,background:EVENT_COLOR[b.event]||'#902828',color:'#fff',fontWeight:700,whiteSpace:'nowrap'}}>{b.event||'BANKRUPT'}</span>
                 </div>
-                <div style={{fontSize:11,color:'#aaa'}}>{b.bankruptcy_date} · {b.mention_count}× archived</div>
+                <div style={{fontSize:11,color:'#aaa'}}>{b.date} · {b.mention_count}× archived</div>
               </div>
             </div>
             {expandedTicker===b.ticker && (
