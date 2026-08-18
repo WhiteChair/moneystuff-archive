@@ -256,7 +256,7 @@ function BlogPost({ blog, onBack, isMobile = false }) {
       <div style={{marginBottom:'2rem'}}>
         <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:12}}>
           <ThemePill theme={blog.theme}/>
-          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa'}}>{blog.publish_date} · {blog.article_count} source articles</span>
+          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:'#aaa'}}>{blog.article_count} source articles</span>
         </div>
         <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:isMobile?20:26,fontWeight:600,lineHeight:1.3,marginBottom:10,letterSpacing:'-0.01em'}}>{blog.title}</h1>
         <p style={{fontSize:16,color:'#666',fontStyle:'italic'}}>{blog.subtitle}</p>
@@ -776,7 +776,6 @@ export default function App() {
               <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:8}}>
                 <span style={{fontSize:18}}>{t?.icon}</span>
                 <ThemePill theme={blog.theme}/>
-                <span style={{fontSize:10,color:'#aaa',fontFamily:"'JetBrains Mono',monospace",marginLeft:'auto'}}>{blog.publish_date}</span>
               </div>
               <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:14,fontWeight:500,lineHeight:1.4,marginBottom:6}}>{blog.title}</h3>
               <p style={{fontSize:12,color:'#777',lineHeight:1.5,marginBottom:6}}>{blog.subtitle}</p>
