@@ -20,6 +20,7 @@ import fulltext as ft            # whole-issue text + section headers
 
 REINDEX_DATES    = '--reindex-dates' in sys.argv      # rebuild every date (slow, ~186 pages)
 BACKFILL_FULLTEXT = '--backfill-fulltext' in sys.argv  # fetch full text for every issue
+BACKFILL_MISSING  = '--backfill-missing' in sys.argv   # lift the per-run cap on new fetches
 SRC_DIR    = os.path.join(SCRIPT_DIR, '..', 'src')
 HEADERS    = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 NOW        = datetime.now()
@@ -76,16 +77,22 @@ def fetch_page_ids(page):
         return list(set(re.findall(r'href="/emails/(\d+)"', html)))
     except: return []
 
+# The old rule was `int(i) > max_id` across the 5 newest listing pages, so the
+# archive could only ever grow at the front - an issue missed once sat below the
+# waterline forever (445 of them did). Take anything the date index lists that
+# we don't already have, newest first, capped so a nightly run stays quick.
+MAX_NEW_PER_RUN = 60
+seen_path = os.path.join(SCRIPT_DIR, 'seen_ids.json')
+try:
+    seen_ids = set(json.load(open(seen_path)))
+except Exception:
+    seen_ids = set()
+
 print("Scanning for new articles...")
-new_ids = []
-for page in range(1, 6):
-    ids = fetch_page_ids(page)
-    fresh = [i for i in ids if int(i) > max_id and i not in existing_ids]
-    new_ids.extend(fresh)
-    if not fresh and page > 2: break
-    time.sleep(0.3)
-new_ids = list(set(new_ids))
-print(f"New IDs: {len(new_ids)}")
+candidates = sorted([i for i in DATE_INDEX if i not in existing_ids and i not in seen_ids],
+                    key=lambda i: DATE_INDEX[i], reverse=True)
+new_ids = candidates if BACKFILL_MISSING else candidates[:MAX_NEW_PER_RUN]
+print(f"New IDs: {len(new_ids)}" + (f" (of {len(candidates)} outstanding)" if len(candidates) > len(new_ids) else ""))
 
 # ── Fetch full text ───────────────────────────────────────────────────────────
 def parse_relative_date(rel):
@@ -117,10 +124,14 @@ def fetch_article(aid):
             date = parse_relative_date(time_m.group(1).strip()) if time_m else NOW_DATE
 
         body = ft.extract_srcdoc(html)
-        if not body: return None
+        if not body: return 'skip'
         text, sections = ft.split_sections(body)
-        if len(text) < 400: return None
-        if 'money stuff' not in text[:120].lower() and 'money stuff' not in title.lower(): return None
+        if len(text) < 400: return 'skip'
+        # Check the RAW title: the prefix is stripped from `title` above and the
+        # masthead is stripped from the body as boilerplate, so neither survives
+        # to be matched. The listing mixes in sibling Bloomberg newsletters, so
+        # this guard does real work.
+        if 'money stuff' not in raw_title.lower() and 'money stuff' not in text[:200].lower(): return 'skip'
         words = text.split()
         return {'id': str(aid), 't': title, 'd': date, 'u': url, 'w': len(words),
                 'p': ' '.join(words[:300]),
@@ -133,13 +144,19 @@ if new_ids:
     print(f"Fetching {len(new_ids)} articles...")
     fetched = []
     with ThreadPoolExecutor(max_workers=4) as ex:
-        for result in ex.map(fetch_article, new_ids):
-            if result:
+        for aid, result in zip(new_ids, ex.map(fetch_article, new_ids)):
+            if result == 'skip':
+                seen_ids.add(str(aid))          # resolved: not a Money Stuff issue
+            elif result:
+                seen_ids.add(str(aid))
                 FULLTEXT[result['id']] = result.pop('_full')
                 fetched.append(result)
                 print(f"  ✓ {result['d']} | {result['t'][:50]}")
+            # result is None => transient failure, leave it to be retried
             time.sleep(0.1)
     articles.extend(fetched)
+    with open(seen_path, 'w') as f:
+        json.dump(sorted(seen_ids), f, separators=(',', ':'))
 for a in articles:
     a.pop('_full', None)
 
@@ -363,7 +380,11 @@ with open(articles_path,   'w') as f: json.dump(articles,   f, separators=(',','
 with open(classified_path, 'w') as f: json.dump(classified, f, separators=(',',':'))
 with open(tickers_path,    'w') as f: json.dump(tickers,    f, separators=(',',':'))
 
-manifest = ft.save_store(FULLTEXT, {a['id']: a['d'] for a in articles})
+# Only keep full text for issues that survived dedupe - the losing copy of a
+# duplicate would otherwise linger in an 'undated' shard forever.
+live = {str(a['id']): a['d'] for a in articles}
+FULLTEXT = {k: v for k, v in FULLTEXT.items() if k in live}
+manifest = ft.save_store(FULLTEXT, live)
 print(f"Full-text shards: {manifest['total']} issues across {len(manifest['years'])} years")
 
 os.makedirs(SRC_DIR, exist_ok=True)

@@ -197,6 +197,12 @@ def save_store(records, dates):
             if hs:
                 sections_map[aid] = hs
 
+    # Drop shards for years that no longer have any issues (e.g. the 'undated'
+    # bucket once duplicates are pruned), or they linger and get committed.
+    for fn in os.listdir(PUBLIC_DIR):
+        if fn.endswith('.json') and fn != 'manifest.json' and fn[:-5] not in by_year:
+            os.remove(os.path.join(PUBLIC_DIR, fn))
+
     manifest = {'years': sorted(by_year.keys()),
                 'counts': {y: len(g) for y, g in by_year.items()},
                 'total': len(records)}

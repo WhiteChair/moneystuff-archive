@@ -49,6 +49,15 @@ TOKEN_RE = re.compile(
     r'|<article>(.*?)</article>',                       # group 2: one article block
     re.DOTALL)
 ID_RE = re.compile(r'href="/emails/(\d+)"')
+# The /newsletters/money-stuff-by-matt-levine listing is NOT Money Stuff only -
+# it interleaves sibling Bloomberg newsletters (Points of Return, Odd Lots...).
+# Only blocks whose headline carries the Money Stuff prefix are ours.
+TITLE_RE = re.compile(r'<h2[^>]*>\s*([^<]{3,120})', re.DOTALL)
+
+
+def is_money_stuff(article_html):
+    m = TITLE_RE.search(article_html)
+    return bool(m) and m.group(1).strip().lower().startswith('money stuff')
 
 
 def parse_header(text, now):
@@ -135,8 +144,9 @@ def build_date_index(max_pages=None, now=None, verbose=True, workers=6):
             if article and current:
                 ids = ID_RE.findall(article)
                 if ids:
-                    index[ids[0]] = current.strftime('%Y-%m-%d')
-                    found_on_page += 1
+                    found_on_page += 1          # page yielded content either way
+                    if is_money_stuff(article):
+                        index[ids[0]] = current.strftime('%Y-%m-%d')
         if verbose and page % 20 == 0:
             print(f"  ...page {page}, {len(index)} dated so far ({current})")
         if found_on_page == 0:
