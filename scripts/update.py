@@ -251,8 +251,59 @@ RULES = {
     "Corporate Governance":   [r'\bboard of director',r'\bceo pay\b',r'\bexecutive compensation\b',r'\bgovernance\b',r'\besg\b'],
     "Options / Derivatives":  [r'\bcall option\b',r'\bput option\b',r'\bout.of.the.money\b',r'\bderivativ',r'\bswap\b',r'\bfutures\b',r'\bwarrant\b'],
 }
-BAD = [r'^Programming note',r'^Bloomberg Opinion',r'^window\.onload',r'^Matt Levine',r"^Don't feel bad"]
+BAD = [r'^Programming note',r'^Bloomberg Opinion',r'^window\.onload',r'^Matt Levine',r"^Don't feel bad",r'^View in browser']
 GOOD_SIGNALS = [r'\bi (always|often|sometimes) say\b',r'\bthe (point|lesson|key) (is|here)\b',r'\bhere.s (how|why)\b',r'\bthink about\b',r'\bthe basic\b',r'\bif you\b',r'\bone way to\b']
+
+def clip_sentence(text, max_len=220):
+    """Trim to max_len without cutting mid-word; prefer a sentence end."""
+    text = (text or '').strip()
+    if len(text) <= max_len:
+        return text
+    window = text[:max_len]
+    best = -1
+    for end in ('. ', '! ', '? ', '."', ".'", '.”', ".’"):
+        i = window.rfind(end)
+        if i >= 50:
+            best = max(best, i + 1)
+    if best > 0:
+        return window[:best].strip()
+    # No sentence end in range — cut on last space so we never mid-word
+    i = window.rfind(' ')
+    if i >= 40:
+        return window[:i].rstrip(' ,;:') + '…'
+    return window.rstrip() + '…'
+
+def extract_passage(preview, title=''):
+    """Pick a key sentence from the preview; return (lesson, summary)."""
+    clean = re.sub(
+        r'Money Stuff\s*|View in browser\s*-->?\s*|View in browser\s*Bloomberg\s*|Bloomberg Opinion.*?Levine\s*',
+        '', preview or '', flags=re.I)
+    clean = re.sub(r'\s+', ' ', clean).strip()
+    sents = re.split(r'(?<=[.!?])\s+', clean)
+    scored = []
+    for s in sents:
+        s = s.strip()
+        if len(s) < 50 or any(re.match(p, s) for p in BAD):
+            continue
+        sc = sum(3 if re.search(p, s, re.I) else 0 for p in GOOD_SIGNALS) + min(len(s) // 30, 5)
+        scored.append((sc, s))
+    scored.sort(key=lambda x: -x[0])
+    if scored:
+        lesson = clip_sentence(scored[0][1], 220)
+        summary = clip_sentence(' '.join(s for _, s in scored[:2]), 320)
+        return lesson, summary
+    fallback = f"Matt's take on {(title or '')[:60].lower()}."
+    return fallback, ''
+
+def public_url(a):
+    """Drop private Gmail deep-links; prefer NewsletterHunt when possible."""
+    u = a.get('u') or ''
+    if 'mail.google.com' in u:
+        aid = str(a.get('id', ''))
+        if aid.isdigit():
+            return f'https://newsletterhunt.com/emails/{aid}'
+        return ''
+    return u
 
 def classify_one(a):
     text = (a['t'] + ' ' + body(a)).lower()
@@ -261,20 +312,9 @@ def classify_one(a):
         for pat in patterns:
             if re.search(pat, text, re.I): scores[theme] += 1
     ranked = sorted(scores.items(), key=lambda x: -x[1])
-    themes = [t for t,s in ranked[:3] if s > 0] or ['Securities Fraud']
-    preview = a.get('p','')
-    clean = re.sub(r'Money Stuff\s*|View in browser\s*-->\s*|Bloomberg Opinion.*?Levine\s*','',preview)
-    clean = re.sub(r'\s+',' ',clean).strip()
-    sents = re.split(r'(?<=[.!?])\s+',clean)
-    scored = []
-    for s in sents:
-        if len(s.strip()) < 50 or any(re.match(p,s.strip()) for p in BAD): continue
-        sc = sum(3 if re.search(p,s,re.I) else 0 for p in GOOD_SIGNALS) + min(len(s)//30,5)
-        scored.append((sc, s.strip()))
-    scored.sort(key=lambda x:-x[0])
-    lesson = scored[0][1][:180] if scored else f"Matt's take on {a['t'][:60].lower()}."
-    good = [s for _,s in scored[:2]]
-    return {'themes': themes[:3], 'lesson': lesson, 'summary': ' '.join(good[:2])[:300]}
+    themes = [t for t, s in ranked[:3] if s > 0] or ['Securities Fraud']
+    lesson, summary = extract_passage(a.get('p', ''), a.get('t', ''))
+    return {'themes': themes[:3], 'lesson': lesson, 'summary': summary}
 
 RECLASSIFY = '--reclassify' in sys.argv
 new_to_classify = articles if RECLASSIFY else [a for a in articles if a['id'] not in classified]
@@ -485,11 +525,23 @@ bankrupt.sort(key=lambda b: -b['mention_count'])
 print("Dead companies: " + ', '.join(f"{b['name']}:{b['mention_count']}" for b in bankrupt))
 
 # ── Build enriched articles ───────────────────────────────────────────────────
+# Re-extract lessons from the preview on every run so mid-word cuts from the old
+# hard [:180] heal without a full --reclassify of themes.
 enriched = []
 for a in articles:
     c = classified.get(a['id'], {})
-    enriched.append({'id':a['id'],'t':a['t'],'d':a['d'],'u':a['u'],'w':a['w'],
-                     'themes':c.get('themes',[]),'lesson':c.get('lesson','')[:180],'summary':c.get('summary','')[:300]})
+    lesson, summary = extract_passage(a.get('p', ''), a.get('t', ''))
+    # Keep theme tags from classified; only refresh the passage text
+    if not lesson and c.get('lesson'):
+        lesson = clip_sentence(c.get('lesson', ''), 220)
+        summary = clip_sentence(c.get('summary', ''), 320)
+    # Persist healed passages back into classified so the next run stays clean
+    if a['id'] in classified:
+        classified[a['id']]['lesson'] = lesson
+        classified[a['id']]['summary'] = summary
+    url = public_url(a) or a.get('u', '')
+    enriched.append({'id': a['id'], 't': a['t'], 'd': a['d'], 'u': url, 'w': a['w'],
+                     'themes': c.get('themes', []), 'lesson': lesson, 'summary': summary})
 
 # ── Match articles to legal doctrines ────────────────────────────────────────
 doctrines = load_json(os.path.join(SRC_DIR, 'doctrines.json'), [])
@@ -512,6 +564,53 @@ for d in doctrines:
 with open(os.path.join(SRC_DIR,'doctrine_matches.json'),'w') as f: json.dump(doctrine_matches, f, separators=(',',':'))
 print(f"Doctrine matches: " + ', '.join(f"{k}:{len(v)}" for k,v in doctrine_matches.items()))
 
+# ── Trending themes (last 90 / 30 days vs historical rate) ─────────────────────
+def build_trending(arts, classif):
+    cutoff_90 = (NOW - timedelta(days=90)).strftime('%Y-%m-%d')
+    cutoff_30 = (NOW - timedelta(days=30)).strftime('%Y-%m-%d')
+    dates = [a['d'] for a in arts if a.get('d')]
+    first = min(dates) if dates else NOW_DATE
+    total_days = max((datetime.fromisoformat(NOW_DATE) - datetime.fromisoformat(first)).days, 1)
+
+    by_theme = defaultdict(lambda: {'recent_90': [], 'recent_30': 0, 'total': 0})
+    for a in arts:
+        themes = classif.get(a['id'], {}).get('themes') or []
+        for th in themes:
+            by_theme[th]['total'] += 1
+            if a.get('d', '') >= cutoff_90:
+                by_theme[th]['recent_90'].append(a)
+            if a.get('d', '') >= cutoff_30:
+                by_theme[th]['recent_30'] += 1
+
+    out = []
+    for th, data in by_theme.items():
+        total = data['total']
+        r90 = len(data['recent_90'])
+        r30 = data['recent_30']
+        expected_90 = total * (90 / total_days) if total_days else 0
+        heat = round(r90 / expected_90, 2) if expected_90 > 0 else 0.0
+        sample = []
+        for a in sorted(data['recent_90'], key=lambda x: x.get('d', ''), reverse=True):
+            u = public_url(a)
+            if not u:
+                continue  # skip private Gmail links
+            sample.append({'d': a['d'], 't': a['t'], 'u': u})
+            if len(sample) >= 5:
+                break
+        out.append({
+            'theme': th,
+            'recent_90': r90,
+            'recent_30': r30,
+            'total': total,
+            'heat_ratio': heat,
+            'articles': sample,
+        })
+    out.sort(key=lambda x: -x['heat_ratio'])
+    return out
+
+trending = build_trending(articles, classified)
+print(f"Trending themes: " + ', '.join(f"{t['theme']}:{t['heat_ratio']}" for t in trending[:6]))
+
 # ── Save everything ───────────────────────────────────────────────────────────
 with open(articles_path,   'w') as f: json.dump(articles,   f, separators=(',',':'))
 with open(classified_path, 'w') as f: json.dump(classified, f, separators=(',',':'))
@@ -528,5 +627,6 @@ os.makedirs(SRC_DIR, exist_ok=True)
 with open(os.path.join(SRC_DIR,'articles.json'),'w') as f: json.dump(enriched, f, separators=(',',':'))
 with open(os.path.join(SRC_DIR,'tickers.json'), 'w') as f: json.dump(tickers,  f, separators=(',',':'))
 with open(os.path.join(SRC_DIR,'bankrupt.json'),'w') as f: json.dump(bankrupt, f, indent=2)
+with open(os.path.join(SRC_DIR,'trending.json'),'w') as f: json.dump(trending, f, indent=2)
 
-print(f"\n✅ Done: {len(enriched)} articles, {len(classified)} classified, {len(tickers)} tickers, {len(bankrupt)} bankrupt")
+print(f"\n✅ Done: {len(enriched)} articles, {len(classified)} classified, {len(tickers)} tickers, {len(bankrupt)} bankrupt, {len(trending)} trending themes")
