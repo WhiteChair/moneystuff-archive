@@ -53,7 +53,7 @@ jobs:
       - name: Commit updated data files
         run: |
           git add scripts/articles_current.json scripts/classified_current.json scripts/tickers_current.json \
-                  scripts/date_index.json scripts/fulltext/ \
+                  scripts/date_index.json scripts/seen_ids.json \
                   src/articles.json src/tickers.json src/bankrupt.json src/sections.json src/doctrine_matches.json src/trending.json \
                   public/fulltext/
           git diff --cached --quiet || git commit -m "chore: daily data update $(date -u +%Y-%m-%d)"
