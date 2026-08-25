@@ -35,10 +35,10 @@
   },
   {
     "theme": "IPOs / Capital Markets",
-    "recent_90": 17,
+    "recent_90": 16,
     "recent_30": 2,
     "total": 224,
-    "heat_ratio": 2.38,
+    "heat_ratio": 2.24,
     "articles": [
       {
         "d": "2026-08-13",
@@ -69,10 +69,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 36,
+    "recent_90": 35,
     "recent_30": 8,
     "total": 496,
-    "heat_ratio": 2.28,
+    "heat_ratio": 2.22,
     "articles": [
       {
         "d": "2026-08-24",
@@ -273,10 +273,10 @@
   },
   {
     "theme": "Securities Fraud",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 4,
     "total": 499,
-    "heat_ratio": 0.94,
+    "heat_ratio": 0.88,
     "articles": [
       {
         "d": "2026-08-13",
