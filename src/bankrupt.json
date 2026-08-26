@@ -205,8 +205,13 @@
     "event": "COLLAPSED",
     "date": "Mar 2021",
     "note": "Bill Hwang's family office blew up on concentrated total return swaps, costing its banks over $10 billion. Credit Suisse took the worst of it. Hwang was convicted of fraud in 2024.",
-    "mention_count": 67,
+    "mention_count": 68,
     "mentions": [
+      {
+        "d": "2026-08-25",
+        "id": "469169",
+        "t": "LeBron Bonds"
+      },
       {
         "d": "2026-08-03",
         "id": "438149",
@@ -241,11 +246,6 @@
         "d": "2024-08-15",
         "id": "87697",
         "t": "Stablecoins Can Have Bank Runs"
-      },
-      {
-        "d": "2024-07-29",
-        "id": "81158",
-        "t": "Due Diligence Can Be Risky"
       }
     ]
   },
