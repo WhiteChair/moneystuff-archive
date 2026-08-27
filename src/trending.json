@@ -72,7 +72,7 @@
     "recent_90": 15,
     "recent_30": 2,
     "total": 224,
-    "heat_ratio": 2.1,
+    "heat_ratio": 2.11,
     "articles": [
       {
         "d": "2026-08-13",
@@ -103,11 +103,16 @@
   },
   {
     "theme": "Options / Derivatives",
-    "recent_90": 7,
-    "recent_30": 2,
-    "total": 135,
-    "heat_ratio": 1.63,
+    "recent_90": 8,
+    "recent_30": 3,
+    "total": 136,
+    "heat_ratio": 1.85,
     "articles": [
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
       {
         "d": "2026-08-04",
         "t": "Leveraged ETF Crash Hedging ETF",
@@ -127,11 +132,6 @@
         "d": "2026-07-10",
         "t": "Sports Gambling ETF",
         "u": "https://newsletterhunt.com/emails/407461"
-      },
-      {
-        "d": "2026-07-01",
-        "t": "Egg Libor",
-        "u": "https://newsletterhunt.com/emails/396701"
       }
     ]
   },
@@ -204,40 +204,6 @@
     ]
   },
   {
-    "theme": "Crypto / Blockchain",
-    "recent_90": 19,
-    "recent_30": 3,
-    "total": 550,
-    "heat_ratio": 1.09,
-    "articles": [
-      {
-        "d": "2026-07-30",
-        "t": "The Situation Deteriorated",
-        "u": "https://newsletterhunt.com/emails/433001"
-      },
-      {
-        "d": "2026-07-29",
-        "t": "SpaceX Crash Insurance",
-        "u": "https://newsletterhunt.com/emails/431582"
-      },
-      {
-        "d": "2026-07-28",
-        "t": "Elevators Won\u2019t Repair Themselves",
-        "u": "https://newsletterhunt.com/emails/430295"
-      },
-      {
-        "d": "2026-07-24",
-        "t": "The Podcast: Worried Noises",
-        "u": "https://newsletterhunt.com/emails/425346"
-      },
-      {
-        "d": "2026-07-21",
-        "t": "LSE Will Trade 22.83 Hours a Day",
-        "u": "https://newsletterhunt.com/emails/420890"
-      }
-    ]
-  },
-  {
     "theme": "M&A / Mergers",
     "recent_90": 13,
     "recent_30": 2,
@@ -272,12 +238,51 @@
     ]
   },
   {
+    "theme": "Crypto / Blockchain",
+    "recent_90": 18,
+    "recent_30": 3,
+    "total": 550,
+    "heat_ratio": 1.03,
+    "articles": [
+      {
+        "d": "2026-07-30",
+        "t": "The Situation Deteriorated",
+        "u": "https://newsletterhunt.com/emails/433001"
+      },
+      {
+        "d": "2026-07-29",
+        "t": "SpaceX Crash Insurance",
+        "u": "https://newsletterhunt.com/emails/431582"
+      },
+      {
+        "d": "2026-07-28",
+        "t": "Elevators Won\u2019t Repair Themselves",
+        "u": "https://newsletterhunt.com/emails/430295"
+      },
+      {
+        "d": "2026-07-24",
+        "t": "The Podcast: Worried Noises",
+        "u": "https://newsletterhunt.com/emails/425346"
+      },
+      {
+        "d": "2026-07-21",
+        "t": "LSE Will Trade 22.83 Hours a Day",
+        "u": "https://newsletterhunt.com/emails/420890"
+      }
+    ]
+  },
+  {
     "theme": "Securities Fraud",
     "recent_90": 14,
     "recent_30": 4,
-    "total": 499,
+    "total": 500,
     "heat_ratio": 0.88,
     "articles": [
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
       {
         "d": "2026-08-13",
         "t": "Bilateral OTC Goat Hedge",
@@ -297,11 +302,6 @@
         "d": "2026-07-27",
         "t": "A Merger Closing Mystery",
         "u": "https://newsletterhunt.com/emails/428909"
-      },
-      {
-        "d": "2026-07-22",
-        "t": "The SEC Pays a Texting Fine",
-        "u": "https://newsletterhunt.com/emails/422309"
       }
     ]
   },
@@ -309,9 +309,14 @@
     "theme": "Regulation / SEC",
     "recent_90": 14,
     "recent_30": 4,
-    "total": 612,
+    "total": 613,
     "heat_ratio": 0.72,
     "articles": [
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
       {
         "d": "2026-08-13",
         "t": "Bilateral OTC Goat Hedge",
@@ -331,18 +336,13 @@
         "d": "2026-07-27",
         "t": "A Merger Closing Mystery",
         "u": "https://newsletterhunt.com/emails/428909"
-      },
-      {
-        "d": "2026-07-22",
-        "t": "The SEC Pays a Texting Fine",
-        "u": "https://newsletterhunt.com/emails/422309"
       }
     ]
   },
   {
     "theme": "Legal / Courts",
     "recent_90": 4,
-    "recent_30": 1,
+    "recent_30": 0,
     "total": 183,
     "heat_ratio": 0.69,
     "articles": [
