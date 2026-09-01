@@ -55,8 +55,13 @@
     "event": "BANKRUPT",
     "date": "Nov 2022",
     "note": "Sam Bankman-Fried's crypto exchange collapsed after a run revealed customer funds at Alameda. SBF sentenced to 25 years.",
-    "mention_count": 147,
+    "mention_count": 148,
     "mentions": [
+      {
+        "d": "2026-08-31",
+        "id": "479069",
+        "t": "Don\u2019t Hedge the KPIs"
+      },
       {
         "d": "2026-07-30",
         "id": "433001",
@@ -91,11 +96,6 @@
         "d": "2025-10-21",
         "id": "204922",
         "t": "OpenAI Is Building a Banker"
-      },
-      {
-        "d": "2025-10-13",
-        "id": "203928",
-        "t": "OpenAI Keeps Doing Deals"
       }
     ]
   },

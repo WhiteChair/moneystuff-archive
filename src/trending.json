@@ -36,10 +36,15 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 34,
-    "recent_30": 7,
-    "total": 497,
+    "recent_30": 8,
+    "total": 498,
     "heat_ratio": 2.15,
     "articles": [
+      {
+        "d": "2026-08-31",
+        "t": "Don\u2019t Hedge the KPIs",
+        "u": "https://newsletterhunt.com/emails/479069"
+      },
       {
         "d": "2026-08-25",
         "t": "LeBron Bonds",
@@ -59,11 +64,6 @@
         "d": "2026-08-10",
         "t": "The Situation Is Fine",
         "u": "https://newsletterhunt.com/emails/447620"
-      },
-      {
-        "d": "2026-08-06",
-        "t": "Fake SpaceX Stock Isn\u2019t Worth as Much",
-        "u": "https://newsletterhunt.com/emails/442472"
       }
     ]
   },
@@ -103,10 +103,10 @@
   },
   {
     "theme": "Options / Derivatives",
-    "recent_90": 8,
+    "recent_90": 7,
     "recent_30": 2,
     "total": 136,
-    "heat_ratio": 1.85,
+    "heat_ratio": 1.62,
     "articles": [
       {
         "d": "2026-08-26",
@@ -273,10 +273,10 @@
   },
   {
     "theme": "Securities Fraud",
-    "recent_90": 14,
+    "recent_90": 13,
     "recent_30": 3,
     "total": 500,
-    "heat_ratio": 0.88,
+    "heat_ratio": 0.82,
     "articles": [
       {
         "d": "2026-08-26",
@@ -307,11 +307,16 @@
   },
   {
     "theme": "Regulation / SEC",
-    "recent_90": 14,
-    "recent_30": 4,
-    "total": 613,
-    "heat_ratio": 0.72,
+    "recent_90": 15,
+    "recent_30": 5,
+    "total": 614,
+    "heat_ratio": 0.77,
     "articles": [
+      {
+        "d": "2026-08-31",
+        "t": "Don\u2019t Hedge the KPIs",
+        "u": "https://newsletterhunt.com/emails/479069"
+      },
       {
         "d": "2026-08-26",
         "t": "Predict the KPIs",
@@ -331,11 +336,6 @@
         "d": "2026-08-04",
         "t": "Leveraged ETF Crash Hedging ETF",
         "u": "https://newsletterhunt.com/emails/439535"
-      },
-      {
-        "d": "2026-07-27",
-        "t": "A Merger Closing Mystery",
-        "u": "https://newsletterhunt.com/emails/428909"
       }
     ]
   },
@@ -369,6 +369,30 @@
     ]
   },
   {
+    "theme": "Bankruptcy",
+    "recent_90": 3,
+    "recent_30": 1,
+    "total": 193,
+    "heat_ratio": 0.49,
+    "articles": [
+      {
+        "d": "2026-08-31",
+        "t": "Don\u2019t Hedge the KPIs",
+        "u": "https://newsletterhunt.com/emails/479069"
+      },
+      {
+        "d": "2026-07-30",
+        "t": "The Situation Deteriorated",
+        "u": "https://newsletterhunt.com/emails/433001"
+      },
+      {
+        "d": "2026-07-20",
+        "t": "Ice Cream Hedging",
+        "u": "https://newsletterhunt.com/emails/419537"
+      }
+    ]
+  },
+  {
     "theme": "Fed / Central Banks",
     "recent_90": 2,
     "recent_30": 1,
@@ -384,25 +408,6 @@
         "d": "2026-07-23",
         "t": "Sports Happen So Much",
         "u": "https://newsletterhunt.com/emails/423695"
-      }
-    ]
-  },
-  {
-    "theme": "Bankruptcy",
-    "recent_90": 2,
-    "recent_30": 0,
-    "total": 192,
-    "heat_ratio": 0.33,
-    "articles": [
-      {
-        "d": "2026-07-30",
-        "t": "The Situation Deteriorated",
-        "u": "https://newsletterhunt.com/emails/433001"
-      },
-      {
-        "d": "2026-07-20",
-        "t": "Ice Cream Hedging",
-        "u": "https://newsletterhunt.com/emails/419537"
       }
     ]
   },
