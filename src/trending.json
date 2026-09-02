@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 7,
     "total": 159,
-    "heat_ratio": 2.97,
+    "heat_ratio": 2.77,
     "articles": [
       {
         "d": "2026-08-27",
@@ -35,10 +35,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 34,
+    "recent_90": 33,
     "recent_30": 8,
     "total": 498,
-    "heat_ratio": 2.15,
+    "heat_ratio": 2.09,
     "articles": [
       {
         "d": "2026-08-31",
@@ -69,10 +69,10 @@
   },
   {
     "theme": "IPOs / Capital Markets",
-    "recent_90": 14,
+    "recent_90": 13,
     "recent_30": 2,
     "total": 224,
-    "heat_ratio": 1.97,
+    "heat_ratio": 1.83,
     "articles": [
       {
         "d": "2026-08-13",
@@ -98,6 +98,40 @@
         "d": "2026-07-15",
         "t": "Keeping Mergers Under the Radar",
         "u": "https://newsletterhunt.com/emails/413366"
+      }
+    ]
+  },
+  {
+    "theme": "Insider Trading",
+    "recent_90": 8,
+    "recent_30": 3,
+    "total": 143,
+    "heat_ratio": 1.76,
+    "articles": [
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
+      {
+        "d": "2026-08-24",
+        "t": "Who Should Control Anthropic?",
+        "u": "https://newsletterhunt.com/emails/467387"
+      },
+      {
+        "d": "2026-08-12",
+        "t": "AI-Backed Securities",
+        "u": "https://newsletterhunt.com/emails/450557"
+      },
+      {
+        "d": "2026-07-23",
+        "t": "Sports Happen So Much",
+        "u": "https://newsletterhunt.com/emails/423695"
+      },
+      {
+        "d": "2026-07-16",
+        "t": "Shorts Will Sell You SpaceX",
+        "u": "https://newsletterhunt.com/emails/414488"
       }
     ]
   },
@@ -132,40 +166,6 @@
         "d": "2026-07-10",
         "t": "Sports Gambling ETF",
         "u": "https://newsletterhunt.com/emails/407461"
-      }
-    ]
-  },
-  {
-    "theme": "Insider Trading",
-    "recent_90": 7,
-    "recent_30": 2,
-    "total": 142,
-    "heat_ratio": 1.55,
-    "articles": [
-      {
-        "d": "2026-08-24",
-        "t": "Who Should Control Anthropic?",
-        "u": "https://newsletterhunt.com/emails/467387"
-      },
-      {
-        "d": "2026-08-12",
-        "t": "AI-Backed Securities",
-        "u": "https://newsletterhunt.com/emails/450557"
-      },
-      {
-        "d": "2026-07-23",
-        "t": "Sports Happen So Much",
-        "u": "https://newsletterhunt.com/emails/423695"
-      },
-      {
-        "d": "2026-07-16",
-        "t": "Shorts Will Sell You SpaceX",
-        "u": "https://newsletterhunt.com/emails/414488"
-      },
-      {
-        "d": "2026-06-30",
-        "t": "Susquehanna Sold Some Suspicious Puts",
-        "u": "https://newsletterhunt.com/emails/394952"
       }
     ]
   },
@@ -273,11 +273,16 @@
   },
   {
     "theme": "Securities Fraud",
-    "recent_90": 13,
-    "recent_30": 3,
-    "total": 500,
-    "heat_ratio": 0.82,
+    "recent_90": 14,
+    "recent_30": 4,
+    "total": 501,
+    "heat_ratio": 0.88,
     "articles": [
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
       {
         "d": "2026-08-26",
         "t": "Predict the KPIs",
@@ -297,21 +302,21 @@
         "d": "2026-07-31",
         "t": "The Podcast: No Kiddie Pool",
         "u": "https://newsletterhunt.com/emails/434552"
-      },
-      {
-        "d": "2026-07-27",
-        "t": "A Merger Closing Mystery",
-        "u": "https://newsletterhunt.com/emails/428909"
       }
     ]
   },
   {
     "theme": "Regulation / SEC",
-    "recent_90": 15,
-    "recent_30": 5,
-    "total": 614,
-    "heat_ratio": 0.77,
+    "recent_90": 16,
+    "recent_30": 6,
+    "total": 615,
+    "heat_ratio": 0.82,
     "articles": [
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
       {
         "d": "2026-08-31",
         "t": "Don\u2019t Hedge the KPIs",
@@ -331,11 +336,6 @@
         "d": "2026-08-12",
         "t": "AI-Backed Securities",
         "u": "https://newsletterhunt.com/emails/450557"
-      },
-      {
-        "d": "2026-08-04",
-        "t": "Leveraged ETF Crash Hedging ETF",
-        "u": "https://newsletterhunt.com/emails/439535"
       }
     ]
   },
