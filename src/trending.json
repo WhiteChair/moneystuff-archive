@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 14,
+    "recent_90": 15,
     "recent_30": 7,
-    "total": 159,
-    "heat_ratio": 2.77,
+    "total": 160,
+    "heat_ratio": 2.96,
     "articles": [
+      {
+        "d": "2026-09-02",
+        "t": "The ETF Dividend Flip",
+        "u": "https://newsletterhunt.com/emails/482633"
+      },
       {
         "d": "2026-08-27",
         "t": "AI Refi",
@@ -25,18 +30,13 @@
         "d": "2026-08-12",
         "t": "AI-Backed Securities",
         "u": "https://newsletterhunt.com/emails/450557"
-      },
-      {
-        "d": "2026-08-10",
-        "t": "The Situation Is Fine",
-        "u": "https://newsletterhunt.com/emails/447620"
       }
     ]
   },
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 33,
-    "recent_30": 8,
+    "recent_30": 7,
     "total": 498,
     "heat_ratio": 2.09,
     "articles": [
@@ -102,11 +102,45 @@
     ]
   },
   {
+    "theme": "Options / Derivatives",
+    "recent_90": 7,
+    "recent_30": 3,
+    "total": 137,
+    "heat_ratio": 1.61,
+    "articles": [
+      {
+        "d": "2026-09-02",
+        "t": "The ETF Dividend Flip",
+        "u": "https://newsletterhunt.com/emails/482633"
+      },
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
+      {
+        "d": "2026-08-04",
+        "t": "Leveraged ETF Crash Hedging ETF",
+        "u": "https://newsletterhunt.com/emails/439535"
+      },
+      {
+        "d": "2026-07-29",
+        "t": "SpaceX Crash Insurance",
+        "u": "https://newsletterhunt.com/emails/431582"
+      },
+      {
+        "d": "2026-07-20",
+        "t": "Ice Cream Hedging",
+        "u": "https://newsletterhunt.com/emails/419537"
+      }
+    ]
+  },
+  {
     "theme": "Insider Trading",
-    "recent_90": 8,
+    "recent_90": 7,
     "recent_30": 3,
     "total": 143,
-    "heat_ratio": 1.76,
+    "heat_ratio": 1.54,
     "articles": [
       {
         "d": "2026-09-01",
@@ -132,40 +166,6 @@
         "d": "2026-07-16",
         "t": "Shorts Will Sell You SpaceX",
         "u": "https://newsletterhunt.com/emails/414488"
-      }
-    ]
-  },
-  {
-    "theme": "Options / Derivatives",
-    "recent_90": 7,
-    "recent_30": 2,
-    "total": 136,
-    "heat_ratio": 1.62,
-    "articles": [
-      {
-        "d": "2026-08-26",
-        "t": "Predict the KPIs",
-        "u": "https://newsletterhunt.com/emails/471050"
-      },
-      {
-        "d": "2026-08-04",
-        "t": "Leveraged ETF Crash Hedging ETF",
-        "u": "https://newsletterhunt.com/emails/439535"
-      },
-      {
-        "d": "2026-07-29",
-        "t": "SpaceX Crash Insurance",
-        "u": "https://newsletterhunt.com/emails/431582"
-      },
-      {
-        "d": "2026-07-20",
-        "t": "Ice Cream Hedging",
-        "u": "https://newsletterhunt.com/emails/419537"
-      },
-      {
-        "d": "2026-07-10",
-        "t": "Sports Gambling ETF",
-        "u": "https://newsletterhunt.com/emails/407461"
       }
     ]
   },
@@ -206,7 +206,7 @@
   {
     "theme": "M&A / Mergers",
     "recent_90": 13,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 385,
     "heat_ratio": 1.06,
     "articles": [
@@ -272,11 +272,45 @@
     ]
   },
   {
+    "theme": "Legal / Courts",
+    "recent_90": 5,
+    "recent_30": 1,
+    "total": 184,
+    "heat_ratio": 0.86,
+    "articles": [
+      {
+        "d": "2026-09-02",
+        "t": "The ETF Dividend Flip",
+        "u": "https://newsletterhunt.com/emails/482633"
+      },
+      {
+        "d": "2026-07-27",
+        "t": "A Merger Closing Mystery",
+        "u": "https://newsletterhunt.com/emails/428909"
+      },
+      {
+        "d": "2026-07-08",
+        "t": "GameStop Has Enough Stock Now",
+        "u": "https://newsletterhunt.com/emails/404918"
+      },
+      {
+        "d": "2026-06-23",
+        "t": "Short Squeeze as a Service",
+        "u": "https://newsletterhunt.com/emails/384194"
+      },
+      {
+        "d": "2026-06-12",
+        "t": "The Podcast: Strongly Worded Letters",
+        "u": "https://newsletterhunt.com/emails/366935"
+      }
+    ]
+  },
+  {
     "theme": "Securities Fraud",
-    "recent_90": 14,
+    "recent_90": 13,
     "recent_30": 4,
     "total": 501,
-    "heat_ratio": 0.88,
+    "heat_ratio": 0.82,
     "articles": [
       {
         "d": "2026-09-01",
@@ -336,35 +370,6 @@
         "d": "2026-08-12",
         "t": "AI-Backed Securities",
         "u": "https://newsletterhunt.com/emails/450557"
-      }
-    ]
-  },
-  {
-    "theme": "Legal / Courts",
-    "recent_90": 4,
-    "recent_30": 0,
-    "total": 183,
-    "heat_ratio": 0.69,
-    "articles": [
-      {
-        "d": "2026-07-27",
-        "t": "A Merger Closing Mystery",
-        "u": "https://newsletterhunt.com/emails/428909"
-      },
-      {
-        "d": "2026-07-08",
-        "t": "GameStop Has Enough Stock Now",
-        "u": "https://newsletterhunt.com/emails/404918"
-      },
-      {
-        "d": "2026-06-23",
-        "t": "Short Squeeze as a Service",
-        "u": "https://newsletterhunt.com/emails/384194"
-      },
-      {
-        "d": "2026-06-12",
-        "t": "The Podcast: Strongly Worded Letters",
-        "u": "https://newsletterhunt.com/emails/366935"
       }
     ]
   },
