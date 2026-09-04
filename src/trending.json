@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 15,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 160,
     "heat_ratio": 2.96,
     "articles": [
@@ -104,7 +104,7 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 7,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 137,
     "heat_ratio": 1.61,
     "articles": [
@@ -171,11 +171,16 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 9,
-    "recent_30": 3,
-    "total": 250,
-    "heat_ratio": 1.13,
+    "recent_90": 10,
+    "recent_30": 4,
+    "total": 251,
+    "heat_ratio": 1.26,
     "articles": [
+      {
+        "d": "2026-09-03",
+        "t": "The Clippers Got Some Consulting",
+        "u": "https://newsletterhunt.com/emails/484349"
+      },
       {
         "d": "2026-08-25",
         "t": "LeBron Bonds",
@@ -195,11 +200,6 @@
         "d": "2026-07-28",
         "t": "Elevators Won\u2019t Repair Themselves",
         "u": "https://newsletterhunt.com/emails/430295"
-      },
-      {
-        "d": "2026-07-23",
-        "t": "Sports Happen So Much",
-        "u": "https://newsletterhunt.com/emails/423695"
       }
     ]
   },
@@ -239,11 +239,16 @@
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 17,
-    "recent_30": 0,
-    "total": 550,
-    "heat_ratio": 0.97,
+    "recent_90": 18,
+    "recent_30": 1,
+    "total": 551,
+    "heat_ratio": 1.03,
     "articles": [
+      {
+        "d": "2026-09-03",
+        "t": "The Clippers Got Some Consulting",
+        "u": "https://newsletterhunt.com/emails/484349"
+      },
       {
         "d": "2026-07-30",
         "t": "The Situation Deteriorated",
@@ -263,11 +268,6 @@
         "d": "2026-07-24",
         "t": "The Podcast: Worried Noises",
         "u": "https://newsletterhunt.com/emails/425346"
-      },
-      {
-        "d": "2026-07-21",
-        "t": "LSE Will Trade 22.83 Hours a Day",
-        "u": "https://newsletterhunt.com/emails/420890"
       }
     ]
   },
@@ -306,43 +306,9 @@
     ]
   },
   {
-    "theme": "Securities Fraud",
-    "recent_90": 13,
-    "recent_30": 4,
-    "total": 501,
-    "heat_ratio": 0.82,
-    "articles": [
-      {
-        "d": "2026-09-01",
-        "t": "Amazon Charged the First Price",
-        "u": "https://newsletterhunt.com/emails/480951"
-      },
-      {
-        "d": "2026-08-26",
-        "t": "Predict the KPIs",
-        "u": "https://newsletterhunt.com/emails/471050"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-11",
-        "t": "Pick-and-Shovel Seller Financing",
-        "u": "https://newsletterhunt.com/emails/449105"
-      },
-      {
-        "d": "2026-07-31",
-        "t": "The Podcast: No Kiddie Pool",
-        "u": "https://newsletterhunt.com/emails/434552"
-      }
-    ]
-  },
-  {
     "theme": "Regulation / SEC",
     "recent_90": 16,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 615,
     "heat_ratio": 0.82,
     "articles": [
@@ -374,12 +340,51 @@
     ]
   },
   {
-    "theme": "Bankruptcy",
-    "recent_90": 3,
-    "recent_30": 1,
-    "total": 193,
-    "heat_ratio": 0.49,
+    "theme": "Securities Fraud",
+    "recent_90": 12,
+    "recent_30": 4,
+    "total": 501,
+    "heat_ratio": 0.76,
     "articles": [
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-11",
+        "t": "Pick-and-Shovel Seller Financing",
+        "u": "https://newsletterhunt.com/emails/449105"
+      },
+      {
+        "d": "2026-07-31",
+        "t": "The Podcast: No Kiddie Pool",
+        "u": "https://newsletterhunt.com/emails/434552"
+      }
+    ]
+  },
+  {
+    "theme": "Bankruptcy",
+    "recent_90": 4,
+    "recent_30": 2,
+    "total": 194,
+    "heat_ratio": 0.65,
+    "articles": [
+      {
+        "d": "2026-09-03",
+        "t": "The Clippers Got Some Consulting",
+        "u": "https://newsletterhunt.com/emails/484349"
+      },
       {
         "d": "2026-08-31",
         "t": "Don\u2019t Hedge the KPIs",
