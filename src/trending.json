@@ -36,7 +36,7 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 33,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 498,
     "heat_ratio": 2.09,
     "articles": [
@@ -70,7 +70,7 @@
   {
     "theme": "IPOs / Capital Markets",
     "recent_90": 13,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 224,
     "heat_ratio": 1.83,
     "articles": [
@@ -171,11 +171,16 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 10,
-    "recent_30": 4,
-    "total": 251,
-    "heat_ratio": 1.26,
+    "recent_90": 11,
+    "recent_30": 5,
+    "total": 252,
+    "heat_ratio": 1.38,
     "articles": [
+      {
+        "d": "2026-09-04",
+        "t": "The Podcast: Learn More Gooder",
+        "u": "https://newsletterhunt.com/emails/486033"
+      },
       {
         "d": "2026-09-03",
         "t": "The Clippers Got Some Consulting",
@@ -195,11 +200,6 @@
         "d": "2026-08-10",
         "t": "The Situation Is Fine",
         "u": "https://newsletterhunt.com/emails/447620"
-      },
-      {
-        "d": "2026-07-28",
-        "t": "Elevators Won\u2019t Repair Themselves",
-        "u": "https://newsletterhunt.com/emails/430295"
       }
     ]
   },
@@ -208,7 +208,7 @@
     "recent_90": 13,
     "recent_30": 1,
     "total": 385,
-    "heat_ratio": 1.06,
+    "heat_ratio": 1.07,
     "articles": [
       {
         "d": "2026-08-27",
