@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 6,
     "total": 160,
-    "heat_ratio": 2.96,
+    "heat_ratio": 2.76,
     "articles": [
       {
         "d": "2026-09-02",
@@ -35,10 +35,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 33,
+    "recent_90": 32,
     "recent_30": 5,
     "total": 498,
-    "heat_ratio": 2.09,
+    "heat_ratio": 2.03,
     "articles": [
       {
         "d": "2026-08-31",
@@ -140,7 +140,7 @@
     "recent_90": 7,
     "recent_30": 3,
     "total": 143,
-    "heat_ratio": 1.54,
+    "heat_ratio": 1.55,
     "articles": [
       {
         "d": "2026-09-01",
@@ -307,10 +307,10 @@
   },
   {
     "theme": "Regulation / SEC",
-    "recent_90": 16,
+    "recent_90": 15,
     "recent_30": 5,
     "total": 615,
-    "heat_ratio": 0.82,
+    "heat_ratio": 0.77,
     "articles": [
       {
         "d": "2026-09-01",
