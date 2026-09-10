@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 14,
+    "recent_90": 15,
     "recent_30": 6,
-    "total": 160,
-    "heat_ratio": 2.76,
+    "total": 161,
+    "heat_ratio": 2.94,
     "articles": [
+      {
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
+      },
       {
         "d": "2026-09-02",
         "t": "The ETF Dividend Flip",
@@ -25,11 +30,6 @@
         "d": "2026-08-24",
         "t": "Who Should Control Anthropic?",
         "u": "https://newsletterhunt.com/emails/467387"
-      },
-      {
-        "d": "2026-08-12",
-        "t": "AI-Backed Securities",
-        "u": "https://newsletterhunt.com/emails/450557"
       }
     ]
   },
@@ -37,9 +37,14 @@
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 31,
     "recent_30": 5,
-    "total": 498,
-    "heat_ratio": 1.97,
+    "total": 499,
+    "heat_ratio": 1.96,
     "articles": [
+      {
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
+      },
       {
         "d": "2026-08-31",
         "t": "Don\u2019t Hedge the KPIs",
@@ -59,11 +64,6 @@
         "d": "2026-08-11",
         "t": "Pick-and-Shovel Seller Financing",
         "u": "https://newsletterhunt.com/emails/449105"
-      },
-      {
-        "d": "2026-08-10",
-        "t": "The Situation Is Fine",
-        "u": "https://newsletterhunt.com/emails/447620"
       }
     ]
   },
@@ -136,43 +136,9 @@
     ]
   },
   {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 11,
-    "recent_30": 1,
-    "total": 224,
-    "heat_ratio": 1.55,
-    "articles": [
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-05",
-        "t": "SpaceX Unlocks Tomorrow",
-        "u": "https://newsletterhunt.com/emails/440822"
-      },
-      {
-        "d": "2026-07-22",
-        "t": "The SEC Pays a Texting Fine",
-        "u": "https://newsletterhunt.com/emails/422309"
-      },
-      {
-        "d": "2026-07-16",
-        "t": "Shorts Will Sell You SpaceX",
-        "u": "https://newsletterhunt.com/emails/414488"
-      },
-      {
-        "d": "2026-07-15",
-        "t": "Keeping Mergers Under the Radar",
-        "u": "https://newsletterhunt.com/emails/413366"
-      }
-    ]
-  },
-  {
     "theme": "Hedge Funds / PE",
     "recent_90": 12,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 253,
     "heat_ratio": 1.5,
     "articles": [
@@ -200,6 +166,40 @@
         "d": "2026-08-11",
         "t": "Pick-and-Shovel Seller Financing",
         "u": "https://newsletterhunt.com/emails/449105"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 10,
+    "recent_30": 1,
+    "total": 224,
+    "heat_ratio": 1.41,
+    "articles": [
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-05",
+        "t": "SpaceX Unlocks Tomorrow",
+        "u": "https://newsletterhunt.com/emails/440822"
+      },
+      {
+        "d": "2026-07-22",
+        "t": "The SEC Pays a Texting Fine",
+        "u": "https://newsletterhunt.com/emails/422309"
+      },
+      {
+        "d": "2026-07-16",
+        "t": "Shorts Will Sell You SpaceX",
+        "u": "https://newsletterhunt.com/emails/414488"
+      },
+      {
+        "d": "2026-07-15",
+        "t": "Keeping Mergers Under the Radar",
+        "u": "https://newsletterhunt.com/emails/413366"
       }
     ]
   },
@@ -306,40 +306,6 @@
     ]
   },
   {
-    "theme": "Regulation / SEC",
-    "recent_90": 14,
-    "recent_30": 5,
-    "total": 615,
-    "heat_ratio": 0.72,
-    "articles": [
-      {
-        "d": "2026-09-01",
-        "t": "Amazon Charged the First Price",
-        "u": "https://newsletterhunt.com/emails/480951"
-      },
-      {
-        "d": "2026-08-31",
-        "t": "Don\u2019t Hedge the KPIs",
-        "u": "https://newsletterhunt.com/emails/479069"
-      },
-      {
-        "d": "2026-08-26",
-        "t": "Predict the KPIs",
-        "u": "https://newsletterhunt.com/emails/471050"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-12",
-        "t": "AI-Backed Securities",
-        "u": "https://newsletterhunt.com/emails/450557"
-      }
-    ]
-  },
-  {
     "theme": "Securities Fraud",
     "recent_90": 11,
     "recent_30": 4,
@@ -374,6 +340,40 @@
     ]
   },
   {
+    "theme": "Regulation / SEC",
+    "recent_90": 13,
+    "recent_30": 5,
+    "total": 615,
+    "heat_ratio": 0.67,
+    "articles": [
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
+      {
+        "d": "2026-08-31",
+        "t": "Don\u2019t Hedge the KPIs",
+        "u": "https://newsletterhunt.com/emails/479069"
+      },
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-12",
+        "t": "AI-Backed Securities",
+        "u": "https://newsletterhunt.com/emails/450557"
+      }
+    ]
+  },
+  {
     "theme": "Bankruptcy",
     "recent_90": 4,
     "recent_30": 2,
@@ -404,11 +404,16 @@
   },
   {
     "theme": "Fed / Central Banks",
-    "recent_90": 2,
-    "recent_30": 1,
-    "total": 155,
-    "heat_ratio": 0.41,
+    "recent_90": 3,
+    "recent_30": 2,
+    "total": 156,
+    "heat_ratio": 0.61,
     "articles": [
+      {
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
+      },
       {
         "d": "2026-08-27",
         "t": "AI Refi",
