@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 15,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 161,
     "heat_ratio": 2.95,
     "articles": [
@@ -138,7 +138,7 @@
   {
     "theme": "Insider Trading",
     "recent_90": 7,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 143,
     "heat_ratio": 1.55,
     "articles": [
@@ -205,11 +205,16 @@
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 20,
-    "recent_30": 3,
-    "total": 553,
-    "heat_ratio": 1.14,
+    "recent_90": 21,
+    "recent_30": 4,
+    "total": 554,
+    "heat_ratio": 1.2,
     "articles": [
+      {
+        "d": "2026-09-11",
+        "t": "The Podcast: What\u2019s the Concern?",
+        "u": "https://newsletterhunt.com/emails/498045"
+      },
       {
         "d": "2026-09-10",
         "t": "Dallas Gets Some Equities",
@@ -229,11 +234,6 @@
         "d": "2026-07-30",
         "t": "The Situation Deteriorated",
         "u": "https://newsletterhunt.com/emails/433001"
-      },
-      {
-        "d": "2026-07-29",
-        "t": "SpaceX Crash Insurance",
-        "u": "https://newsletterhunt.com/emails/431582"
       }
     ]
   },
@@ -337,7 +337,7 @@
   {
     "theme": "Regulation / SEC",
     "recent_90": 13,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 615,
     "heat_ratio": 0.67,
     "articles": [
