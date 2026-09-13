@@ -172,7 +172,7 @@
   {
     "theme": "IPOs / Capital Markets",
     "recent_90": 9,
-    "recent_30": 1,
+    "recent_30": 0,
     "total": 224,
     "heat_ratio": 1.27,
     "articles": [
@@ -242,7 +242,7 @@
     "recent_90": 13,
     "recent_30": 2,
     "total": 386,
-    "heat_ratio": 1.06,
+    "heat_ratio": 1.07,
     "articles": [
       {
         "d": "2026-09-08",
@@ -303,7 +303,7 @@
   {
     "theme": "Securities Fraud",
     "recent_90": 11,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 501,
     "heat_ratio": 0.69,
     "articles": [
@@ -337,7 +337,7 @@
   {
     "theme": "Regulation / SEC",
     "recent_90": 13,
-    "recent_30": 4,
+    "recent_30": 3,
     "total": 615,
     "heat_ratio": 0.67,
     "articles": [
