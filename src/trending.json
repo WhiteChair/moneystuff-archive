@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 5,
     "total": 161,
-    "heat_ratio": 2.95,
+    "heat_ratio": 2.75,
     "articles": [
       {
         "d": "2026-09-09",
@@ -35,10 +35,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 31,
+    "recent_90": 30,
     "recent_30": 5,
     "total": 500,
-    "heat_ratio": 1.96,
+    "heat_ratio": 1.9,
     "articles": [
       {
         "d": "2026-09-10",
@@ -170,40 +170,6 @@
     ]
   },
   {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 9,
-    "recent_30": 0,
-    "total": 224,
-    "heat_ratio": 1.27,
-    "articles": [
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-05",
-        "t": "SpaceX Unlocks Tomorrow",
-        "u": "https://newsletterhunt.com/emails/440822"
-      },
-      {
-        "d": "2026-07-22",
-        "t": "The SEC Pays a Texting Fine",
-        "u": "https://newsletterhunt.com/emails/422309"
-      },
-      {
-        "d": "2026-07-16",
-        "t": "Shorts Will Sell You SpaceX",
-        "u": "https://newsletterhunt.com/emails/414488"
-      },
-      {
-        "d": "2026-07-15",
-        "t": "Keeping Mergers Under the Radar",
-        "u": "https://newsletterhunt.com/emails/413366"
-      }
-    ]
-  },
-  {
     "theme": "Crypto / Blockchain",
     "recent_90": 21,
     "recent_30": 4,
@@ -234,6 +200,40 @@
         "d": "2026-07-30",
         "t": "The Situation Deteriorated",
         "u": "https://newsletterhunt.com/emails/433001"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 8,
+    "recent_30": 0,
+    "total": 224,
+    "heat_ratio": 1.13,
+    "articles": [
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-05",
+        "t": "SpaceX Unlocks Tomorrow",
+        "u": "https://newsletterhunt.com/emails/440822"
+      },
+      {
+        "d": "2026-07-22",
+        "t": "The SEC Pays a Texting Fine",
+        "u": "https://newsletterhunt.com/emails/422309"
+      },
+      {
+        "d": "2026-07-16",
+        "t": "Shorts Will Sell You SpaceX",
+        "u": "https://newsletterhunt.com/emails/414488"
+      },
+      {
+        "d": "2026-07-15",
+        "t": "Keeping Mergers Under the Radar",
+        "u": "https://newsletterhunt.com/emails/413366"
       }
     ]
   },
