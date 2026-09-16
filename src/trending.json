@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 13,
+    "recent_90": 12,
     "recent_30": 5,
     "total": 161,
-    "heat_ratio": 2.56,
+    "heat_ratio": 2.36,
     "articles": [
       {
         "d": "2026-09-09",
@@ -171,10 +171,10 @@
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 21,
+    "recent_90": 20,
     "recent_30": 4,
     "total": 554,
-    "heat_ratio": 1.2,
+    "heat_ratio": 1.14,
     "articles": [
       {
         "d": "2026-09-11",
@@ -272,40 +272,6 @@
     ]
   },
   {
-    "theme": "Securities Fraud",
-    "recent_90": 11,
-    "recent_30": 2,
-    "total": 501,
-    "heat_ratio": 0.7,
-    "articles": [
-      {
-        "d": "2026-09-01",
-        "t": "Amazon Charged the First Price",
-        "u": "https://newsletterhunt.com/emails/480951"
-      },
-      {
-        "d": "2026-08-26",
-        "t": "Predict the KPIs",
-        "u": "https://newsletterhunt.com/emails/471050"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-11",
-        "t": "Pick-and-Shovel Seller Financing",
-        "u": "https://newsletterhunt.com/emails/449105"
-      },
-      {
-        "d": "2026-07-31",
-        "t": "The Podcast: No Kiddie Pool",
-        "u": "https://newsletterhunt.com/emails/434552"
-      }
-    ]
-  },
-  {
     "theme": "Legal / Courts",
     "recent_90": 4,
     "recent_30": 1,
@@ -394,6 +360,40 @@
         "d": "2026-07-20",
         "t": "Ice Cream Hedging",
         "u": "https://newsletterhunt.com/emails/419537"
+      }
+    ]
+  },
+  {
+    "theme": "Securities Fraud",
+    "recent_90": 10,
+    "recent_30": 2,
+    "total": 501,
+    "heat_ratio": 0.63,
+    "articles": [
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-11",
+        "t": "Pick-and-Shovel Seller Financing",
+        "u": "https://newsletterhunt.com/emails/449105"
+      },
+      {
+        "d": "2026-07-31",
+        "t": "The Podcast: No Kiddie Pool",
+        "u": "https://newsletterhunt.com/emails/434552"
       }
     ]
   },
