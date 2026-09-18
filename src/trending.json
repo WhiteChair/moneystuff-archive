@@ -35,10 +35,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 28,
+    "recent_90": 27,
     "recent_30": 5,
     "total": 500,
-    "heat_ratio": 1.77,
+    "heat_ratio": 1.71,
     "articles": [
       {
         "d": "2026-09-10",
@@ -137,10 +137,10 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 12,
+    "recent_90": 11,
     "recent_30": 5,
     "total": 254,
-    "heat_ratio": 1.5,
+    "heat_ratio": 1.37,
     "articles": [
       {
         "d": "2026-09-10",
@@ -204,6 +204,40 @@
     ]
   },
   {
+    "theme": "M&A / Mergers",
+    "recent_90": 12,
+    "recent_30": 2,
+    "total": 386,
+    "heat_ratio": 0.99,
+    "articles": [
+      {
+        "d": "2026-09-08",
+        "t": "Robinhood Tokenized AMC",
+        "u": "https://newsletterhunt.com/emails/492898"
+      },
+      {
+        "d": "2026-08-27",
+        "t": "AI Refi",
+        "u": "https://newsletterhunt.com/emails/472535"
+      },
+      {
+        "d": "2026-08-03",
+        "t": "Hedgehog Hedge Fund",
+        "u": "https://newsletterhunt.com/emails/438149"
+      },
+      {
+        "d": "2026-07-28",
+        "t": "Elevators Won\u2019t Repair Themselves",
+        "u": "https://newsletterhunt.com/emails/430295"
+      },
+      {
+        "d": "2026-07-21",
+        "t": "LSE Will Trade 22.83 Hours a Day",
+        "u": "https://newsletterhunt.com/emails/420890"
+      }
+    ]
+  },
+  {
     "theme": "IPOs / Capital Markets",
     "recent_90": 7,
     "recent_30": 0,
@@ -234,40 +268,6 @@
         "d": "2026-07-15",
         "t": "Keeping Mergers Under the Radar",
         "u": "https://newsletterhunt.com/emails/413366"
-      }
-    ]
-  },
-  {
-    "theme": "M&A / Mergers",
-    "recent_90": 12,
-    "recent_30": 2,
-    "total": 386,
-    "heat_ratio": 0.98,
-    "articles": [
-      {
-        "d": "2026-09-08",
-        "t": "Robinhood Tokenized AMC",
-        "u": "https://newsletterhunt.com/emails/492898"
-      },
-      {
-        "d": "2026-08-27",
-        "t": "AI Refi",
-        "u": "https://newsletterhunt.com/emails/472535"
-      },
-      {
-        "d": "2026-08-03",
-        "t": "Hedgehog Hedge Fund",
-        "u": "https://newsletterhunt.com/emails/438149"
-      },
-      {
-        "d": "2026-07-28",
-        "t": "Elevators Won\u2019t Repair Themselves",
-        "u": "https://newsletterhunt.com/emails/430295"
-      },
-      {
-        "d": "2026-07-21",
-        "t": "LSE Will Trade 22.83 Hours a Day",
-        "u": "https://newsletterhunt.com/emails/420890"
       }
     ]
   },
