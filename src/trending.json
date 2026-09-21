@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 12,
+    "recent_90": 11,
     "recent_30": 5,
     "total": 161,
-    "heat_ratio": 2.36,
+    "heat_ratio": 2.17,
     "articles": [
       {
         "d": "2026-09-09",
@@ -35,10 +35,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 27,
+    "recent_90": 26,
     "recent_30": 5,
     "total": 500,
-    "heat_ratio": 1.71,
+    "heat_ratio": 1.65,
     "articles": [
       {
         "d": "2026-09-10",
@@ -171,10 +171,10 @@
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 20,
+    "recent_90": 19,
     "recent_30": 4,
     "total": 554,
-    "heat_ratio": 1.14,
+    "heat_ratio": 1.09,
     "articles": [
       {
         "d": "2026-09-11",
