@@ -34,40 +34,6 @@
     ]
   },
   {
-    "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 26,
-    "recent_30": 5,
-    "total": 500,
-    "heat_ratio": 1.65,
-    "articles": [
-      {
-        "d": "2026-09-10",
-        "t": "Dallas Gets Some Equities",
-        "u": "https://newsletterhunt.com/emails/496295"
-      },
-      {
-        "d": "2026-09-09",
-        "t": "AAA AI",
-        "u": "https://newsletterhunt.com/emails/494579"
-      },
-      {
-        "d": "2026-08-31",
-        "t": "Don\u2019t Hedge the KPIs",
-        "u": "https://newsletterhunt.com/emails/479069"
-      },
-      {
-        "d": "2026-08-25",
-        "t": "LeBron Bonds",
-        "u": "https://newsletterhunt.com/emails/469169"
-      },
-      {
-        "d": "2026-08-24",
-        "t": "Who Should Control Anthropic?",
-        "u": "https://newsletterhunt.com/emails/467387"
-      }
-    ]
-  },
-  {
     "theme": "Options / Derivatives",
     "recent_90": 7,
     "recent_30": 2,
@@ -98,6 +64,40 @@
         "d": "2026-07-20",
         "t": "Ice Cream Hedging",
         "u": "https://newsletterhunt.com/emails/419537"
+      }
+    ]
+  },
+  {
+    "theme": "Musk / Tesla / SpaceX",
+    "recent_90": 25,
+    "recent_30": 5,
+    "total": 500,
+    "heat_ratio": 1.59,
+    "articles": [
+      {
+        "d": "2026-09-10",
+        "t": "Dallas Gets Some Equities",
+        "u": "https://newsletterhunt.com/emails/496295"
+      },
+      {
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
+      },
+      {
+        "d": "2026-08-31",
+        "t": "Don\u2019t Hedge the KPIs",
+        "u": "https://newsletterhunt.com/emails/479069"
+      },
+      {
+        "d": "2026-08-25",
+        "t": "LeBron Bonds",
+        "u": "https://newsletterhunt.com/emails/469169"
+      },
+      {
+        "d": "2026-08-24",
+        "t": "Who Should Control Anthropic?",
+        "u": "https://newsletterhunt.com/emails/467387"
       }
     ]
   },
@@ -239,10 +239,10 @@
   },
   {
     "theme": "IPOs / Capital Markets",
-    "recent_90": 7,
+    "recent_90": 6,
     "recent_30": 0,
     "total": 224,
-    "heat_ratio": 0.99,
+    "heat_ratio": 0.85,
     "articles": [
       {
         "d": "2026-08-13",
@@ -268,35 +268,6 @@
         "d": "2026-07-15",
         "t": "Keeping Mergers Under the Radar",
         "u": "https://newsletterhunt.com/emails/413366"
-      }
-    ]
-  },
-  {
-    "theme": "Legal / Courts",
-    "recent_90": 4,
-    "recent_30": 1,
-    "total": 184,
-    "heat_ratio": 0.69,
-    "articles": [
-      {
-        "d": "2026-09-02",
-        "t": "The ETF Dividend Flip",
-        "u": "https://newsletterhunt.com/emails/482633"
-      },
-      {
-        "d": "2026-07-27",
-        "t": "A Merger Closing Mystery",
-        "u": "https://newsletterhunt.com/emails/428909"
-      },
-      {
-        "d": "2026-07-08",
-        "t": "GameStop Has Enough Stock Now",
-        "u": "https://newsletterhunt.com/emails/404918"
-      },
-      {
-        "d": "2026-06-23",
-        "t": "Short Squeeze as a Service",
-        "u": "https://newsletterhunt.com/emails/384194"
       }
     ]
   },
@@ -418,6 +389,30 @@
         "d": "2026-07-23",
         "t": "Sports Happen So Much",
         "u": "https://newsletterhunt.com/emails/423695"
+      }
+    ]
+  },
+  {
+    "theme": "Legal / Courts",
+    "recent_90": 3,
+    "recent_30": 1,
+    "total": 184,
+    "heat_ratio": 0.52,
+    "articles": [
+      {
+        "d": "2026-09-02",
+        "t": "The ETF Dividend Flip",
+        "u": "https://newsletterhunt.com/emails/482633"
+      },
+      {
+        "d": "2026-07-27",
+        "t": "A Merger Closing Mystery",
+        "u": "https://newsletterhunt.com/emails/428909"
+      },
+      {
+        "d": "2026-07-08",
+        "t": "GameStop Has Enough Stock Now",
+        "u": "https://newsletterhunt.com/emails/404918"
       }
     ]
   },
