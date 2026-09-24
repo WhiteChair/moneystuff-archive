@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 12,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 162,
     "heat_ratio": 2.35,
     "articles": [
@@ -70,7 +70,7 @@
   {
     "theme": "Insider Trading",
     "recent_90": 7,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 144,
     "heat_ratio": 1.54,
     "articles": [
@@ -98,40 +98,6 @@
         "d": "2026-07-23",
         "t": "Sports Happen So Much",
         "u": "https://newsletterhunt.com/emails/423695"
-      }
-    ]
-  },
-  {
-    "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 24,
-    "recent_30": 5,
-    "total": 500,
-    "heat_ratio": 1.52,
-    "articles": [
-      {
-        "d": "2026-09-10",
-        "t": "Dallas Gets Some Equities",
-        "u": "https://newsletterhunt.com/emails/496295"
-      },
-      {
-        "d": "2026-09-09",
-        "t": "AAA AI",
-        "u": "https://newsletterhunt.com/emails/494579"
-      },
-      {
-        "d": "2026-08-31",
-        "t": "Don\u2019t Hedge the KPIs",
-        "u": "https://newsletterhunt.com/emails/479069"
-      },
-      {
-        "d": "2026-08-25",
-        "t": "LeBron Bonds",
-        "u": "https://newsletterhunt.com/emails/469169"
-      },
-      {
-        "d": "2026-08-24",
-        "t": "Who Should Control Anthropic?",
-        "u": "https://newsletterhunt.com/emails/467387"
       }
     ]
   },
@@ -170,11 +136,45 @@
     ]
   },
   {
+    "theme": "Musk / Tesla / SpaceX",
+    "recent_90": 23,
+    "recent_30": 4,
+    "total": 500,
+    "heat_ratio": 1.46,
+    "articles": [
+      {
+        "d": "2026-09-10",
+        "t": "Dallas Gets Some Equities",
+        "u": "https://newsletterhunt.com/emails/496295"
+      },
+      {
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
+      },
+      {
+        "d": "2026-08-31",
+        "t": "Don\u2019t Hedge the KPIs",
+        "u": "https://newsletterhunt.com/emails/479069"
+      },
+      {
+        "d": "2026-08-25",
+        "t": "LeBron Bonds",
+        "u": "https://newsletterhunt.com/emails/469169"
+      },
+      {
+        "d": "2026-08-24",
+        "t": "Who Should Control Anthropic?",
+        "u": "https://newsletterhunt.com/emails/467387"
+      }
+    ]
+  },
+  {
     "theme": "Crypto / Blockchain",
-    "recent_90": 22,
+    "recent_90": 21,
     "recent_30": 7,
     "total": 557,
-    "heat_ratio": 1.25,
+    "heat_ratio": 1.2,
     "articles": [
       {
         "d": "2026-09-22",
@@ -206,10 +206,15 @@
   {
     "theme": "M&A / Mergers",
     "recent_90": 12,
-    "recent_30": 3,
-    "total": 387,
+    "recent_30": 4,
+    "total": 388,
     "heat_ratio": 0.98,
     "articles": [
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      },
       {
         "d": "2026-09-22",
         "t": "Who Cares If a Merger Is Fair?",
@@ -229,11 +234,6 @@
         "d": "2026-08-03",
         "t": "Hedgehog Hedge Fund",
         "u": "https://newsletterhunt.com/emails/438149"
-      },
-      {
-        "d": "2026-07-28",
-        "t": "Elevators Won\u2019t Repair Themselves",
-        "u": "https://newsletterhunt.com/emails/430295"
       }
     ]
   },
@@ -273,11 +273,16 @@
   },
   {
     "theme": "Regulation / SEC",
-    "recent_90": 15,
-    "recent_30": 5,
-    "total": 617,
-    "heat_ratio": 0.77,
+    "recent_90": 16,
+    "recent_30": 6,
+    "total": 618,
+    "heat_ratio": 0.82,
     "articles": [
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      },
       {
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
@@ -297,11 +302,35 @@
         "d": "2026-08-31",
         "t": "Don\u2019t Hedge the KPIs",
         "u": "https://newsletterhunt.com/emails/479069"
+      }
+    ]
+  },
+  {
+    "theme": "Fed / Central Banks",
+    "recent_90": 4,
+    "recent_30": 3,
+    "total": 157,
+    "heat_ratio": 0.81,
+    "articles": [
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
       },
       {
-        "d": "2026-08-26",
-        "t": "Predict the KPIs",
-        "u": "https://newsletterhunt.com/emails/471050"
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
+      },
+      {
+        "d": "2026-08-27",
+        "t": "AI Refi",
+        "u": "https://newsletterhunt.com/emails/472535"
+      },
+      {
+        "d": "2026-07-23",
+        "t": "Sports Happen So Much",
+        "u": "https://newsletterhunt.com/emails/423695"
       }
     ]
   },
@@ -394,30 +423,6 @@
         "d": "2026-07-20",
         "t": "Ice Cream Hedging",
         "u": "https://newsletterhunt.com/emails/419537"
-      }
-    ]
-  },
-  {
-    "theme": "Fed / Central Banks",
-    "recent_90": 3,
-    "recent_30": 2,
-    "total": 156,
-    "heat_ratio": 0.61,
-    "articles": [
-      {
-        "d": "2026-09-09",
-        "t": "AAA AI",
-        "u": "https://newsletterhunt.com/emails/494579"
-      },
-      {
-        "d": "2026-08-27",
-        "t": "AI Refi",
-        "u": "https://newsletterhunt.com/emails/472535"
-      },
-      {
-        "d": "2026-07-23",
-        "t": "Sports Happen So Much",
-        "u": "https://newsletterhunt.com/emails/423695"
       }
     ]
   },
