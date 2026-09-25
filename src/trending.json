@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 12,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 162,
     "heat_ratio": 2.35,
     "articles": [
@@ -35,11 +35,16 @@
   },
   {
     "theme": "Options / Derivatives",
-    "recent_90": 9,
-    "recent_30": 4,
-    "total": 139,
-    "heat_ratio": 2.06,
+    "recent_90": 10,
+    "recent_30": 5,
+    "total": 140,
+    "heat_ratio": 2.27,
     "articles": [
+      {
+        "d": "2026-09-24",
+        "t": "Morgan Stanley Leaked Some Deals",
+        "u": "https://newsletterhunt.com/emails/507218"
+      },
       {
         "d": "2026-09-22",
         "t": "BlackRock Wants Pensions",
@@ -59,21 +64,21 @@
         "d": "2026-08-26",
         "t": "Predict the KPIs",
         "u": "https://newsletterhunt.com/emails/471050"
-      },
-      {
-        "d": "2026-08-04",
-        "t": "Leveraged ETF Crash Hedging ETF",
-        "u": "https://newsletterhunt.com/emails/439535"
       }
     ]
   },
   {
     "theme": "Insider Trading",
-    "recent_90": 7,
-    "recent_30": 2,
-    "total": 144,
-    "heat_ratio": 1.54,
+    "recent_90": 8,
+    "recent_30": 3,
+    "total": 145,
+    "heat_ratio": 1.75,
     "articles": [
+      {
+        "d": "2026-09-24",
+        "t": "Morgan Stanley Leaked Some Deals",
+        "u": "https://newsletterhunt.com/emails/507218"
+      },
       {
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
@@ -93,11 +98,6 @@
         "d": "2026-08-12",
         "t": "AI-Backed Securities",
         "u": "https://newsletterhunt.com/emails/450557"
-      },
-      {
-        "d": "2026-07-23",
-        "t": "Sports Happen So Much",
-        "u": "https://newsletterhunt.com/emails/423695"
       }
     ]
   },
@@ -105,9 +105,14 @@
     "theme": "Hedge Funds / PE",
     "recent_90": 12,
     "recent_30": 6,
-    "total": 255,
+    "total": 256,
     "heat_ratio": 1.49,
     "articles": [
+      {
+        "d": "2026-09-24",
+        "t": "Morgan Stanley Leaked Some Deals",
+        "u": "https://newsletterhunt.com/emails/507218"
+      },
       {
         "d": "2026-09-22",
         "t": "BlackRock Wants Pensions",
@@ -127,20 +132,15 @@
         "d": "2026-09-04",
         "t": "The Podcast: Learn More Gooder",
         "u": "https://newsletterhunt.com/emails/486033"
-      },
-      {
-        "d": "2026-09-03",
-        "t": "The Clippers Got Some Consulting",
-        "u": "https://newsletterhunt.com/emails/484349"
       }
     ]
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 23,
-    "recent_30": 4,
+    "recent_90": 22,
+    "recent_30": 3,
     "total": 500,
-    "heat_ratio": 1.46,
+    "heat_ratio": 1.4,
     "articles": [
       {
         "d": "2026-09-10",
