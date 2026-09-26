@@ -36,7 +36,7 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 10,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 140,
     "heat_ratio": 2.27,
     "articles": [
@@ -274,7 +274,7 @@
   {
     "theme": "Regulation / SEC",
     "recent_90": 16,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 618,
     "heat_ratio": 0.82,
     "articles": [
@@ -337,7 +337,7 @@
   {
     "theme": "Securities Fraud",
     "recent_90": 11,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 502,
     "heat_ratio": 0.7,
     "articles": [
@@ -402,7 +402,7 @@
     "recent_90": 4,
     "recent_30": 2,
     "total": 194,
-    "heat_ratio": 0.65,
+    "heat_ratio": 0.66,
     "articles": [
       {
         "d": "2026-09-03",
