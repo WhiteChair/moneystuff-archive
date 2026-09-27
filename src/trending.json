@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 12,
-    "recent_30": 4,
+    "recent_30": 3,
     "total": 162,
     "heat_ratio": 2.35,
     "articles": [
@@ -206,7 +206,7 @@
   {
     "theme": "M&A / Mergers",
     "recent_90": 12,
-    "recent_30": 4,
+    "recent_30": 3,
     "total": 388,
     "heat_ratio": 0.98,
     "articles": [
@@ -308,7 +308,7 @@
   {
     "theme": "Fed / Central Banks",
     "recent_90": 4,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 157,
     "heat_ratio": 0.81,
     "articles": [
