@@ -4,7 +4,7 @@
     "recent_90": 12,
     "recent_30": 3,
     "total": 162,
-    "heat_ratio": 2.35,
+    "heat_ratio": 2.36,
     "articles": [
       {
         "d": "2026-09-22",
@@ -102,40 +102,6 @@
     ]
   },
   {
-    "theme": "Hedge Funds / PE",
-    "recent_90": 12,
-    "recent_30": 6,
-    "total": 256,
-    "heat_ratio": 1.49,
-    "articles": [
-      {
-        "d": "2026-09-24",
-        "t": "Morgan Stanley Leaked Some Deals",
-        "u": "https://newsletterhunt.com/emails/507218"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "BlackRock Wants Pensions",
-        "u": "https://newsletterhunt.com/emails/504616"
-      },
-      {
-        "d": "2026-09-10",
-        "t": "Dallas Gets Some Equities",
-        "u": "https://newsletterhunt.com/emails/496295"
-      },
-      {
-        "d": "2026-09-08",
-        "t": "Robinhood Tokenized AMC",
-        "u": "https://newsletterhunt.com/emails/492898"
-      },
-      {
-        "d": "2026-09-04",
-        "t": "The Podcast: Learn More Gooder",
-        "u": "https://newsletterhunt.com/emails/486033"
-      }
-    ]
-  },
-  {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 22,
     "recent_30": 3,
@@ -170,11 +136,45 @@
     ]
   },
   {
+    "theme": "Hedge Funds / PE",
+    "recent_90": 11,
+    "recent_30": 6,
+    "total": 256,
+    "heat_ratio": 1.37,
+    "articles": [
+      {
+        "d": "2026-09-24",
+        "t": "Morgan Stanley Leaked Some Deals",
+        "u": "https://newsletterhunt.com/emails/507218"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "BlackRock Wants Pensions",
+        "u": "https://newsletterhunt.com/emails/504616"
+      },
+      {
+        "d": "2026-09-10",
+        "t": "Dallas Gets Some Equities",
+        "u": "https://newsletterhunt.com/emails/496295"
+      },
+      {
+        "d": "2026-09-08",
+        "t": "Robinhood Tokenized AMC",
+        "u": "https://newsletterhunt.com/emails/492898"
+      },
+      {
+        "d": "2026-09-04",
+        "t": "The Podcast: Learn More Gooder",
+        "u": "https://newsletterhunt.com/emails/486033"
+      }
+    ]
+  },
+  {
     "theme": "Crypto / Blockchain",
-    "recent_90": 21,
+    "recent_90": 20,
     "recent_30": 7,
     "total": 557,
-    "heat_ratio": 1.2,
+    "heat_ratio": 1.14,
     "articles": [
       {
         "d": "2026-09-22",
@@ -335,40 +335,6 @@
     ]
   },
   {
-    "theme": "Securities Fraud",
-    "recent_90": 11,
-    "recent_30": 2,
-    "total": 502,
-    "heat_ratio": 0.7,
-    "articles": [
-      {
-        "d": "2026-09-22",
-        "t": "The Podcast: Trying to Save the World Is No Excuse",
-        "u": "https://newsletterhunt.com/emails/504452"
-      },
-      {
-        "d": "2026-09-01",
-        "t": "Amazon Charged the First Price",
-        "u": "https://newsletterhunt.com/emails/480951"
-      },
-      {
-        "d": "2026-08-26",
-        "t": "Predict the KPIs",
-        "u": "https://newsletterhunt.com/emails/471050"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-11",
-        "t": "Pick-and-Shovel Seller Financing",
-        "u": "https://newsletterhunt.com/emails/449105"
-      }
-    ]
-  },
-  {
     "theme": "Legal / Courts",
     "recent_90": 4,
     "recent_30": 2,
@@ -423,6 +389,40 @@
         "d": "2026-07-20",
         "t": "Ice Cream Hedging",
         "u": "https://newsletterhunt.com/emails/419537"
+      }
+    ]
+  },
+  {
+    "theme": "Securities Fraud",
+    "recent_90": 10,
+    "recent_30": 2,
+    "total": 502,
+    "heat_ratio": 0.63,
+    "articles": [
+      {
+        "d": "2026-09-22",
+        "t": "The Podcast: Trying to Save the World Is No Excuse",
+        "u": "https://newsletterhunt.com/emails/504452"
+      },
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      },
+      {
+        "d": "2026-08-26",
+        "t": "Predict the KPIs",
+        "u": "https://newsletterhunt.com/emails/471050"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-11",
+        "t": "Pick-and-Shovel Seller Financing",
+        "u": "https://newsletterhunt.com/emails/449105"
       }
     ]
   },
