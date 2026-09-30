@@ -5,8 +5,13 @@
     "event": "TAKEN PRIVATE",
     "date": "Oct 2022",
     "note": "Musk signed in April 2022, spent the summer trying to get out of it, then closed at $54.20 a share in October. Now X.",
-    "mention_count": 446,
+    "mention_count": 447,
     "mentions": [
+      {
+        "d": "2026-09-29",
+        "id": "512829",
+        "t": "Is Existential Risk Securities Fraud?"
+      },
       {
         "d": "2026-09-22",
         "id": "504616",
@@ -41,11 +46,6 @@
         "d": "2026-05-14",
         "id": "320207",
         "t": "Ryan Cohen Wants to Work at eBay"
-      },
-      {
-        "d": "2026-05-07",
-        "id": "308261",
-        "t": "Sell on eBay to Buy eBay"
       }
     ]
   },
@@ -255,8 +255,13 @@
     "event": "SEIZED",
     "date": "Mar 2023",
     "note": "Deposits fled after a botched capital raise; regulators closed it in a weekend. Second-largest US bank failure at the time.",
-    "mention_count": 54,
+    "mention_count": 55,
     "mentions": [
+      {
+        "d": "2026-09-29",
+        "id": "512829",
+        "t": "Is Existential Risk Securities Fraud?"
+      },
       {
         "d": "2025-12-09",
         "id": "211894",
@@ -291,11 +296,6 @@
         "d": "2024-03-07",
         "id": "52359",
         "t": "Exxon Barges in on Hess Deal"
-      },
-      {
-        "d": "2023-12-07",
-        "id": "43979",
-        "t": "OpenAI Was Pretty Portable"
       }
     ]
   },
