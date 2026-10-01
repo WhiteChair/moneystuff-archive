@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 14,
+    "recent_90": 13,
     "recent_30": 5,
     "total": 164,
-    "heat_ratio": 2.72,
+    "heat_ratio": 2.52,
     "articles": [
       {
         "d": "2026-09-29",
@@ -103,11 +103,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 22,
+    "recent_90": 23,
     "recent_30": 4,
-    "total": 501,
-    "heat_ratio": 1.4,
+    "total": 502,
+    "heat_ratio": 1.46,
     "articles": [
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
+      },
       {
         "d": "2026-09-28",
         "t": "Banks Recycle the Risk",
@@ -127,11 +132,6 @@
         "d": "2026-08-31",
         "t": "Don\u2019t Hedge the KPIs",
         "u": "https://newsletterhunt.com/emails/479069"
-      },
-      {
-        "d": "2026-08-25",
-        "t": "LeBron Bonds",
-        "u": "https://newsletterhunt.com/emails/469169"
       }
     ]
   },
@@ -172,10 +172,15 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 19,
-    "recent_30": 7,
-    "total": 557,
-    "heat_ratio": 1.09,
+    "recent_30": 8,
+    "total": 558,
+    "heat_ratio": 1.08,
     "articles": [
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
+      },
       {
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
@@ -195,45 +200,6 @@
         "d": "2026-09-11",
         "t": "The Podcast: What\u2019s the Concern?",
         "u": "https://newsletterhunt.com/emails/498045"
-      },
-      {
-        "d": "2026-09-10",
-        "t": "Dallas Gets Some Equities",
-        "u": "https://newsletterhunt.com/emails/496295"
-      }
-    ]
-  },
-  {
-    "theme": "M&A / Mergers",
-    "recent_90": 11,
-    "recent_30": 3,
-    "total": 388,
-    "heat_ratio": 0.9,
-    "articles": [
-      {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Who Cares If a Merger Is Fair?",
-        "u": "https://newsletterhunt.com/emails/504624"
-      },
-      {
-        "d": "2026-09-08",
-        "t": "Robinhood Tokenized AMC",
-        "u": "https://newsletterhunt.com/emails/492898"
-      },
-      {
-        "d": "2026-08-27",
-        "t": "AI Refi",
-        "u": "https://newsletterhunt.com/emails/472535"
-      },
-      {
-        "d": "2026-08-03",
-        "t": "Hedgehog Hedge Fund",
-        "u": "https://newsletterhunt.com/emails/438149"
       }
     ]
   },
@@ -272,6 +238,74 @@
     ]
   },
   {
+    "theme": "Regulation / SEC",
+    "recent_90": 16,
+    "recent_30": 5,
+    "total": 619,
+    "heat_ratio": 0.82,
+    "articles": [
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
+      },
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Not All the Susquehanna Puts Were Bad",
+        "u": "https://newsletterhunt.com/emails/504628"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "The Whole Indian Options Trade Was Too Good",
+        "u": "https://newsletterhunt.com/emails/504482"
+      },
+      {
+        "d": "2026-09-01",
+        "t": "Amazon Charged the First Price",
+        "u": "https://newsletterhunt.com/emails/480951"
+      }
+    ]
+  },
+  {
+    "theme": "M&A / Mergers",
+    "recent_90": 10,
+    "recent_30": 3,
+    "total": 388,
+    "heat_ratio": 0.82,
+    "articles": [
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Who Cares If a Merger Is Fair?",
+        "u": "https://newsletterhunt.com/emails/504624"
+      },
+      {
+        "d": "2026-09-08",
+        "t": "Robinhood Tokenized AMC",
+        "u": "https://newsletterhunt.com/emails/492898"
+      },
+      {
+        "d": "2026-08-27",
+        "t": "AI Refi",
+        "u": "https://newsletterhunt.com/emails/472535"
+      },
+      {
+        "d": "2026-08-03",
+        "t": "Hedgehog Hedge Fund",
+        "u": "https://newsletterhunt.com/emails/438149"
+      }
+    ]
+  },
+  {
     "theme": "Fed / Central Banks",
     "recent_90": 4,
     "recent_30": 2,
@@ -297,40 +331,6 @@
         "d": "2026-07-23",
         "t": "Sports Happen So Much",
         "u": "https://newsletterhunt.com/emails/423695"
-      }
-    ]
-  },
-  {
-    "theme": "Regulation / SEC",
-    "recent_90": 15,
-    "recent_30": 5,
-    "total": 618,
-    "heat_ratio": 0.77,
-    "articles": [
-      {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Not All the Susquehanna Puts Were Bad",
-        "u": "https://newsletterhunt.com/emails/504628"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "The Whole Indian Options Trade Was Too Good",
-        "u": "https://newsletterhunt.com/emails/504482"
-      },
-      {
-        "d": "2026-09-01",
-        "t": "Amazon Charged the First Price",
-        "u": "https://newsletterhunt.com/emails/480951"
-      },
-      {
-        "d": "2026-08-31",
-        "t": "Don\u2019t Hedge the KPIs",
-        "u": "https://newsletterhunt.com/emails/479069"
       }
     ]
   },
@@ -414,7 +414,7 @@
   {
     "theme": "Bankruptcy",
     "recent_90": 4,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 194,
     "heat_ratio": 0.66,
     "articles": [
