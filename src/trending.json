@@ -138,7 +138,7 @@
   {
     "theme": "Hedge Funds / PE",
     "recent_90": 11,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 256,
     "heat_ratio": 1.37,
     "articles": [
@@ -172,9 +172,9 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 19,
-    "recent_30": 8,
+    "recent_30": 7,
     "total": 558,
-    "heat_ratio": 1.08,
+    "heat_ratio": 1.09,
     "articles": [
       {
         "d": "2026-09-30",
@@ -414,7 +414,7 @@
   {
     "theme": "Bankruptcy",
     "recent_90": 4,
-    "recent_30": 1,
+    "recent_30": 0,
     "total": 194,
     "heat_ratio": 0.66,
     "articles": [
