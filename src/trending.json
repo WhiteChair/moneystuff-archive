@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 13,
-    "recent_30": 4,
-    "total": 164,
-    "heat_ratio": 2.53,
+    "recent_90": 14,
+    "recent_30": 5,
+    "total": 165,
+    "heat_ratio": 2.71,
     "articles": [
+      {
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
+      },
       {
         "d": "2026-09-29",
         "t": "Is Existential Risk Securities Fraud?",
@@ -25,21 +30,21 @@
         "d": "2026-09-09",
         "t": "AAA AI",
         "u": "https://newsletterhunt.com/emails/494579"
-      },
-      {
-        "d": "2026-09-02",
-        "t": "The ETF Dividend Flip",
-        "u": "https://newsletterhunt.com/emails/482633"
       }
     ]
   },
   {
     "theme": "Options / Derivatives",
     "recent_90": 10,
-    "recent_30": 4,
-    "total": 141,
-    "heat_ratio": 2.26,
+    "recent_30": 5,
+    "total": 142,
+    "heat_ratio": 2.25,
     "articles": [
+      {
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
+      },
       {
         "d": "2026-09-28",
         "t": "Banks Recycle the Risk",
@@ -59,20 +64,15 @@
         "d": "2026-09-22",
         "t": "The Whole Indian Options Trade Was Too Good",
         "u": "https://newsletterhunt.com/emails/504482"
-      },
-      {
-        "d": "2026-09-02",
-        "t": "The ETF Dividend Flip",
-        "u": "https://newsletterhunt.com/emails/482633"
       }
     ]
   },
   {
     "theme": "Hedge Funds / PE",
     "recent_90": 14,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 259,
-    "heat_ratio": 1.72,
+    "heat_ratio": 1.73,
     "articles": [
       {
         "d": "2026-10-07",
@@ -137,10 +137,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 22,
+    "recent_90": 21,
     "recent_30": 6,
     "total": 504,
-    "heat_ratio": 1.39,
+    "heat_ratio": 1.33,
     "articles": [
       {
         "d": "2026-10-07",
@@ -170,21 +170,16 @@
     ]
   },
   {
-    "theme": "Regulation / SEC",
-    "recent_90": 18,
-    "recent_30": 6,
-    "total": 621,
-    "heat_ratio": 0.92,
+    "theme": "Crypto / Blockchain",
+    "recent_90": 16,
+    "recent_30": 7,
+    "total": 559,
+    "heat_ratio": 0.91,
     "articles": [
       {
-        "d": "2026-10-07",
-        "t": "ESG Gets More Illegal",
-        "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
       },
       {
         "d": "2026-09-30",
@@ -192,21 +187,26 @@
         "u": "https://newsletterhunt.com/emails/513884"
       },
       {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
-      },
-      {
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
         "u": "https://newsletterhunt.com/emails/504628"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Who Cares If a Merger Is Fair?",
+        "u": "https://newsletterhunt.com/emails/504624"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "BlackRock Wants Pensions",
+        "u": "https://newsletterhunt.com/emails/504616"
       }
     ]
   },
   {
     "theme": "M&A / Mergers",
     "recent_90": 11,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 390,
     "heat_ratio": 0.9,
     "articles": [
@@ -238,36 +238,36 @@
     ]
   },
   {
-    "theme": "Crypto / Blockchain",
-    "recent_90": 15,
-    "recent_30": 7,
-    "total": 558,
-    "heat_ratio": 0.86,
+    "theme": "Regulation / SEC",
+    "recent_90": 17,
+    "recent_30": 6,
+    "total": 621,
+    "heat_ratio": 0.87,
     "articles": [
+      {
+        "d": "2026-10-07",
+        "t": "ESG Gets More Illegal",
+        "u": "https://newsletterhunt.com/emails/521309"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
+      },
       {
         "d": "2026-09-30",
         "t": "AI Agents Will Pay Attention",
         "u": "https://newsletterhunt.com/emails/513884"
       },
       {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      },
+      {
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
         "u": "https://newsletterhunt.com/emails/504628"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Who Cares If a Merger Is Fair?",
-        "u": "https://newsletterhunt.com/emails/504624"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "BlackRock Wants Pensions",
-        "u": "https://newsletterhunt.com/emails/504616"
-      },
-      {
-        "d": "2026-09-11",
-        "t": "The Podcast: What\u2019s the Concern?",
-        "u": "https://newsletterhunt.com/emails/498045"
       }
     ]
   },
