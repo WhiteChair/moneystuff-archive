@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 14,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 165,
     "heat_ratio": 2.71,
     "articles": [
@@ -35,11 +35,16 @@
   },
   {
     "theme": "Options / Derivatives",
-    "recent_90": 10,
-    "recent_30": 5,
-    "total": 142,
-    "heat_ratio": 2.25,
+    "recent_90": 11,
+    "recent_30": 6,
+    "total": 143,
+    "heat_ratio": 2.46,
     "articles": [
+      {
+        "d": "2026-10-09",
+        "t": "The Podcast: Jeremy Maletz",
+        "u": "https://newsletterhunt.com/emails/523322"
+      },
       {
         "d": "2026-10-08",
         "t": "Pre-IPO Perpetual Futures Swap ETF",
@@ -59,11 +64,6 @@
         "d": "2026-09-22",
         "t": "BlackRock Wants Pensions",
         "u": "https://newsletterhunt.com/emails/504616"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "The Whole Indian Options Trade Was Too Good",
-        "u": "https://newsletterhunt.com/emails/504482"
       }
     ]
   },
@@ -138,7 +138,7 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 21,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 504,
     "heat_ratio": 1.33,
     "articles": [
@@ -308,7 +308,7 @@
   {
     "theme": "Fed / Central Banks",
     "recent_90": 4,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 157,
     "heat_ratio": 0.81,
     "articles": [
