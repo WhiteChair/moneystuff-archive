@@ -70,7 +70,7 @@
   {
     "theme": "Hedge Funds / PE",
     "recent_90": 14,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 259,
     "heat_ratio": 1.73,
     "articles": [
@@ -138,7 +138,7 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 21,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 504,
     "heat_ratio": 1.33,
     "articles": [
@@ -172,7 +172,7 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 16,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 559,
     "heat_ratio": 0.91,
     "articles": [
