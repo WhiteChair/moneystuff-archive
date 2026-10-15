@@ -1,5 +1,39 @@
 [
   {
+    "theme": "OpenAI / AI",
+    "recent_90": 15,
+    "recent_30": 6,
+    "total": 167,
+    "heat_ratio": 2.87,
+    "articles": [
+      {
+        "d": "2026-10-14",
+        "t": "Bank of America Missed Some Bad Guys",
+        "u": "https://newsletterhunt.com/emails/527315"
+      },
+      {
+        "d": "2026-10-12",
+        "t": "Don\u2019t Bet Against the Sports Bets",
+        "u": "https://newsletterhunt.com/emails/525467"
+      },
+      {
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
+      },
+      {
+        "d": "2026-09-29",
+        "t": "Is Existential Risk Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/512829"
+      },
+      {
+        "d": "2026-09-28",
+        "t": "Banks Recycle the Risk",
+        "u": "https://newsletterhunt.com/emails/511640"
+      }
+    ]
+  },
+  {
     "theme": "Options / Derivatives",
     "recent_90": 13,
     "recent_30": 8,
@@ -30,40 +64,6 @@
         "d": "2026-09-28",
         "t": "Banks Recycle the Risk",
         "u": "https://newsletterhunt.com/emails/511640"
-      }
-    ]
-  },
-  {
-    "theme": "OpenAI / AI",
-    "recent_90": 14,
-    "recent_30": 5,
-    "total": 166,
-    "heat_ratio": 2.7,
-    "articles": [
-      {
-        "d": "2026-10-12",
-        "t": "Don\u2019t Bet Against the Sports Bets",
-        "u": "https://newsletterhunt.com/emails/525467"
-      },
-      {
-        "d": "2026-10-08",
-        "t": "Pre-IPO Perpetual Futures Swap ETF",
-        "u": "https://newsletterhunt.com/emails/522398"
-      },
-      {
-        "d": "2026-09-29",
-        "t": "Is Existential Risk Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/512829"
-      },
-      {
-        "d": "2026-09-28",
-        "t": "Banks Recycle the Risk",
-        "u": "https://newsletterhunt.com/emails/511640"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "The Whole Indian Options Trade Was Too Good",
-        "u": "https://newsletterhunt.com/emails/504482"
       }
     ]
   },
@@ -103,10 +103,10 @@
   },
   {
     "theme": "Insider Trading",
-    "recent_90": 7,
+    "recent_90": 6,
     "recent_30": 2,
     "total": 145,
-    "heat_ratio": 1.54,
+    "heat_ratio": 1.32,
     "articles": [
       {
         "d": "2026-09-24",
@@ -137,10 +137,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 18,
+    "recent_90": 17,
     "recent_30": 4,
     "total": 504,
-    "heat_ratio": 1.14,
+    "heat_ratio": 1.08,
     "articles": [
       {
         "d": "2026-10-07",
@@ -204,6 +204,40 @@
     ]
   },
   {
+    "theme": "Crypto / Blockchain",
+    "recent_90": 15,
+    "recent_30": 6,
+    "total": 560,
+    "heat_ratio": 0.86,
+    "articles": [
+      {
+        "d": "2026-10-14",
+        "t": "Bank of America Missed Some Bad Guys",
+        "u": "https://newsletterhunt.com/emails/527315"
+      },
+      {
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
+      },
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Not All the Susquehanna Puts Were Bad",
+        "u": "https://newsletterhunt.com/emails/504628"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Who Cares If a Merger Is Fair?",
+        "u": "https://newsletterhunt.com/emails/504624"
+      }
+    ]
+  },
+  {
     "theme": "Legal / Courts",
     "recent_90": 5,
     "recent_30": 3,
@@ -238,11 +272,45 @@
     ]
   },
   {
+    "theme": "Securities Fraud",
+    "recent_90": 13,
+    "recent_30": 6,
+    "total": 507,
+    "heat_ratio": 0.82,
+    "articles": [
+      {
+        "d": "2026-10-14",
+        "t": "Bank of America Missed Some Bad Guys",
+        "u": "https://newsletterhunt.com/emails/527315"
+      },
+      {
+        "d": "2026-10-13",
+        "t": "They Found Some Walter Victims",
+        "u": "https://newsletterhunt.com/emails/526424"
+      },
+      {
+        "d": "2026-10-06",
+        "t": "Treasury Futures Might Switch",
+        "u": "https://newsletterhunt.com/emails/520287"
+      },
+      {
+        "d": "2026-10-02",
+        "t": "The Podcast: Reintegration WIth the Default World",
+        "u": "https://newsletterhunt.com/emails/516458"
+      },
+      {
+        "d": "2026-09-29",
+        "t": "Is Existential Risk Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/512829"
+      }
+    ]
+  },
+  {
     "theme": "Fed / Central Banks",
     "recent_90": 4,
     "recent_30": 1,
     "total": 157,
-    "heat_ratio": 0.81,
+    "heat_ratio": 0.82,
     "articles": [
       {
         "d": "2026-09-23",
@@ -263,74 +331,6 @@
         "d": "2026-07-23",
         "t": "Sports Happen So Much",
         "u": "https://newsletterhunt.com/emails/423695"
-      }
-    ]
-  },
-  {
-    "theme": "Crypto / Blockchain",
-    "recent_90": 14,
-    "recent_30": 5,
-    "total": 559,
-    "heat_ratio": 0.8,
-    "articles": [
-      {
-        "d": "2026-10-08",
-        "t": "Pre-IPO Perpetual Futures Swap ETF",
-        "u": "https://newsletterhunt.com/emails/522398"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Not All the Susquehanna Puts Were Bad",
-        "u": "https://newsletterhunt.com/emails/504628"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Who Cares If a Merger Is Fair?",
-        "u": "https://newsletterhunt.com/emails/504624"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "BlackRock Wants Pensions",
-        "u": "https://newsletterhunt.com/emails/504616"
-      }
-    ]
-  },
-  {
-    "theme": "Securities Fraud",
-    "recent_90": 12,
-    "recent_30": 5,
-    "total": 506,
-    "heat_ratio": 0.76,
-    "articles": [
-      {
-        "d": "2026-10-13",
-        "t": "They Found Some Walter Victims",
-        "u": "https://newsletterhunt.com/emails/526424"
-      },
-      {
-        "d": "2026-10-06",
-        "t": "Treasury Futures Might Switch",
-        "u": "https://newsletterhunt.com/emails/520287"
-      },
-      {
-        "d": "2026-10-02",
-        "t": "The Podcast: Reintegration WIth the Default World",
-        "u": "https://newsletterhunt.com/emails/516458"
-      },
-      {
-        "d": "2026-09-29",
-        "t": "Is Existential Risk Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/512829"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "The Podcast: Trying to Save the World Is No Excuse",
-        "u": "https://newsletterhunt.com/emails/504452"
       }
     ]
   },
@@ -365,40 +365,6 @@
         "d": "2026-09-08",
         "t": "Robinhood Tokenized AMC",
         "u": "https://newsletterhunt.com/emails/492898"
-      }
-    ]
-  },
-  {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 5,
-    "recent_30": 1,
-    "total": 225,
-    "heat_ratio": 0.71,
-    "articles": [
-      {
-        "d": "2026-10-05",
-        "t": "Mergers and Acqui-hires",
-        "u": "https://newsletterhunt.com/emails/519395"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-05",
-        "t": "SpaceX Unlocks Tomorrow",
-        "u": "https://newsletterhunt.com/emails/440822"
-      },
-      {
-        "d": "2026-07-22",
-        "t": "The SEC Pays a Texting Fine",
-        "u": "https://newsletterhunt.com/emails/422309"
-      },
-      {
-        "d": "2026-07-16",
-        "t": "Shorts Will Sell You SpaceX",
-        "u": "https://newsletterhunt.com/emails/414488"
       }
     ]
   },
@@ -442,6 +408,35 @@
         "d": "2026-07-20",
         "t": "Ice Cream Hedging",
         "u": "https://newsletterhunt.com/emails/419537"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 4,
+    "recent_30": 1,
+    "total": 225,
+    "heat_ratio": 0.57,
+    "articles": [
+      {
+        "d": "2026-10-05",
+        "t": "Mergers and Acqui-hires",
+        "u": "https://newsletterhunt.com/emails/519395"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-05",
+        "t": "SpaceX Unlocks Tomorrow",
+        "u": "https://newsletterhunt.com/emails/440822"
+      },
+      {
+        "d": "2026-07-22",
+        "t": "The SEC Pays a Texting Fine",
+        "u": "https://newsletterhunt.com/emails/422309"
       }
     ]
   },
