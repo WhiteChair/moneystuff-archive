@@ -1,5 +1,39 @@
 [
   {
+    "theme": "Options / Derivatives",
+    "recent_90": 14,
+    "recent_30": 9,
+    "total": 146,
+    "heat_ratio": 3.07,
+    "articles": [
+      {
+        "d": "2026-10-16",
+        "t": "The Podcast: Release Me From This Demon",
+        "u": "https://newsletterhunt.com/emails/528965"
+      },
+      {
+        "d": "2026-10-13",
+        "t": "They Found Some Walter Victims",
+        "u": "https://newsletterhunt.com/emails/526424"
+      },
+      {
+        "d": "2026-10-12",
+        "t": "Don\u2019t Bet Against the Sports Bets",
+        "u": "https://newsletterhunt.com/emails/525467"
+      },
+      {
+        "d": "2026-10-09",
+        "t": "The Podcast: Jeremy Maletz",
+        "u": "https://newsletterhunt.com/emails/523322"
+      },
+      {
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
+      }
+    ]
+  },
+  {
     "theme": "OpenAI / AI",
     "recent_90": 16,
     "recent_30": 7,
@@ -30,40 +64,6 @@
         "d": "2026-09-29",
         "t": "Is Existential Risk Securities Fraud?",
         "u": "https://newsletterhunt.com/emails/512829"
-      }
-    ]
-  },
-  {
-    "theme": "Options / Derivatives",
-    "recent_90": 13,
-    "recent_30": 8,
-    "total": 145,
-    "heat_ratio": 2.87,
-    "articles": [
-      {
-        "d": "2026-10-13",
-        "t": "They Found Some Walter Victims",
-        "u": "https://newsletterhunt.com/emails/526424"
-      },
-      {
-        "d": "2026-10-12",
-        "t": "Don\u2019t Bet Against the Sports Bets",
-        "u": "https://newsletterhunt.com/emails/525467"
-      },
-      {
-        "d": "2026-10-09",
-        "t": "The Podcast: Jeremy Maletz",
-        "u": "https://newsletterhunt.com/emails/523322"
-      },
-      {
-        "d": "2026-10-08",
-        "t": "Pre-IPO Perpetual Futures Swap ETF",
-        "u": "https://newsletterhunt.com/emails/522398"
-      },
-      {
-        "d": "2026-09-28",
-        "t": "Banks Recycle the Risk",
-        "u": "https://newsletterhunt.com/emails/511640"
       }
     ]
   },
@@ -170,6 +170,40 @@
     ]
   },
   {
+    "theme": "Regulation / SEC",
+    "recent_90": 17,
+    "recent_30": 7,
+    "total": 622,
+    "heat_ratio": 0.87,
+    "articles": [
+      {
+        "d": "2026-10-16",
+        "t": "The Podcast: Release Me From This Demon",
+        "u": "https://newsletterhunt.com/emails/528965"
+      },
+      {
+        "d": "2026-10-07",
+        "t": "ESG Gets More Illegal",
+        "u": "https://newsletterhunt.com/emails/521309"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
+      },
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
+      },
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      }
+    ]
+  },
+  {
     "theme": "Crypto / Blockchain",
     "recent_90": 15,
     "recent_30": 6,
@@ -268,40 +302,6 @@
         "d": "2026-09-29",
         "t": "Is Existential Risk Securities Fraud?",
         "u": "https://newsletterhunt.com/emails/512829"
-      }
-    ]
-  },
-  {
-    "theme": "Regulation / SEC",
-    "recent_90": 16,
-    "recent_30": 6,
-    "total": 621,
-    "heat_ratio": 0.82,
-    "articles": [
-      {
-        "d": "2026-10-07",
-        "t": "ESG Gets More Illegal",
-        "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
-      },
-      {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Not All the Susquehanna Puts Were Bad",
-        "u": "https://newsletterhunt.com/emails/504628"
       }
     ]
   },
