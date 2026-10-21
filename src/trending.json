@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 17,
-    "recent_30": 8,
-    "total": 169,
-    "heat_ratio": 3.22,
+    "recent_90": 18,
+    "recent_30": 9,
+    "total": 170,
+    "heat_ratio": 3.39,
     "articles": [
+      {
+        "d": "2026-10-20",
+        "t": "Someone Has to Take the AI Risk",
+        "u": "https://newsletterhunt.com/emails/531968"
+      },
       {
         "d": "2026-10-19",
         "t": "Universal Basic AI",
@@ -25,11 +30,6 @@
         "d": "2026-10-12",
         "t": "Don\u2019t Bet Against the Sports Bets",
         "u": "https://newsletterhunt.com/emails/525467"
-      },
-      {
-        "d": "2026-10-08",
-        "t": "Pre-IPO Perpetual Futures Swap ETF",
-        "u": "https://newsletterhunt.com/emails/522398"
       }
     ]
   },
@@ -69,11 +69,16 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 15,
-    "recent_30": 6,
-    "total": 260,
-    "heat_ratio": 1.85,
+    "recent_90": 16,
+    "recent_30": 7,
+    "total": 261,
+    "heat_ratio": 1.97,
     "articles": [
+      {
+        "d": "2026-10-20",
+        "t": "Someone Has to Take the AI Risk",
+        "u": "https://newsletterhunt.com/emails/531968"
+      },
       {
         "d": "2026-10-15",
         "t": "Private Markets Are the New AI Markets",
@@ -93,11 +98,6 @@
         "d": "2026-10-05",
         "t": "Mergers and Acqui-hires",
         "u": "https://newsletterhunt.com/emails/519395"
-      },
-      {
-        "d": "2026-09-24",
-        "t": "Morgan Stanley Leaked Some Deals",
-        "u": "https://newsletterhunt.com/emails/507218"
       }
     ]
   },
@@ -204,40 +204,6 @@
     ]
   },
   {
-    "theme": "Securities Fraud",
-    "recent_90": 13,
-    "recent_30": 6,
-    "total": 507,
-    "heat_ratio": 0.82,
-    "articles": [
-      {
-        "d": "2026-10-14",
-        "t": "Bank of America Missed Some Bad Guys",
-        "u": "https://newsletterhunt.com/emails/527315"
-      },
-      {
-        "d": "2026-10-13",
-        "t": "They Found Some Walter Victims",
-        "u": "https://newsletterhunt.com/emails/526424"
-      },
-      {
-        "d": "2026-10-06",
-        "t": "Treasury Futures Might Switch",
-        "u": "https://newsletterhunt.com/emails/520287"
-      },
-      {
-        "d": "2026-10-02",
-        "t": "The Podcast: Reintegration WIth the Default World",
-        "u": "https://newsletterhunt.com/emails/516458"
-      },
-      {
-        "d": "2026-09-29",
-        "t": "Is Existential Risk Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/512829"
-      }
-    ]
-  },
-  {
     "theme": "Fed / Central Banks",
     "recent_90": 4,
     "recent_30": 1,
@@ -301,11 +267,45 @@
     ]
   },
   {
+    "theme": "Securities Fraud",
+    "recent_90": 12,
+    "recent_30": 6,
+    "total": 507,
+    "heat_ratio": 0.76,
+    "articles": [
+      {
+        "d": "2026-10-14",
+        "t": "Bank of America Missed Some Bad Guys",
+        "u": "https://newsletterhunt.com/emails/527315"
+      },
+      {
+        "d": "2026-10-13",
+        "t": "They Found Some Walter Victims",
+        "u": "https://newsletterhunt.com/emails/526424"
+      },
+      {
+        "d": "2026-10-06",
+        "t": "Treasury Futures Might Switch",
+        "u": "https://newsletterhunt.com/emails/520287"
+      },
+      {
+        "d": "2026-10-02",
+        "t": "The Podcast: Reintegration WIth the Default World",
+        "u": "https://newsletterhunt.com/emails/516458"
+      },
+      {
+        "d": "2026-09-29",
+        "t": "Is Existential Risk Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/512829"
+      }
+    ]
+  },
+  {
     "theme": "Regulation / SEC",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 7,
     "total": 622,
-    "heat_ratio": 0.77,
+    "heat_ratio": 0.72,
     "articles": [
       {
         "d": "2026-10-16",
@@ -383,31 +383,21 @@
     ]
   },
   {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 4,
-    "recent_30": 1,
-    "total": 225,
-    "heat_ratio": 0.57,
+    "theme": "Corporate Governance",
+    "recent_90": 2,
+    "recent_30": 2,
+    "total": 118,
+    "heat_ratio": 0.54,
     "articles": [
       {
-        "d": "2026-10-05",
-        "t": "Mergers and Acqui-hires",
-        "u": "https://newsletterhunt.com/emails/519395"
+        "d": "2026-10-20",
+        "t": "Someone Has to Take the AI Risk",
+        "u": "https://newsletterhunt.com/emails/531968"
       },
       {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-05",
-        "t": "SpaceX Unlocks Tomorrow",
-        "u": "https://newsletterhunt.com/emails/440822"
-      },
-      {
-        "d": "2026-07-22",
-        "t": "The SEC Pays a Texting Fine",
-        "u": "https://newsletterhunt.com/emails/422309"
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
@@ -436,16 +426,26 @@
     ]
   },
   {
-    "theme": "Corporate Governance",
-    "recent_90": 1,
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 3,
     "recent_30": 1,
-    "total": 117,
-    "heat_ratio": 0.27,
+    "total": 225,
+    "heat_ratio": 0.43,
     "articles": [
       {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
+        "d": "2026-10-05",
+        "t": "Mergers and Acqui-hires",
+        "u": "https://newsletterhunt.com/emails/519395"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-05",
+        "t": "SpaceX Unlocks Tomorrow",
+        "u": "https://newsletterhunt.com/emails/440822"
       }
     ]
   }

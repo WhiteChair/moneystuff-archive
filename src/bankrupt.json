@@ -455,8 +455,13 @@
     "event": "INSOLVENT",
     "date": "Mar 2021",
     "note": "Supply-chain finance turned into lending against invoices that had not happened yet. Took $10 billion of Credit Suisse client funds down with it.",
-    "mention_count": 25,
+    "mention_count": 26,
     "mentions": [
+      {
+        "d": "2026-10-20",
+        "id": "531968",
+        "t": "Someone Has to Take the AI Risk"
+      },
       {
         "d": "2025-10-09",
         "id": "203482",
@@ -491,11 +496,6 @@
         "d": "2022-06-28",
         "id": "21612",
         "t": "Don\u2019t Cheat on the Ethics Exam"
-      },
-      {
-        "d": "2022-05-20",
-        "id": "21231",
-        "t": "The SPAC Bust Is Expensive"
       }
     ]
   },
