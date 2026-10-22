@@ -5,8 +5,13 @@
     "event": "TAKEN PRIVATE",
     "date": "Oct 2022",
     "note": "Musk signed in April 2022, spent the summer trying to get out of it, then closed at $54.20 a share in October. Now X.",
-    "mention_count": 448,
+    "mention_count": 449,
     "mentions": [
+      {
+        "d": "2026-10-21",
+        "id": "532761",
+        "t": "Obviously SpaceX and Tesla Will Merge"
+      },
       {
         "d": "2026-10-13",
         "id": "526424",
@@ -41,11 +46,6 @@
         "d": "2026-05-21",
         "id": "331889",
         "t": "SpaceX Investors Can\u2019t Complain"
-      },
-      {
-        "d": "2026-05-18",
-        "id": "326543",
-        "t": "Sometimes Andrew Left Was Right"
       }
     ]
   },

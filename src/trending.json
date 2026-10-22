@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 18,
-    "recent_30": 9,
-    "total": 170,
-    "heat_ratio": 3.39,
+    "recent_90": 19,
+    "recent_30": 10,
+    "total": 171,
+    "heat_ratio": 3.56,
     "articles": [
+      {
+        "d": "2026-10-21",
+        "t": "Obviously SpaceX and Tesla Will Merge",
+        "u": "https://newsletterhunt.com/emails/532761"
+      },
       {
         "d": "2026-10-20",
         "t": "Someone Has to Take the AI Risk",
@@ -25,11 +30,6 @@
         "d": "2026-10-14",
         "t": "Bank of America Missed Some Bad Guys",
         "u": "https://newsletterhunt.com/emails/527315"
-      },
-      {
-        "d": "2026-10-12",
-        "t": "Don\u2019t Bet Against the Sports Bets",
-        "u": "https://newsletterhunt.com/emails/525467"
       }
     ]
   },
@@ -69,10 +69,10 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 16,
+    "recent_90": 15,
     "recent_30": 7,
     "total": 261,
-    "heat_ratio": 1.97,
+    "heat_ratio": 1.84,
     "articles": [
       {
         "d": "2026-10-20",
@@ -103,10 +103,10 @@
   },
   {
     "theme": "Insider Trading",
-    "recent_90": 7,
+    "recent_90": 6,
     "recent_30": 3,
     "total": 146,
-    "heat_ratio": 1.54,
+    "heat_ratio": 1.32,
     "articles": [
       {
         "d": "2026-10-15",
@@ -137,11 +137,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 17,
-    "recent_30": 5,
-    "total": 505,
-    "heat_ratio": 1.08,
+    "recent_90": 18,
+    "recent_30": 6,
+    "total": 506,
+    "heat_ratio": 1.14,
     "articles": [
+      {
+        "d": "2026-10-21",
+        "t": "Obviously SpaceX and Tesla Will Merge",
+        "u": "https://newsletterhunt.com/emails/532761"
+      },
       {
         "d": "2026-10-19",
         "t": "Universal Basic AI",
@@ -161,11 +166,6 @@
         "d": "2026-09-30",
         "t": "AI Agents Will Pay Attention",
         "u": "https://newsletterhunt.com/emails/513884"
-      },
-      {
-        "d": "2026-09-28",
-        "t": "Banks Recycle the Risk",
-        "u": "https://newsletterhunt.com/emails/511640"
       }
     ]
   },
@@ -200,35 +200,6 @@
         "d": "2026-07-27",
         "t": "A Merger Closing Mystery",
         "u": "https://newsletterhunt.com/emails/428909"
-      }
-    ]
-  },
-  {
-    "theme": "Fed / Central Banks",
-    "recent_90": 4,
-    "recent_30": 1,
-    "total": 157,
-    "heat_ratio": 0.82,
-    "articles": [
-      {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
-      },
-      {
-        "d": "2026-09-09",
-        "t": "AAA AI",
-        "u": "https://newsletterhunt.com/emails/494579"
-      },
-      {
-        "d": "2026-08-27",
-        "t": "AI Refi",
-        "u": "https://newsletterhunt.com/emails/472535"
-      },
-      {
-        "d": "2026-07-23",
-        "t": "Sports Happen So Much",
-        "u": "https://newsletterhunt.com/emails/423695"
       }
     ]
   },
@@ -301,6 +272,40 @@
     ]
   },
   {
+    "theme": "M&A / Mergers",
+    "recent_90": 9,
+    "recent_30": 5,
+    "total": 391,
+    "heat_ratio": 0.74,
+    "articles": [
+      {
+        "d": "2026-10-21",
+        "t": "Obviously SpaceX and Tesla Will Merge",
+        "u": "https://newsletterhunt.com/emails/532761"
+      },
+      {
+        "d": "2026-10-06",
+        "t": "Treasury Futures Might Switch",
+        "u": "https://newsletterhunt.com/emails/520287"
+      },
+      {
+        "d": "2026-10-05",
+        "t": "Mergers and Acqui-hires",
+        "u": "https://newsletterhunt.com/emails/519395"
+      },
+      {
+        "d": "2026-09-23",
+        "t": "Kalshi Levers the Predictions",
+        "u": "https://newsletterhunt.com/emails/506063"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Who Cares If a Merger Is Fair?",
+        "u": "https://newsletterhunt.com/emails/504624"
+      }
+    ]
+  },
+  {
     "theme": "Regulation / SEC",
     "recent_90": 14,
     "recent_30": 7,
@@ -349,36 +354,26 @@
     ]
   },
   {
-    "theme": "M&A / Mergers",
-    "recent_90": 8,
-    "recent_30": 4,
-    "total": 390,
-    "heat_ratio": 0.66,
+    "theme": "Fed / Central Banks",
+    "recent_90": 3,
+    "recent_30": 1,
+    "total": 157,
+    "heat_ratio": 0.61,
     "articles": [
-      {
-        "d": "2026-10-06",
-        "t": "Treasury Futures Might Switch",
-        "u": "https://newsletterhunt.com/emails/520287"
-      },
-      {
-        "d": "2026-10-05",
-        "t": "Mergers and Acqui-hires",
-        "u": "https://newsletterhunt.com/emails/519395"
-      },
       {
         "d": "2026-09-23",
         "t": "Kalshi Levers the Predictions",
         "u": "https://newsletterhunt.com/emails/506063"
       },
       {
-        "d": "2026-09-22",
-        "t": "Who Cares If a Merger Is Fair?",
-        "u": "https://newsletterhunt.com/emails/504624"
+        "d": "2026-09-09",
+        "t": "AAA AI",
+        "u": "https://newsletterhunt.com/emails/494579"
       },
       {
-        "d": "2026-09-08",
-        "t": "Robinhood Tokenized AMC",
-        "u": "https://newsletterhunt.com/emails/492898"
+        "d": "2026-08-27",
+        "t": "AI Refi",
+        "u": "https://newsletterhunt.com/emails/472535"
       }
     ]
   },
