@@ -4,7 +4,7 @@
     "recent_90": 19,
     "recent_30": 9,
     "total": 171,
-    "heat_ratio": 3.56,
+    "heat_ratio": 3.57,
     "articles": [
       {
         "d": "2026-10-21",
@@ -137,11 +137,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 18,
-    "recent_30": 6,
-    "total": 506,
-    "heat_ratio": 1.14,
+    "recent_90": 19,
+    "recent_30": 7,
+    "total": 507,
+    "heat_ratio": 1.2,
     "articles": [
+      {
+        "d": "2026-10-23",
+        "t": "The Podcast: Tice Brown",
+        "u": "https://newsletterhunt.com/emails/534311"
+      },
       {
         "d": "2026-10-21",
         "t": "Obviously SpaceX and Tesla Will Merge",
@@ -161,11 +166,6 @@
         "d": "2026-10-01",
         "t": "Opening Private Markets to the Public",
         "u": "https://newsletterhunt.com/emails/515105"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
       }
     ]
   },
@@ -206,7 +206,7 @@
   {
     "theme": "M&A / Mergers",
     "recent_90": 10,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 392,
     "heat_ratio": 0.82,
     "articles": [
@@ -234,6 +234,40 @@
         "d": "2026-09-23",
         "t": "Kalshi Levers the Predictions",
         "u": "https://newsletterhunt.com/emails/506063"
+      }
+    ]
+  },
+  {
+    "theme": "Regulation / SEC",
+    "recent_90": 15,
+    "recent_30": 5,
+    "total": 623,
+    "heat_ratio": 0.77,
+    "articles": [
+      {
+        "d": "2026-10-23",
+        "t": "The Podcast: Tice Brown",
+        "u": "https://newsletterhunt.com/emails/534311"
+      },
+      {
+        "d": "2026-10-16",
+        "t": "The Podcast: Release Me From This Demon",
+        "u": "https://newsletterhunt.com/emails/528965"
+      },
+      {
+        "d": "2026-10-07",
+        "t": "ESG Gets More Illegal",
+        "u": "https://newsletterhunt.com/emails/521309"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
+      },
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
       }
     ]
   },
@@ -306,40 +340,6 @@
     ]
   },
   {
-    "theme": "Regulation / SEC",
-    "recent_90": 14,
-    "recent_30": 5,
-    "total": 622,
-    "heat_ratio": 0.72,
-    "articles": [
-      {
-        "d": "2026-10-16",
-        "t": "The Podcast: Release Me From This Demon",
-        "u": "https://newsletterhunt.com/emails/528965"
-      },
-      {
-        "d": "2026-10-07",
-        "t": "ESG Gets More Illegal",
-        "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
-      },
-      {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
-      }
-    ]
-  },
-  {
     "theme": "Banking / Crises",
     "recent_90": 1,
     "recent_30": 1,
@@ -356,7 +356,7 @@
   {
     "theme": "Fed / Central Banks",
     "recent_90": 3,
-    "recent_30": 1,
+    "recent_30": 0,
     "total": 157,
     "heat_ratio": 0.61,
     "articles": [
