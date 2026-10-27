@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 19,
-    "recent_30": 9,
-    "total": 171,
-    "heat_ratio": 3.57,
+    "recent_90": 20,
+    "recent_30": 10,
+    "total": 172,
+    "heat_ratio": 3.74,
     "articles": [
+      {
+        "d": "2026-10-26",
+        "t": "Anthropic Raises Concerns",
+        "u": "https://newsletterhunt.com/emails/536721"
+      },
       {
         "d": "2026-10-21",
         "t": "Obviously SpaceX and Tesla Will Merge",
@@ -25,11 +30,6 @@
         "d": "2026-10-15",
         "t": "Private Markets Are the New AI Markets",
         "u": "https://newsletterhunt.com/emails/528074"
-      },
-      {
-        "d": "2026-10-14",
-        "t": "Bank of America Missed Some Bad Guys",
-        "u": "https://newsletterhunt.com/emails/527315"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "recent_90": 15,
     "recent_30": 8,
     "total": 148,
-    "heat_ratio": 3.25,
+    "heat_ratio": 3.26,
     "articles": [
       {
         "d": "2026-10-22",
@@ -69,10 +69,10 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 5,
     "total": 261,
-    "heat_ratio": 1.85,
+    "heat_ratio": 1.72,
     "articles": [
       {
         "d": "2026-10-20",
@@ -137,11 +137,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 19,
-    "recent_30": 7,
-    "total": 507,
-    "heat_ratio": 1.2,
+    "recent_90": 20,
+    "recent_30": 8,
+    "total": 508,
+    "heat_ratio": 1.26,
     "articles": [
+      {
+        "d": "2026-10-26",
+        "t": "Anthropic Raises Concerns",
+        "u": "https://newsletterhunt.com/emails/536721"
+      },
       {
         "d": "2026-10-23",
         "t": "The Podcast: Tice Brown",
@@ -161,20 +166,15 @@
         "d": "2026-10-07",
         "t": "ESG Gets More Illegal",
         "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
   {
     "theme": "M&A / Mergers",
-    "recent_90": 10,
+    "recent_90": 9,
     "recent_30": 4,
     "total": 392,
-    "heat_ratio": 0.82,
+    "heat_ratio": 0.74,
     "articles": [
       {
         "d": "2026-10-22",
@@ -200,40 +200,6 @@
         "d": "2026-09-23",
         "t": "Kalshi Levers the Predictions",
         "u": "https://newsletterhunt.com/emails/506063"
-      }
-    ]
-  },
-  {
-    "theme": "Crypto / Blockchain",
-    "recent_90": 13,
-    "recent_30": 3,
-    "total": 560,
-    "heat_ratio": 0.75,
-    "articles": [
-      {
-        "d": "2026-10-14",
-        "t": "Bank of America Missed Some Bad Guys",
-        "u": "https://newsletterhunt.com/emails/527315"
-      },
-      {
-        "d": "2026-10-08",
-        "t": "Pre-IPO Perpetual Futures Swap ETF",
-        "u": "https://newsletterhunt.com/emails/522398"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Not All the Susquehanna Puts Were Bad",
-        "u": "https://newsletterhunt.com/emails/504628"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Who Cares If a Merger Is Fair?",
-        "u": "https://newsletterhunt.com/emails/504624"
       }
     ]
   },
@@ -268,6 +234,40 @@
         "d": "2026-09-30",
         "t": "AI Agents Will Pay Attention",
         "u": "https://newsletterhunt.com/emails/513884"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 5,
+    "recent_30": 3,
+    "total": 227,
+    "heat_ratio": 0.71,
+    "articles": [
+      {
+        "d": "2026-10-26",
+        "t": "Anthropic Raises Concerns",
+        "u": "https://newsletterhunt.com/emails/536721"
+      },
+      {
+        "d": "2026-10-22",
+        "t": "Zuckerberg Wants to Keep His Votes",
+        "u": "https://newsletterhunt.com/emails/533488"
+      },
+      {
+        "d": "2026-10-05",
+        "t": "Mergers and Acqui-hires",
+        "u": "https://newsletterhunt.com/emails/519395"
+      },
+      {
+        "d": "2026-08-13",
+        "t": "Bilateral OTC Goat Hedge",
+        "u": "https://newsletterhunt.com/emails/451877"
+      },
+      {
+        "d": "2026-08-05",
+        "t": "SpaceX Unlocks Tomorrow",
+        "u": "https://newsletterhunt.com/emails/440822"
       }
     ]
   },
@@ -316,6 +316,40 @@
         "d": "2026-09-29",
         "t": "Is Existential Risk Securities Fraud?",
         "u": "https://newsletterhunt.com/emails/512829"
+      }
+    ]
+  },
+  {
+    "theme": "Crypto / Blockchain",
+    "recent_90": 12,
+    "recent_30": 3,
+    "total": 560,
+    "heat_ratio": 0.69,
+    "articles": [
+      {
+        "d": "2026-10-14",
+        "t": "Bank of America Missed Some Bad Guys",
+        "u": "https://newsletterhunt.com/emails/527315"
+      },
+      {
+        "d": "2026-10-08",
+        "t": "Pre-IPO Perpetual Futures Swap ETF",
+        "u": "https://newsletterhunt.com/emails/522398"
+      },
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Not All the Susquehanna Puts Were Bad",
+        "u": "https://newsletterhunt.com/emails/504628"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Who Cares If a Merger Is Fair?",
+        "u": "https://newsletterhunt.com/emails/504624"
       }
     ]
   },
@@ -369,35 +403,6 @@
         "d": "2026-08-27",
         "t": "AI Refi",
         "u": "https://newsletterhunt.com/emails/472535"
-      }
-    ]
-  },
-  {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 4,
-    "recent_30": 2,
-    "total": 226,
-    "heat_ratio": 0.57,
-    "articles": [
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
-      },
-      {
-        "d": "2026-10-05",
-        "t": "Mergers and Acqui-hires",
-        "u": "https://newsletterhunt.com/emails/519395"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      },
-      {
-        "d": "2026-08-05",
-        "t": "SpaceX Unlocks Tomorrow",
-        "u": "https://newsletterhunt.com/emails/440822"
       }
     ]
   },
