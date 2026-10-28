@@ -35,10 +35,10 @@
   },
   {
     "theme": "Options / Derivatives",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 8,
     "total": 148,
-    "heat_ratio": 3.26,
+    "heat_ratio": 3.04,
     "articles": [
       {
         "d": "2026-10-22",
@@ -138,10 +138,15 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 20,
-    "recent_30": 8,
-    "total": 508,
+    "recent_30": 9,
+    "total": 509,
     "heat_ratio": 1.26,
     "articles": [
+      {
+        "d": "2026-10-27",
+        "t": "Musk\u2019s Mars Merger Pay",
+        "u": "https://newsletterhunt.com/emails/537413"
+      },
       {
         "d": "2026-10-26",
         "t": "Anthropic Raises Concerns",
@@ -161,21 +166,21 @@
         "d": "2026-10-19",
         "t": "Universal Basic AI",
         "u": "https://newsletterhunt.com/emails/531044"
-      },
-      {
-        "d": "2026-10-07",
-        "t": "ESG Gets More Illegal",
-        "u": "https://newsletterhunt.com/emails/521309"
       }
     ]
   },
   {
     "theme": "M&A / Mergers",
-    "recent_90": 9,
-    "recent_30": 4,
-    "total": 392,
-    "heat_ratio": 0.74,
+    "recent_90": 10,
+    "recent_30": 5,
+    "total": 393,
+    "heat_ratio": 0.82,
     "articles": [
+      {
+        "d": "2026-10-27",
+        "t": "Musk\u2019s Mars Merger Pay",
+        "u": "https://newsletterhunt.com/emails/537413"
+      },
       {
         "d": "2026-10-22",
         "t": "Zuckerberg Wants to Keep His Votes",
@@ -195,11 +200,6 @@
         "d": "2026-10-05",
         "t": "Mergers and Acqui-hires",
         "u": "https://newsletterhunt.com/emails/519395"
-      },
-      {
-        "d": "2026-09-23",
-        "t": "Kalshi Levers the Predictions",
-        "u": "https://newsletterhunt.com/emails/506063"
       }
     ]
   },
@@ -322,10 +322,15 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 12,
-    "recent_30": 3,
-    "total": 560,
+    "recent_30": 4,
+    "total": 561,
     "heat_ratio": 0.69,
     "articles": [
+      {
+        "d": "2026-10-27",
+        "t": "Musk\u2019s Mars Merger Pay",
+        "u": "https://newsletterhunt.com/emails/537413"
+      },
       {
         "d": "2026-10-14",
         "t": "Bank of America Missed Some Bad Guys",
@@ -345,11 +350,6 @@
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
         "u": "https://newsletterhunt.com/emails/504628"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Who Cares If a Merger Is Fair?",
-        "u": "https://newsletterhunt.com/emails/504624"
       }
     ]
   },
