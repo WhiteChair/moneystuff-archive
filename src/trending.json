@@ -72,7 +72,7 @@
     "recent_90": 14,
     "recent_30": 5,
     "total": 261,
-    "heat_ratio": 1.72,
+    "heat_ratio": 1.73,
     "articles": [
       {
         "d": "2026-10-20",
@@ -137,11 +137,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 19,
+    "recent_90": 20,
     "recent_30": 8,
-    "total": 509,
-    "heat_ratio": 1.2,
+    "total": 510,
+    "heat_ratio": 1.26,
     "articles": [
+      {
+        "d": "2026-10-30",
+        "t": "The Podcast: Artisanal Human Podcast",
+        "u": "https://newsletterhunt.com/emails/540020"
+      },
       {
         "d": "2026-10-27",
         "t": "Musk\u2019s Mars Merger Pay",
@@ -161,11 +166,6 @@
         "d": "2026-10-21",
         "t": "Obviously SpaceX and Tesla Will Merge",
         "u": "https://newsletterhunt.com/emails/532761"
-      },
-      {
-        "d": "2026-10-19",
-        "t": "Universal Basic AI",
-        "u": "https://newsletterhunt.com/emails/531044"
       }
     ]
   },
@@ -238,9 +238,33 @@
     ]
   },
   {
+    "theme": "Corporate Governance",
+    "recent_90": 3,
+    "recent_30": 3,
+    "total": 119,
+    "heat_ratio": 0.81,
+    "articles": [
+      {
+        "d": "2026-10-30",
+        "t": "The Podcast: Artisanal Human Podcast",
+        "u": "https://newsletterhunt.com/emails/540020"
+      },
+      {
+        "d": "2026-10-20",
+        "t": "Someone Has to Take the AI Risk",
+        "u": "https://newsletterhunt.com/emails/531968"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
+      }
+    ]
+  },
+  {
     "theme": "Regulation / SEC",
     "recent_90": 14,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 623,
     "heat_ratio": 0.72,
     "articles": [
@@ -286,9 +310,43 @@
     ]
   },
   {
+    "theme": "Securities Fraud",
+    "recent_90": 11,
+    "recent_30": 5,
+    "total": 508,
+    "heat_ratio": 0.7,
+    "articles": [
+      {
+        "d": "2026-10-30",
+        "t": "The Podcast: Artisanal Human Podcast",
+        "u": "https://newsletterhunt.com/emails/540020"
+      },
+      {
+        "d": "2026-10-14",
+        "t": "Bank of America Missed Some Bad Guys",
+        "u": "https://newsletterhunt.com/emails/527315"
+      },
+      {
+        "d": "2026-10-13",
+        "t": "They Found Some Walter Victims",
+        "u": "https://newsletterhunt.com/emails/526424"
+      },
+      {
+        "d": "2026-10-06",
+        "t": "Treasury Futures Might Switch",
+        "u": "https://newsletterhunt.com/emails/520287"
+      },
+      {
+        "d": "2026-10-02",
+        "t": "The Podcast: Reintegration WIth the Default World",
+        "u": "https://newsletterhunt.com/emails/516458"
+      }
+    ]
+  },
+  {
     "theme": "Crypto / Blockchain",
     "recent_90": 12,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 562,
     "heat_ratio": 0.69,
     "articles": [
@@ -349,40 +407,6 @@
     ]
   },
   {
-    "theme": "Securities Fraud",
-    "recent_90": 10,
-    "recent_30": 4,
-    "total": 507,
-    "heat_ratio": 0.63,
-    "articles": [
-      {
-        "d": "2026-10-14",
-        "t": "Bank of America Missed Some Bad Guys",
-        "u": "https://newsletterhunt.com/emails/527315"
-      },
-      {
-        "d": "2026-10-13",
-        "t": "They Found Some Walter Victims",
-        "u": "https://newsletterhunt.com/emails/526424"
-      },
-      {
-        "d": "2026-10-06",
-        "t": "Treasury Futures Might Switch",
-        "u": "https://newsletterhunt.com/emails/520287"
-      },
-      {
-        "d": "2026-10-02",
-        "t": "The Podcast: Reintegration WIth the Default World",
-        "u": "https://newsletterhunt.com/emails/516458"
-      },
-      {
-        "d": "2026-09-29",
-        "t": "Is Existential Risk Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/512829"
-      }
-    ]
-  },
-  {
     "theme": "Fed / Central Banks",
     "recent_90": 3,
     "recent_30": 0,
@@ -403,25 +427,6 @@
         "d": "2026-08-27",
         "t": "AI Refi",
         "u": "https://newsletterhunt.com/emails/472535"
-      }
-    ]
-  },
-  {
-    "theme": "Corporate Governance",
-    "recent_90": 2,
-    "recent_30": 2,
-    "total": 118,
-    "heat_ratio": 0.55,
-    "articles": [
-      {
-        "d": "2026-10-20",
-        "t": "Someone Has to Take the AI Risk",
-        "u": "https://newsletterhunt.com/emails/531968"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
