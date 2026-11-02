@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 21,
+    "recent_90": 20,
     "recent_30": 9,
     "total": 173,
-    "heat_ratio": 3.91,
+    "heat_ratio": 3.72,
     "articles": [
       {
         "d": "2026-10-29",
@@ -137,10 +137,10 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 20,
+    "recent_90": 19,
     "recent_30": 7,
     "total": 510,
-    "heat_ratio": 1.26,
+    "heat_ratio": 1.2,
     "articles": [
       {
         "d": "2026-10-30",
@@ -166,40 +166,6 @@
         "d": "2026-10-21",
         "t": "Obviously SpaceX and Tesla Will Merge",
         "u": "https://newsletterhunt.com/emails/532761"
-      }
-    ]
-  },
-  {
-    "theme": "M&A / Mergers",
-    "recent_90": 11,
-    "recent_30": 6,
-    "total": 394,
-    "heat_ratio": 0.9,
-    "articles": [
-      {
-        "d": "2026-10-29",
-        "t": "Run on the Law Firm",
-        "u": "https://newsletterhunt.com/emails/539195"
-      },
-      {
-        "d": "2026-10-27",
-        "t": "Musk\u2019s Mars Merger Pay",
-        "u": "https://newsletterhunt.com/emails/537413"
-      },
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
-      },
-      {
-        "d": "2026-10-21",
-        "t": "Obviously SpaceX and Tesla Will Merge",
-        "u": "https://newsletterhunt.com/emails/532761"
-      },
-      {
-        "d": "2026-10-06",
-        "t": "Treasury Futures Might Switch",
-        "u": "https://newsletterhunt.com/emails/520287"
       }
     ]
   },
@@ -234,6 +200,40 @@
         "d": "2026-08-13",
         "t": "Bilateral OTC Goat Hedge",
         "u": "https://newsletterhunt.com/emails/451877"
+      }
+    ]
+  },
+  {
+    "theme": "M&A / Mergers",
+    "recent_90": 10,
+    "recent_30": 6,
+    "total": 394,
+    "heat_ratio": 0.82,
+    "articles": [
+      {
+        "d": "2026-10-29",
+        "t": "Run on the Law Firm",
+        "u": "https://newsletterhunt.com/emails/539195"
+      },
+      {
+        "d": "2026-10-27",
+        "t": "Musk\u2019s Mars Merger Pay",
+        "u": "https://newsletterhunt.com/emails/537413"
+      },
+      {
+        "d": "2026-10-22",
+        "t": "Zuckerberg Wants to Keep His Votes",
+        "u": "https://newsletterhunt.com/emails/533488"
+      },
+      {
+        "d": "2026-10-21",
+        "t": "Obviously SpaceX and Tesla Will Merge",
+        "u": "https://newsletterhunt.com/emails/532761"
+      },
+      {
+        "d": "2026-10-06",
+        "t": "Treasury Futures Might Switch",
+        "u": "https://newsletterhunt.com/emails/520287"
       }
     ]
   },
@@ -312,7 +312,7 @@
   {
     "theme": "Securities Fraud",
     "recent_90": 11,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 508,
     "heat_ratio": 0.7,
     "articles": [
@@ -411,7 +411,7 @@
     "recent_90": 3,
     "recent_30": 0,
     "total": 157,
-    "heat_ratio": 0.61,
+    "heat_ratio": 0.62,
     "articles": [
       {
         "d": "2026-09-23",
