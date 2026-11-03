@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 20,
+    "recent_90": 19,
     "recent_30": 9,
     "total": 173,
-    "heat_ratio": 3.72,
+    "heat_ratio": 3.54,
     "articles": [
       {
         "d": "2026-10-29",
@@ -36,10 +36,15 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 15,
-    "recent_30": 8,
-    "total": 149,
-    "heat_ratio": 3.24,
+    "recent_30": 9,
+    "total": 150,
+    "heat_ratio": 3.22,
     "articles": [
+      {
+        "d": "2026-11-02",
+        "t": "Binance Got Some Money Back",
+        "u": "https://newsletterhunt.com/emails/542165"
+      },
       {
         "d": "2026-10-28",
         "t": "Not Your Keys, Not Your DAT",
@@ -59,11 +64,6 @@
         "d": "2026-10-16",
         "t": "The Podcast: Release Me From This Demon",
         "u": "https://newsletterhunt.com/emails/528965"
-      },
-      {
-        "d": "2026-10-13",
-        "t": "They Found Some Walter Victims",
-        "u": "https://newsletterhunt.com/emails/526424"
       }
     ]
   },
@@ -262,60 +262,17 @@
     ]
   },
   {
-    "theme": "Regulation / SEC",
-    "recent_90": 14,
-    "recent_30": 3,
-    "total": 623,
-    "heat_ratio": 0.72,
-    "articles": [
-      {
-        "d": "2026-10-23",
-        "t": "The Podcast: Tice Brown",
-        "u": "https://newsletterhunt.com/emails/534311"
-      },
-      {
-        "d": "2026-10-16",
-        "t": "The Podcast: Release Me From This Demon",
-        "u": "https://newsletterhunt.com/emails/528965"
-      },
-      {
-        "d": "2026-10-07",
-        "t": "ESG Gets More Illegal",
-        "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
-      }
-    ]
-  },
-  {
-    "theme": "Banking / Crises",
-    "recent_90": 1,
-    "recent_30": 0,
-    "total": 45,
-    "heat_ratio": 0.72,
-    "articles": [
-      {
-        "d": "2026-09-29",
-        "t": "Is Existential Risk Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/512829"
-      }
-    ]
-  },
-  {
     "theme": "Securities Fraud",
-    "recent_90": 11,
-    "recent_30": 4,
-    "total": 508,
-    "heat_ratio": 0.7,
+    "recent_90": 12,
+    "recent_30": 5,
+    "total": 509,
+    "heat_ratio": 0.76,
     "articles": [
+      {
+        "d": "2026-11-02",
+        "t": "Binance Got Some Money Back",
+        "u": "https://newsletterhunt.com/emails/542165"
+      },
       {
         "d": "2026-10-30",
         "t": "The Podcast: Artisanal Human Podcast",
@@ -335,21 +292,21 @@
         "d": "2026-10-06",
         "t": "Treasury Futures Might Switch",
         "u": "https://newsletterhunt.com/emails/520287"
-      },
-      {
-        "d": "2026-10-02",
-        "t": "The Podcast: Reintegration WIth the Default World",
-        "u": "https://newsletterhunt.com/emails/516458"
       }
     ]
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 12,
-    "recent_30": 4,
-    "total": 562,
-    "heat_ratio": 0.69,
+    "recent_90": 13,
+    "recent_30": 5,
+    "total": 563,
+    "heat_ratio": 0.74,
     "articles": [
+      {
+        "d": "2026-11-02",
+        "t": "Binance Got Some Money Back",
+        "u": "https://newsletterhunt.com/emails/542165"
+      },
       {
         "d": "2026-10-28",
         "t": "Not Your Keys, Not Your DAT",
@@ -369,11 +326,20 @@
         "d": "2026-10-08",
         "t": "Pre-IPO Perpetual Futures Swap ETF",
         "u": "https://newsletterhunt.com/emails/522398"
-      },
+      }
+    ]
+  },
+  {
+    "theme": "Banking / Crises",
+    "recent_90": 1,
+    "recent_30": 0,
+    "total": 45,
+    "heat_ratio": 0.72,
+    "articles": [
       {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
+        "d": "2026-09-29",
+        "t": "Is Existential Risk Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/512829"
       }
     ]
   },
@@ -403,6 +369,40 @@
         "d": "2026-09-02",
         "t": "The ETF Dividend Flip",
         "u": "https://newsletterhunt.com/emails/482633"
+      }
+    ]
+  },
+  {
+    "theme": "Regulation / SEC",
+    "recent_90": 13,
+    "recent_30": 3,
+    "total": 623,
+    "heat_ratio": 0.67,
+    "articles": [
+      {
+        "d": "2026-10-23",
+        "t": "The Podcast: Tice Brown",
+        "u": "https://newsletterhunt.com/emails/534311"
+      },
+      {
+        "d": "2026-10-16",
+        "t": "The Podcast: Release Me From This Demon",
+        "u": "https://newsletterhunt.com/emails/528965"
+      },
+      {
+        "d": "2026-10-07",
+        "t": "ESG Gets More Illegal",
+        "u": "https://newsletterhunt.com/emails/521309"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
+      },
+      {
+        "d": "2026-09-30",
+        "t": "AI Agents Will Pay Attention",
+        "u": "https://newsletterhunt.com/emails/513884"
       }
     ]
   },
