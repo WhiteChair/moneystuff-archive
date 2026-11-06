@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 20,
-    "recent_30": 10,
-    "total": 174,
-    "heat_ratio": 3.7,
+    "recent_90": 21,
+    "recent_30": 11,
+    "total": 175,
+    "heat_ratio": 3.87,
     "articles": [
+      {
+        "d": "2026-11-05",
+        "t": "Financial Predictionization",
+        "u": "https://newsletterhunt.com/emails/544640"
+      },
       {
         "d": "2026-11-03",
         "t": "How Much Should Anthropic Pop?",
@@ -25,11 +30,6 @@
         "d": "2026-10-21",
         "t": "Obviously SpaceX and Tesla Will Merge",
         "u": "https://newsletterhunt.com/emails/532761"
-      },
-      {
-        "d": "2026-10-20",
-        "t": "Someone Has to Take the AI Risk",
-        "u": "https://newsletterhunt.com/emails/531968"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "recent_90": 16,
     "recent_30": 10,
     "total": 151,
-    "heat_ratio": 3.41,
+    "heat_ratio": 3.42,
     "articles": [
       {
         "d": "2026-11-04",
@@ -70,7 +70,7 @@
   {
     "theme": "Hedge Funds / PE",
     "recent_90": 14,
-    "recent_30": 4,
+    "recent_30": 3,
     "total": 261,
     "heat_ratio": 1.73,
     "articles": [
@@ -170,6 +170,40 @@
     ]
   },
   {
+    "theme": "Crypto / Blockchain",
+    "recent_90": 15,
+    "recent_30": 7,
+    "total": 565,
+    "heat_ratio": 0.86,
+    "articles": [
+      {
+        "d": "2026-11-05",
+        "t": "Financial Predictionization",
+        "u": "https://newsletterhunt.com/emails/544640"
+      },
+      {
+        "d": "2026-11-03",
+        "t": "How Much Should Anthropic Pop?",
+        "u": "https://newsletterhunt.com/emails/543056"
+      },
+      {
+        "d": "2026-11-02",
+        "t": "Binance Got Some Money Back",
+        "u": "https://newsletterhunt.com/emails/542165"
+      },
+      {
+        "d": "2026-10-28",
+        "t": "Not Your Keys, Not Your DAT",
+        "u": "https://newsletterhunt.com/emails/538304"
+      },
+      {
+        "d": "2026-10-27",
+        "t": "Musk\u2019s Mars Merger Pay",
+        "u": "https://newsletterhunt.com/emails/537413"
+      }
+    ]
+  },
+  {
     "theme": "Legal / Courts",
     "recent_90": 5,
     "recent_30": 3,
@@ -206,7 +240,7 @@
   {
     "theme": "Securities Fraud",
     "recent_90": 13,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 510,
     "heat_ratio": 0.82,
     "articles": [
@@ -240,7 +274,7 @@
   {
     "theme": "M&A / Mergers",
     "recent_90": 10,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 394,
     "heat_ratio": 0.82,
     "articles": [
@@ -296,36 +330,36 @@
     ]
   },
   {
-    "theme": "Crypto / Blockchain",
+    "theme": "Regulation / SEC",
     "recent_90": 14,
-    "recent_30": 6,
-    "total": 564,
-    "heat_ratio": 0.8,
+    "recent_30": 4,
+    "total": 624,
+    "heat_ratio": 0.72,
     "articles": [
       {
-        "d": "2026-11-03",
-        "t": "How Much Should Anthropic Pop?",
-        "u": "https://newsletterhunt.com/emails/543056"
+        "d": "2026-11-05",
+        "t": "Financial Predictionization",
+        "u": "https://newsletterhunt.com/emails/544640"
       },
       {
-        "d": "2026-11-02",
-        "t": "Binance Got Some Money Back",
-        "u": "https://newsletterhunt.com/emails/542165"
+        "d": "2026-10-23",
+        "t": "The Podcast: Tice Brown",
+        "u": "https://newsletterhunt.com/emails/534311"
       },
       {
-        "d": "2026-10-28",
-        "t": "Not Your Keys, Not Your DAT",
-        "u": "https://newsletterhunt.com/emails/538304"
+        "d": "2026-10-16",
+        "t": "The Podcast: Release Me From This Demon",
+        "u": "https://newsletterhunt.com/emails/528965"
       },
       {
-        "d": "2026-10-27",
-        "t": "Musk\u2019s Mars Merger Pay",
-        "u": "https://newsletterhunt.com/emails/537413"
+        "d": "2026-10-07",
+        "t": "ESG Gets More Illegal",
+        "u": "https://newsletterhunt.com/emails/521309"
       },
       {
-        "d": "2026-10-14",
-        "t": "Bank of America Missed Some Bad Guys",
-        "u": "https://newsletterhunt.com/emails/527315"
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
@@ -374,40 +408,6 @@
         "d": "2026-08-13",
         "t": "Bilateral OTC Goat Hedge",
         "u": "https://newsletterhunt.com/emails/451877"
-      }
-    ]
-  },
-  {
-    "theme": "Regulation / SEC",
-    "recent_90": 13,
-    "recent_30": 3,
-    "total": 623,
-    "heat_ratio": 0.67,
-    "articles": [
-      {
-        "d": "2026-10-23",
-        "t": "The Podcast: Tice Brown",
-        "u": "https://newsletterhunt.com/emails/534311"
-      },
-      {
-        "d": "2026-10-16",
-        "t": "The Podcast: Release Me From This Demon",
-        "u": "https://newsletterhunt.com/emails/528965"
-      },
-      {
-        "d": "2026-10-07",
-        "t": "ESG Gets More Illegal",
-        "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
-      },
-      {
-        "d": "2026-09-30",
-        "t": "AI Agents Will Pay Attention",
-        "u": "https://newsletterhunt.com/emails/513884"
       }
     ]
   },
