@@ -70,7 +70,7 @@
   {
     "theme": "Hedge Funds / PE",
     "recent_90": 14,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 261,
     "heat_ratio": 1.73,
     "articles": [
@@ -106,7 +106,7 @@
     "recent_90": 6,
     "recent_30": 1,
     "total": 146,
-    "heat_ratio": 1.32,
+    "heat_ratio": 1.33,
     "articles": [
       {
         "d": "2026-10-15",
@@ -138,7 +138,7 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 18,
-    "recent_30": 8,
+    "recent_30": 7,
     "total": 511,
     "heat_ratio": 1.14,
     "articles": [
@@ -171,11 +171,16 @@
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 15,
-    "recent_30": 7,
-    "total": 565,
-    "heat_ratio": 0.86,
+    "recent_90": 16,
+    "recent_30": 8,
+    "total": 566,
+    "heat_ratio": 0.91,
     "articles": [
+      {
+        "d": "2026-11-06",
+        "t": "The Podcast: Friend Acquisition Rate",
+        "u": "https://newsletterhunt.com/emails/545366"
+      },
       {
         "d": "2026-11-05",
         "t": "Financial Predictionization",
@@ -195,11 +200,40 @@
         "d": "2026-10-28",
         "t": "Not Your Keys, Not Your DAT",
         "u": "https://newsletterhunt.com/emails/538304"
+      }
+    ]
+  },
+  {
+    "theme": "M&A / Mergers",
+    "recent_90": 11,
+    "recent_30": 5,
+    "total": 395,
+    "heat_ratio": 0.9,
+    "articles": [
+      {
+        "d": "2026-11-06",
+        "t": "The Podcast: Friend Acquisition Rate",
+        "u": "https://newsletterhunt.com/emails/545366"
+      },
+      {
+        "d": "2026-10-29",
+        "t": "Run on the Law Firm",
+        "u": "https://newsletterhunt.com/emails/539195"
       },
       {
         "d": "2026-10-27",
         "t": "Musk\u2019s Mars Merger Pay",
         "u": "https://newsletterhunt.com/emails/537413"
+      },
+      {
+        "d": "2026-10-22",
+        "t": "Zuckerberg Wants to Keep His Votes",
+        "u": "https://newsletterhunt.com/emails/533488"
+      },
+      {
+        "d": "2026-10-21",
+        "t": "Obviously SpaceX and Tesla Will Merge",
+        "u": "https://newsletterhunt.com/emails/532761"
       }
     ]
   },
@@ -272,40 +306,6 @@
     ]
   },
   {
-    "theme": "M&A / Mergers",
-    "recent_90": 10,
-    "recent_30": 4,
-    "total": 394,
-    "heat_ratio": 0.82,
-    "articles": [
-      {
-        "d": "2026-10-29",
-        "t": "Run on the Law Firm",
-        "u": "https://newsletterhunt.com/emails/539195"
-      },
-      {
-        "d": "2026-10-27",
-        "t": "Musk\u2019s Mars Merger Pay",
-        "u": "https://newsletterhunt.com/emails/537413"
-      },
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
-      },
-      {
-        "d": "2026-10-21",
-        "t": "Obviously SpaceX and Tesla Will Merge",
-        "u": "https://newsletterhunt.com/emails/532761"
-      },
-      {
-        "d": "2026-10-06",
-        "t": "Treasury Futures Might Switch",
-        "u": "https://newsletterhunt.com/emails/520287"
-      }
-    ]
-  },
-  {
     "theme": "Corporate Governance",
     "recent_90": 3,
     "recent_30": 2,
@@ -332,7 +332,7 @@
   {
     "theme": "Regulation / SEC",
     "recent_90": 14,
-    "recent_30": 4,
+    "recent_30": 3,
     "total": 624,
     "heat_ratio": 0.72,
     "articles": [
