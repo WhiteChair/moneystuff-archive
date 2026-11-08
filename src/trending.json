@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 21,
-    "recent_30": 11,
+    "recent_30": 10,
     "total": 175,
     "heat_ratio": 3.87,
     "articles": [
@@ -36,7 +36,7 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 16,
-    "recent_30": 10,
+    "recent_30": 9,
     "total": 151,
     "heat_ratio": 3.42,
     "articles": [
@@ -172,7 +172,7 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 16,
-    "recent_30": 8,
+    "recent_30": 7,
     "total": 566,
     "heat_ratio": 0.91,
     "articles": [
