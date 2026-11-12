@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 21,
-    "recent_30": 12,
+    "recent_30": 11,
     "total": 177,
     "heat_ratio": 3.83,
     "articles": [
@@ -36,7 +36,7 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 16,
-    "recent_30": 8,
+    "recent_30": 7,
     "total": 151,
     "heat_ratio": 3.42,
     "articles": [
@@ -72,7 +72,7 @@
     "recent_90": 12,
     "recent_30": 2,
     "total": 261,
-    "heat_ratio": 1.48,
+    "heat_ratio": 1.49,
     "articles": [
       {
         "d": "2026-10-20",
@@ -238,43 +238,9 @@
     ]
   },
   {
-    "theme": "Securities Fraud",
-    "recent_90": 14,
-    "recent_30": 7,
-    "total": 512,
-    "heat_ratio": 0.88,
-    "articles": [
-      {
-        "d": "2026-11-10",
-        "t": "Anthropic Has Some Anchor Investors",
-        "u": "https://newsletterhunt.com/emails/549095"
-      },
-      {
-        "d": "2026-11-09",
-        "t": "Is the Nvidia Affair Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/548072"
-      },
-      {
-        "d": "2026-11-04",
-        "t": "The Midterm Predictions Were Good",
-        "u": "https://newsletterhunt.com/emails/543914"
-      },
-      {
-        "d": "2026-11-02",
-        "t": "Binance Got Some Money Back",
-        "u": "https://newsletterhunt.com/emails/542165"
-      },
-      {
-        "d": "2026-10-30",
-        "t": "The Podcast: Artisanal Human Podcast",
-        "u": "https://newsletterhunt.com/emails/540020"
-      }
-    ]
-  },
-  {
     "theme": "Legal / Courts",
     "recent_90": 5,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 188,
     "heat_ratio": 0.86,
     "articles": [
@@ -302,6 +268,40 @@
         "d": "2026-09-02",
         "t": "The ETF Dividend Flip",
         "u": "https://newsletterhunt.com/emails/482633"
+      }
+    ]
+  },
+  {
+    "theme": "Securities Fraud",
+    "recent_90": 13,
+    "recent_30": 7,
+    "total": 512,
+    "heat_ratio": 0.82,
+    "articles": [
+      {
+        "d": "2026-11-10",
+        "t": "Anthropic Has Some Anchor Investors",
+        "u": "https://newsletterhunt.com/emails/549095"
+      },
+      {
+        "d": "2026-11-09",
+        "t": "Is the Nvidia Affair Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/548072"
+      },
+      {
+        "d": "2026-11-04",
+        "t": "The Midterm Predictions Were Good",
+        "u": "https://newsletterhunt.com/emails/543914"
+      },
+      {
+        "d": "2026-11-02",
+        "t": "Binance Got Some Money Back",
+        "u": "https://newsletterhunt.com/emails/542165"
+      },
+      {
+        "d": "2026-10-30",
+        "t": "The Podcast: Artisanal Human Podcast",
+        "u": "https://newsletterhunt.com/emails/540020"
       }
     ]
   },
@@ -344,45 +344,11 @@
     ]
   },
   {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 5,
-    "recent_30": 3,
-    "total": 228,
-    "heat_ratio": 0.71,
-    "articles": [
-      {
-        "d": "2026-10-28",
-        "t": "Not Your Keys, Not Your DAT",
-        "u": "https://newsletterhunt.com/emails/538304"
-      },
-      {
-        "d": "2026-10-26",
-        "t": "Anthropic Raises Concerns",
-        "u": "https://newsletterhunt.com/emails/536721"
-      },
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
-      },
-      {
-        "d": "2026-10-05",
-        "t": "Mergers and Acqui-hires",
-        "u": "https://newsletterhunt.com/emails/519395"
-      },
-      {
-        "d": "2026-08-13",
-        "t": "Bilateral OTC Goat Hedge",
-        "u": "https://newsletterhunt.com/emails/451877"
-      }
-    ]
-  },
-  {
     "theme": "Regulation / SEC",
-    "recent_90": 13,
+    "recent_90": 12,
     "recent_30": 3,
     "total": 624,
-    "heat_ratio": 0.67,
+    "heat_ratio": 0.62,
     "articles": [
       {
         "d": "2026-11-05",
@@ -432,6 +398,35 @@
         "d": "2026-08-27",
         "t": "AI Refi",
         "u": "https://newsletterhunt.com/emails/472535"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 4,
+    "recent_30": 3,
+    "total": 228,
+    "heat_ratio": 0.57,
+    "articles": [
+      {
+        "d": "2026-10-28",
+        "t": "Not Your Keys, Not Your DAT",
+        "u": "https://newsletterhunt.com/emails/538304"
+      },
+      {
+        "d": "2026-10-26",
+        "t": "Anthropic Raises Concerns",
+        "u": "https://newsletterhunt.com/emails/536721"
+      },
+      {
+        "d": "2026-10-22",
+        "t": "Zuckerberg Wants to Keep His Votes",
+        "u": "https://newsletterhunt.com/emails/533488"
+      },
+      {
+        "d": "2026-10-05",
+        "t": "Mergers and Acqui-hires",
+        "u": "https://newsletterhunt.com/emails/519395"
       }
     ]
   },
