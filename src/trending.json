@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 21,
-    "recent_30": 11,
-    "total": 177,
-    "heat_ratio": 3.83,
+    "recent_90": 22,
+    "recent_30": 12,
+    "total": 178,
+    "heat_ratio": 3.99,
     "articles": [
+      {
+        "d": "2026-11-12",
+        "t": "Nvidia\u2019s Board Had to Do Something",
+        "u": "https://newsletterhunt.com/emails/550976"
+      },
       {
         "d": "2026-11-10",
         "t": "Anthropic Has Some Anchor Investors",
@@ -25,18 +30,13 @@
         "d": "2026-11-03",
         "t": "How Much Should Anthropic Pop?",
         "u": "https://newsletterhunt.com/emails/543056"
-      },
-      {
-        "d": "2026-10-29",
-        "t": "Run on the Law Firm",
-        "u": "https://newsletterhunt.com/emails/539195"
       }
     ]
   },
   {
     "theme": "Options / Derivatives",
     "recent_90": 16,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 151,
     "heat_ratio": 3.42,
     "articles": [
@@ -137,11 +137,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 17,
-    "recent_30": 8,
-    "total": 512,
-    "heat_ratio": 1.07,
+    "recent_90": 18,
+    "recent_30": 9,
+    "total": 513,
+    "heat_ratio": 1.13,
     "articles": [
+      {
+        "d": "2026-11-12",
+        "t": "Nvidia\u2019s Board Had to Do Something",
+        "u": "https://newsletterhunt.com/emails/550976"
+      },
       {
         "d": "2026-11-10",
         "t": "Anthropic Has Some Anchor Investors",
@@ -161,11 +166,35 @@
         "d": "2026-10-27",
         "t": "Musk\u2019s Mars Merger Pay",
         "u": "https://newsletterhunt.com/emails/537413"
+      }
+    ]
+  },
+  {
+    "theme": "Corporate Governance",
+    "recent_90": 4,
+    "recent_30": 3,
+    "total": 120,
+    "heat_ratio": 1.08,
+    "articles": [
+      {
+        "d": "2026-11-12",
+        "t": "Nvidia\u2019s Board Had to Do Something",
+        "u": "https://newsletterhunt.com/emails/550976"
       },
       {
-        "d": "2026-10-26",
-        "t": "Anthropic Raises Concerns",
-        "u": "https://newsletterhunt.com/emails/536721"
+        "d": "2026-10-30",
+        "t": "The Podcast: Artisanal Human Podcast",
+        "u": "https://newsletterhunt.com/emails/540020"
+      },
+      {
+        "d": "2026-10-20",
+        "t": "Someone Has to Take the AI Risk",
+        "u": "https://newsletterhunt.com/emails/531968"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
@@ -240,7 +269,7 @@
   {
     "theme": "Legal / Courts",
     "recent_90": 5,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 188,
     "heat_ratio": 0.86,
     "articles": [
@@ -274,7 +303,7 @@
   {
     "theme": "Securities Fraud",
     "recent_90": 13,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 512,
     "heat_ratio": 0.82,
     "articles": [
@@ -302,30 +331,6 @@
         "d": "2026-10-30",
         "t": "The Podcast: Artisanal Human Podcast",
         "u": "https://newsletterhunt.com/emails/540020"
-      }
-    ]
-  },
-  {
-    "theme": "Corporate Governance",
-    "recent_90": 3,
-    "recent_30": 2,
-    "total": 119,
-    "heat_ratio": 0.81,
-    "articles": [
-      {
-        "d": "2026-10-30",
-        "t": "The Podcast: Artisanal Human Podcast",
-        "u": "https://newsletterhunt.com/emails/540020"
-      },
-      {
-        "d": "2026-10-20",
-        "t": "Someone Has to Take the AI Risk",
-        "u": "https://newsletterhunt.com/emails/531968"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
