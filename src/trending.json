@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 22,
-    "recent_30": 12,
+    "recent_30": 11,
     "total": 178,
     "heat_ratio": 3.99,
     "articles": [
@@ -201,7 +201,7 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 16,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 566,
     "heat_ratio": 0.91,
     "articles": [
@@ -303,7 +303,7 @@
   {
     "theme": "Securities Fraud",
     "recent_90": 13,
-    "recent_30": 6,
+    "recent_30": 5,
     "total": 512,
     "heat_ratio": 0.82,
     "articles": [
@@ -345,6 +345,40 @@
         "d": "2026-09-29",
         "t": "Is Existential Risk Securities Fraud?",
         "u": "https://newsletterhunt.com/emails/512829"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 5,
+    "recent_30": 4,
+    "total": 229,
+    "heat_ratio": 0.71,
+    "articles": [
+      {
+        "d": "2026-11-13",
+        "t": "The Podcast: Loser Mentality",
+        "u": "https://newsletterhunt.com/emails/551769"
+      },
+      {
+        "d": "2026-10-28",
+        "t": "Not Your Keys, Not Your DAT",
+        "u": "https://newsletterhunt.com/emails/538304"
+      },
+      {
+        "d": "2026-10-26",
+        "t": "Anthropic Raises Concerns",
+        "u": "https://newsletterhunt.com/emails/536721"
+      },
+      {
+        "d": "2026-10-22",
+        "t": "Zuckerberg Wants to Keep His Votes",
+        "u": "https://newsletterhunt.com/emails/533488"
+      },
+      {
+        "d": "2026-10-05",
+        "t": "Mergers and Acqui-hires",
+        "u": "https://newsletterhunt.com/emails/519395"
       }
     ]
   },
@@ -403,35 +437,6 @@
         "d": "2026-08-27",
         "t": "AI Refi",
         "u": "https://newsletterhunt.com/emails/472535"
-      }
-    ]
-  },
-  {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 4,
-    "recent_30": 3,
-    "total": 228,
-    "heat_ratio": 0.57,
-    "articles": [
-      {
-        "d": "2026-10-28",
-        "t": "Not Your Keys, Not Your DAT",
-        "u": "https://newsletterhunt.com/emails/538304"
-      },
-      {
-        "d": "2026-10-26",
-        "t": "Anthropic Raises Concerns",
-        "u": "https://newsletterhunt.com/emails/536721"
-      },
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
-      },
-      {
-        "d": "2026-10-05",
-        "t": "Mergers and Acqui-hires",
-        "u": "https://newsletterhunt.com/emails/519395"
       }
     ]
   },
