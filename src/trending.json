@@ -2,9 +2,9 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 22,
-    "recent_30": 11,
+    "recent_30": 10,
     "total": 178,
-    "heat_ratio": 3.99,
+    "heat_ratio": 4.0,
     "articles": [
       {
         "d": "2026-11-12",
@@ -38,7 +38,7 @@
     "recent_90": 16,
     "recent_30": 6,
     "total": 151,
-    "heat_ratio": 3.42,
+    "heat_ratio": 3.43,
     "articles": [
       {
         "d": "2026-11-04",
@@ -70,7 +70,7 @@
   {
     "theme": "Hedge Funds / PE",
     "recent_90": 12,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 261,
     "heat_ratio": 1.49,
     "articles": [
@@ -104,7 +104,7 @@
   {
     "theme": "Insider Trading",
     "recent_90": 6,
-    "recent_30": 2,
+    "recent_30": 1,
     "total": 147,
     "heat_ratio": 1.32,
     "articles": [
