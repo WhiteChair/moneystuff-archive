@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 22,
-    "recent_30": 10,
-    "total": 178,
-    "heat_ratio": 4.0,
+    "recent_90": 23,
+    "recent_30": 11,
+    "total": 179,
+    "heat_ratio": 4.16,
     "articles": [
+      {
+        "d": "2026-11-16",
+        "t": "People Miss Jensen Huang Already",
+        "u": "https://newsletterhunt.com/emails/554672"
+      },
       {
         "d": "2026-11-12",
         "t": "Nvidia\u2019s Board Had to Do Something",
@@ -25,11 +30,6 @@
         "d": "2026-11-05",
         "t": "Financial Predictionization",
         "u": "https://newsletterhunt.com/emails/544640"
-      },
-      {
-        "d": "2026-11-03",
-        "t": "How Much Should Anthropic Pop?",
-        "u": "https://newsletterhunt.com/emails/543056"
       }
     ]
   },
@@ -102,6 +102,40 @@
     ]
   },
   {
+    "theme": "Corporate Governance",
+    "recent_90": 5,
+    "recent_30": 4,
+    "total": 121,
+    "heat_ratio": 1.34,
+    "articles": [
+      {
+        "d": "2026-11-16",
+        "t": "People Miss Jensen Huang Already",
+        "u": "https://newsletterhunt.com/emails/554672"
+      },
+      {
+        "d": "2026-11-12",
+        "t": "Nvidia\u2019s Board Had to Do Something",
+        "u": "https://newsletterhunt.com/emails/550976"
+      },
+      {
+        "d": "2026-10-30",
+        "t": "The Podcast: Artisanal Human Podcast",
+        "u": "https://newsletterhunt.com/emails/540020"
+      },
+      {
+        "d": "2026-10-20",
+        "t": "Someone Has to Take the AI Risk",
+        "u": "https://newsletterhunt.com/emails/531968"
+      },
+      {
+        "d": "2026-10-01",
+        "t": "Opening Private Markets to the Public",
+        "u": "https://newsletterhunt.com/emails/515105"
+      }
+    ]
+  },
+  {
     "theme": "Insider Trading",
     "recent_90": 6,
     "recent_30": 1,
@@ -137,11 +171,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 18,
-    "recent_30": 9,
-    "total": 513,
-    "heat_ratio": 1.13,
+    "recent_90": 19,
+    "recent_30": 10,
+    "total": 514,
+    "heat_ratio": 1.2,
     "articles": [
+      {
+        "d": "2026-11-16",
+        "t": "People Miss Jensen Huang Already",
+        "u": "https://newsletterhunt.com/emails/554672"
+      },
       {
         "d": "2026-11-12",
         "t": "Nvidia\u2019s Board Had to Do Something",
@@ -161,40 +200,6 @@
         "d": "2026-10-30",
         "t": "The Podcast: Artisanal Human Podcast",
         "u": "https://newsletterhunt.com/emails/540020"
-      },
-      {
-        "d": "2026-10-27",
-        "t": "Musk\u2019s Mars Merger Pay",
-        "u": "https://newsletterhunt.com/emails/537413"
-      }
-    ]
-  },
-  {
-    "theme": "Corporate Governance",
-    "recent_90": 4,
-    "recent_30": 3,
-    "total": 120,
-    "heat_ratio": 1.08,
-    "articles": [
-      {
-        "d": "2026-11-12",
-        "t": "Nvidia\u2019s Board Had to Do Something",
-        "u": "https://newsletterhunt.com/emails/550976"
-      },
-      {
-        "d": "2026-10-30",
-        "t": "The Podcast: Artisanal Human Podcast",
-        "u": "https://newsletterhunt.com/emails/540020"
-      },
-      {
-        "d": "2026-10-20",
-        "t": "Someone Has to Take the AI Risk",
-        "u": "https://newsletterhunt.com/emails/531968"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
