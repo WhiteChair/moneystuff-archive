@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 23,
-    "recent_30": 11,
-    "total": 179,
-    "heat_ratio": 4.16,
+    "recent_90": 24,
+    "recent_30": 12,
+    "total": 180,
+    "heat_ratio": 4.32,
     "articles": [
+      {
+        "d": "2026-11-17",
+        "t": "The Agents Will Trade the Bonds",
+        "u": "https://newsletterhunt.com/emails/555596"
+      },
       {
         "d": "2026-11-16",
         "t": "People Miss Jensen Huang Already",
@@ -25,11 +30,6 @@
         "d": "2026-11-09",
         "t": "Is the Nvidia Affair Securities Fraud?",
         "u": "https://newsletterhunt.com/emails/548072"
-      },
-      {
-        "d": "2026-11-05",
-        "t": "Financial Predictionization",
-        "u": "https://newsletterhunt.com/emails/544640"
       }
     ]
   },
@@ -171,11 +171,16 @@
   },
   {
     "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 19,
-    "recent_30": 10,
-    "total": 514,
-    "heat_ratio": 1.2,
+    "recent_90": 20,
+    "recent_30": 11,
+    "total": 515,
+    "heat_ratio": 1.26,
     "articles": [
+      {
+        "d": "2026-11-17",
+        "t": "The Agents Will Trade the Bonds",
+        "u": "https://newsletterhunt.com/emails/555596"
+      },
       {
         "d": "2026-11-16",
         "t": "People Miss Jensen Huang Already",
@@ -195,21 +200,21 @@
         "d": "2026-11-03",
         "t": "How Much Should Anthropic Pop?",
         "u": "https://newsletterhunt.com/emails/543056"
-      },
-      {
-        "d": "2026-10-30",
-        "t": "The Podcast: Artisanal Human Podcast",
-        "u": "https://newsletterhunt.com/emails/540020"
       }
     ]
   },
   {
     "theme": "Crypto / Blockchain",
-    "recent_90": 16,
-    "recent_30": 6,
-    "total": 566,
-    "heat_ratio": 0.91,
+    "recent_90": 17,
+    "recent_30": 7,
+    "total": 567,
+    "heat_ratio": 0.97,
     "articles": [
+      {
+        "d": "2026-11-17",
+        "t": "The Agents Will Trade the Bonds",
+        "u": "https://newsletterhunt.com/emails/555596"
+      },
       {
         "d": "2026-11-06",
         "t": "The Podcast: Friend Acquisition Rate",
@@ -229,11 +234,6 @@
         "d": "2026-11-02",
         "t": "Binance Got Some Money Back",
         "u": "https://newsletterhunt.com/emails/542165"
-      },
-      {
-        "d": "2026-10-28",
-        "t": "Not Your Keys, Not Your DAT",
-        "u": "https://newsletterhunt.com/emails/538304"
       }
     ]
   },
