@@ -2,7 +2,7 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 24,
-    "recent_30": 12,
+    "recent_30": 11,
     "total": 180,
     "heat_ratio": 4.32,
     "articles": [
@@ -36,7 +36,7 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 16,
-    "recent_30": 5,
+    "recent_30": 4,
     "total": 151,
     "heat_ratio": 3.43,
     "articles": [
@@ -64,6 +64,40 @@
         "d": "2026-10-19",
         "t": "Universal Basic AI",
         "u": "https://newsletterhunt.com/emails/531044"
+      }
+    ]
+  },
+  {
+    "theme": "Insider Trading",
+    "recent_90": 7,
+    "recent_30": 2,
+    "total": 148,
+    "heat_ratio": 1.53,
+    "articles": [
+      {
+        "d": "2026-11-18",
+        "t": "A Lot of People Want Anthropic Stock",
+        "u": "https://newsletterhunt.com/emails/556685"
+      },
+      {
+        "d": "2026-11-09",
+        "t": "Is the Nvidia Affair Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/548072"
+      },
+      {
+        "d": "2026-10-15",
+        "t": "Private Markets Are the New AI Markets",
+        "u": "https://newsletterhunt.com/emails/528074"
+      },
+      {
+        "d": "2026-09-24",
+        "t": "Morgan Stanley Leaked Some Deals",
+        "u": "https://newsletterhunt.com/emails/507218"
+      },
+      {
+        "d": "2026-09-22",
+        "t": "Not All the Susquehanna Puts Were Bad",
+        "u": "https://newsletterhunt.com/emails/504628"
       }
     ]
   },
@@ -136,43 +170,9 @@
     ]
   },
   {
-    "theme": "Insider Trading",
-    "recent_90": 6,
-    "recent_30": 1,
-    "total": 147,
-    "heat_ratio": 1.32,
-    "articles": [
-      {
-        "d": "2026-11-09",
-        "t": "Is the Nvidia Affair Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/548072"
-      },
-      {
-        "d": "2026-10-15",
-        "t": "Private Markets Are the New AI Markets",
-        "u": "https://newsletterhunt.com/emails/528074"
-      },
-      {
-        "d": "2026-09-24",
-        "t": "Morgan Stanley Leaked Some Deals",
-        "u": "https://newsletterhunt.com/emails/507218"
-      },
-      {
-        "d": "2026-09-22",
-        "t": "Not All the Susquehanna Puts Were Bad",
-        "u": "https://newsletterhunt.com/emails/504628"
-      },
-      {
-        "d": "2026-09-01",
-        "t": "Amazon Charged the First Price",
-        "u": "https://newsletterhunt.com/emails/480951"
-      }
-    ]
-  },
-  {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 20,
-    "recent_30": 11,
+    "recent_30": 10,
     "total": 515,
     "heat_ratio": 1.26,
     "articles": [
@@ -272,6 +272,40 @@
     ]
   },
   {
+    "theme": "Securities Fraud",
+    "recent_90": 14,
+    "recent_30": 6,
+    "total": 513,
+    "heat_ratio": 0.88,
+    "articles": [
+      {
+        "d": "2026-11-18",
+        "t": "A Lot of People Want Anthropic Stock",
+        "u": "https://newsletterhunt.com/emails/556685"
+      },
+      {
+        "d": "2026-11-10",
+        "t": "Anthropic Has Some Anchor Investors",
+        "u": "https://newsletterhunt.com/emails/549095"
+      },
+      {
+        "d": "2026-11-09",
+        "t": "Is the Nvidia Affair Securities Fraud?",
+        "u": "https://newsletterhunt.com/emails/548072"
+      },
+      {
+        "d": "2026-11-04",
+        "t": "The Midterm Predictions Were Good",
+        "u": "https://newsletterhunt.com/emails/543914"
+      },
+      {
+        "d": "2026-11-02",
+        "t": "Binance Got Some Money Back",
+        "u": "https://newsletterhunt.com/emails/542165"
+      }
+    ]
+  },
+  {
     "theme": "Legal / Courts",
     "recent_90": 5,
     "recent_30": 1,
@@ -302,40 +336,6 @@
         "d": "2026-09-02",
         "t": "The ETF Dividend Flip",
         "u": "https://newsletterhunt.com/emails/482633"
-      }
-    ]
-  },
-  {
-    "theme": "Securities Fraud",
-    "recent_90": 13,
-    "recent_30": 5,
-    "total": 512,
-    "heat_ratio": 0.82,
-    "articles": [
-      {
-        "d": "2026-11-10",
-        "t": "Anthropic Has Some Anchor Investors",
-        "u": "https://newsletterhunt.com/emails/549095"
-      },
-      {
-        "d": "2026-11-09",
-        "t": "Is the Nvidia Affair Securities Fraud?",
-        "u": "https://newsletterhunt.com/emails/548072"
-      },
-      {
-        "d": "2026-11-04",
-        "t": "The Midterm Predictions Were Good",
-        "u": "https://newsletterhunt.com/emails/543914"
-      },
-      {
-        "d": "2026-11-02",
-        "t": "Binance Got Some Money Back",
-        "u": "https://newsletterhunt.com/emails/542165"
-      },
-      {
-        "d": "2026-10-30",
-        "t": "The Podcast: Artisanal Human Podcast",
-        "u": "https://newsletterhunt.com/emails/540020"
       }
     ]
   },
@@ -389,11 +389,16 @@
   },
   {
     "theme": "Regulation / SEC",
-    "recent_90": 12,
-    "recent_30": 2,
-    "total": 624,
-    "heat_ratio": 0.62,
+    "recent_90": 13,
+    "recent_30": 3,
+    "total": 625,
+    "heat_ratio": 0.67,
     "articles": [
+      {
+        "d": "2026-11-18",
+        "t": "A Lot of People Want Anthropic Stock",
+        "u": "https://newsletterhunt.com/emails/556685"
+      },
       {
         "d": "2026-11-05",
         "t": "Financial Predictionization",
@@ -413,11 +418,6 @@
         "d": "2026-10-07",
         "t": "ESG Gets More Illegal",
         "u": "https://newsletterhunt.com/emails/521309"
-      },
-      {
-        "d": "2026-10-01",
-        "t": "Opening Private Markets to the Public",
-        "u": "https://newsletterhunt.com/emails/515105"
       }
     ]
   },
