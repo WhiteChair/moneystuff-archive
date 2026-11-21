@@ -2,9 +2,9 @@
   {
     "theme": "OpenAI / AI",
     "recent_90": 25,
-    "recent_30": 11,
+    "recent_30": 10,
     "total": 181,
-    "heat_ratio": 4.47,
+    "heat_ratio": 4.48,
     "articles": [
       {
         "d": "2026-11-19",
@@ -172,7 +172,7 @@
   {
     "theme": "Musk / Tesla / SpaceX",
     "recent_90": 21,
-    "recent_30": 11,
+    "recent_30": 10,
     "total": 516,
     "heat_ratio": 1.32,
     "articles": [
@@ -200,6 +200,74 @@
         "d": "2026-11-10",
         "t": "Anthropic Has Some Anchor Investors",
         "u": "https://newsletterhunt.com/emails/549095"
+      }
+    ]
+  },
+  {
+    "theme": "M&A / Mergers",
+    "recent_90": 12,
+    "recent_30": 5,
+    "total": 396,
+    "heat_ratio": 0.98,
+    "articles": [
+      {
+        "d": "2026-11-20",
+        "t": "The Podcast: Fakeovers",
+        "u": "https://newsletterhunt.com/emails/558830"
+      },
+      {
+        "d": "2026-11-06",
+        "t": "The Podcast: Friend Acquisition Rate",
+        "u": "https://newsletterhunt.com/emails/545366"
+      },
+      {
+        "d": "2026-10-29",
+        "t": "Run on the Law Firm",
+        "u": "https://newsletterhunt.com/emails/539195"
+      },
+      {
+        "d": "2026-10-27",
+        "t": "Musk\u2019s Mars Merger Pay",
+        "u": "https://newsletterhunt.com/emails/537413"
+      },
+      {
+        "d": "2026-10-22",
+        "t": "Zuckerberg Wants to Keep His Votes",
+        "u": "https://newsletterhunt.com/emails/533488"
+      }
+    ]
+  },
+  {
+    "theme": "IPOs / Capital Markets",
+    "recent_90": 7,
+    "recent_30": 6,
+    "total": 231,
+    "heat_ratio": 0.98,
+    "articles": [
+      {
+        "d": "2026-11-20",
+        "t": "The Podcast: Fakeovers",
+        "u": "https://newsletterhunt.com/emails/558830"
+      },
+      {
+        "d": "2026-11-19",
+        "t": "Anthropic Pops",
+        "u": "https://newsletterhunt.com/emails/557741"
+      },
+      {
+        "d": "2026-11-13",
+        "t": "The Podcast: Loser Mentality",
+        "u": "https://newsletterhunt.com/emails/551769"
+      },
+      {
+        "d": "2026-10-28",
+        "t": "Not Your Keys, Not Your DAT",
+        "u": "https://newsletterhunt.com/emails/538304"
+      },
+      {
+        "d": "2026-10-26",
+        "t": "Anthropic Raises Concerns",
+        "u": "https://newsletterhunt.com/emails/536721"
       }
     ]
   },
@@ -234,40 +302,6 @@
         "d": "2026-11-02",
         "t": "Binance Got Some Money Back",
         "u": "https://newsletterhunt.com/emails/542165"
-      }
-    ]
-  },
-  {
-    "theme": "M&A / Mergers",
-    "recent_90": 11,
-    "recent_30": 5,
-    "total": 395,
-    "heat_ratio": 0.9,
-    "articles": [
-      {
-        "d": "2026-11-06",
-        "t": "The Podcast: Friend Acquisition Rate",
-        "u": "https://newsletterhunt.com/emails/545366"
-      },
-      {
-        "d": "2026-10-29",
-        "t": "Run on the Law Firm",
-        "u": "https://newsletterhunt.com/emails/539195"
-      },
-      {
-        "d": "2026-10-27",
-        "t": "Musk\u2019s Mars Merger Pay",
-        "u": "https://newsletterhunt.com/emails/537413"
-      },
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
-      },
-      {
-        "d": "2026-10-21",
-        "t": "Obviously SpaceX and Tesla Will Merge",
-        "u": "https://newsletterhunt.com/emails/532761"
       }
     ]
   },
@@ -336,40 +370,6 @@
         "d": "2026-09-02",
         "t": "The ETF Dividend Flip",
         "u": "https://newsletterhunt.com/emails/482633"
-      }
-    ]
-  },
-  {
-    "theme": "IPOs / Capital Markets",
-    "recent_90": 6,
-    "recent_30": 5,
-    "total": 230,
-    "heat_ratio": 0.84,
-    "articles": [
-      {
-        "d": "2026-11-19",
-        "t": "Anthropic Pops",
-        "u": "https://newsletterhunt.com/emails/557741"
-      },
-      {
-        "d": "2026-11-13",
-        "t": "The Podcast: Loser Mentality",
-        "u": "https://newsletterhunt.com/emails/551769"
-      },
-      {
-        "d": "2026-10-28",
-        "t": "Not Your Keys, Not Your DAT",
-        "u": "https://newsletterhunt.com/emails/538304"
-      },
-      {
-        "d": "2026-10-26",
-        "t": "Anthropic Raises Concerns",
-        "u": "https://newsletterhunt.com/emails/536721"
-      },
-      {
-        "d": "2026-10-22",
-        "t": "Zuckerberg Wants to Keep His Votes",
-        "u": "https://newsletterhunt.com/emails/533488"
       }
     ]
   },
