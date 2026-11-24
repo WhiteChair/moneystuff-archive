@@ -1,10 +1,10 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 25,
+    "recent_90": 24,
     "recent_30": 11,
     "total": 182,
-    "heat_ratio": 4.45,
+    "heat_ratio": 4.28,
     "articles": [
       {
         "d": "2026-11-23",
@@ -69,10 +69,10 @@
   },
   {
     "theme": "Hedge Funds / PE",
-    "recent_90": 12,
+    "recent_90": 11,
     "recent_30": 0,
     "total": 261,
-    "heat_ratio": 1.49,
+    "heat_ratio": 1.37,
     "articles": [
       {
         "d": "2026-10-20",
@@ -136,40 +136,6 @@
     ]
   },
   {
-    "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 21,
-    "recent_30": 10,
-    "total": 517,
-    "heat_ratio": 1.32,
-    "articles": [
-      {
-        "d": "2026-11-23",
-        "t": "Jensen\u2019s Candor Is Satisfactory Now",
-        "u": "https://newsletterhunt.com/emails/561504"
-      },
-      {
-        "d": "2026-11-19",
-        "t": "Anthropic Pops",
-        "u": "https://newsletterhunt.com/emails/557741"
-      },
-      {
-        "d": "2026-11-17",
-        "t": "The Agents Will Trade the Bonds",
-        "u": "https://newsletterhunt.com/emails/555596"
-      },
-      {
-        "d": "2026-11-16",
-        "t": "People Miss Jensen Huang Already",
-        "u": "https://newsletterhunt.com/emails/554672"
-      },
-      {
-        "d": "2026-11-12",
-        "t": "Nvidia\u2019s Board Had to Do Something",
-        "u": "https://newsletterhunt.com/emails/550976"
-      }
-    ]
-  },
-  {
     "theme": "Insider Trading",
     "recent_90": 6,
     "recent_30": 2,
@@ -200,6 +166,40 @@
         "d": "2026-09-22",
         "t": "Not All the Susquehanna Puts Were Bad",
         "u": "https://newsletterhunt.com/emails/504628"
+      }
+    ]
+  },
+  {
+    "theme": "Musk / Tesla / SpaceX",
+    "recent_90": 20,
+    "recent_30": 10,
+    "total": 517,
+    "heat_ratio": 1.25,
+    "articles": [
+      {
+        "d": "2026-11-23",
+        "t": "Jensen\u2019s Candor Is Satisfactory Now",
+        "u": "https://newsletterhunt.com/emails/561504"
+      },
+      {
+        "d": "2026-11-19",
+        "t": "Anthropic Pops",
+        "u": "https://newsletterhunt.com/emails/557741"
+      },
+      {
+        "d": "2026-11-17",
+        "t": "The Agents Will Trade the Bonds",
+        "u": "https://newsletterhunt.com/emails/555596"
+      },
+      {
+        "d": "2026-11-16",
+        "t": "People Miss Jensen Huang Already",
+        "u": "https://newsletterhunt.com/emails/554672"
+      },
+      {
+        "d": "2026-11-12",
+        "t": "Nvidia\u2019s Board Had to Do Something",
+        "u": "https://newsletterhunt.com/emails/550976"
       }
     ]
   },
