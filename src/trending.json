@@ -1,11 +1,16 @@
 [
   {
     "theme": "OpenAI / AI",
-    "recent_90": 24,
-    "recent_30": 11,
-    "total": 182,
-    "heat_ratio": 4.28,
+    "recent_90": 25,
+    "recent_30": 12,
+    "total": 183,
+    "heat_ratio": 4.43,
     "articles": [
+      {
+        "d": "2026-11-24",
+        "t": "Anthropic Drops",
+        "u": "https://newsletterhunt.com/emails/562527"
+      },
       {
         "d": "2026-11-23",
         "t": "Jensen\u2019s Candor Is Satisfactory Now",
@@ -25,20 +30,15 @@
         "d": "2026-11-16",
         "t": "People Miss Jensen Huang Already",
         "u": "https://newsletterhunt.com/emails/554672"
-      },
-      {
-        "d": "2026-11-12",
-        "t": "Nvidia\u2019s Board Had to Do Something",
-        "u": "https://newsletterhunt.com/emails/550976"
       }
     ]
   },
   {
     "theme": "Options / Derivatives",
-    "recent_90": 16,
+    "recent_90": 15,
     "recent_30": 3,
     "total": 151,
-    "heat_ratio": 3.44,
+    "heat_ratio": 3.22,
     "articles": [
       {
         "d": "2026-11-04",
@@ -136,11 +136,45 @@
     ]
   },
   {
+    "theme": "Musk / Tesla / SpaceX",
+    "recent_90": 21,
+    "recent_30": 11,
+    "total": 518,
+    "heat_ratio": 1.32,
+    "articles": [
+      {
+        "d": "2026-11-24",
+        "t": "Anthropic Drops",
+        "u": "https://newsletterhunt.com/emails/562527"
+      },
+      {
+        "d": "2026-11-23",
+        "t": "Jensen\u2019s Candor Is Satisfactory Now",
+        "u": "https://newsletterhunt.com/emails/561504"
+      },
+      {
+        "d": "2026-11-19",
+        "t": "Anthropic Pops",
+        "u": "https://newsletterhunt.com/emails/557741"
+      },
+      {
+        "d": "2026-11-17",
+        "t": "The Agents Will Trade the Bonds",
+        "u": "https://newsletterhunt.com/emails/555596"
+      },
+      {
+        "d": "2026-11-16",
+        "t": "People Miss Jensen Huang Already",
+        "u": "https://newsletterhunt.com/emails/554672"
+      }
+    ]
+  },
+  {
     "theme": "Insider Trading",
     "recent_90": 6,
     "recent_30": 2,
     "total": 148,
-    "heat_ratio": 1.31,
+    "heat_ratio": 1.32,
     "articles": [
       {
         "d": "2026-11-18",
@@ -170,21 +204,16 @@
     ]
   },
   {
-    "theme": "Musk / Tesla / SpaceX",
-    "recent_90": 20,
-    "recent_30": 10,
-    "total": 517,
-    "heat_ratio": 1.25,
+    "theme": "Crypto / Blockchain",
+    "recent_90": 18,
+    "recent_30": 8,
+    "total": 568,
+    "heat_ratio": 1.03,
     "articles": [
       {
-        "d": "2026-11-23",
-        "t": "Jensen\u2019s Candor Is Satisfactory Now",
-        "u": "https://newsletterhunt.com/emails/561504"
-      },
-      {
-        "d": "2026-11-19",
-        "t": "Anthropic Pops",
-        "u": "https://newsletterhunt.com/emails/557741"
+        "d": "2026-11-24",
+        "t": "Anthropic Drops",
+        "u": "https://newsletterhunt.com/emails/562527"
       },
       {
         "d": "2026-11-17",
@@ -192,14 +221,19 @@
         "u": "https://newsletterhunt.com/emails/555596"
       },
       {
-        "d": "2026-11-16",
-        "t": "People Miss Jensen Huang Already",
-        "u": "https://newsletterhunt.com/emails/554672"
+        "d": "2026-11-06",
+        "t": "The Podcast: Friend Acquisition Rate",
+        "u": "https://newsletterhunt.com/emails/545366"
       },
       {
-        "d": "2026-11-12",
-        "t": "Nvidia\u2019s Board Had to Do Something",
-        "u": "https://newsletterhunt.com/emails/550976"
+        "d": "2026-11-05",
+        "t": "Financial Predictionization",
+        "u": "https://newsletterhunt.com/emails/544640"
+      },
+      {
+        "d": "2026-11-03",
+        "t": "How Much Should Anthropic Pop?",
+        "u": "https://newsletterhunt.com/emails/543056"
       }
     ]
   },
@@ -272,45 +306,11 @@
     ]
   },
   {
-    "theme": "Crypto / Blockchain",
-    "recent_90": 17,
-    "recent_30": 7,
-    "total": 567,
-    "heat_ratio": 0.97,
-    "articles": [
-      {
-        "d": "2026-11-17",
-        "t": "The Agents Will Trade the Bonds",
-        "u": "https://newsletterhunt.com/emails/555596"
-      },
-      {
-        "d": "2026-11-06",
-        "t": "The Podcast: Friend Acquisition Rate",
-        "u": "https://newsletterhunt.com/emails/545366"
-      },
-      {
-        "d": "2026-11-05",
-        "t": "Financial Predictionization",
-        "u": "https://newsletterhunt.com/emails/544640"
-      },
-      {
-        "d": "2026-11-03",
-        "t": "How Much Should Anthropic Pop?",
-        "u": "https://newsletterhunt.com/emails/543056"
-      },
-      {
-        "d": "2026-11-02",
-        "t": "Binance Got Some Money Back",
-        "u": "https://newsletterhunt.com/emails/542165"
-      }
-    ]
-  },
-  {
     "theme": "Securities Fraud",
-    "recent_90": 15,
+    "recent_90": 14,
     "recent_30": 7,
     "total": 514,
-    "heat_ratio": 0.95,
+    "heat_ratio": 0.88,
     "articles": [
       {
         "d": "2026-11-23",
@@ -389,10 +389,10 @@
   },
   {
     "theme": "Regulation / SEC",
-    "recent_90": 13,
+    "recent_90": 12,
     "recent_30": 2,
     "total": 625,
-    "heat_ratio": 0.67,
+    "heat_ratio": 0.62,
     "articles": [
       {
         "d": "2026-11-18",
