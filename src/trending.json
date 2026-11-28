@@ -36,7 +36,7 @@
   {
     "theme": "Options / Derivatives",
     "recent_90": 15,
-    "recent_30": 3,
+    "recent_30": 2,
     "total": 151,
     "heat_ratio": 3.23,
     "articles": [
@@ -206,7 +206,7 @@
   {
     "theme": "Crypto / Blockchain",
     "recent_90": 18,
-    "recent_30": 7,
+    "recent_30": 6,
     "total": 568,
     "heat_ratio": 1.03,
     "articles": [
@@ -240,7 +240,7 @@
   {
     "theme": "IPOs / Capital Markets",
     "recent_90": 7,
-    "recent_30": 4,
+    "recent_30": 3,
     "total": 231,
     "heat_ratio": 0.98,
     "articles": [
